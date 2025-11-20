@@ -9,6 +9,7 @@ numpy>=1
 setuptools>=68
 faker
 ollama
+google-generativeai
 python-Levenshtein
 jellyfish
 aiohttp

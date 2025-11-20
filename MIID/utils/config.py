@@ -165,6 +165,28 @@ def add_miner_args(cls, parser):
     )
 
     parser.add_argument(
+        "--neuron.llm_provider",
+        type=str,
+        choices=["ollama", "gemini"],
+        help="LLM provider to use: 'ollama' for local Ollama or 'gemini' for Google Gemini API (default: ollama)",
+        default="ollama",
+    )
+
+    parser.add_argument(
+        "--neuron.gemini_api_key",
+        type=str,
+        help="Google Gemini API key (required if using gemini provider). Can also be set via GEMINI_API_KEY environment variable.",
+        default=None,
+    )
+
+    parser.add_argument(
+        "--neuron.gemini_model_name",
+        type=str,
+        help="Gemini model to use (default: gemini-2.0-flash-exp)",
+        default="gemini-2.0-flash-exp",
+    )
+
+    parser.add_argument(
         "--blacklist.force_validator_permit",
         action="store_true",
         help="If set, we will force incoming requests to have a permit.",

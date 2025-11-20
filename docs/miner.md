@@ -13,9 +13,11 @@ MIID miners receive requests from validators containing names and a query templa
 
 - Python 3.10 or higher
 - A Bittensor wallet with TAO for registration
-- A local LLM via Ollama (default: llama3.1:latest)
-- Sufficient storage for model weights (~10GB or more depending on model)
-- At least 8GB RAM (16GB+ recommended)
+- An LLM provider (choose one):
+  - **Ollama**: Local LLM (requires Ollama installation and model download)
+  - **Google Gemini**: API-based (requires API key, no local installation needed)
+- For Ollama: Sufficient storage for model weights (~10GB or more depending on model)
+- At least 8GB RAM (16GB+ recommended for Ollama)
 - Open port 8091 for validator communication ([Network Setup Guide](network_setup.md))
 
 ## Installation
@@ -97,14 +99,44 @@ For running your miner in the background (recommended for production), see the [
 
 You can configure your miner with the following command-line arguments:
 
+### LLM Provider Selection
+
+The miner supports two LLM providers:
+
+**Ollama (Local LLM):**
+- `--neuron.llm_provider ollama`: Use Ollama (default)
 - `--neuron.model_name`: The Ollama model to use (default: tinyllama:latest)
+- `--neuron.ollama_url`: Ollama server URL (default: http://127.0.0.1:11434)
+
+**Google Gemini (API):**
+- `--neuron.llm_provider gemini`: Use Google Gemini API
+- `--neuron.gemini_api_key`: Your Gemini API key (or set GEMINI_API_KEY environment variable)
+- `--neuron.gemini_model_name`: Gemini model to use (default: gemini-2.0-flash-exp)
+
+### Other Options
+
 - `--neuron.logging.debug`: Enable debug logging
 - `--neuron.log_responses`: Save miner responses for analysis
 - `--neuron.response_cache_dir`: Directory to store response logs
 
-Example with custom configuration:
+### Examples
+
+**Using Ollama (default):**
 ```bash
 python neurons/miner.py --netuid 54 --wallet.name your_wallet_name --wallet.hotkey your_hotkey --subtensor.network finney --neuron.model_name mistral:7b --neuron.logging.debug
+```
+
+**Using Google Gemini:**
+```bash
+# Option 1: Set API key via command line
+python neurons/miner.py --netuid 54 --wallet.name your_wallet_name --wallet.hotkey your_hotkey --subtensor.network finney --neuron.llm_provider gemini --neuron.gemini_api_key YOUR_API_KEY
+
+# Option 2: Set API key via environment variable (recommended for security)
+export GEMINI_API_KEY=your_api_key_here
+python neurons/miner.py --netuid 54 --wallet.name your_wallet_name --wallet.hotkey your_hotkey --subtensor.network finney --neuron.llm_provider gemini
+
+# Option 3: Use a different Gemini model
+python neurons/miner.py --netuid 54 --wallet.name your_wallet_name --wallet.hotkey your_hotkey --subtensor.network finney --neuron.llm_provider gemini --neuron.gemini_model_name gemini-1.5-pro
 ```
 
 ## How It Works
@@ -115,7 +147,7 @@ python neurons/miner.py --netuid 54 --wallet.name your_wallet_name --wallet.hotk
 
 2. For each name, the miner:
    - Formats the query template with the name
-   - Sends the formatted query to the local LLM
+   - Sends the formatted query to the configured LLM (Ollama or Gemini)
    - Extracts the generated variations from the LLM response
 
 3. The miner processes all responses and returns a dictionary mapping each input name to a list of variations.
