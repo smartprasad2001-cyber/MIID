@@ -6,7 +6,7 @@ Test the latest available Gemini models.
 import os
 import sys
 
-os.environ['GEMINI_API_KEY'] = 'AIzaSyC5bJ82CRL65UqWj4Tx04AmtofX19eRF5o'
+# API key should be set via environment variable: export GEMINI_API_KEY=your_key
 
 def test_model(model_name):
     """Test a specific Gemini model."""
@@ -101,7 +101,7 @@ def main():
         print(f"    --wallet.name abc \\")
         print(f"    --wallet.hotkey abc \\")
         print(f"    --neuron.llm_provider gemini \\")
-        print(f"    --neuron.gemini_api_key AIzaSyC5bJ82CRL65UqWj4Tx04AmtofX19eRF5o \\")
+        print(f"    --neuron.gemini_api_key YOUR_API_KEY \\")
         print(f"    --neuron.gemini_model_name {recommended} \\")
         print(f"    --logging.debug")
         print("="*60 + "\n")

@@ -7,8 +7,7 @@ import os
 import asyncio
 import sys
 
-# Set API key
-os.environ['GEMINI_API_KEY'] = 'AIzaSyC5bJ82CRL65UqWj4Tx04AmtofX19eRF5o'
+# API key should be set via environment variable: export GEMINI_API_KEY=your_key
 
 async def test_miner_gemini():
     """Test the miner's Get_Respond_LLM method with Gemini."""
@@ -87,7 +86,7 @@ async def test_miner_gemini():
         print("✅ All tests passed! Gemini integration works!")
         print("="*60)
         print("\nYou can now run the miner with:")
-        print("  export GEMINI_API_KEY=AIzaSyC5bJ82CRL65UqWj4Tx04AmtofX19eRF5o")
+        print("  export GEMINI_API_KEY=your_api_key_here")
         print("  python neurons/miner.py --mock --netuid 1 --neuron.llm_provider gemini")
         print("="*60)
         return True

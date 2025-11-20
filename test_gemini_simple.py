@@ -6,8 +6,7 @@ Simple test of Gemini integration - tests the core LLM functionality.
 import os
 import sys
 
-# Set API key
-os.environ['GEMINI_API_KEY'] = 'AIzaSyC5bJ82CRL65UqWj4Tx04AmtofX19eRF5o'
+# API key should be set via environment variable: export GEMINI_API_KEY=your_key
 
 def test_gemini_directly():
     """Test Gemini API directly (same way miner uses it)."""
@@ -82,7 +81,7 @@ Remember: Only provide the name variations in a clean, comma-separated format.
         print("="*60)
         print("\nYour Gemini integration is working correctly!")
         print("\nTo run the miner with Gemini:")
-        print("  export GEMINI_API_KEY=AIzaSyC5bJ82CRL65UqWj4Tx04AmtofX19eRF5o")
+        print("  export GEMINI_API_KEY=your_api_key_here")
         print("  python neurons/miner.py --mock --netuid 1 --neuron.llm_provider gemini")
         print("\nOr for mainnet/testnet:")
         print("  python neurons/miner.py --netuid 54 --neuron.llm_provider gemini --wallet.name YOUR_WALLET --wallet.hotkey YOUR_HOTKEY")

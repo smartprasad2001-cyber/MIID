@@ -4,7 +4,7 @@
 import os
 import google.generativeai as genai
 
-os.environ['GEMINI_API_KEY'] = 'AIzaSyC5bJ82CRL65UqWj4Tx04AmtofX19eRF5o'
+# API key should be set via environment variable: export GEMINI_API_KEY=your_key
 genai.configure(api_key=os.environ['GEMINI_API_KEY'])
 
 # Test latest models
