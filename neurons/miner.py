@@ -214,6 +214,35 @@ class Miner(BaseMinerNeuron):
         run_id = int(time.time())
         bt.logging.info(f"Starting run {run_id} for {len(synapse.identity)} names")
         
+        # Log the ENTIRE validator synapse for debugging
+        bt.logging.info("=" * 80)
+        bt.logging.info("COMPLETE VALIDATOR SYNAPSE (FULL REQUEST)")
+        bt.logging.info("=" * 80)
+        try:
+            synapse_dict = {
+                "identity": synapse.identity,
+                "query_template": synapse.query_template,
+                "timeout": getattr(synapse, 'timeout', None),
+                "variations": getattr(synapse, 'variations', None),
+                "process_time": getattr(synapse, 'process_time', None),
+            }
+            import json
+            bt.logging.info(f"Identity: {json.dumps(synapse.identity, indent=2, ensure_ascii=False)}")
+            bt.logging.info(f"Query Template: {synapse.query_template}")
+            bt.logging.info(f"Timeout: {getattr(synapse, 'timeout', None)}")
+            bt.logging.info(f"Variations (initial): {getattr(synapse, 'variations', None)}")
+            bt.logging.info(f"Process Time (initial): {getattr(synapse, 'process_time', None)}")
+            
+            # Log validator info if available
+            if hasattr(synapse, 'dendrite') and synapse.dendrite:
+                bt.logging.info(f"Validator Hotkey: {synapse.dendrite.hotkey if synapse.dendrite else None}")
+            
+            bt.logging.info("=" * 80)
+        except Exception as e:
+            bt.logging.warning(f"Error logging synapse details: {e}")
+            bt.logging.info(f"Synapse identity count: {len(synapse.identity)}")
+            bt.logging.info(f"Query template length: {len(synapse.query_template)}")
+        
         # Get timeout from synapse (default to 120s if not specified)
         timeout = getattr(synapse, 'timeout', 120.0)
         bt.logging.info(f"Request timeout: {timeout:.1f}s for {len(synapse.identity)} names")
