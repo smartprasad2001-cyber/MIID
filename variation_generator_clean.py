@@ -20,6 +20,14 @@ from typing import List, Dict
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from name_variations import generate_name_variations
 
+# Import unidecode for transliteration
+try:
+    from unidecode import unidecode
+    UNIDECODE_AVAILABLE = True
+except ImportError:
+    UNIDECODE_AVAILABLE = False
+    print("⚠️  Warning: unidecode not available. Non-Latin scripts may not work well.")
+
 # Minimal IdentitySynapse class
 class IdentitySynapse:
     def __init__(self, identity, query_template, timeout=120.0):
@@ -400,6 +408,116 @@ def generate_uav_address(address: str) -> Dict:
     }
 
 # ============================================================================
+# Non-Latin Script Detection and Variations
+# ============================================================================
+
+def detect_script(name: str) -> str:
+    """Detect the script type of a name"""
+    # Check for Arabic characters
+    if re.search(r'[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\uFB50-\uFDFF\uFE70-\uFEFF]', name):
+        return 'arabic'
+    # Check for Cyrillic characters
+    if re.search(r'[\u0400-\u04FF\u0500-\u052F\u2DE0-\u2DFF\uA640-\uA69F]', name):
+        return 'cyrillic'
+    # Check for Chinese/Japanese/Korean characters
+    if re.search(r'[\u4E00-\u9FFF\u3040-\u309F\u30A0-\u30FF\uAC00-\uD7AF]', name):
+        return 'cjk'
+    # Check if contains non-Latin characters
+    if re.search(r'[^\x00-\x7F]', name):
+        return 'non-latin'
+    return 'latin'
+
+def generate_non_latin_variations(name: str, script: str, count: int) -> List[str]:
+    """Generate variations for non-Latin script names"""
+    variations = []
+    used = set([name.lower()])
+    
+    # Strategy 1: Transliterate and generate variations, then keep original script
+    if UNIDECODE_AVAILABLE:
+        transliterated = unidecode(name)
+        if transliterated and transliterated != name:
+            # Generate variations on transliterated version
+            latin_vars = generate_name_variations(transliterated, limit=count * 2)
+            # Keep some transliterated variations as-is (valid for non-Latin names)
+            for var in latin_vars[:count // 2]:
+                if var.lower() not in used:
+                    variations.append(var)
+                    used.add(var.lower())
+    
+    # Strategy 2: Script-specific transformations
+    parts = name.split()
+    
+    # For Arabic/Cyrillic: Swap similar-looking characters, add/remove spaces
+    if script in ['arabic', 'cyrillic']:
+        # Swap adjacent parts
+        if len(parts) >= 2:
+            swapped = " ".join([parts[-1]] + parts[:-1])
+            if swapped.lower() not in used:
+                variations.append(swapped)
+                used.add(swapped.lower())
+        
+        # Remove spaces (merge parts)
+        if len(parts) >= 2:
+            merged = "".join(parts)
+            if merged.lower() not in used:
+                variations.append(merged)
+                used.add(merged.lower())
+        
+        # Add space in middle of long words
+        for idx, part in enumerate(parts):
+            if len(part) > 4:
+                mid = len(part) // 2
+                spaced = part[:mid] + " " + part[mid:]
+                var = " ".join(parts[:idx] + [spaced] + parts[idx+1:])
+                if var.lower() not in used:
+                    variations.append(var)
+                    used.add(var.lower())
+                    break
+    
+    # For CJK: Character-level variations
+    if script == 'cjk':
+        # Swap characters
+        if len(parts) >= 2:
+            swapped = " ".join([parts[-1]] + parts[:-1])
+            if swapped.lower() not in used:
+                variations.append(swapped)
+                used.add(swapped.lower())
+    
+    # Strategy 3: Simple transformations (work for all scripts)
+    # Add/remove punctuation-like characters
+    for i in range(min(count // 2, 3)):
+        # Remove middle character if long enough
+        if len(name) > 3:
+            idx = random.randint(1, len(name) - 2)
+            var = name[:idx] + name[idx+1:]
+            if var.lower() not in used:
+                variations.append(var)
+                used.add(var.lower())
+        
+        # Duplicate a character
+        if len(name) > 2:
+            idx = random.randint(0, len(name) - 1)
+            var = name[:idx+1] + name[idx] + name[idx+1:]
+            if var.lower() not in used:
+                variations.append(var)
+                used.add(var.lower())
+    
+    # Strategy 4: If we have transliteration, use those variations directly
+    if UNIDECODE_AVAILABLE and len(variations) < count:
+        transliterated = unidecode(name)
+        if transliterated and transliterated != name:
+            # Get more transliterated variations
+            more_latin_vars = generate_name_variations(transliterated, limit=(count - len(variations)) * 2)
+            for var in more_latin_vars:
+                if len(variations) >= count:
+                    break
+                if var.lower() not in used:
+                    variations.append(var)
+                    used.add(var.lower())
+    
+    return variations[:count]
+
+# ============================================================================
 # Main Generation Function
 # ============================================================================
 
@@ -411,6 +529,10 @@ def generate_name_variations_clean(original_name: str, variation_count: int,
     
     variations = []
     used_variations = set()
+    
+    # Detect script type
+    script = detect_script(original_name)
+    is_non_latin = (script != 'latin')
     
     # Generate rule-based variations
     print(f"   🔧 Rule-based: {rule_based_count}")
@@ -432,7 +554,7 @@ def generate_name_variations_clean(original_name: str, variation_count: int,
     # Generate non-rule variations using name_variations.py DIRECTLY
     print(f"   🔬 Non-rule: {non_rule_count} (using name_variations.py)")
     if non_rule_count > 0:
-        non_rule_vars = generate_name_variations(original_name, limit=non_rule_count)
+        non_rule_vars = generate_name_variations(original_name, limit=non_rule_count * 2)
         
         for var in non_rule_vars:
             if len(variations) >= variation_count:
@@ -440,13 +562,39 @@ def generate_name_variations_clean(original_name: str, variation_count: int,
             if var.lower() not in used_variations:
                 variations.append(var)
                 used_variations.add(var.lower())
+        
+        # If we got too few variations and it's a non-Latin script, use special handling
+        if len(variations) < variation_count and is_non_latin and len(non_rule_vars) < non_rule_count:
+            print(f"   🌍 Detected {script} script - using script-specific variations")
+            remaining = variation_count - len(variations)
+            non_latin_vars = generate_non_latin_variations(original_name, script, remaining)
+            
+            for var in non_latin_vars:
+                if len(variations) >= variation_count:
+                    break
+                if var.lower() not in used_variations:
+                    variations.append(var)
+                    used_variations.add(var.lower())
     
-    # Fill remaining if needed (shouldn't happen but just in case)
-    while len(variations) < variation_count:
-        var = original_name + str(len(variations))
-        if var.lower() not in used_variations:
-            variations.append(var)
-            used_variations.add(var.lower())
+    # Final fallback - only if we still don't have enough
+    if len(variations) < variation_count:
+        if is_non_latin:
+            # For non-Latin, use script-specific variations as last resort
+            remaining = variation_count - len(variations)
+            non_latin_vars = generate_non_latin_variations(original_name, script, remaining)
+            for var in non_latin_vars:
+                if len(variations) >= variation_count:
+                    break
+                if var.lower() not in used_variations:
+                    variations.append(var)
+                    used_variations.add(var.lower())
+        else:
+            # For Latin, only fall back to numeric suffixes as absolute last resort
+            while len(variations) < variation_count:
+                var = original_name + str(len(variations))
+                if var.lower() not in used_variations:
+                    variations.append(var)
+                    used_variations.add(var.lower())
     
     return variations[:variation_count]
 
