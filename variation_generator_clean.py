@@ -47,11 +47,20 @@ def parse_query_template(query_template: str) -> Dict:
     if count_match:
         requirements['variation_count'] = int(count_match.group(1))
     
-    # Extract rule percentage - look for "also include X%" or "X% of variations"
-    rule_pct_match = re.search(r'(\d+)%\s+of\s+variations|include\s+(\d+)%', query_template, re.I)
-    if rule_pct_match:
-        pct = rule_pct_match.group(1) or rule_pct_match.group(2)
-        requirements['rule_percentage'] = int(pct) / 100
+    # Extract rule percentage - look for patterns like "X% of", "approximately X%", "include X%"
+    rule_pct_patterns = [
+        r'approximately\s+(\d+)%\s+of',  # "Approximately 24% of"
+        r'(\d+)%\s+of\s+the\s+total',     # "24% of the total"
+        r'(\d+)%\s+of\s+variations',      # "24% of variations"
+        r'include\s+(\d+)%',              # "include 24%"
+        r'(\d+)%\s+should\s+follow'       # "24% should follow"
+    ]
+    for pattern in rule_pct_patterns:
+        rule_pct_match = re.search(pattern, query_template, re.I)
+        if rule_pct_match:
+            pct = rule_pct_match.group(1)
+            requirements['rule_percentage'] = int(pct) / 100
+            break
     
     # Extract rules - check various phrasings
     if 'replace spaces with special characters' in query_template.lower():
@@ -64,6 +73,10 @@ def parse_query_template(query_template: str) -> Dict:
         requirements['rules'].append('swap_adjacent_consonants')
     if 'swap adjacent syllables' in query_template.lower():
         requirements['rules'].append('swap_adjacent_syllables')
+    if 'add a title suffix' in query_template.lower() or 'title suffix' in query_template.lower():
+        requirements['rules'].append('add_title_suffix')
+    if 'abbreviate name parts' in query_template.lower() or 'abbreviate' in query_template.lower():
+        requirements['rules'].append('abbreviate_name_parts')
     
     # Extract similarity (just parse, don't validate)
     if 'phonetic similarity' in query_template.lower():
@@ -132,6 +145,22 @@ def apply_swap_adjacent_syllables(name: str) -> str:
             return word[mid:] + word[:mid]
     return name
 
+def apply_add_title_suffix(name: str) -> str:
+    """Add a title suffix (Jr., PhD, etc.)"""
+    suffixes = ['Jr.', 'Sr.', 'PhD', 'MD', 'III', 'II', 'Esq.']
+    return name + " " + random.choice(suffixes)
+
+def apply_abbreviate_name_parts(name: str) -> str:
+    """Abbreviate name parts (e.g., "John" -> "J.")"""
+    parts = name.split()
+    if len(parts) >= 2:
+        # Abbreviate first name
+        parts[0] = parts[0][0] + "." if len(parts[0]) > 0 else parts[0]
+    elif len(parts) == 1 and len(parts[0]) > 1:
+        # If single word, abbreviate first letter
+        parts[0] = parts[0][0] + "."
+    return " ".join(parts)
+
 def apply_rule_to_name(name: str, rule: str) -> str:
     """Apply a rule to a name"""
     rule_map = {
@@ -140,6 +169,8 @@ def apply_rule_to_name(name: str, rule: str) -> str:
         'replace_double_letters': apply_replace_double_letters,
         'swap_adjacent_consonants': apply_swap_adjacent_consonants,
         'swap_adjacent_syllables': apply_swap_adjacent_syllables,
+        'add_title_suffix': apply_add_title_suffix,
+        'abbreviate_name_parts': apply_abbreviate_name_parts,
     }
     func = rule_map.get(rule)
     return func(name) if func else name
