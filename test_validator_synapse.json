@@ -1,0 +1,11 @@
+{
+  "identity": [
+    ["Christopher Johnson", "1985-03-15", "New York, United States"],
+    ["Maria Garcia", "1990-07-22", "Los Angeles, United States"],
+    ["Ahmed al-Rashid", "1982-05-20", "Baghdad, Iraq"]
+  ],
+  "query_template": "Generate 10 variations of {name}, ensuring phonetic similarity where some sound-alike names are Light (10%), Medium (50%), or Far (40), and orthographic similarity where some visually similar names are Light (70%), Medium (30%), or Far (0%). Approximately 30% of the total 10 variations should follow these rule-based transformations: replace spaces with special characters, swap adjacent consonants, and delete a random letter. Additionally, generate variations that perform these transformations: Add a title suffix (Jr., PhD, etc.), and Abbreviate name parts.\n[VALIDATION HINTS]: Phonetic similarity: 10% Light, 50% Medium, 40% Far.; Orthographic similarity: 70% Light, 30% Medium. The following address is the seed country/city to generate address variations for: {address}. Generate unique real addresses within the specified country/city for each variation.  The following date of birth is the seed DOB to generate variations for: {dob}.\n\n[ADDITIONAL CONTEXT]:\n- Address variations should be realistic addresses within the specified country/city\n- DOB variations ATLEAST one in each category (±1 day, ±3 days, ±30 days, ±90 days, ±365 days, year+month only)\n- For year+month, generate the exact DOB without day\n- Each variation must have a different, realistic address and DOB",
+  "variations": {},
+  "timeout": 720.0
+}
+

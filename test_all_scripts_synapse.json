@@ -1,0 +1,22 @@
+{
+  "identity": [
+    ["Christopher Johnson", "1985-03-15", "New York, United States"],
+    ["María García", "1990-07-22", "Madrid, Spain"],
+    ["محمد علي", "1982-05-20", "Baghdad, Iraq"],
+    ["Игорь Карпенко", "1988-09-12", "Moscow, Russia"],
+    ["張三", "1987-03-25", "Beijing, China"],
+    ["田中太郎", "1985-11-08", "Tokyo, Japan"],
+    ["김철수", "1986-07-14", "Seoul, South Korea"],
+    ["Jean-Pierre Dubois", "1983-04-30", "Paris, France"],
+    ["Ahmed al-Rashid", "1984-08-17", "Cairo, Egypt"],
+    ["Александр Петров", "1989-12-03", "St. Petersburg, Russia"],
+    ["ساجي النشاشيبي", "1986-08-19", "Damascus, Syria"],
+    ["李小明", "1985-06-21", "Shanghai, China"],
+    ["François Müller", "1987-01-18", "Berlin, Germany"],
+    ["Мария ШУВАЛОВА", "1990-05-04", "Kiev, Ukraine"]
+  ],
+  "query_template": "Generate 8 variations of {name}, ensuring phonetic similarity where some sound-alike names are Light (10%), Medium (50%), or Far (40), and orthographic similarity where some visually similar names are Light (60%), Medium (30%), or Far (10%). Approximately 35% of the total 8 variations should follow these rule-based transformations: replace spaces with special characters, swap adjacent consonants, delete a random letter, add a title suffix, and reorder name parts.\n[VALIDATION HINTS]: Phonetic similarity: 10% Light, 50% Medium, 40% Far.; Orthographic similarity: 60% Light, 30% Medium, 10% Far. The following address is the seed country/city to generate address variations for: {address}. Generate unique real addresses within the specified country/city for each variation.  The following date of birth is the seed DOB to generate variations for: {dob}.\n\n[ADDITIONAL CONTEXT]:\n- Address variations should be realistic addresses within the specified country/city\n- DOB variations ATLEAST one in each category (±1 day, ±3 days, ±30 days, ±90 days, ±365 days, year+month only)\n- For year+month, generate the exact DOB without day\n- Each variation must have a different, realistic address and DOB",
+  "variations": {},
+  "timeout": 720.0
+}
+
