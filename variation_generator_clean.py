@@ -58,6 +58,7 @@ def parse_query_template(query_template: str) -> Dict:
     # Extract rule percentage - look for patterns like "X% of", "approximately X%", "include X%"
     rule_pct_patterns = [
         r'approximately\s+(\d+)%\s+of',  # "Approximately 24% of"
+        r'also\s+include\s+(\d+)%\s+of', # "also include 44% of"
         r'(\d+)%\s+of\s+the\s+total',     # "24% of the total"
         r'(\d+)%\s+of\s+variations',      # "24% of variations"
         r'include\s+(\d+)%',              # "include 24%"
@@ -71,20 +72,55 @@ def parse_query_template(query_template: str) -> Dict:
             break
     
     # Extract rules - check various phrasings
-    if 'replace spaces with special characters' in query_template.lower():
+    # Character replacement
+    if 'replace spaces with special characters' in query_template.lower() or 'replace spaces with random special characters' in query_template.lower():
         requirements['rules'].append('replace_spaces_with_special_characters')
-    if 'delete a random letter' in query_template.lower() or 'delete random letter' in query_template.lower():
-        requirements['rules'].append('delete_random_letter')
-    if 'replace double letters' in query_template.lower():
+    if 'replace double letters' in query_template.lower() or 'replace double letters with single letter' in query_template.lower():
         requirements['rules'].append('replace_double_letters')
+    if 'replace random vowels' in query_template.lower() or 'replace vowels with different vowels' in query_template.lower():
+        requirements['rules'].append('replace_random_vowels')
+    if 'replace random consonants' in query_template.lower() or 'replace consonants with different consonants' in query_template.lower():
+        requirements['rules'].append('replace_random_consonants')
+    
+    # Character swapping
     if 'swap adjacent consonants' in query_template.lower():
         requirements['rules'].append('swap_adjacent_consonants')
     if 'swap adjacent syllables' in query_template.lower():
         requirements['rules'].append('swap_adjacent_syllables')
-    if 'add a title suffix' in query_template.lower() or 'title suffix' in query_template.lower():
+    if 'swap random letter' in query_template.lower() or 'swap random adjacent letters' in query_template.lower():
+        requirements['rules'].append('swap_random_letter')
+    
+    # Character removal
+    if 'delete a random letter' in query_template.lower() or 'delete random letter' in query_template.lower():
+        requirements['rules'].append('delete_random_letter')
+    if 'remove random vowel' in query_template.lower() or 'remove a random vowel' in query_template.lower():
+        requirements['rules'].append('remove_random_vowel')
+    if 'remove random consonant' in query_template.lower() or 'remove a random consonant' in query_template.lower():
+        requirements['rules'].append('remove_random_consonant')
+    if 'remove all spaces' in query_template.lower() or 'remove spaces' in query_template.lower():
+        requirements['rules'].append('remove_all_spaces')
+    
+    # Character insertion
+    if 'duplicate a random letter' in query_template.lower() or 'duplicate random letter' in query_template.lower():
+        requirements['rules'].append('duplicate_random_letter')
+    if 'insert random letter' in query_template.lower() or 'insert a random letter' in query_template.lower():
+        requirements['rules'].append('insert_random_letter')
+    if 'add a title prefix' in query_template.lower() or 'title prefix' in query_template.lower() or 'add title prefix' in query_template.lower():
+        requirements['rules'].append('add_title_prefix')
+    if 'add a title suffix' in query_template.lower() or 'title suffix' in query_template.lower() or 'add title suffix' in query_template.lower():
         requirements['rules'].append('add_title_suffix')
-    if 'abbreviate name parts' in query_template.lower() or 'abbreviate' in query_template.lower():
+    
+    # Name formatting
+    if 'use first name initial' in query_template.lower() or 'first name initial with last name' in query_template.lower():
+        requirements['rules'].append('initial_only_first_name')
+    if 'convert name to initials' in query_template.lower() or 'shorten name to initials' in query_template.lower():
+        requirements['rules'].append('shorten_to_initials')
+    if 'abbreviate name parts' in query_template.lower() or 'abbreviate' in query_template.lower() or 'shorten name to abbreviations' in query_template.lower():
         requirements['rules'].append('abbreviate_name_parts')
+    
+    # Structure change
+    if 'reorder name parts' in query_template.lower() or 'reorder parts' in query_template.lower() or 'name parts permutations' in query_template.lower():
+        requirements['rules'].append('reorder_name_parts')
     
     # Extract similarity (just parse, don't validate)
     if 'phonetic similarity' in query_template.lower():
@@ -169,16 +205,234 @@ def apply_abbreviate_name_parts(name: str) -> str:
         parts[0] = parts[0][0] + "."
     return " ".join(parts)
 
+def apply_replace_random_vowels(name: str) -> str:
+    """Replace random vowels with different vowels"""
+    vowels = {'a': ['e', 'i', 'o', 'u'], 'e': ['a', 'i', 'o', 'u'], 'i': ['a', 'e', 'o', 'u'],
+              'o': ['a', 'e', 'i', 'u'], 'u': ['a', 'e', 'i', 'o'],
+              'A': ['E', 'I', 'O', 'U'], 'E': ['A', 'I', 'O', 'U'], 'I': ['A', 'E', 'O', 'U'],
+              'O': ['A', 'E', 'I', 'U'], 'U': ['A', 'E', 'I', 'O']}
+    
+    result = list(name)
+    vowel_indices = [i for i, char in enumerate(name) if char.lower() in 'aeiou']
+    
+    if vowel_indices:
+        # Replace 1-2 random vowels
+        num_replacements = min(random.randint(1, 2), len(vowel_indices))
+        indices_to_replace = random.sample(vowel_indices, num_replacements)
+        
+        for idx in indices_to_replace:
+            char = name[idx]
+            if char in vowels:
+                result[idx] = random.choice(vowels[char])
+    
+    return ''.join(result)
+
+def apply_remove_all_spaces(name: str) -> str:
+    """Remove all spaces from name"""
+    return name.replace(' ', '')
+
+def apply_reorder_name_parts(name: str) -> str:
+    """Reorder name parts (swap, reverse, etc.)"""
+    parts = name.split()
+    if len(parts) >= 2:
+        # Different reordering strategies
+        strategy = random.choice(['swap_first_last', 'reverse_all', 'random_shuffle'])
+        
+        if strategy == 'swap_first_last':
+            # Swap first and last
+            return " ".join([parts[-1]] + parts[1:-1] + [parts[0]])
+        elif strategy == 'reverse_all':
+            # Reverse all parts
+            return " ".join(reversed(parts))
+        else:  # random_shuffle
+            # Shuffle all parts
+            shuffled = parts.copy()
+            random.shuffle(shuffled)
+            return " ".join(shuffled)
+    elif len(parts) == 1:
+        # For single word, reverse it
+        return parts[0][::-1]
+    return name
+
+def apply_replace_random_consonants(name: str) -> str:
+    """Replace random consonants with different consonants"""
+    consonants = {
+        'b': ['c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'z'],
+        'c': ['b', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'z'],
+        'd': ['b', 'c', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'z'],
+        'f': ['b', 'c', 'd', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'z'],
+        'g': ['b', 'c', 'd', 'f', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'z'],
+        'h': ['b', 'c', 'd', 'f', 'g', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'z'],
+        'j': ['b', 'c', 'd', 'f', 'g', 'h', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'z'],
+        'k': ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'z'],
+        'l': ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'z'],
+        'm': ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'z'],
+        'n': ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'z'],
+        'p': ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'q', 'r', 's', 't', 'v', 'w', 'x', 'z'],
+        'q': ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'r', 's', 't', 'v', 'w', 'x', 'z'],
+        'r': ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 's', 't', 'v', 'w', 'x', 'z'],
+        's': ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 't', 'v', 'w', 'x', 'z'],
+        't': ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 'v', 'w', 'x', 'z'],
+        'v': ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'w', 'x', 'z'],
+        'w': ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'x', 'z'],
+        'x': ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'z'],
+        'z': ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x']
+    }
+    # Add uppercase versions
+    for key in list(consonants.keys()):
+        consonants[key.upper()] = [c.upper() for c in consonants[key]]
+    
+    result = list(name)
+    consonant_indices = [i for i, char in enumerate(name) if char.isalpha() and char.lower() not in 'aeiou']
+    
+    if consonant_indices:
+        # Replace 1-2 random consonants
+        num_replacements = min(random.randint(1, 2), len(consonant_indices))
+        indices_to_replace = random.sample(consonant_indices, num_replacements)
+        
+        for idx in indices_to_replace:
+            char = name[idx]
+            if char.lower() in consonants:
+                result[idx] = random.choice(consonants[char.lower() if char.islower() else char.upper()])
+    
+    return ''.join(result)
+
+def apply_swap_random_letter(name: str) -> str:
+    """Swap random adjacent letters (not just consonants)"""
+    if len(name) < 2:
+        return name
+    
+    # Find all adjacent letter pairs (case-insensitive, any letters)
+    swap_candidates = []
+    for i in range(len(name) - 1):
+        if name[i].isalpha() and name[i+1].isalpha() and name[i].lower() != name[i+1].lower():
+            swap_candidates.append(i)
+    
+    if swap_candidates:
+        idx = random.choice(swap_candidates)
+        return name[:idx] + name[idx+1] + name[idx] + name[idx+2:]
+    
+    return name
+
+def apply_remove_random_vowel(name: str) -> str:
+    """Remove a random vowel"""
+    vowels = 'aeiouAEIOU'
+    vowel_indices = [i for i, char in enumerate(name) if char in vowels]
+    
+    if vowel_indices:
+        idx = random.choice(vowel_indices)
+        return name[:idx] + name[idx+1:]
+    
+    return name
+
+def apply_remove_random_consonant(name: str) -> str:
+    """Remove a random consonant"""
+    consonant_indices = [i for i, char in enumerate(name) if char.isalpha() and char.lower() not in 'aeiou']
+    
+    if consonant_indices:
+        idx = random.choice(consonant_indices)
+        return name[:idx] + name[idx+1:]
+    
+    return name
+
+def apply_duplicate_random_letter(name: str) -> str:
+    """Duplicate a random letter"""
+    if len(name) == 0:
+        return name
+    
+    letter_indices = [i for i, char in enumerate(name) if char.isalpha()]
+    
+    if letter_indices:
+        idx = random.choice(letter_indices)
+        return name[:idx+1] + name[idx] + name[idx+1:]
+    
+    return name
+
+def apply_insert_random_letter(name: str) -> str:
+    """Insert a random letter"""
+    if len(name) == 0:
+        return random.choice('abcdefghijklmnopqrstuvwxyz')
+    
+    # Insert at random position
+    idx = random.randint(0, len(name))
+    random_letter = random.choice('abcdefghijklmnopqrstuvwxyz')
+    
+    # Preserve case context
+    if idx > 0 and name[idx-1].isupper():
+        random_letter = random_letter.upper()
+    
+    return name[:idx] + random_letter + name[idx:]
+
+def apply_add_title_prefix(name: str) -> str:
+    """Add a title prefix (Mr., Dr., etc.)"""
+    prefixes = ['Mr.', 'Mrs.', 'Ms.', 'Dr.', 'Prof.', 'Rev.', 'Sir', 'Lady']
+    return random.choice(prefixes) + " " + name
+
+def apply_initial_only_first_name(name: str) -> str:
+    """Use first name initial with last name (e.g., 'John Doe' -> 'J. Doe')"""
+    parts = name.split()
+    if len(parts) >= 2:
+        parts[0] = parts[0][0] + "." if len(parts[0]) > 0 else parts[0]
+        return " ".join(parts)
+    elif len(parts) == 1 and len(parts[0]) > 1:
+        return parts[0][0] + "."
+    return name
+
+def apply_shorten_to_initials(name: str) -> str:
+    """Convert name to initials (e.g., 'John Doe' -> 'J. D.')"""
+    parts = name.split()
+    if len(parts) >= 2:
+        initials = [part[0] + "." for part in parts if len(part) > 0]
+        return " ".join(initials)
+    elif len(parts) == 1 and len(parts[0]) > 1:
+        return parts[0][0] + "."
+    return name
+
 def apply_rule_to_name(name: str, rule: str) -> str:
     """Apply a rule to a name"""
     rule_map = {
+        # Character replacement
         'replace_spaces_with_special_characters': apply_replace_spaces_with_special_chars,
-        'delete_random_letter': apply_delete_random_letter,
         'replace_double_letters': apply_replace_double_letters,
+        'replace_random_vowels': apply_replace_random_vowels,
+        'replace_random_consonants': apply_replace_random_consonants,
+        
+        # Character swapping
         'swap_adjacent_consonants': apply_swap_adjacent_consonants,
         'swap_adjacent_syllables': apply_swap_adjacent_syllables,
+        'swap_random_letter': apply_swap_random_letter,
+        
+        # Character removal
+        'delete_random_letter': apply_delete_random_letter,
+        'remove_random_vowel': apply_remove_random_vowel,
+        'remove_random_consonant': apply_remove_random_consonant,
+        'remove_all_spaces': apply_remove_all_spaces,
+        
+        # Character insertion
+        'duplicate_random_letter': apply_duplicate_random_letter,
+        'insert_random_letter': apply_insert_random_letter,
+        'add_title_prefix': apply_add_title_prefix,
         'add_title_suffix': apply_add_title_suffix,
+        
+        # Name formatting
+        'initial_only_first_name': apply_initial_only_first_name,
+        'shorten_to_initials': apply_shorten_to_initials,
         'abbreviate_name_parts': apply_abbreviate_name_parts,
+        
+        # Structure change
+        'reorder_name_parts': apply_reorder_name_parts,
+        
+        # Aliases for validator rule names
+        'replace_spaces_with_random_special_characters': apply_replace_spaces_with_special_chars,
+        'replace_double_letters_with_single_letter': apply_replace_double_letters,
+        'replace_random_vowel_with_random_vowel': apply_replace_random_vowels,
+        'replace_random_consonant_with_random_consonant': apply_replace_random_consonants,
+        'duplicate_random_letter_as_double_letter': apply_duplicate_random_letter,
+        'add_random_leading_title': apply_add_title_prefix,
+        'add_random_trailing_title': apply_add_title_suffix,
+        'shorten_name_to_initials': apply_shorten_to_initials,
+        'shorten_name_to_abbreviations': apply_abbreviate_name_parts,
+        'name_parts_permutations': apply_reorder_name_parts,
     }
     func = rule_map.get(rule)
     return func(name) if func else name
@@ -432,19 +686,7 @@ def generate_non_latin_variations(name: str, script: str, count: int) -> List[st
     variations = []
     used = set([name.lower()])
     
-    # Strategy 1: Transliterate and generate variations, then keep original script
-    if UNIDECODE_AVAILABLE:
-        transliterated = unidecode(name)
-        if transliterated and transliterated != name:
-            # Generate variations on transliterated version
-            latin_vars = generate_name_variations(transliterated, limit=count * 2)
-            # Keep some transliterated variations as-is (valid for non-Latin names)
-            for var in latin_vars[:count // 2]:
-                if var.lower() not in used:
-                    variations.append(var)
-                    used.add(var.lower())
-    
-    # Strategy 2: Script-specific transformations
+    # Strategy 1: Script-specific transformations (keep original script) - PRIORITIZE THESE
     parts = name.split()
     
     # For Arabic/Cyrillic: Swap similar-looking characters, add/remove spaces
@@ -473,6 +715,13 @@ def generate_non_latin_variations(name: str, script: str, count: int) -> List[st
                     variations.append(var)
                     used.add(var.lower())
                     break
+        
+        # Reverse parts order
+        if len(parts) >= 2:
+            reversed_parts = " ".join(parts[::-1])
+            if reversed_parts.lower() not in used:
+                variations.append(reversed_parts)
+                used.add(reversed_parts.lower())
     
     # For CJK: Character-level variations
     if script == 'cjk':
@@ -483,37 +732,105 @@ def generate_non_latin_variations(name: str, script: str, count: int) -> List[st
                 variations.append(swapped)
                 used.add(swapped.lower())
     
-    # Strategy 3: Simple transformations (work for all scripts)
-    # Add/remove punctuation-like characters
-    for i in range(min(count // 2, 3)):
-        # Remove middle character if long enough
-        if len(name) > 3:
-            idx = random.randint(1, len(name) - 2)
+    # Strategy 2: Transliterate and generate variations (mix with script-specific)
+    transliterated_vars = []
+    if UNIDECODE_AVAILABLE and len(variations) < count:
+        transliterated = unidecode(name)
+        if transliterated and transliterated != name:
+            # Generate variations on transliterated version (limit to avoid filling all slots)
+            latin_vars = generate_name_variations(transliterated, limit=max(count - len(variations), count // 2))
+            # Keep transliterated variations (valid for non-Latin names)
+            for var in latin_vars:
+                if var.lower() not in used:
+                    transliterated_vars.append(var)
+                    used.add(var.lower())
+    
+    # Mix script-specific and transliterated variations (prioritize script-specific)
+    # Add script-specific first, then interleave with transliterated
+    final_variations = variations[:]  # Copy script-specific variations
+    translit_idx = 0
+    while len(final_variations) < count and translit_idx < len(transliterated_vars):
+        final_variations.append(transliterated_vars[translit_idx])
+        translit_idx += 1
+    variations = final_variations
+    
+    # Strategy 3: Character-level transformations (work for all scripts)
+    # Generate variations by removing/duplicating/inserting characters
+    max_char_variations = count
+    attempts = 0
+    while len(variations) < count and attempts < count * 3:
+        attempts += 1
+        
+        # Remove a character
+        if len(name) > 2:
+            idx = random.randint(0, len(name) - 1)
             var = name[:idx] + name[idx+1:]
-            if var.lower() not in used:
+            if var and var.lower() not in used:
                 variations.append(var)
                 used.add(var.lower())
+                if len(variations) >= count:
+                    break
         
         # Duplicate a character
-        if len(name) > 2:
+        if len(name) > 1:
             idx = random.randint(0, len(name) - 1)
             var = name[:idx+1] + name[idx] + name[idx+1:]
             if var.lower() not in used:
                 variations.append(var)
                 used.add(var.lower())
+                if len(variations) >= count:
+                    break
+        
+        # Swap adjacent characters (if not already done)
+        if len(name) >= 2:
+            idx = random.randint(0, len(name) - 2)
+            var = name[:idx] + name[idx+1] + name[idx] + name[idx+2:]
+            if var.lower() not in used:
+                variations.append(var)
+                used.add(var.lower())
+                if len(variations) >= count:
+                    break
     
-    # Strategy 4: If we have transliteration, use those variations directly
+    # Strategy 4: Add more transliterated variations if we still need more
     if UNIDECODE_AVAILABLE and len(variations) < count:
         transliterated = unidecode(name)
         if transliterated and transliterated != name:
             # Get more transliterated variations
-            more_latin_vars = generate_name_variations(transliterated, limit=(count - len(variations)) * 2)
+            remaining = count - len(variations)
+            more_latin_vars = generate_name_variations(transliterated, limit=remaining * 3)
             for var in more_latin_vars:
                 if len(variations) >= count:
                     break
                 if var.lower() not in used:
                     variations.append(var)
                     used.add(var.lower())
+    
+    # Strategy 5: If still not enough, create simple variations by modifying parts
+    if len(variations) < count:
+        remaining = count - len(variations)
+        for i in range(remaining * 2):
+            if len(variations) >= count:
+                break
+            parts = name.split()
+            if len(parts) >= 2:
+                # Try different part combinations
+                if i % 3 == 0:
+                    var = " ".join(parts[::-1])
+                elif i % 3 == 1:
+                    var = "".join(parts)
+                else:
+                    var = parts[-1] + " " + " ".join(parts[:-1])
+            elif len(parts) == 1 and len(parts[0]) > 1:
+                # For single word, try removing characters from different positions
+                word = parts[0]
+                idx = (i * 3) % (len(word) - 1) + 1
+                var = word[:idx] + word[idx+1:]
+            else:
+                continue
+            
+            if var and var.lower() not in used:
+                variations.append(var)
+                used.add(var.lower())
     
     return variations[:count]
 
@@ -551,25 +868,25 @@ def generate_name_variations_clean(original_name: str, variation_count: int,
                 variations.append(var)
                 used_variations.add(var.lower())
     
-    # Generate non-rule variations using name_variations.py DIRECTLY
+    # Generate non-rule variations
     print(f"   🔬 Non-rule: {non_rule_count} (using name_variations.py)")
     if non_rule_count > 0:
-        non_rule_vars = generate_name_variations(original_name, limit=non_rule_count * 2)
-        
-        for var in non_rule_vars:
-            if len(variations) >= variation_count:
-                break
-            if var.lower() not in used_variations:
-                variations.append(var)
-                used_variations.add(var.lower())
-        
-        # If we got too few variations and it's a non-Latin script, use special handling
-        if len(variations) < variation_count and is_non_latin and len(non_rule_vars) < non_rule_count:
+        # For non-Latin scripts, skip name_variations.py and go straight to script-specific variations
+        if is_non_latin:
             print(f"   🌍 Detected {script} script - using script-specific variations")
-            remaining = variation_count - len(variations)
-            non_latin_vars = generate_non_latin_variations(original_name, script, remaining)
+            non_latin_vars = generate_non_latin_variations(original_name, script, non_rule_count * 2)
             
             for var in non_latin_vars:
+                if len(variations) >= variation_count:
+                    break
+                if var.lower() not in used_variations:
+                    variations.append(var)
+                    used_variations.add(var.lower())
+        else:
+            # For Latin scripts, use name_variations.py
+            non_rule_vars = generate_name_variations(original_name, limit=non_rule_count * 2)
+            
+            for var in non_rule_vars:
                 if len(variations) >= variation_count:
                     break
                 if var.lower() not in used_variations:
@@ -579,15 +896,48 @@ def generate_name_variations_clean(original_name: str, variation_count: int,
     # Final fallback - only if we still don't have enough
     if len(variations) < variation_count:
         if is_non_latin:
-            # For non-Latin, use script-specific variations as last resort
+            # For non-Latin, ALWAYS use script-specific variations - NEVER numeric suffixes
             remaining = variation_count - len(variations)
-            non_latin_vars = generate_non_latin_variations(original_name, script, remaining)
+            print(f"   🌍 Generating {remaining} more {script} script variations (no numeric suffixes)")
+            
+            # Generate many more variations to ensure we have enough
+            non_latin_vars = generate_non_latin_variations(original_name, script, remaining * 5)
+            
             for var in non_latin_vars:
                 if len(variations) >= variation_count:
                     break
                 if var.lower() not in used_variations:
                     variations.append(var)
                     used_variations.add(var.lower())
+            
+            # If still not enough, create character-level variations manually
+            if len(variations) < variation_count:
+                parts = original_name.split()
+                attempts = 0
+                while len(variations) < variation_count and attempts < 200:
+                    attempts += 1
+                    
+                    if len(parts) >= 2:
+                        # Try different part orders
+                        if attempts % 4 == 0:
+                            var = " ".join(parts[::-1])
+                        elif attempts % 4 == 1:
+                            var = "".join(parts)
+                        elif attempts % 4 == 2:
+                            var = parts[-1] + " " + " ".join(parts[:-1])
+                        else:
+                            var = " ".join([parts[1]] + [parts[0]] + parts[2:]) if len(parts) > 2 else " ".join(parts[::-1])
+                    elif len(parts) == 1 and len(parts[0]) > 1:
+                        # For single word, remove characters from different positions
+                        word = parts[0]
+                        idx = attempts % (len(word) - 1) + 1
+                        var = word[:idx] + word[idx+1:]
+                    else:
+                        continue
+                    
+                    if var and var.lower() not in used_variations:
+                        variations.append(var)
+                        used_variations.add(var.lower())
         else:
             # For Latin, only fall back to numeric suffixes as absolute last resort
             while len(variations) < variation_count:
