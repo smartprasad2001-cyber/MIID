@@ -57,8 +57,13 @@ import bittensor as bt
 import pandas as pd
 import os
 import numpy as np
+import sys
 from typing import List, Dict, Tuple, Any, Optional
 from tqdm import tqdm
+
+# Import clean variation generator
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from variation_generator_clean import generate_variations as generate_variations_clean
 
 # Conditionally import LLM providers
 try:
@@ -132,11 +137,20 @@ class Miner(BaseMinerNeuron):
         """
         super(Miner, self).__init__(config=config)
         
-        # Determine which LLM provider to use
-        self.llm_provider = getattr(self.config.neuron, 'llm_provider', 'ollama') if hasattr(self.config, 'neuron') else 'ollama'
-        bt.logging.info(f"Using LLM provider: {self.llm_provider}")
+        bt.logging.info("=" * 80)
+        bt.logging.info("MINER: Using variation_generator_clean.py (NO Ollama/Gemini)")
+        bt.logging.info("=" * 80)
         
-        if self.llm_provider == 'gemini':
+        # Skip LLM initialization - we use variation_generator_clean.py instead
+        # LLM code is kept below for reference but won't be executed
+        self.llm_provider = 'clean'  # Using clean algorithm mode
+        
+        # Skip all LLM initialization since we use variation_generator_clean.py
+        # If you want to enable LLM mode later, uncomment the code below and set llm_provider appropriately
+        skip_llm_init = True  # Set to False to enable LLM mode
+        
+        if not skip_llm_init:
+            if self.llm_provider == 'gemini':
             # Initialize Gemini
             if not GEMINI_AVAILABLE:
                 raise RuntimeError("Google Generative AI library not installed. Install with: pip install google-generativeai")
@@ -199,8 +213,8 @@ class Miner(BaseMinerNeuron):
                 bt.logging.error("Install Ollama: curl -fsSL https://ollama.com/install.sh | sh")
                 bt.logging.error("Start Ollama: ollama serve")
                 raise RuntimeError("Ollama is required for this miner. Please install and start Ollama.")
-        else:
-            raise RuntimeError(f"Unknown LLM provider: {self.llm_provider}. Must be 'ollama' or 'gemini'")
+            else:
+                raise RuntimeError(f"Unknown LLM provider: {self.llm_provider}. Must be 'ollama' or 'gemini'")
         
         # Create a directory for storing mining results
         # This helps with debugging and analysis
@@ -255,16 +269,12 @@ class Miner(BaseMinerNeuron):
 
     async def forward(self, synapse: IdentitySynapse) -> IdentitySynapse:
         """
-        Process a name variation request by generating variations for each name.
+        Process a name variation request using variation_generator_clean.py.
         
         This is the main entry point for the miner's functionality. It:
-        1. Receives a request with names and a query template
-        2. Processes each name through the LLM
-        3. Extracts variations from the LLM responses
-        4. Returns the variations to the validator
-        
-        Each run is assigned a unique timestamp ID and results are saved in a
-        dedicated directory for that run.
+        1. Receives a request with names and a query template from validator
+        2. Routes it to variation_generator_clean.py to generate variations
+        3. Returns the variations to the validator
         
         Args:
             synapse: The IdentitySynapse containing names and query template
@@ -281,91 +291,33 @@ class Miner(BaseMinerNeuron):
         bt.logging.info(f"Request timeout: {timeout:.1f}s for {len(synapse.identity)} names")
         start_time = time.time()
         
-        # Create a run-specific directory
-        run_dir = os.path.join(self.output_path, f"run_{run_id}")
-        os.makedirs(run_dir, exist_ok=True)
-        
-        # This will store all responses from the LLM in a format that can be processed later
-        # Format: ["Respond", "---", "Query-{name}", "---", "{LLM response}"]
-        Response_list = []
-        
-        # Track which names we've processed
-        processed_names = []
-        
-        # Process each identity in the request, respecting the timeout
-        for i, identity in enumerate(tqdm(synapse.identity, desc="Processing identities")):
-            # Check if we're approaching the timeout (reserve 15% for processing)
-            elapsed = time.time() - start_time
-            remaining = timeout - elapsed
-            time_buffer = timeout * 0.15  # Reserve 15% of total time for final processing
+        # Route request to variation_generator_clean.py
+        try:
+            bt.logging.info("Routing request to variation_generator_clean.py (NO LLM)")
+            variations = generate_variations_clean(synapse)
             
-            # If time is running out, skip remaining identities
-            if remaining < time_buffer:
-                bt.logging.warning(
-                    f"Time limit approaching ({elapsed:.1f}/{timeout:.1f}s), "
-                    f"processed {len(processed_names)}/{len(synapse.identity)} identities. "
-                    f"Skipping remaining identities to ensure timely response."
-                )
-                break
-            
-            # Extract name, dob, and address from identity array
-            name = identity[0] if len(identity) > 0 else "Unknown"
-            dob = identity[1] if len(identity) > 1 else "Unknown"
-            address = identity[2] if len(identity) > 2 else "Unknown"
-            
-            # Format the response list for later processing
-            Response_list.append("Respond")
-            Response_list.append("---")
-            Response_list.append("Query-" + name)
-            Response_list.append("---")
-            
-            # Format the query with the current name, address, and DOB
-            formatted_query = synapse.query_template.replace("{name}", name)
-            formatted_query = formatted_query.replace("{address}", address)
-            formatted_query = formatted_query.replace("{dob}", dob)
-            
-            # Query the LLM with timeout awareness
-            try:
-                bt.logging.info(f"Generating variations for name: {name}, remaining time: {remaining:.1f}s")
-                # Pass a more limited timeout to the LLM call to ensure we stay within bounds
-                name_respond = self.Get_Respond_LLM(formatted_query)
-                Response_list.append(name_respond)
-                processed_names.append(name)
-            except Exception as e:
-                bt.logging.error(f"Error querying LLM for name {name}: {str(e)}")
-                Response_list.append("Error: " + str(e))
-        
-        # Check if we've managed to process at least some names
-        if not processed_names:
-            bt.logging.error("Could not process any names within the timeout period")
-            synapse.variations = {}
-            return synapse
-        
-        # Process the responses to extract variations, but be aware of remaining time
-        remaining = timeout - (time.time() - start_time)
-        bt.logging.info(f"Processing responses with {remaining:.1f}s remaining of {timeout:.1f}s timeout")
-        
-        # Only proceed with processing if we have enough time
-        if remaining > 1.0:  # Ensure at least 1 second for processing
-            variations = self.process_variations(Response_list, run_id, run_dir, synapse.identity)
-            bt.logging.info(f"======== FINAL VARIATIONS===============================================: {variations}")
             # Set the variations in the synapse for return to the validator
             synapse.variations = variations
-        else:
-            bt.logging.warning(f"Insufficient time for processing responses, returning empty result")
+            
+            # Calculate processing time
+            process_time = time.time() - start_time
+            synapse.process_time = process_time
+            
+            # Log final timing information
+            bt.logging.info(
+                f"Request completed in {process_time:.2f}s of {timeout:.1f}s allowed. "
+                f"Processed {len(synapse.identity)}/{len(synapse.identity)} names."
+            )
+            
+            bt.logging.info(f"======== SYNAPSE VARIATIONS===============================================: {synapse.variations}")
+            bt.logging.info(f"==========================Processed variations for {len(synapse.variations)} names in run {run_id}")
+            bt.logging.info("========================================================================================")
+            
+        except Exception as e:
+            bt.logging.error(f"Error generating variations: {str(e)}")
             synapse.variations = {}
+            synapse.process_time = time.time() - start_time
         
-        # Log final timing information
-        total_time = time.time() - start_time
-        bt.logging.info(
-            f"Request completed in {total_time:.2f}s of {timeout:.1f}s allowed. "
-            f"Processed {len(processed_names)}/{len(synapse.identity)} names."
-        )
-        
-        bt.logging.info(f"======== SYNAPSE VARIATIONS===============================================: {synapse.variations}")
-        bt.logging.info(f"==========================Processed variations for {len(synapse.variations)} names in run {run_id}")
-        bt.logging.info(f"==========================Synapse: {synapse}")
-        bt.logging.info("========================================================================================")
         return synapse
     
     def Get_Respond_LLM(self, prompt: str) -> str:
