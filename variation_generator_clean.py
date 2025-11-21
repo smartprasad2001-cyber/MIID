@@ -543,20 +543,26 @@ def generate_dob_variations(dob: str, count: int = 15) -> List[str]:
 # ============================================================================
 
 def generate_address_variations(address: str, count: int = 15) -> List[str]:
-    """Generate address variations - uses real city names from geonamescache when available"""
-    # Extract city/country from address
+    """
+    Generate address variations - uses real city names from geonamescache when available.
+    
+    IMPORTANT: Uses the EXACT country name from seed address to ensure region matching
+    passes validator checks (Address Regain Match score).
+    """
+    # Extract city/country from address - preserve EXACT country name format
     parts = address.split(',')
     if len(parts) >= 2:
         # Has comma: "City, Country" format
         city = parts[0].strip()
-        country = parts[-1].strip()
+        country = parts[-1].strip()  # Use EXACT country name from seed
         # Use provided city as-is
         city_pool = [city]
     else:
         # No comma: validator sent just country name
+        # CRITICAL: Preserve EXACT country name format for region matching
+        country = address.strip() if address.strip() else "Unknown"
         # Validator requires at least 2 commas in address format (street, city, country)
         # Try to get real cities for this country
-        country = address.strip() if address.strip() else "Unknown"
         city_pool = get_cities_for_country(country)
         
         # Fallback to generic "City" if no cities found or geonamescache unavailable
@@ -580,6 +586,7 @@ def generate_address_variations(address: str, count: int = 15) -> List[str]:
         city = random.choice(city_pool)
         
         # Always use "street, city, country" format (validator requires at least 2 commas)
+        # CRITICAL: Use EXACT country name from seed address (preserves case/format for region matching)
         addr = f"{number} {street}, {city}, {country}"
         
         if addr not in used:
