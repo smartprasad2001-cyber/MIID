@@ -1,0 +1,14 @@
+{
+  "identity": [
+    ["John Smith", "1980-01-15", "Cuba"],
+    ["Ahmad Hassan", "1975-05-20", "Democratic Republic of the Congo"],
+    ["Иван Петров", "1990-08-10", "Russia"],
+    ["محمد علي", "1985-12-25", "Iran"],
+    ["Christopher Roberts", "1978-03-18", "Belize"],
+    ["María García", "1992-07-22", "Venezuela"],
+    ["هيثم مشعشع", "1988-11-30", "Iraq"]
+  ],
+  "query_template": "Generate 15 variations of {name}, ensuring phonetic similarity based on 10% Light, 50% Medium, and 40% Far types, and orthographic similarity based on 20% Light, 60% Medium, and 20% Far types. Approximately 30% of the total 15 variations should follow these rule-based transformations: Replace random consonants with different consonants, Replace random vowels with different vowels, and Delete a random letter. The following address is the seed country/city to generate address variations for: {address}. Generate unique real addresses within the specified country/city for each variation.  The following date of birth is the seed DOB to generate variations for: {dob}.\n\n[VALIDATION HINTS]: Phonetic similarity: 10% Light, 50% Medium, 40% Far.; Orthographic similarity: 20% Far, 20% Light, 60% Medium. The following address is the seed country/city to generate address variations for: {address}. Generate unique real addresses within the specified country/city for each variation.  The following date of birth is the seed DOB to generate variations for: {dob}.\n\n[ADDITIONAL CONTEXT]:\n- Address variations should be realistic addresses within the specified country/city\n- DOB variations ATLEAST one in each category (±1 day, ±3 days, ±30 days, ±90 days, ±365 days, year+month only)\n- For year+month, generate the exact DOB without day\n- Each variation must have a different, realistic address and DOB\n\n[UAV REQUIREMENTS - Phase 3]:\nReturn variations in the NEW structure. For the seed \"هيثم مشعشع\" ONLY, use this structure:\n{\n  \"هيثم مشعشع\": {\n    \"variations\": [[\"name_var\", \"dob_var\", \"addr_var\"], ...],  # Your normal variations\n    \"uav\": {\n      \"address\": \"address_variant\",  # REQUIRED: Address that looks valid but may fail validation\n      \"label\": \"explanation\",        # REQUIRED: Why this could be a valid address\n      \"latitude\": float,              # REQUIRED: Latitude coordinates\n      \"longitude\": float              # REQUIRED: Longitude coordinates\n    }\n  }\n}\n\nFor all OTHER seeds, use the standard structure (variations only):\n{\n  \"other_seed_name\": [[\"name_var\", \"dob_var\", \"addr_var\"], ...]\n}\n\nUAV = Unknown Attack Vector: An address from the seed's country/city/region that looks legitimate but might fail geocoding.\nExamples: \"123 Main Str\" (typo), \"456 Oak Av\" (abbreviation), \"789 1st St\" (missing direction)\nLabel examples: \"Common typo\", \"Local abbreviation\", \"Missing street direction\"",
+  "timeout": 120.0
+}
+

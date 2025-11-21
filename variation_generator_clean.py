@@ -681,6 +681,7 @@ def normalize_country_name(country: str) -> str:
         "netherlands": "the netherlands",
         "holland": "the netherlands",
         "congo, democratic republic of the": "democratic republic of the congo",
+        "democratic republic of the": "democratic republic of the congo",  # Added variant for truncated country names
         "drc": "democratic republic of the congo",
         "congo, republic of the": "republic of the congo",
         "burma": "myanmar",
@@ -702,6 +703,145 @@ def normalize_country_name(country: str) -> str:
     # Return original format but with normalized value for lookup
     # Preserve original case/format but use normalized for validation
     return normalized
+
+# Well-known cities for countries that might not be in geonamescache or when lookup fails
+# Mapped from sanctioned_countries.json - all countries should have real cities here
+WELL_KNOWN_CITIES = {
+    # Latin script countries
+    "cuba": ["Havana", "Santiago de Cuba", "Camagüey", "Holguín", "Santa Clara", "Guantánamo", "Bayamo", "Cienfuegos"],
+    "venezuela": ["Caracas", "Maracaibo", "Valencia", "Barquisimeto", "Ciudad Guayana", "Mérida", "San Cristóbal", "Barinas"],
+    "south sudan": ["Juba", "Malakal", "Wau", "Yei", "Bentiu", "Aweil", "Rumbek", "Torit"],
+    "central african republic": ["Bangui", "Bimbo", "Berbérati", "Carnot", "Bambari", "Bouar", "Bossangoa", "Bria"],
+    "democratic republic of the congo": ["Kinshasa", "Lubumbashi", "Mbuji-Mayi", "Bukavu", "Kananga", "Kisangani", "Goma", "Matadi"],
+    "democratic republic of the": ["Kinshasa", "Lubumbashi", "Mbuji-Mayi", "Bukavu", "Kananga", "Kisangani", "Goma", "Matadi"],  # Variant
+    "mali": ["Bamako", "Sikasso", "Mopti", "Koutiala", "Kayes", "Ségou", "Gao", "Timbuktu"],
+    "nicaragua": ["Managua", "León", "Granada", "Masaya", "Matagalpa", "Chinandega", "Estelí", "Jinotega"],
+    "angola": ["Luanda", "Huambo", "Lobito", "Benguela", "Kuito", "Lubango", "Malanje", "Namibe"],
+    "bolivia": ["La Paz", "Santa Cruz", "Cochabamba", "Sucre", "Oruro", "Tarija", "Potosí", "Trinidad"],
+    "burkina faso": ["Ouagadougou", "Bobo-Dioulasso", "Koudougou", "Ouahigouya", "Banfora", "Dédougou", "Kaya", "Tenkodogo"],
+    "cameroon": ["Douala", "Yaoundé", "Garoua", "Bafoussam", "Bamenda", "Maroua", "Kribi", "Buea"],
+    "ivory coast": ["Abidjan", "Bouaké", "Daloa", "Yamoussoukro", "San-Pédro", "Korhogo", "Man", "Divo"],
+    "côte d'ivoire": ["Abidjan", "Bouaké", "Daloa", "Yamoussoukro", "San-Pédro", "Korhogo", "Man", "Divo"],  # Variant
+    "cote d'ivoire": ["Abidjan", "Bouaké", "Daloa", "Yamoussoukro", "San-Pédro", "Korhogo", "Man", "Divo"],  # Variant
+    "british virgin islands": ["Road Town", "Spanish Town", "East End", "The Valley", "Great Harbour"],
+    "haiti": ["Port-au-Prince", "Carrefour", "Delmas", "Pétion-Ville", "Gonaïves", "Cap-Haïtien", "Saint-Marc", "Les Cayes"],
+    "kenya": ["Nairobi", "Mombasa", "Kisumu", "Nakuru", "Eldoret", "Thika", "Malindi", "Kitale"],
+    "monaco": ["Monaco", "Monte Carlo", "Fontvieille"],
+    "mozambique": ["Maputo", "Matola", "Beira", "Nampula", "Chimoio", "Nacala", "Quelimane", "Tete"],
+    "namibia": ["Windhoek", "Rundu", "Walvis Bay", "Oshakati", "Swakopmund", "Katima Mulilo", "Grootfontein", "Mariental"],
+    "nigeria": ["Lagos", "Kano", "Ibadan", "Abuja", "Port Harcourt", "Benin City", "Kaduna", "Maiduguri"],
+    "south africa": ["Johannesburg", "Cape Town", "Durban", "Pretoria", "Port Elizabeth", "Bloemfontein", "East London", "Polokwane"],
+    "myanmar": ["Yangon", "Mandalay", "Naypyidaw", "Mawlamyine", "Taunggyi", "Monywa", "Sittwe", "Pathein"],
+    "burma": ["Yangon", "Mandalay", "Naypyidaw", "Mawlamyine", "Taunggyi", "Monywa", "Sittwe", "Pathein"],  # Variant
+    "laos": ["Vientiane", "Savannakhet", "Pakse", "Luang Prabang", "Phonsavan", "Thakhek", "Xam Neua", "Muang Xay"],
+    "nepal": ["Kathmandu", "Pokhara", "Patan", "Biratnagar", "Birgunj", "Dharan", "Bharatpur", "Janakpur"],
+    "vietnam": ["Ho Chi Minh City", "Hanoi", "Da Nang", "Haiphong", "Can Tho", "Hue", "Nha Trang", "Quy Nhon"],
+    
+    # Arabic script countries
+    "iran": ["Tehran", "Mashhad", "Isfahan", "Karaj", "Shiraz", "Tabriz", "Qom", "Ahvaz"],
+    "afghanistan": ["Kabul", "Kandahar", "Herat", "Mazar-i-Sharif", "Jalalabad", "Kunduz", "Ghazni", "Balkh"],
+    "sudan": ["Khartoum", "Omdurman", "Port Sudan", "Kassala", "El Geneina", "Nyala", "Al-Fashir", "Kosti"],
+    "iraq": ["Baghdad", "Basra", "Mosul", "Erbil", "Najaf", "Karbala", "Kirkuk", "Ramadi"],
+    "lebanon": ["Beirut", "Tripoli", "Sidon", "Tyre", "Zahle", "Byblos", "Baalbek", "Jounieh"],
+    "libya": ["Tripoli", "Benghazi", "Misrata", "Bayda", "Zawiya", "Ajdabiya", "Tobruk", "Sabha"],
+    "somalia": ["Mogadishu", "Hargeisa", "Kismayo", "Bosaso", "Baidoa", "Beledweyne", "Galkayo", "Garowe"],
+    "yemen": ["Sana'a", "Aden", "Ta'izz", "Hodeidah", "Ibb", "Dhamar", "Sayyan", "Zinjibar"],
+    "algeria": ["Algiers", "Oran", "Constantine", "Annaba", "Blida", "Batna", "Djelfa", "Sétif"],
+    "syria": ["Damascus", "Aleppo", "Homs", "Latakia", "Hama", "Tartus", "Deir ez-Zor", "Raqqa"],
+    
+    # CJK script countries
+    "north korea": ["Pyongyang", "Hamhung", "Chongjin", "Nampo", "Wonsan", "Sinuiju", "Tanchon", "Kaechon"],
+    
+    # Cyrillic script countries
+    "russia": ["Moscow", "Saint Petersburg", "Novosibirsk", "Yekaterinburg", "Kazan", "Nizhny Novgorod", "Chelyabinsk", "Samara"],
+    "crimea": ["Simferopol", "Sevastopol", "Yalta", "Kerch", "Feodosia", "Evpatoria", "Bakhchisaray", "Sudak"],
+    "donetsk": ["Donetsk", "Mariupol", "Makiivka", "Horlivka", "Kramatorsk", "Sloviansk", "Bakhmut", "Pokrovsk"],
+    "luhansk": ["Luhansk", "Alchevsk", "Sievierodonetsk", "Lysychansk", "Stakhanov", "Krasnyi Luch", "Antratsyt", "Pervomaisk"],
+    "belarus": ["Minsk", "Gomel", "Mogilev", "Vitebsk", "Grodno", "Brest", "Bobruisk", "Baranavichy"],
+    "bulgaria": ["Sofia", "Plovdiv", "Varna", "Burgas", "Ruse", "Stara Zagora", "Pleven", "Sliven"],
+    "ukraine": ["Kyiv", "Kharkiv", "Odesa", "Dnipro", "Donetsk", "Zaporizhzhia", "Lviv", "Kryvyi Rih"],
+    
+    # Additional common variations
+    "republic of the congo": ["Brazzaville", "Pointe-Noire", "Dolisie", "Nkayi", "Ouesso", "Owando"],
+    "the netherlands": ["Amsterdam", "Rotterdam", "The Hague", "Utrecht", "Eindhoven", "Groningen", "Tilburg", "Almere"],
+    "netherlands": ["Amsterdam", "Rotterdam", "The Hague", "Utrecht", "Eindhoven", "Groningen", "Tilburg", "Almere"],
+    "holland": ["Amsterdam", "Rotterdam", "The Hague", "Utrecht", "Eindhoven", "Groningen", "Tilburg", "Almere"],
+    "south korea": ["Seoul", "Busan", "Incheon", "Daegu", "Daejeon", "Gwangju", "Ulsan", "Seongnam"],
+    "gambia": ["Banjul", "Serekunda", "Brikama", "Bakau", "Farafenni", "Lamin", "Sukuta", "Basse Santa Su"],
+    "the gambia": ["Banjul", "Serekunda", "Brikama", "Bakau", "Farafenni", "Lamin", "Sukuta", "Basse Santa Su"],
+    "united arab emirates": ["Dubai", "Abu Dhabi", "Sharjah", "Al Ain", "Ajman", "Ras Al Khaimah", "Fujairah", "Umm Al Quwain"],
+    "uae": ["Dubai", "Abu Dhabi", "Sharjah", "Al Ain", "Ajman", "Ras Al Khaimah", "Fujairah", "Umm Al Quwain"],
+    "united kingdom": ["London", "Birmingham", "Manchester", "Glasgow", "Liverpool", "Leeds", "Edinburgh", "Sheffield"],
+    "uk": ["London", "Birmingham", "Manchester", "Glasgow", "Liverpool", "Leeds", "Edinburgh", "Sheffield"],
+    "great britain": ["London", "Birmingham", "Manchester", "Glasgow", "Liverpool", "Leeds", "Edinburgh", "Sheffield"],
+    "britain": ["London", "Birmingham", "Manchester", "Glasgow", "Liverpool", "Leeds", "Edinburgh", "Sheffield"],
+    "united states": ["New York", "Los Angeles", "Chicago", "Houston", "Phoenix", "Philadelphia", "San Antonio", "San Diego"],
+    "usa": ["New York", "Los Angeles", "Chicago", "Houston", "Phoenix", "Philadelphia", "San Antonio", "San Diego"],
+    "us": ["New York", "Los Angeles", "Chicago", "Houston", "Phoenix", "Philadelphia", "San Antonio", "San Diego"],
+}
+
+def get_fallback_cities(country_name: str) -> List[str]:
+    """
+    Get fallback cities for a country when geonamescache fails.
+    
+    Strategy:
+    1. First try WELL_KNOWN_CITIES database (for sanctioned countries)
+    2. If not found, try geonamescache directly (should work for most countries)
+    3. If geonamescache also fails, return empty list (will use country name extraction)
+    
+    Returns empty list if no fallback cities available.
+    """
+    country_lower = country_name.lower().strip()
+    normalized = normalize_country_name(country_name)
+    
+    # Strategy 1: Try WELL_KNOWN_CITIES database first (for sanctioned countries)
+    # Try normalized name first
+    if normalized in WELL_KNOWN_CITIES:
+        return WELL_KNOWN_CITIES[normalized]
+    
+    # Try original name
+    if country_lower in WELL_KNOWN_CITIES:
+        return WELL_KNOWN_CITIES[country_lower]
+    
+    # Try partial match for long country names
+    for key, cities in WELL_KNOWN_CITIES.items():
+        if country_lower in key or key in country_lower:
+            return cities
+    
+    # Strategy 2: Try geonamescache directly as fallback (for valid countries)
+    # This should work for most countries from geonamescache
+    if GEONAMESCACHE_AVAILABLE:
+        try:
+            cities, countries = get_geonames_data()
+            
+            # Find country code
+            country_code = None
+            for code, data in countries.items():
+                if data.get('name', '').lower().strip() == normalized:
+                    country_code = code
+                    break
+                if data.get('name', '').lower().strip() == country_lower:
+                    country_code = code
+                    break
+            
+            if country_code:
+                # Get cities for this country
+                country_cities = []
+                for city_id, city_data in cities.items():
+                    if city_data.get("countrycode", "") == country_code:
+                        city_name = city_data.get("name", "").strip()
+                        if city_name and len(city_name) > 2:  # Filter very short names
+                            country_cities.append(city_name)
+                
+                # Return up to 10 cities (should be enough)
+                if country_cities:
+                    return list(set(country_cities))[:10]  # Remove duplicates and limit
+        except Exception:
+            # If geonamescache lookup fails, continue to next strategy
+            pass
+    
+    # Strategy 3: Return empty list (will use country name extraction as last resort)
+    return []
 
 def generate_address_variations(address: str, count: int = 15) -> List[str]:
     """
@@ -736,9 +876,31 @@ def generate_address_variations(address: str, count: int = 15) -> List[str]:
         # Filter to only cities that pass validator's city_in_country check
         city_pool = [city for city in all_cities if validate_city_in_country(city, normalized_country)]
         
-        # Fallback to generic "City" if no validated cities found
+        # If no validated cities found, try fallback cities from well-known database
         if not city_pool:
-            city_pool = ["City"]
+            fallback_cities = get_fallback_cities(original_country)
+            if fallback_cities:
+                # Try to validate fallback cities against geonamescache
+                validated_fallbacks = [city for city in fallback_cities if validate_city_in_country(city, normalized_country)]
+                if validated_fallbacks:
+                    city_pool = validated_fallbacks
+                else:
+                    # Use fallback cities even if not validated (better than "City")
+                    city_pool = fallback_cities
+            else:
+                # Last resort: try to use first word of country name or a generic name
+                # Extract a meaningful word from country name instead of "City"
+                country_words = normalized_country.split()
+                if len(country_words) > 0:
+                    # Use first significant word (skip "the", "of", etc.)
+                    significant_words = [w for w in country_words if w.lower() not in ["the", "of", "and", "republic", "democratic"]]
+                    if significant_words:
+                        fallback_name = significant_words[0].capitalize()
+                        city_pool = [fallback_name]
+                    else:
+                        city_pool = ["City"]  # Absolute last resort
+                else:
+                    city_pool = ["City"]  # Absolute last resort
     
     # Simple street names
     street_names = ["Main St", "Oak Ave", "Park Rd", "Elm St", "First Ave", 
@@ -803,9 +965,31 @@ def generate_uav_address(address: str) -> Dict:
         # Filter to only cities that pass validator's city_in_country check
         city_pool = [city for city in all_cities if validate_city_in_country(city, normalized_country)]
         
-        # Fallback to generic "City" if no validated cities found
+        # If no validated cities found, try fallback cities from well-known database
         if not city_pool:
-            city_pool = ["City"]
+            fallback_cities = get_fallback_cities(original_country)
+            if fallback_cities:
+                # Try to validate fallback cities against geonamescache
+                validated_fallbacks = [city for city in fallback_cities if validate_city_in_country(city, normalized_country)]
+                if validated_fallbacks:
+                    city_pool = validated_fallbacks
+                else:
+                    # Use fallback cities even if not validated (better than "City")
+                    city_pool = fallback_cities
+            else:
+                # Last resort: try to use first word of country name or a generic name
+                # Extract a meaningful word from country name instead of "City"
+                country_words = normalized_country.split()
+                if len(country_words) > 0:
+                    # Use first significant word (skip "the", "of", etc.)
+                    significant_words = [w for w in country_words if w.lower() not in ["the", "of", "and", "republic", "democratic"]]
+                    if significant_words:
+                        fallback_name = significant_words[0].capitalize()
+                        city_pool = [fallback_name]
+                    else:
+                        city_pool = ["City"]  # Absolute last resort
+                else:
+                    city_pool = ["City"]  # Absolute last resort
     
     # Select a random city from the pool
     city = random.choice(city_pool)
