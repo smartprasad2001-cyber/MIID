@@ -257,37 +257,109 @@ def generate_uav_address(address: str) -> Dict:
     uav_address = gen_func()
     
     # Generate realistic coordinates based on country (approximate)
+    # Comprehensive country database with geographic centers
     # These are rough approximations - in production, use geocoding API
     country_coords = {
-        "USA": (39.8283, -98.5795),  # Geographic center
-        "UK": (54.7024, -3.2766),
-        "Canada": (56.1304, -106.3468),
-        "Germany": (51.1657, 10.4515),
-        "France": (46.2276, 2.2137),
-        "Spain": (40.4637, -3.7492),
-        "Italy": (41.8719, 12.5674),
-        "Russia": (61.5240, 105.3188),
-        "China": (35.8617, 104.1954),
-        "India": (20.5937, 78.9629),
-        "Japan": (36.2048, 138.2529),
-        "Brazil": (-14.2350, -51.9253),
-        "Mexico": (23.6345, -102.5528),
+        # North America
+        "USA": (39.8283, -98.5795), "United States": (39.8283, -98.5795),
+        "US": (39.8283, -98.5795), "United States of America": (39.8283, -98.5795),
+        "Canada": (56.1304, -106.3468), "Mexico": (23.6345, -102.5528),
+        # Central America & Caribbean
+        "Haiti": (18.9712, -72.2852), "Honduras": (15.2000, -86.2419),
+        "Cuba": (21.5218, -77.7812), "Jamaica": (18.1096, -77.2975),
+        "Guatemala": (15.7835, -90.2308), "Belize": (17.1899, -88.4976),
+        "El Salvador": (13.7942, -88.8965), "Nicaragua": (12.2650, -85.2072),
+        "Costa Rica": (9.7489, -83.7534), "Panama": (8.5380, -80.7821),
+        "Dominican Republic": (18.7357, -70.1627), "Puerto Rico": (18.2208, -66.5901),
+        # South America
+        "Brazil": (-14.2350, -51.9253), "Argentina": (-38.4161, -63.6167),
+        "Colombia": (4.5709, -74.2973), "Peru": (-9.1900, -75.0152),
+        "Venezuela": (6.4238, -66.5897), "Chile": (-35.6751, -71.5430),
+        "Ecuador": (-1.8312, -78.1834), "Bolivia": (-16.2902, -63.5887),
+        "Paraguay": (-23.4425, -58.4438), "Uruguay": (-32.5228, -55.7658),
+        # Europe
+        "UK": (54.7024, -3.2766), "United Kingdom": (54.7024, -3.2766),
+        "Britain": (54.7024, -3.2766), "Great Britain": (54.7024, -3.2766),
+        "Germany": (51.1657, 10.4515), "France": (46.2276, 2.2137),
+        "Spain": (40.4637, -3.7492), "Italy": (41.8719, 12.5674),
+        "Russia": (61.5240, 105.3188), "Poland": (51.9194, 19.1451),
+        "Netherlands": (52.1326, 5.2913), "Belgium": (50.5039, 4.4699),
+        "Greece": (39.0742, 21.8243), "Portugal": (39.3999, -8.2245),
+        "Sweden": (60.1282, 18.6435), "Norway": (60.4720, 8.4689),
+        "Denmark": (56.2639, 9.5018), "Finland": (61.9241, 25.7482),
+        "Switzerland": (46.8182, 8.2275), "Austria": (47.5162, 14.5501),
+        "Czech Republic": (49.8175, 15.4730), "Romania": (45.9432, 24.9668),
+        "Hungary": (47.1625, 19.5033), "Ukraine": (48.3794, 31.1656),
+        "Turkey": (38.9637, 35.2433), "Ireland": (53.4129, -8.2439),
+        # Asia
+        "China": (35.8617, 104.1954), "India": (20.5937, 78.9629),
+        "Japan": (36.2048, 138.2529), "South Korea": (35.9078, 127.7669),
+        "North Korea": (40.3399, 127.5101), "Thailand": (15.8700, 100.9925),
+        "Vietnam": (14.0583, 108.2772), "Philippines": (12.8797, 121.7740),
+        "Indonesia": (-0.7893, 113.9213), "Malaysia": (4.2105, 101.9758),
+        "Singapore": (1.3521, 103.8198), "Bangladesh": (23.6850, 90.3563),
+        "Pakistan": (30.3753, 69.3451), "Afghanistan": (33.9391, 67.7100),
+        "Iran": (32.4279, 53.6880), "Iraq": (33.2232, 43.6793),
+        "Saudi Arabia": (23.8859, 45.0792), "UAE": (23.4241, 53.8478),
+        "United Arab Emirates": (23.4241, 53.8478), "Israel": (31.0461, 34.8516),
+        "Lebanon": (33.8547, 35.8623), "Jordan": (30.5852, 36.2384),
+        "Syria": (34.8021, 38.9968), "Yemen": (15.5527, 48.5164),
+        # Africa
+        "Egypt": (26.8206, 30.8025), "Libya": (26.3351, 17.2283),
+        "Sudan": (12.8628, 30.2176), "Ethiopia": (9.1450, 38.7667),
+        "Kenya": (-0.0236, 37.9062), "Nigeria": (9.0820, 8.6753),
+        "South Africa": (-30.5595, 22.9375), "Ghana": (7.9465, -1.0232),
+        "Morocco": (31.7917, -7.0926), "Algeria": (28.0339, 1.6596),
+        "Tunisia": (33.8869, 9.5375), "Mauritius": (-20.3484, 57.5522),
+        "Gabon": (-0.8037, 11.6094), "Benin": (9.3077, 2.3158),
+        "Namibia": (-22.9576, 18.4904), "Papua New Guinea": (-6.3150, 143.9555),
+        # Additional sanctioned countries
+        "South Sudan": (6.8770, 31.3070), "Central African Republic": (6.6111, 20.9394),
+        "Democratic Republic of the Congo": (-4.0383, 21.7587), "DRC": (-4.0383, 21.7587),
+        "Congo, Democratic Republic of the": (-4.0383, 21.7587), "Mali": (17.5707, -3.9962),
+        "Angola": (-11.2027, 17.8739), "Burkina Faso": (12.2383, -1.5616),
+        "Cameroon": (7.3697, 12.3547), "Ivory Coast": (7.5400, -5.5471),
+        "Cote d'Ivoire": (7.5400, -5.5471), "British Virgin Islands": (18.4207, -64.6399),
+        "Monaco": (43.7384, 7.4246), "Mozambique": (-18.6657, 35.5296),
+        "Myanmar": (21.9162, 95.9560), "Laos": (19.8563, 102.4955),
+        "Nepal": (28.3949, 84.1240), "Somalia": (5.1521, 46.1996),
+        # Additional Cyrillic sanctioned regions
+        "Belarus": (53.7098, 27.9534), "Bulgaria": (42.7339, 25.4858),
+        "Crimea": (45.3388, 33.5000), "Donetsk": (48.0159, 37.8029),
+        "Luhansk": (48.5740, 39.3078),
+        # Oceania
+        "Australia": (-25.2744, 133.7751), "New Zealand": (-40.9006, 174.8860),
+        # Middle East (already listed above, keeping for organization)
+        "Kuwait": (29.3117, 47.4818), "Qatar": (25.3548, 51.1839),
+        "Bahrain": (25.9304, 50.6378), "Oman": (21.4735, 55.9754),
     }
     
-    # Try to find country in our map (case-insensitive)
+    # Normalize country name for matching (lowercase, handle common variations)
+    country_normalized = country.strip().lower()
+    
+    # Try to find country in our map (case-insensitive, partial matching)
     lat, lon = None, None
     for country_key, coords in country_coords.items():
-        if country_key.lower() in country.lower() or country.lower() in country_key.lower():
+        country_key_lower = country_key.lower()
+        # Exact match or substring match (either direction)
+        if (country_key_lower == country_normalized or
+            country_key_lower in country_normalized or
+            country_normalized in country_key_lower):
             lat, lon = coords
-            # Add small random offset to make it unique
+            # Add small random offset to make it unique (within ~50km)
             lat += random.uniform(-0.5, 0.5)
             lon += random.uniform(-0.5, 0.5)
             break
     
-    # Fallback coordinates if country not found
+    # Fallback: Try to get approximate coordinates for unrecognized countries
+    # Use a basic heuristic based on country name patterns
     if lat is None or lon is None:
-        lat = random.uniform(-90, 90)
+        # For unknown countries, generate coordinates in reasonable ranges
+        # Most countries are between -60 and 70 latitude
+        lat = random.uniform(-35, 60)
         lon = random.uniform(-180, 180)
+        # Log for debugging
+        print(f"   ⚠️  Country '{country}' not found in database, using approximate coordinates")
     
     return {
         'address': uav_address,
