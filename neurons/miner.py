@@ -141,86 +141,14 @@ class Miner(BaseMinerNeuron):
         bt.logging.info("MINER: Using variation_generator_clean.py (NO Ollama/Gemini)")
         bt.logging.info("=" * 80)
         
-        # Skip LLM initialization - we use variation_generator_clean.py instead
-        # LLM code is kept below for reference but won't be executed
-        self.llm_provider = 'clean'  # Using clean algorithm mode
+        # NO LLM initialization needed - we use variation_generator_clean.py instead
         
-        # Skip all LLM initialization since we use variation_generator_clean.py
-        # If you want to enable LLM mode later, uncomment the code below and set llm_provider appropriately
-        skip_llm_init = True  # Set to False to enable LLM mode
-        
-        if not skip_llm_init:
-            if self.llm_provider == 'gemini':
-            # Initialize Gemini
-            if not GEMINI_AVAILABLE:
-                raise RuntimeError("Google Generative AI library not installed. Install with: pip install google-generativeai")
-            
-            # Get API key from config or environment variable
-            api_key = getattr(self.config.neuron, 'gemini_api_key', None) if hasattr(self.config, 'neuron') else None
-            if not api_key:
-                api_key = os.getenv('GEMINI_API_KEY')
-            
-            if not api_key:
-                raise RuntimeError(
-                    "Gemini API key is required. Set it via --neuron.gemini_api_key or GEMINI_API_KEY environment variable"
-                )
-            
-            # Configure Gemini
-            genai.configure(api_key=api_key)
-            self.gemini_model_name = getattr(self.config.neuron, 'gemini_model_name', 'gemini-2.0-flash-exp') if hasattr(self.config, 'neuron') else 'gemini-2.0-flash-exp'
-            self.model_name = self.gemini_model_name  # For compatibility
-            bt.logging.info(f"Initialized Gemini with model: {self.gemini_model_name}")
-            
-            # Test Gemini connection
-            try:
-                model = genai.GenerativeModel(self.gemini_model_name)
-                # Quick test to verify API key works
-                bt.logging.info("Testing Gemini connection...")
-                response = model.generate_content("test")
-                bt.logging.success("Gemini connection successful")
-            except Exception as e:
-                bt.logging.error(f"Failed to connect to Gemini: {str(e)}")
-                raise RuntimeError(f"Gemini initialization failed: {str(e)}")
-        
-        elif self.llm_provider == 'ollama':
-            # Initialize Ollama
-            if not OLLAMA_AVAILABLE:
-                raise RuntimeError("Ollama library not installed. Install with: pip install ollama")
-            
-            # Get model name from config
-            self.model_name = getattr(self.config.neuron, 'model_name', None) if hasattr(self.config, 'neuron') else None
-            if self.model_name is None:
-                self.model_name = 'tinyllama:latest'
-                bt.logging.info(f"No model specified in config, using default model: {self.model_name}")
-            
-            bt.logging.info(f"Using Ollama model: {self.model_name}")
-            
-            # Check if Ollama is available and model exists
-            try:
-                # Check if model exists locally first
-                models = ollama.list().get('models', [])
-                model_exists = any(model.get('name') == self.model_name for model in models)
-                
-                if model_exists:
-                    bt.logging.info(f"Model {self.model_name} already pulled")
-                else:
-                    # Model not found locally, pull it
-                    bt.logging.info(f"Pulling model {self.model_name}...")
-                    ollama.pull(self.model_name)
-            except Exception as e:
-                bt.logging.error(f"Error with Ollama: {str(e)}")
-                bt.logging.error("Make sure Ollama is installed and running on this machine")
-                bt.logging.error("Install Ollama: curl -fsSL https://ollama.com/install.sh | sh")
-                bt.logging.error("Start Ollama: ollama serve")
-                raise RuntimeError("Ollama is required for this miner. Please install and start Ollama.")
-            else:
-                raise RuntimeError(f"Unknown LLM provider: {self.llm_provider}. Must be 'ollama' or 'gemini'")
-        
-        # Create a directory for storing mining results
-        # This helps with debugging and analysis
+        # Create a directory for storing mining results (if needed)
         self.output_path = os.path.join(self.config.logging.logging_dir, "mining_results")
         os.makedirs(self.output_path, exist_ok=True)
-        bt.logging.info(f"Mining results will be saved to: {self.output_path}")
+        bt.logging.info(f"Mining results directory: {self.output_path}")
+        
+        # Set up verification
         self.axon.verify_fns[IdentitySynapse.__name__] = self._verify_validator_request
 
     async def _verify_validator_request(self, synapse: IdentitySynapse) -> None:
