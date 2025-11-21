@@ -13,8 +13,17 @@ import random
 import json
 import os
 import sys
+import time
 from datetime import datetime, timedelta
-from typing import List, Dict
+from typing import List, Dict, Optional
+
+# Import requests for Nominatim API queries
+try:
+    import requests
+    REQUESTS_AVAILABLE = True
+except ImportError:
+    REQUESTS_AVAILABLE = False
+    print("⚠️  Warning: requests not available. Real address generation will be disabled.")
 
 # Import name_variations.py directly
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -843,6 +852,230 @@ def get_fallback_cities(country_name: str) -> List[str]:
     # Strategy 3: Return empty list (will use country name extraction as last resort)
     return []
 
+# ============================================================================
+# Real Address Generation - Hardcoded Database of Street Names
+# ============================================================================
+
+# Load hardcoded database of real street names per country
+_real_street_names_db: Dict[str, List[str]] = {}
+_db_loaded = False
+
+def _load_street_names_database():
+    """Load the hardcoded database of real street names per country."""
+    global _real_street_names_db, _db_loaded
+    
+    if _db_loaded:
+        return _real_street_names_db
+    
+    try:
+        # Try to load from JSON file first
+        db_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'real_street_names_db.json')
+        if os.path.exists(db_path):
+            with open(db_path, 'r', encoding='utf-8') as f:
+                _real_street_names_db = json.load(f)
+            _db_loaded = True
+            return _real_street_names_db
+    except Exception:
+        pass
+    
+    # If file doesn't exist, use the inline database (defined below)
+    _real_street_names_db = _INLINE_STREET_NAMES_DB
+    _db_loaded = True
+    return _real_street_names_db
+
+# Inline database of real street names (fallback if JSON file not available)
+# This is populated from real_street_names_db.json or generated on-demand
+_INLINE_STREET_NAMES_DB: Dict[str, List[str]] = {}
+
+def get_real_street_names_for_country(country: str) -> List[str]:
+    """
+    Get real street names for a specific country from the hardcoded database.
+    
+    Args:
+        country: Country name (normalized)
+        
+    Returns:
+        List of real street names for that country
+    """
+    db = _load_street_names_database()
+    
+    # Try exact match first
+    if country in db:
+        return db[country]
+    
+    # Try normalized country name
+    normalized = normalize_country_name(country)
+    if normalized in db:
+        return db[normalized]
+    
+    # Try case-insensitive lookup
+    country_lower = country.lower()
+    for key, streets in db.items():
+        if key.lower() == country_lower:
+            return streets
+    
+    # Try partial match
+    for key, streets in db.items():
+        if country_lower in key.lower() or key.lower() in country_lower:
+            return streets
+    
+    # Return empty list if not found (will use fallback)
+    return []
+
+def get_real_addresses_from_nominatim(city: str, country: str, limit: int = 20) -> List[str]:
+    """
+    Query Nominatim API for real addresses in a specific city/country.
+    Results are cached per city+country to avoid repeated API calls.
+    
+    Args:
+        city: City name
+        country: Country name (normalized)
+        limit: Maximum number of addresses to fetch
+        
+    Returns:
+        List of real addresses from OSM (formatted as "number street, city, country")
+    """
+    if not REQUESTS_AVAILABLE:
+        return []
+    
+    # Create cache key
+    cache_key = f"{city.lower()},{country.lower()}"
+    
+    # Return cached results if available
+    if cache_key in _real_addresses_cache:
+        return _real_addresses_cache[cache_key]
+    
+    try:
+        # Strategy: Query for various place types in the city to get street names
+        # We'll accept results with place_rank >= 18 (neighborhood level or better)
+        # This gives us more results while still being reasonably specific
+        
+        url = "https://nominatim.openstreetmap.org/search"
+        headers = {
+            "User-Agent": "MIID-Subnet-Miner/1.0 (https://github.com/yanezcompliance/MIID-subnet; miner@yanezcompliance.com)"
+        }
+        
+        all_results = []
+        
+        # Try different query strategies
+        queries = [
+            f"{city}, {country}",  # Simple city, country (gets various places)
+        ]
+        
+        for query in queries:
+            params = {
+                "q": query,
+                "format": "json",
+                "limit": limit * 5,  # Fetch many results to filter
+                "addressdetails": 1,
+                "extratags": 1,
+                "namedetails": 1
+            }
+            
+            try:
+                response = requests.get(url, params=params, headers=headers, timeout=10)
+                
+                if response.status_code == 200:
+                    results = response.json()
+                    if results:
+                        all_results.extend(results)
+                
+                # Rate limiting: wait 1 second between queries
+                time.sleep(1.0)
+                break  # Only try first query for now
+            except Exception:
+                continue
+        
+        if not all_results:
+            return []
+        
+        # Extract street names and format addresses
+        real_addresses = []
+        seen_addresses = set()
+        seen_roads = set()  # Track unique road names
+        
+        for result in all_results:
+            # Accept street-level, building-level, or neighborhood-level results
+            # place_rank >= 18 includes neighborhoods, streets, and buildings
+            place_rank = result.get('place_rank', 0)
+            if place_rank < 18:
+                continue
+            
+            # Extract address components
+            display_name = result.get('display_name', '')
+            address_details = result.get('address', {})
+            
+            # Try to extract street/road name from various fields
+            road = (
+                address_details.get('road', '') or
+                address_details.get('street', '') or
+                address_details.get('street_name', '') or
+                address_details.get('residential', '') or
+                address_details.get('pedestrian', '') or
+                address_details.get('path', '')
+            )
+            
+            # Also check result type - if it's a highway/road, use the name
+            result_type = result.get('type', '')
+            result_class = result.get('class', '')
+            if (result_class == 'highway' or result_type in ['residential', 'primary', 'secondary', 'tertiary', 'unclassified']) and not road:
+                # Use the name field if it's a road
+                road = result.get('name', '')
+            
+            # Fallback: try to extract from display_name
+            if not road and display_name:
+                parts = display_name.split(',')
+                if len(parts) > 0:
+                    first_part = parts[0].strip()
+                    # Check if first part looks like a street name (not a number, not too short)
+                    if len(first_part) > 3 and not first_part.replace(' ', '').isdigit():
+                        # Try to extract street name (might have number prefix)
+                        street_match = re.match(r'^(\d+)\s+(.+?)$', first_part)
+                        if street_match:
+                            road = street_match.group(2).strip()
+                        elif 'street' in first_part.lower() or 'road' in first_part.lower() or 'avenue' in first_part.lower():
+                            road = first_part
+            
+            # If we have a road/street name, format the address
+            if road and len(road) > 2 and road.lower() not in seen_roads:
+                seen_roads.add(road.lower())
+                
+                # Extract house number if available
+                house_number = address_details.get('house_number', '')
+                if not house_number and display_name:
+                    # Try to extract number from display_name
+                    number_match = re.search(r'\b(\d+)\b', display_name.split(',')[0])
+                    if number_match:
+                        house_number = number_match.group(1)
+                
+                # Use house_number if available, otherwise generate a random number
+                number = house_number if house_number else str(random.randint(1, 999))
+                
+                # Format address: "number street, city, country"
+                formatted_addr = f"{number} {road}, {city}, {country}"
+                
+                # Normalize to avoid duplicates
+                normalized_addr = formatted_addr.lower().strip()
+                if normalized_addr not in seen_addresses:
+                    real_addresses.append(formatted_addr)
+                    seen_addresses.add(normalized_addr)
+                    
+                    if len(real_addresses) >= limit:
+                        break
+        
+        # Cache the results (even if empty, to avoid repeated failed queries)
+        _real_addresses_cache[cache_key] = real_addresses
+        
+        # Rate limiting: wait 1 second after API call (Nominatim policy)
+        time.sleep(1.0)
+        
+        return real_addresses
+        
+    except Exception as e:
+        # On error, return empty list (will fallback to generic addresses)
+        print(f"⚠️  Warning: Failed to fetch real addresses from Nominatim for {city}, {country}: {str(e)}")
+        return []
+
 def generate_address_variations(address: str, count: int = 15) -> List[str]:
     """
     Generate address variations - uses real city names from geonamescache when available.
@@ -902,36 +1135,58 @@ def generate_address_variations(address: str, count: int = 15) -> List[str]:
                 else:
                     city_pool = ["City"]  # Absolute last resort
     
-    # Simple street names
-    street_names = ["Main St", "Oak Ave", "Park Rd", "Elm St", "First Ave", 
-                    "Second St", "Broadway", "Washington Ave", "Lincoln St"]
-    
-    # Simple building numbers
-    building_numbers = list(range(1, 999))
-    
     variations = []
     used = set()
     
-    for i in range(count):
-        street = random.choice(street_names)
-        number = random.choice(building_numbers)
-        # Randomly select a city from the pool
-        city = random.choice(city_pool)
+    # Get real street names from hardcoded database for this country
+    real_street_names = get_real_street_names_for_country(normalized_country)
+    
+    # Determine if we should use real street names or fallback to generic
+    has_real_streets = len(real_street_names) > 0
+    
+    if has_real_streets:
+        # Use real street names from hardcoded database
+        # Generate addresses: "number street, city, country"
+        building_numbers = list(range(1, 999))
         
-        # Always use "street, city, country" format (validator requires at least 2 commas)
-        # CRITICAL: Use normalized country name that matches validator's COUNTRY_MAPPING
-        # The validator normalizes country names, so we must use normalized version too
-        addr = f"{number} {street}, {city}, {normalized_country}"
+        for i in range(count):
+            street = random.choice(real_street_names)
+            number = random.choice(building_numbers)
+            city = random.choice(city_pool)
+            
+            addr = f"{number} {street}, {city}, {normalized_country}"
+            
+            if addr not in used:
+                variations.append(addr)
+                used.add(addr)
+            else:
+                # Add apartment number if duplicate
+                apt = random.randint(1, 999)
+                addr = f"{number} {street}, Apt {apt}, {city}, {normalized_country}"
+                variations.append(addr)
+                used.add(addr)
+    else:
+        # Fallback to generic street names if database doesn't have this country
+        street_names = ["Main St", "Oak Ave", "Park Rd", "Elm St", "First Ave", 
+                        "Second St", "Broadway", "Washington Ave", "Lincoln St"]
+        building_numbers = list(range(1, 999))
         
-        if addr not in used:
-            variations.append(addr)
-            used.add(addr)
-        else:
-            # Add apartment number if duplicate
-            apt = random.randint(1, 999)
-            addr = f"{number} {street}, Apt {apt}, {city}, {normalized_country}"
-            variations.append(addr)
-            used.add(addr)
+        for i in range(count):
+            street = random.choice(street_names)
+            number = random.choice(building_numbers)
+            city = random.choice(city_pool)
+            
+            addr = f"{number} {street}, {city}, {normalized_country}"
+            
+            if addr not in used:
+                variations.append(addr)
+                used.add(addr)
+            else:
+                # Add apartment number if duplicate
+                apt = random.randint(1, 999)
+                addr = f"{number} {street}, Apt {apt}, {city}, {normalized_country}"
+                variations.append(addr)
+                used.add(addr)
     
     return variations[:count]
 
@@ -994,19 +1249,36 @@ def generate_uav_address(address: str) -> Dict:
     # Select a random city from the pool
     city = random.choice(city_pool)
     
+    # Get real street names from hardcoded database for this country
+    real_street_names = get_real_street_names_for_country(normalized_country)
+    
     # Generate an address with a potential issue (typo, abbreviation, etc.)
     # CRITICAL: Use normalized_country (not original_country) to match validator expectations
     num = random.randint(1, 999)
-    uav_types = [
-        ("typo", lambda c=city, n=normalized_country, num=num: f"{num} Main Str, {c}, {n}", "Common typo (Str vs St)"),
-        ("abbreviation", lambda c=city, n=normalized_country, num=num: f"{num} Oak Av, {c}, {n}", "Local abbreviation (Av vs Ave)"),
-        ("missing_direction", lambda c=city, n=normalized_country, num=num: f"{num} 1st St, {c}, {n}", "Missing street direction"),
-        ("number_only", lambda c=city, n=normalized_country, num=num: f"{num}, {c}, {n}", "Number without street name"),
-        ("abbreviated_st", lambda c=city, n=normalized_country, num=num: f"{num} Elm St., {c}, {n}", "Abbreviated with period"),
-    ]
     
-    uav_type, gen_func, label = random.choice(uav_types)
-    uav_address = gen_func()
+    if real_street_names:
+        # Use a real street name as base and modify it to create a UAV (typo, abbreviation, etc.)
+        street = random.choice(real_street_names)
+        
+        # Create UAV variations from real street name
+        uav_options = [
+            (f"{num} {street}tr, {city}, {normalized_country}", "Common typo (Str vs St)"),
+            (f"{num} {street[:15]} Av, {city}, {normalized_country}", "Local abbreviation (Av vs Ave)"),
+            (f"{num} 1st {street}, {city}, {normalized_country}", "Missing street direction"),
+            (f"{num}, {city}, {normalized_country}", "Number without street name"),
+            (f"{num} {street}., {city}, {normalized_country}", "Abbreviated with period"),
+        ]
+        uav_address, label = random.choice(uav_options)
+    else:
+        # Fallback to generic if no real street names available from database
+        uav_options = [
+            (f"{num} Main Str, {city}, {normalized_country}", "Common typo (Str vs St)"),
+            (f"{num} Oak Av, {city}, {normalized_country}", "Local abbreviation (Av vs Ave)"),
+            (f"{num} 1st St, {city}, {normalized_country}", "Missing street direction"),
+            (f"{num}, {city}, {normalized_country}", "Number without street name"),
+            (f"{num} Elm St., {city}, {normalized_country}", "Abbreviated with period"),
+        ]
+        uav_address, label = random.choice(uav_options)
     
     # Generate realistic coordinates based on country (approximate)
     # Comprehensive country database with geographic centers

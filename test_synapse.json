@@ -1,0 +1,57 @@
+{
+  "identity": [
+    [
+      "John Smith",
+      "1980-05-15",
+      "New York, United States"
+    ],
+    [
+      "محمد أحمد",
+      "1990-08-20",
+      "Tehran, Iran"
+    ],
+    [
+      "Иван Петров",
+      "1975-12-10",
+      "Moscow, Russia"
+    ],
+    [
+      "Jean Dupont",
+      "1985-03-25",
+      "Paris, France"
+    ],
+    [
+      "Carlos Rodriguez",
+      "1992-07-08",
+      "Havana, Cuba"
+    ],
+    [
+      "Ahmad Hassan",
+      "1985-06-20",
+      "Iraq"
+    ],
+    [
+      "Aleksandr Ryzhenkov",
+      "1993-05-26",
+      "Russia"
+    ],
+    [
+      "felisa roig",
+      "1974-09-07",
+      "Liberia"
+    ],
+    [
+      "javi amorós",
+      "1975-08-23",
+      "Nicaragua"
+    ],
+    [
+      "océane berger",
+      "1951-04-24",
+      "Mali"
+    ]
+  ],
+  "query_template": "Generate 15 variations of {name}, ensuring phonetic similarity where some sound-alike names are Light (10%), Medium (50%), or Far (40), and orthographic similarity where some visually similar names are Light (20%), Medium (60%), or Far (20). Approximately 30% of the total 15 variations should follow these rule-based transformations: replace spaces with random special characters, delete a random letter, and add a title suffix.\n\n[VALIDATION HINTS]:\nPhonetic similarity: 10% Light, 40% Far, 50% Medium.\nOrthographic similarity: 20% Far, 20% Light, 60% Medium.\n\nThe following address is the seed country/city to generate address variations for: {address}. Generate unique real addresses within the specified country/city for each variation.\nThe following date of birth is the seed DOB to generate variations for: {dob}.\n\n[ADDITIONAL CONTEXT]:\n- Address variations should be realistic addresses within the specified country/city\n- DOB variations ATLEAST one in each category (±1 day, ±3 days, ±30 days, ±90 days, ±365 days, year+month only)\n- For year+month, generate the exact DOB without day\n- Each variation must have a different, realistic address and DOB\n\n[UAV REQUIREMENTS - Phase 3]:\nReturn variations in the NEW structure. For the seed \"javi amorós\" ONLY, use this structure:\n{\n  \"javi amorós\": {\n    \"variations\": [[\"name_var\", \"dob_var\", \"addr_var\"], ...],\n    \"uav\": {\n      \"address\": \"address_variant\",\n      \"label\": \"explanation\",\n      \"latitude\": float,\n      \"longitude\": float\n    }\n  }\n}\n\nFor all OTHER seeds, use the standard structure (variations only):\n{\n  \"other_seed_name\": [[\"name_var\", \"dob_var\", \"addr_var\"], ...]\n}\n\nUAV = Unknown Attack Vector: An address from the seed's country/city/region that looks legitimate but might fail geocoding.\nExamples: \"123 Main Str\" (typo), \"456 Oak Av\" (abbreviation), \"789 1st St\" (missing direction)\nLabel examples: \"Common typo\", \"Local abbreviation\", \"Missing street direction\"",
+  "timeout": 120.0,
+  "variations": {}
+}
