@@ -599,14 +599,22 @@ def generate_uav_address(address: str) -> Dict:
     Generate UAV (Unknown Attack Vector) address that looks valid but might fail geocoding.
     Returns: dict with 'address', 'label', 'latitude', 'longitude'
     """
-    # Extract city/country from address
+    # Extract city/country from address (same logic as generate_address_variations)
     parts = address.split(',')
     if len(parts) >= 2:
         city = parts[0].strip()
         country = parts[-1].strip()
+        city_pool = [city]  # Use provided city as-is
     else:
-        city = address.split()[0] if address.split() else "Unknown"
-        country = address.split()[-1] if address.split() else "Unknown"
+        # No comma: validator sent just country name
+        country = address.strip() if address.strip() else "Unknown"
+        # Get real cities for this country (same as generate_address_variations)
+        city_pool = get_cities_for_country(country)
+        if not city_pool:
+            city_pool = ["City"]  # Fallback to generic city
+    
+    # Select a random city from the pool
+    city = random.choice(city_pool)
     
     # Generate an address with a potential issue (typo, abbreviation, etc.)
     uav_types = [
@@ -1018,7 +1026,6 @@ def generate_name_variations_clean(original_name: str, variation_count: int,
         # This ensures we never fall back to numeric suffixes
         if len(variations) < variation_count:
             remaining = variation_count - len(variations)
-            print(f"   🔄 Creating {remaining} character-level variations (no numeric suffixes)")
             parts = original_name.split()
             attempts = 0
             max_attempts = remaining * 10  # Try many times to get unique variations
