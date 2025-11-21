@@ -853,20 +853,46 @@ def generate_name_variations_clean(original_name: str, variation_count: int,
     
     # Generate rule-based variations
     print(f"   🔧 Rule-based: {rule_based_count}")
+    rule_attempts = {}
     for i in range(rule_based_count):
         if rules:
             rule = random.choice(rules)
-            var = apply_rule_to_name(original_name, rule)
             
-            # Ensure uniqueness
+            # Try applying the rule multiple times to get unique variations
             attempts = 0
-            while var.lower() in used_variations and attempts < 10:
-                var = apply_rule_to_name(original_name, rule) + str(random.randint(1, 99))
+            var = None
+            while attempts < 20:  # Try up to 20 times to get a unique variation
+                var = apply_rule_to_name(original_name, rule)
+                
+                # If we got a unique variation, use it
+                if var.lower() not in used_variations and var != original_name:
+                    break
+                
+                # If this rule always produces the same result, try a different rule
+                if rule not in rule_attempts:
+                    rule_attempts[rule] = 0
+                rule_attempts[rule] += 1
+                
+                # If we've tried this rule too many times, pick a different one
+                if rule_attempts[rule] > 5:
+                    rule = random.choice([r for r in rules if r != rule])
+                    rule_attempts[rule] = 0
+                
                 attempts += 1
             
-            if var.lower() not in used_variations:
+            # Only add if we got a valid unique variation (NEVER add numeric suffixes)
+            if var and var.lower() not in used_variations and var != original_name:
                 variations.append(var)
                 used_variations.add(var.lower())
+            elif var and var == original_name and attempts < 20:
+                # If rule didn't change the name, try a different rule
+                for alt_rule in rules:
+                    if alt_rule != rule:
+                        var = apply_rule_to_name(original_name, alt_rule)
+                        if var.lower() not in used_variations and var != original_name:
+                            variations.append(var)
+                            used_variations.add(var.lower())
+                            break
     
     # Generate non-rule variations
     print(f"   🔬 Non-rule: {non_rule_count} (using name_variations.py)")
