@@ -28,6 +28,63 @@ except ImportError:
     UNIDECODE_AVAILABLE = False
     print("⚠️  Warning: unidecode not available. Non-Latin scripts may not work well.")
 
+# Import geonamescache for getting real city names
+try:
+    import geonamescache
+    GEONAMESCACHE_AVAILABLE = True
+    # Global cache for geonames data
+    _geonames_cache = None
+    _cities_cache = None
+    _countries_cache = None
+    
+    def get_geonames_data():
+        """Get cached geonames data, loading it only once."""
+        global _geonames_cache, _cities_cache, _countries_cache
+        if _geonames_cache is None:
+            _geonames_cache = geonamescache.GeonamesCache()
+            _cities_cache = _geonames_cache.get_cities()
+            _countries_cache = _geonames_cache.get_countries()
+        return _cities_cache, _countries_cache
+    
+    def get_cities_for_country(country_name: str) -> List[str]:
+        """Get a list of real city names for a given country."""
+        if not country_name or not GEONAMESCACHE_AVAILABLE:
+            return []
+        
+        try:
+            cities, countries = get_geonames_data()
+            country_name_lower = country_name.lower().strip()
+            
+            # Find country code
+            country_code = None
+            for code, data in countries.items():
+                if data.get('name', '').lower().strip() == country_name_lower:
+                    country_code = code
+                    break
+            
+            if not country_code:
+                return []
+            
+            # Get cities for this country
+            country_cities = []
+            for city_id, city_data in cities.items():
+                if city_data.get("countrycode", "") == country_code:
+                    city_name = city_data.get("name", "")
+                    if city_name and len(city_name) >= 3:  # Filter very short names
+                        country_cities.append(city_name)
+            
+            return country_cities
+        except Exception as e:
+            return []
+            
+except ImportError:
+    GEONAMESCACHE_AVAILABLE = False
+    _geonames_cache = None
+    
+    def get_cities_for_country(country_name: str) -> List[str]:
+        """Fallback when geonamescache is not available."""
+        return []
+
 # Minimal IdentitySynapse class
 class IdentitySynapse:
     def __init__(self, identity, query_template, timeout=120.0):
@@ -486,15 +543,25 @@ def generate_dob_variations(dob: str, count: int = 15) -> List[str]:
 # ============================================================================
 
 def generate_address_variations(address: str, count: int = 15) -> List[str]:
-    """Generate address variations - simple approach"""
+    """Generate address variations - uses real city names from geonamescache when available"""
     # Extract city/country from address
     parts = address.split(',')
     if len(parts) >= 2:
+        # Has comma: "City, Country" format
         city = parts[0].strip()
         country = parts[-1].strip()
+        # Use provided city as-is
+        city_pool = [city]
     else:
-        city = address.split()[0] if address.split() else "Unknown"
-        country = address.split()[-1] if address.split() else "Unknown"
+        # No comma: validator sent just country name
+        # Validator requires at least 2 commas in address format (street, city, country)
+        # Try to get real cities for this country
+        country = address.strip() if address.strip() else "Unknown"
+        city_pool = get_cities_for_country(country)
+        
+        # Fallback to generic "City" if no cities found or geonamescache unavailable
+        if not city_pool:
+            city_pool = ["City"]
     
     # Simple street names
     street_names = ["Main St", "Oak Ave", "Park Rd", "Elm St", "First Ave", 
@@ -509,6 +576,10 @@ def generate_address_variations(address: str, count: int = 15) -> List[str]:
     for i in range(count):
         street = random.choice(street_names)
         number = random.choice(building_numbers)
+        # Randomly select a city from the pool
+        city = random.choice(city_pool)
+        
+        # Always use "street, city, country" format (validator requires at least 2 commas)
         addr = f"{number} {street}, {city}, {country}"
         
         if addr not in used:
@@ -875,8 +946,13 @@ def generate_name_variations_clean(original_name: str, variation_count: int,
                 
                 # If we've tried this rule too many times, pick a different one
                 if rule_attempts[rule] > 5:
-                    rule = random.choice([r for r in rules if r != rule])
-                    rule_attempts[rule] = 0
+                    other_rules = [r for r in rules if r != rule]
+                    if other_rules:
+                        rule = random.choice(other_rules)
+                        rule_attempts[rule] = 0
+                    else:
+                        # Only one rule available - break and try fallback strategies
+                        break
                 
                 attempts += 1
             
@@ -900,7 +976,8 @@ def generate_name_variations_clean(original_name: str, variation_count: int,
         # For non-Latin scripts, skip name_variations.py and go straight to script-specific variations
         if is_non_latin:
             print(f"   🌍 Detected {script} script - using script-specific variations")
-            non_latin_vars = generate_non_latin_variations(original_name, script, non_rule_count * 2)
+            # Request 3x more variations to ensure we have enough unique ones
+            non_latin_vars = generate_non_latin_variations(original_name, script, non_rule_count * 3)
             
             for var in non_latin_vars:
                 if len(variations) >= variation_count:
@@ -909,8 +986,8 @@ def generate_name_variations_clean(original_name: str, variation_count: int,
                     variations.append(var)
                     used_variations.add(var.lower())
         else:
-            # For Latin scripts, use name_variations.py
-            non_rule_vars = generate_name_variations(original_name, limit=non_rule_count * 2)
+            # For Latin scripts, use name_variations.py - request 3x more for better uniqueness
+            non_rule_vars = generate_name_variations(original_name, limit=non_rule_count * 3)
             
             for var in non_rule_vars:
                 if len(variations) >= variation_count:
@@ -920,10 +997,11 @@ def generate_name_variations_clean(original_name: str, variation_count: int,
                     used_variations.add(var.lower())
     
     # Final fallback - only if we still don't have enough
+    # NEVER use numeric suffixes - use character-level transformations instead
     if len(variations) < variation_count:
+        remaining = variation_count - len(variations)
         if is_non_latin:
             # For non-Latin, ALWAYS use script-specific variations - NEVER numeric suffixes
-            remaining = variation_count - len(variations)
             print(f"   🌍 Generating {remaining} more {script} script variations (no numeric suffixes)")
             
             # Generate many more variations to ensure we have enough
@@ -935,40 +1013,86 @@ def generate_name_variations_clean(original_name: str, variation_count: int,
                 if var.lower() not in used_variations:
                     variations.append(var)
                     used_variations.add(var.lower())
+        
+        # For BOTH Latin and non-Latin: create character-level variations manually
+        # This ensures we never fall back to numeric suffixes
+        if len(variations) < variation_count:
+            remaining = variation_count - len(variations)
+            print(f"   🔄 Creating {remaining} character-level variations (no numeric suffixes)")
+            parts = original_name.split()
+            attempts = 0
+            max_attempts = remaining * 10  # Try many times to get unique variations
             
-            # If still not enough, create character-level variations manually
-            if len(variations) < variation_count:
-                parts = original_name.split()
-                attempts = 0
-                while len(variations) < variation_count and attempts < 200:
-                    attempts += 1
-                    
-                    if len(parts) >= 2:
-                        # Try different part orders
-                        if attempts % 4 == 0:
-                            var = " ".join(parts[::-1])
-                        elif attempts % 4 == 1:
-                            var = "".join(parts)
-                        elif attempts % 4 == 2:
-                            var = parts[-1] + " " + " ".join(parts[:-1])
+            while len(variations) < variation_count and attempts < max_attempts:
+                attempts += 1
+                
+                if len(parts) >= 2:
+                    # Try different part orders and combinations
+                    strategy = attempts % 6
+                    if strategy == 0:
+                        var = " ".join(parts[::-1])  # Reverse order
+                    elif strategy == 1:
+                        var = "".join(parts)  # Merge parts
+                    elif strategy == 2:
+                        var = parts[-1] + " " + " ".join(parts[:-1])  # Last name first
+                    elif strategy == 3:
+                        var = " ".join([parts[1]] + [parts[0]] + parts[2:]) if len(parts) > 2 else " ".join(parts[::-1])  # Swap first two
+                    elif strategy == 4:
+                        # Try applying character transformations to individual parts
+                        modified_parts = list(parts)
+                        part_idx = attempts % len(modified_parts)
+                        word = modified_parts[part_idx]
+                        if len(word) > 1:
+                            # Try removing a character
+                            char_idx = (attempts // len(modified_parts)) % (len(word) - 1) + 1
+                            modified_parts[part_idx] = word[:char_idx] + word[char_idx+1:]
+                            var = " ".join(modified_parts)
                         else:
-                            var = " ".join([parts[1]] + [parts[0]] + parts[2:]) if len(parts) > 2 else " ".join(parts[::-1])
-                    elif len(parts) == 1 and len(parts[0]) > 1:
-                        # For single word, remove characters from different positions
-                        word = parts[0]
-                        idx = attempts % (len(word) - 1) + 1
-                        var = word[:idx] + word[idx+1:]
+                            var = None
                     else:
-                        continue
+                        # Try merging with different separators
+                        separators = ['', '-', '_', '.']
+                        sep = separators[attempts % len(separators)]
+                        var = sep.join(parts)
+                elif len(parts) == 1 and len(parts[0]) > 1:
+                    # For single word, try various character-level transformations
+                    word = parts[0]
+                    word_len = len(word)
+                    strategy = attempts % 5
                     
-                    if var and var.lower() not in used_variations:
-                        variations.append(var)
-                        used_variations.add(var.lower())
-        else:
-            # For Latin, only fall back to numeric suffixes as absolute last resort
-            while len(variations) < variation_count:
-                var = original_name + str(len(variations))
-                if var.lower() not in used_variations:
+                    if strategy == 0:
+                        # Remove a character from different positions
+                        idx = (attempts // 5) % (word_len - 1) + 1
+                        var = word[:idx] + word[idx+1:]
+                    elif strategy == 1:
+                        # Swap adjacent characters
+                        idx = (attempts // 5) % (word_len - 1)
+                        chars = list(word)
+                        chars[idx], chars[idx+1] = chars[idx+1], chars[idx]
+                        var = ''.join(chars)
+                    elif strategy == 2:
+                        # Duplicate a character
+                        idx = (attempts // 5) % word_len
+                        var = word[:idx+1] + word[idx:]
+                    elif strategy == 3:
+                        # Capitalize different positions
+                        var = word[:1].upper() + word[1:].lower() if word[0].islower() else word
+                    else:
+                        # Try vowel substitutions (common misspellings)
+                        vowels = 'aeiou'
+                        for i, char in enumerate(word.lower()):
+                            if char in vowels:
+                                # Replace with a different vowel
+                                new_vowel = vowels[(vowels.index(char) + (attempts // 5) % len(vowels)) % len(vowels)]
+                                var = word[:i] + new_vowel + word[i+1:]
+                                break
+                        else:
+                            var = word
+                else:
+                    continue
+                
+                # Only add if valid and unique
+                if var and var.lower() not in used_variations and var != original_name:
                     variations.append(var)
                     used_variations.add(var.lower())
     
