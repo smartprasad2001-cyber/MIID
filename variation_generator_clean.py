@@ -38,7 +38,8 @@ def parse_query_template(query_template: str) -> Dict:
         'rule_percentage': 0,
         'rules': [],
         'phonetic_similarity': {},
-        'orthographic_similarity': {}
+        'orthographic_similarity': {},
+        'uav_seed_name': None  # Phase 3: UAV seed name
     }
     
     # Extract variation count
@@ -46,12 +47,13 @@ def parse_query_template(query_template: str) -> Dict:
     if count_match:
         requirements['variation_count'] = int(count_match.group(1))
     
-    # Extract rule percentage
-    rule_pct_match = re.search(r'(\d+)%\s+of\s+variations', query_template, re.I)
+    # Extract rule percentage - look for "also include X%" or "X% of variations"
+    rule_pct_match = re.search(r'(\d+)%\s+of\s+variations|include\s+(\d+)%', query_template, re.I)
     if rule_pct_match:
-        requirements['rule_percentage'] = int(rule_pct_match.group(1)) / 100
+        pct = rule_pct_match.group(1) or rule_pct_match.group(2)
+        requirements['rule_percentage'] = int(pct) / 100
     
-    # Extract rules
+    # Extract rules - check various phrasings
     if 'replace spaces with special characters' in query_template.lower():
         requirements['rules'].append('replace_spaces_with_special_characters')
     if 'delete a random letter' in query_template.lower() or 'delete random letter' in query_template.lower():
@@ -60,6 +62,8 @@ def parse_query_template(query_template: str) -> Dict:
         requirements['rules'].append('replace_double_letters')
     if 'swap adjacent consonants' in query_template.lower():
         requirements['rules'].append('swap_adjacent_consonants')
+    if 'swap adjacent syllables' in query_template.lower():
+        requirements['rules'].append('swap_adjacent_syllables')
     
     # Extract similarity (just parse, don't validate)
     if 'phonetic similarity' in query_template.lower():
@@ -69,6 +73,11 @@ def parse_query_template(query_template: str) -> Dict:
     if 'orthographic similarity' in query_template.lower():
         if '100%' in query_template or 'Medium' in query_template:
             requirements['orthographic_similarity'] = {'Medium': 1.0}
+    
+    # Extract UAV seed name from Phase 3 requirements
+    uav_match = re.search(r'For the seed "([^"]+)" ONLY', query_template, re.I)
+    if uav_match:
+        requirements['uav_seed_name'] = uav_match.group(1)
     
     return requirements
 
@@ -109,6 +118,20 @@ def apply_swap_adjacent_consonants(name: str) -> str:
             return name[:i] + name[i+1] + name[i] + name[i+2:]
     return name
 
+def apply_swap_adjacent_syllables(name: str) -> str:
+    """Swap adjacent syllables (simplified: swap name parts)"""
+    parts = name.split()
+    if len(parts) >= 2:
+        # Swap first and last name
+        return " ".join([parts[-1]] + parts[1:-1] + [parts[0]])
+    elif len(parts) == 1:
+        # For single word, try to split in middle and swap
+        word = parts[0]
+        mid = len(word) // 2
+        if mid > 0:
+            return word[mid:] + word[:mid]
+    return name
+
 def apply_rule_to_name(name: str, rule: str) -> str:
     """Apply a rule to a name"""
     rule_map = {
@@ -116,6 +139,7 @@ def apply_rule_to_name(name: str, rule: str) -> str:
         'delete_random_letter': apply_delete_random_letter,
         'replace_double_letters': apply_replace_double_letters,
         'swap_adjacent_consonants': apply_swap_adjacent_consonants,
+        'swap_adjacent_syllables': apply_swap_adjacent_syllables,
     }
     func = rule_map.get(rule)
     return func(name) if func else name
@@ -206,6 +230,72 @@ def generate_address_variations(address: str, count: int = 15) -> List[str]:
     
     return variations[:count]
 
+def generate_uav_address(address: str) -> Dict:
+    """
+    Generate UAV (Unknown Attack Vector) address that looks valid but might fail geocoding.
+    Returns: dict with 'address', 'label', 'latitude', 'longitude'
+    """
+    # Extract city/country from address
+    parts = address.split(',')
+    if len(parts) >= 2:
+        city = parts[0].strip()
+        country = parts[-1].strip()
+    else:
+        city = address.split()[0] if address.split() else "Unknown"
+        country = address.split()[-1] if address.split() else "Unknown"
+    
+    # Generate an address with a potential issue (typo, abbreviation, etc.)
+    uav_types = [
+        ("typo", lambda: f"{random.randint(1, 999)} Main Str, {city}, {country}", "Common typo (Str vs St)"),
+        ("abbreviation", lambda: f"{random.randint(1, 999)} Oak Av, {city}, {country}", "Local abbreviation (Av vs Ave)"),
+        ("missing_direction", lambda: f"{random.randint(1, 999)} 1st St, {city}, {country}", "Missing street direction"),
+        ("number_only", lambda: f"{random.randint(1, 999)}, {city}, {country}", "Number without street name"),
+        ("abbreviated_st", lambda: f"{random.randint(1, 999)} Elm St., {city}, {country}", "Abbreviated with period"),
+    ]
+    
+    uav_type, gen_func, label = random.choice(uav_types)
+    uav_address = gen_func()
+    
+    # Generate realistic coordinates based on country (approximate)
+    # These are rough approximations - in production, use geocoding API
+    country_coords = {
+        "USA": (39.8283, -98.5795),  # Geographic center
+        "UK": (54.7024, -3.2766),
+        "Canada": (56.1304, -106.3468),
+        "Germany": (51.1657, 10.4515),
+        "France": (46.2276, 2.2137),
+        "Spain": (40.4637, -3.7492),
+        "Italy": (41.8719, 12.5674),
+        "Russia": (61.5240, 105.3188),
+        "China": (35.8617, 104.1954),
+        "India": (20.5937, 78.9629),
+        "Japan": (36.2048, 138.2529),
+        "Brazil": (-14.2350, -51.9253),
+        "Mexico": (23.6345, -102.5528),
+    }
+    
+    # Try to find country in our map (case-insensitive)
+    lat, lon = None, None
+    for country_key, coords in country_coords.items():
+        if country_key.lower() in country.lower() or country.lower() in country_key.lower():
+            lat, lon = coords
+            # Add small random offset to make it unique
+            lat += random.uniform(-0.5, 0.5)
+            lon += random.uniform(-0.5, 0.5)
+            break
+    
+    # Fallback coordinates if country not found
+    if lat is None or lon is None:
+        lat = random.uniform(-90, 90)
+        lon = random.uniform(-180, 180)
+    
+    return {
+        'address': uav_address,
+        'label': label,
+        'latitude': round(lat, 6),
+        'longitude': round(lon, 6)
+    }
+
 # ============================================================================
 # Main Generation Function
 # ============================================================================
@@ -261,8 +351,11 @@ def generate_name_variations_clean(original_name: str, variation_count: int,
 # Main Function
 # ============================================================================
 
-def generate_variations(synapse: IdentitySynapse) -> Dict[str, List[List[str]]]:
-    """Generate variations for all identities"""
+def generate_variations(synapse: IdentitySynapse) -> Dict:
+    """
+    Generate variations for all identities.
+    Returns different structure for UAV seed vs normal seeds.
+    """
     requirements = parse_query_template(synapse.query_template)
     
     print("=" * 80)
@@ -272,9 +365,12 @@ def generate_variations(synapse: IdentitySynapse) -> Dict[str, List[List[str]]]:
     print(f"   Variation count: {requirements['variation_count']}")
     print(f"   Rule percentage: {requirements['rule_percentage']*100:.0f}%")
     print(f"   Rules: {requirements['rules']}")
+    if requirements['uav_seed_name']:
+        print(f"   🎯 UAV Seed: {requirements['uav_seed_name']}")
     print()
     
     all_variations = {}
+    uav_seed_name = requirements['uav_seed_name']
     
     for identity in synapse.identity:
         name = identity[0] if len(identity) > 0 else "Unknown"
@@ -282,6 +378,10 @@ def generate_variations(synapse: IdentitySynapse) -> Dict[str, List[List[str]]]:
         address = identity[2] if len(identity) > 2 else "Unknown"
         
         print(f"🔄 Processing: {name}")
+        is_uav_seed = (uav_seed_name and name.lower() == uav_seed_name.lower())
+        
+        if is_uav_seed:
+            print(f"   🎯 This is the UAV seed - will include UAV data")
         
         # Generate variations
         name_vars = generate_name_variations_clean(
@@ -303,7 +403,22 @@ def generate_variations(synapse: IdentitySynapse) -> Dict[str, List[List[str]]]:
                 address_vars[i] if i < len(address_vars) else address
             ])
         
-        all_variations[name] = combined
+        # Phase 3: Return different structure for UAV seed
+        if is_uav_seed:
+            # Generate UAV address
+            uav_data = generate_uav_address(address)
+            print(f"   🎯 Generated UAV: {uav_data['address']} ({uav_data['label']})")
+            print(f"      Coordinates: ({uav_data['latitude']}, {uav_data['longitude']})")
+            
+            # UAV seed structure: {name: {variations: [...], uav: {...}}}
+            all_variations[name] = {
+                'variations': combined,
+                'uav': uav_data
+            }
+        else:
+            # Normal structure: {name: [[name, dob, addr], ...]}
+            all_variations[name] = combined
+        
         print(f"   ✅ Generated {len(combined)} variations\n")
     
     return all_variations
