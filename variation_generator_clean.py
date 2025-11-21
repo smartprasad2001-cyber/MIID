@@ -1258,27 +1258,84 @@ def generate_uav_address(address: str) -> Dict:
     
     if real_street_names:
         # Use a real street name as base and modify it to create a UAV (typo, abbreviation, etc.)
-        street = random.choice(real_street_names)
+        # CRITICAL: Ensure street name is long enough to meet 30-char minimum
+        # Try multiple street names until we find one that works
+        max_attempts = 10
+        uav_address = None
+        label = None
         
-        # Create UAV variations from real street name
-        uav_options = [
-            (f"{num} {street}tr, {city}, {normalized_country}", "Common typo (Str vs St)"),
-            (f"{num} {street[:15]} Av, {city}, {normalized_country}", "Local abbreviation (Av vs Ave)"),
-            (f"{num} 1st {street}, {city}, {normalized_country}", "Missing street direction"),
-            (f"{num}, {city}, {normalized_country}", "Number without street name"),
-            (f"{num} {street}., {city}, {normalized_country}", "Abbreviated with period"),
-        ]
-        uav_address, label = random.choice(uav_options)
+        for attempt in range(max_attempts):
+            street = random.choice(real_street_names)
+            
+            # Create UAV variations from real street name
+            # CRITICAL: All options must have street name + city + country format
+            # CRITICAL: All options must be >= 30 characters to pass validator validation
+            uav_options = [
+                # Typo: "Str" instead of "St" or "Street" (use full street name)
+                (f"{num} {street} Str, {city}, {normalized_country}", "Common typo (Str vs St)"),
+                # Abbreviation: "Av" instead of "Ave" or "Avenue" (use longer portion of street)
+                (f"{num} {street[:25] if len(street) > 25 else street} Av, {city}, {normalized_country}", "Local abbreviation (Av vs Ave)"),
+                # Missing direction: "1st" prefix but missing street type (use full street)
+                (f"{num} 1st {street}, {city}, {normalized_country}", "Missing street direction"),
+                # Abbreviated with period: "St." or "Av." (use full street)
+                (f"{num} {street} St., {city}, {normalized_country}", "Abbreviated with period"),
+                # Missing space: street name merged with number (typo)
+                (f"{num}{street[:15]} Street, {city}, {normalized_country}", "Missing space after number"),
+            ]
+            candidate_address, candidate_label = random.choice(uav_options)
+            
+            # Check if address is at least 30 characters (validator requirement)
+            addr_len = len(''.join(c for c in candidate_address if c.isalnum()))
+            if addr_len >= 30:
+                uav_address = candidate_address
+                label = candidate_label
+                break
+        
+        # Final fallback: if still too short, use longest street name available
+        if uav_address is None or len(''.join(c for c in uav_address if c.isalnum())) < 30:
+            longest_street = max(real_street_names, key=len)
+            # Ensure minimum length by adding city details or using longer format
+            base_address = f"{num} {longest_street} Str, {city}, {normalized_country}"
+            addr_len = len(''.join(c for c in base_address if c.isalnum()))
+            if addr_len < 30:
+                # Add more details to reach 30 chars minimum
+                uav_address = f"{num} {longest_street} Street Str, {city}, {normalized_country}"
+            else:
+                uav_address = base_address
+            label = "Common typo (Str vs St)"
     else:
         # Fallback to generic if no real street names available from database
+        # CRITICAL: All options must have street name + city + country format
+        # CRITICAL: All options must be >= 30 characters to pass validator validation
+        # Use longer generic street names to ensure minimum length
+        generic_street_options = [
+            "Main Street", "Oak Avenue", "Elm Boulevard", "Park Drive", "First Avenue",
+            "Second Street", "Third Boulevard", "Washington Avenue", "Lincoln Street"
+        ]
+        street = random.choice(generic_street_options)
+        
         uav_options = [
-            (f"{num} Main Str, {city}, {normalized_country}", "Common typo (Str vs St)"),
-            (f"{num} Oak Av, {city}, {normalized_country}", "Local abbreviation (Av vs Ave)"),
-            (f"{num} 1st St, {city}, {normalized_country}", "Missing street direction"),
-            (f"{num}, {city}, {normalized_country}", "Number without street name"),
-            (f"{num} Elm St., {city}, {normalized_country}", "Abbreviated with period"),
+            (f"{num} {street} Str, {city}, {normalized_country}", "Common typo (Str vs St)"),
+            (f"{num} {street[:15]} Av, {city}, {normalized_country}", "Local abbreviation (Av vs Ave)"),
+            (f"{num} 1st {street}, {city}, {normalized_country}", "Missing street direction"),
+            (f"{num} {street} St., {city}, {normalized_country}", "Abbreviated with period"),
+            (f"{num}{street[:10]} Street, {city}, {normalized_country}", "Missing space after number"),
         ]
         uav_address, label = random.choice(uav_options)
+        
+        # Ensure address is at least 30 characters (validator requirement)
+        addr_len = len(''.join(c for c in uav_address if c.isalnum()))
+        if addr_len < 30:
+            # Fallback to longest generic street name
+            longest_street = max(generic_street_options, key=len)
+            uav_address = f"{num} {longest_street} Str, {city}, {normalized_country}"
+            label = "Common typo (Str vs St)"
+            
+            # Final check - if still too short, add more details
+            addr_len = len(''.join(c for c in uav_address if c.isalnum()))
+            if addr_len < 30:
+                uav_address = f"{num} {longest_street} Street Str, {city}, {normalized_country}"
+                label = "Common typo (Str vs St)"
     
     # Generate realistic coordinates based on country (approximate)
     # Comprehensive country database with geographic centers
