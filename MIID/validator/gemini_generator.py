@@ -417,21 +417,38 @@ IMPORTANT:
     uav_instructions = ""
     if is_uav_seed:
         uav_instructions = f"""
-UAV REQUIREMENTS (Phase 3):
-For this seed ONLY, also include a UAV (Unknown Attack Vector) address:
-- Generate an address that looks valid but might fail geocoding
-- Examples: "123 Main Str" (typo), "456 Oak Av" (abbreviation), "789 1st St" (missing direction)
-- Include latitude and longitude coordinates
-- Add a label explaining why it could be valid
+UAV REQUIREMENTS (Phase 3) - CRITICAL:
+For this seed ONLY, you MUST include a complete UAV (Unknown Attack Vector) object with ALL fields:
 
-Return in this format:
+1. UAV Address: Generate an address from {address} that looks valid but might fail geocoding
+   - Examples: "123 Main Str" (typo), "456 Oak Av" (abbreviation), "789 1st St" (missing direction)
+   - Must be from the same country/city as: {address}
+   - Should look legitimate but have issues that might cause geocoding to fail
+
+2. Label: Explain why this address could be valid (REQUIRED string)
+   - Examples: "Common typo in street name", "Local abbreviation", "Missing street direction"
+   - Must be a descriptive string explaining the issue
+
+3. Latitude: Provide latitude coordinate (REQUIRED float, not None)
+   - Use approximate coordinates for the city/region: {address}
+   - Example for Namibia: -22.566667
+   - Must be a valid float number
+
+4. Longitude: Provide longitude coordinate (REQUIRED float, not None)
+   - Use approximate coordinates for the city/region: {address}
+   - Example for Namibia: 17.083333
+   - Must be a valid float number
+
+CRITICAL: ALL four fields (address, label, latitude, longitude) are REQUIRED and must not be None or empty!
+
+Return in this EXACT format:
 {{
   "variations": [...],
   "uav": {{
-    "address": "address_variant",
-    "label": "explanation",
-    "latitude": float,
-    "longitude": float
+    "address": "123 Independence Ave",
+    "label": "Missing city and postal code, incomplete street name",
+    "latitude": -22.566667,
+    "longitude": 17.083333
   }}
 }}
 """
@@ -628,6 +645,18 @@ def generate_variations_with_gemini(
             # Parse JSON
             try:
                 result = json.loads(response_text)
+                
+                # Handle case where Gemini returns nested structure: {"name": {"variations": [...], "uav": {...}}}
+                # Or: {"name": [["var1", "dob1", "addr1"], ...]}
+                if isinstance(result, dict) and len(result) == 1:
+                    # Check if the key matches the name (case-insensitive)
+                    for key in result.keys():
+                        if key.lower() == name.lower():
+                            # Extract the inner structure
+                            result = result[key]
+                            bt.logging.debug(f"Extracted nested structure for {name}")
+                            break
+                
             except json.JSONDecodeError as e:
                 bt.logging.error(f"Failed to parse JSON response: {e}")
                 bt.logging.error(f"Response text: {response_text[:500]}")
@@ -646,49 +675,117 @@ def generate_variations_with_gemini(
                     all_variations[name] = []
                 continue
             
-            # Extract variations
-            if is_uav_seed:
-                # UAV structure
+            # Extract variations - handle both formats
+            # Check if result is a dict with 'variations' key (UAV format) or just a list
+            if isinstance(result, dict) and 'variations' in result:
+                # Result is in UAV format
                 variations = result.get('variations', [])
                 uav_data = result.get('uav', {})
                 
+                # Only use UAV format if this is actually the UAV seed
+                if is_uav_seed:
+                    # Validate and complete UAV data
+                    if not uav_data or not isinstance(uav_data, dict):
+                        uav_data = {}
+                    
+                    # Ensure all required UAV fields are present and valid
+                    if 'address' not in uav_data or not uav_data['address'] or uav_data['address'] == address:
+                        # Generate a simple UAV address (incomplete/abbreviated)
+                        uav_data['address'] = f"123 Main St"  # Simple incomplete address
+                    if 'label' not in uav_data or not uav_data['label']:
+                        uav_data['label'] = 'Incomplete address - missing city and postal code'
+                    if 'latitude' not in uav_data or uav_data['latitude'] is None:
+                        # Use default coordinates (will need to be improved with geocoding)
+                        uav_data['latitude'] = 0.0  # Placeholder - should be geocoded
+                    if 'longitude' not in uav_data or uav_data['longitude'] is None:
+                        uav_data['longitude'] = 0.0  # Placeholder - should be geocoded
+                    
+                    # Validate types
+                    if not isinstance(uav_data['latitude'], (int, float)):
+                        uav_data['latitude'] = 0.0
+                    if not isinstance(uav_data['longitude'], (int, float)):
+                        uav_data['longitude'] = 0.0
+                    
+                    # Ensure exact count
+                    variation_count = requirements['variation_count']
+                    if len(variations) < variation_count:
+                        if variations:
+                            last_var = variations[-1]
+                            while len(variations) < variation_count:
+                                variations.append(last_var.copy() if isinstance(last_var, list) else last_var)
+                        else:
+                            variations = [[name, dob, address] for _ in range(variation_count)]
+                    elif len(variations) > variation_count:
+                        variations = variations[:variation_count]
+                    
+                    all_variations[name] = {
+                        'variations': variations,
+                        'uav': uav_data
+                    }
+                else:
+                    # Gemini returned UAV format but this is NOT the UAV seed
+                    # Extract just the variations and use normal format
+                    bt.logging.warning(f"Gemini returned UAV format for non-UAV seed '{name}'. Extracting variations only.")
+                    
+                    # Ensure exact count
+                    variation_count = requirements['variation_count']
+                    if len(variations) < variation_count:
+                        if variations:
+                            last_var = variations[-1]
+                            while len(variations) < variation_count:
+                                variations.append(last_var.copy() if isinstance(last_var, list) else last_var)
+                        else:
+                            variations = [[name, dob, address] for _ in range(variation_count)]
+                    elif len(variations) > variation_count:
+                        variations = variations[:variation_count]
+                    
+                    all_variations[name] = variations
+                    
+            elif isinstance(result, list):
+                # Result is a list (old format)
+                variations = result
+                
                 # Ensure exact count
                 variation_count = requirements['variation_count']
                 if len(variations) < variation_count:
-                    # Pad with last variation
                     if variations:
                         last_var = variations[-1]
                         while len(variations) < variation_count:
                             variations.append(last_var.copy() if isinstance(last_var, list) else last_var)
                     else:
-                        # Create default
                         variations = [[name, dob, address] for _ in range(variation_count)]
                 elif len(variations) > variation_count:
                     variations = variations[:variation_count]
                 
-                all_variations[name] = {
-                    'variations': variations,
-                    'uav': uav_data
-                }
+                if is_uav_seed:
+                    # Should have UAV format but got list - create default UAV
+                    bt.logging.warning(f"UAV seed '{name}' returned list format. Creating default UAV.")
+                    all_variations[name] = {
+                        'variations': variations,
+                        'uav': {
+                            'address': address,
+                            'label': 'Default UAV - format not provided',
+                            'latitude': None,
+                            'longitude': None
+                        }
+                    }
+                else:
+                    all_variations[name] = variations
             else:
-                # Normal structure
-                variations = result.get('variations', [])
-                
-                # Ensure exact count
-                variation_count = requirements['variation_count']
-                if len(variations) < variation_count:
-                    # Pad with last variation
-                    if variations:
-                        last_var = variations[-1]
-                        while len(variations) < variation_count:
-                            variations.append(last_var.copy() if isinstance(last_var, list) else last_var)
-                    else:
-                        # Create default
-                        variations = [[name, dob, address] for _ in range(variation_count)]
-                elif len(variations) > variation_count:
-                    variations = variations[:variation_count]
-                
-                all_variations[name] = variations
+                # Unexpected format
+                bt.logging.error(f"Unexpected result format for {name}: {type(result)}")
+                if is_uav_seed:
+                    all_variations[name] = {
+                        'variations': [],
+                        'uav': {
+                            'address': address,
+                            'label': 'Unexpected response format',
+                            'latitude': None,
+                            'longitude': None
+                        }
+                    }
+                else:
+                    all_variations[name] = []
             
             bt.logging.info(f"✅ Generated {len(variations)} variations for {name}")
             
