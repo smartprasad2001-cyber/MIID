@@ -1,0 +1,16 @@
+{
+  "timestamp": 1763796951.6769578,
+  "process_time": 15.806952953338623,
+  "seed_names": [
+    "John Smith",
+    "Maria Garcia",
+    "Ahmed Hassan"
+  ],
+  "variations_count": {
+    "John Smith": 15,
+    "Maria Garcia": 15,
+    "Ahmed Hassan": 15
+  },
+  "issues": [],
+  "format_valid": true
+}

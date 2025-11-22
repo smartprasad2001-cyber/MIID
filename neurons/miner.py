@@ -138,10 +138,21 @@ class Miner(BaseMinerNeuron):
         super(Miner, self).__init__(config=config)
         
         bt.logging.info("=" * 80)
-        bt.logging.info("MINER: Using variation_generator_clean.py (NO Ollama/Gemini)")
+        bt.logging.info("MINER: Using Gemini for maximum scoring")
         bt.logging.info("=" * 80)
         
-        # NO LLM initialization needed - we use variation_generator_clean.py instead
+        # Initialize Gemini if available
+        self.gemini_api_key = os.getenv("GEMINI_API_KEY") or getattr(self.config.neuron, 'gemini_api_key', None)
+        self.gemini_model = getattr(self.config.neuron, 'gemini_model_name', 'gemini-2.0-flash-exp')
+        
+        if self.gemini_api_key and GEMINI_AVAILABLE:
+            bt.logging.info(f"✅ Gemini configured: {self.gemini_model}")
+        else:
+            bt.logging.warning("⚠️  Gemini not available - falling back to variation_generator_clean.py")
+            if not GEMINI_AVAILABLE:
+                bt.logging.warning("   Install: pip install google-generativeai")
+            if not self.gemini_api_key:
+                bt.logging.warning("   Set GEMINI_API_KEY environment variable")
         
         # Create a directory for storing mining results (if needed)
         self.output_path = os.path.join(self.config.logging.logging_dir, "mining_results")
@@ -197,12 +208,14 @@ class Miner(BaseMinerNeuron):
 
     async def forward(self, synapse: IdentitySynapse) -> IdentitySynapse:
         """
-        Process a name variation request using variation_generator_clean.py.
+        Process a name variation request using Gemini for maximum scoring.
         
         This is the main entry point for the miner's functionality. It:
         1. Receives a request with names and a query template from validator
-        2. Routes it to variation_generator_clean.py to generate variations
-        3. Returns the variations to the validator
+        2. Parses the validator query template to extract all requirements
+        3. Uses Gemini to generate optimal variations that maximize scoring
+        4. Falls back to variation_generator_clean.py if Gemini is not available
+        5. Returns the variations to the validator
         
         Args:
             synapse: The IdentitySynapse containing names and query template
@@ -248,10 +261,19 @@ class Miner(BaseMinerNeuron):
         bt.logging.info(f"Request timeout: {timeout:.1f}s for {len(synapse.identity)} names")
         start_time = time.time()
         
-        # Route request to variation_generator_clean.py
+        # Route request to Gemini generator (or fallback to clean generator)
         try:
-            bt.logging.info("Routing request to variation_generator_clean.py (NO LLM)")
-            variations = generate_variations_clean(synapse)
+            if self.gemini_api_key and GEMINI_AVAILABLE:
+                bt.logging.info("Routing request to Gemini generator for maximum scoring")
+                from MIID.validator.gemini_generator import generate_variations_with_gemini
+                variations = generate_variations_with_gemini(
+                    synapse,
+                    gemini_api_key=self.gemini_api_key,
+                    gemini_model=self.gemini_model
+                )
+            else:
+                bt.logging.info("Routing request to variation_generator_clean.py (fallback)")
+                variations = generate_variations_clean(synapse)
             
             # Set the variations in the synapse for return to the validator
             synapse.variations = variations
