@@ -411,14 +411,18 @@ IMPORTANT:
 - DO NOT include markdown code blocks
 - DO NOT include explanations
 - Return ONLY the JSON object
+- ⚠️  CRITICAL: Use STANDARD format (list of arrays), NOT UAV format with {{"variations": ..., "uav": ...}}
+- ⚠️  UAV format is ONLY for the specific UAV seed mentioned in query template - this is NOT that seed
 """
     
     # UAV instructions if applicable
     uav_instructions = ""
     if is_uav_seed:
         uav_instructions = f"""
-UAV REQUIREMENTS (Phase 3) - CRITICAL:
-For this seed ONLY, you MUST include a complete UAV (Unknown Attack Vector) object with ALL fields:
+UAV REQUIREMENTS (Phase 3) - CRITICAL - FOR THIS SEED ONLY:
+⚠️  IMPORTANT: This seed "{name}" is the ONLY seed that requires UAV format. All other seeds use standard format.
+
+You MUST include a complete UAV (Unknown Attack Vector) object with ALL fields:
 
 1. UAV Address: Generate an address from {address} that looks valid but might fail geocoding
    - Examples: "123 Main Str" (typo), "456 Oak Av" (abbreviation), "789 1st St" (missing direction)
@@ -553,7 +557,7 @@ Generate the variations now. Remember: Similarity distribution matching is 60% o
 def generate_variations_with_gemini(
     synapse,
     gemini_api_key: Optional[str] = None,
-    gemini_model: str = "gemini-2.0-flash-exp"
+    gemini_model: str = "gemini-2.5-flash-lite"
 ) -> Dict[str, Any]:
     """
     Generate variations using Gemini API for maximum scoring.
@@ -616,7 +620,7 @@ def generate_variations_with_gemini(
             response = model.generate_content(
                 prompt,
                 generation_config=genai.types.GenerationConfig(
-                    max_output_tokens=8192,
+                    max_output_tokens=16384,  # Increased for complex responses with multiple variations
                     temperature=0.7,
                 )
             )
@@ -624,27 +628,70 @@ def generate_variations_with_gemini(
             # Parse response
             response_text = response.text.strip()
             
-            # Remove markdown code blocks if present
-            if response_text.startswith("```"):
-                # Extract JSON from code block
+            # Extract JSON from response - handle multiple formats
+            # 1. Try to find JSON in markdown code blocks (```json or ```)
+            json_text = None
+            if "```" in response_text:
                 lines = response_text.split("\n")
                 json_start = None
                 json_end = None
                 for i, line in enumerate(lines):
-                    if line.strip().startswith("```"):
+                    line_stripped = line.strip()
+                    if line_stripped.startswith("```"):
                         if json_start is None:
                             json_start = i + 1
                         else:
                             json_end = i
                             break
                 if json_start and json_end:
-                    response_text = "\n".join(lines[json_start:json_end])
+                    json_text = "\n".join(lines[json_start:json_end])
                 elif json_start:
-                    response_text = "\n".join(lines[json_start:])
+                    json_text = "\n".join(lines[json_start:])
+            
+            # 2. If no code block found, try to find JSON object/array in text
+            if not json_text:
+                # Look for first { or [ that starts a JSON structure
+                first_brace = response_text.find('{')
+                first_bracket = response_text.find('[')
+                
+                if first_brace != -1 and (first_bracket == -1 or first_brace < first_bracket):
+                    # Find matching closing brace
+                    brace_count = 0
+                    json_start_idx = first_brace
+                    json_end_idx = -1
+                    for i in range(first_brace, len(response_text)):
+                        if response_text[i] == '{':
+                            brace_count += 1
+                        elif response_text[i] == '}':
+                            brace_count -= 1
+                            if brace_count == 0:
+                                json_end_idx = i + 1
+                                break
+                    if json_end_idx > 0:
+                        json_text = response_text[json_start_idx:json_end_idx]
+                elif first_bracket != -1:
+                    # Find matching closing bracket
+                    bracket_count = 0
+                    json_start_idx = first_bracket
+                    json_end_idx = -1
+                    for i in range(first_bracket, len(response_text)):
+                        if response_text[i] == '[':
+                            bracket_count += 1
+                        elif response_text[i] == ']':
+                            bracket_count -= 1
+                            if bracket_count == 0:
+                                json_end_idx = i + 1
+                                break
+                    if json_end_idx > 0:
+                        json_text = response_text[json_start_idx:json_end_idx]
+            
+            # 3. Fallback to full response if no JSON found
+            if not json_text:
+                json_text = response_text
             
             # Parse JSON
             try:
-                result = json.loads(response_text)
+                result = json.loads(json_text)
                 
                 # Handle case where Gemini returns nested structure: {"name": {"variations": [...], "uav": {...}}}
                 # Or: {"name": [["var1", "dob1", "addr1"], ...]}
@@ -658,22 +705,46 @@ def generate_variations_with_gemini(
                             break
                 
             except json.JSONDecodeError as e:
-                bt.logging.error(f"Failed to parse JSON response: {e}")
-                bt.logging.error(f"Response text: {response_text[:500]}")
-                # Fallback: return empty variations
-                if is_uav_seed:
-                    all_variations[name] = {
-                        'variations': [],
-                        'uav': {
-                            'address': address,
-                            'label': 'Failed to parse response',
-                            'latitude': None,
-                            'longitude': None
+                bt.logging.error(f"Failed to parse JSON response for {name}: {e}")
+                bt.logging.error(f"Response text (first 1000 chars): {response_text[:1000]}")
+                bt.logging.error(f"Extracted JSON text (first 500 chars): {json_text[:500] if json_text else 'None'}")
+                
+                # Try to recover partial JSON if truncated
+                if json_text and ('{' in json_text or '[' in json_text):
+                    # Try to fix common truncation issues
+                    try:
+                        # If JSON ends abruptly, try to close it
+                        if json_text.rstrip().endswith(',') or not json_text.rstrip().endswith(('}', ']')):
+                            # Try to close incomplete structures
+                            fixed_json = json_text.rstrip().rstrip(',')
+                            # Count open braces/brackets
+                            open_braces = fixed_json.count('{') - fixed_json.count('}')
+                            open_brackets = fixed_json.count('[') - fixed_json.count(']')
+                            # Close them
+                            fixed_json += ']' * open_brackets + '}' * open_braces
+                            result = json.loads(fixed_json)
+                            bt.logging.warning(f"Recovered partial JSON for {name} by closing structures")
+                        else:
+                            raise
+                    except:
+                        pass
+                
+                # If recovery failed, fallback to empty variations
+                if 'result' not in locals() or result is None:
+                    bt.logging.warning(f"Using fallback empty variations for {name}")
+                    if is_uav_seed:
+                        all_variations[name] = {
+                            'variations': [],
+                            'uav': {
+                                'address': address,
+                                'label': 'Failed to parse response',
+                                'latitude': None,
+                                'longitude': None
+                            }
                         }
-                    }
-                else:
-                    all_variations[name] = []
-                continue
+                    else:
+                        all_variations[name] = []
+                    continue
             
             # Extract variations - handle both formats
             # Check if result is a dict with 'variations' key (UAV format) or just a list
@@ -725,7 +796,8 @@ def generate_variations_with_gemini(
                 else:
                     # Gemini returned UAV format but this is NOT the UAV seed
                     # Extract just the variations and use normal format
-                    bt.logging.warning(f"Gemini returned UAV format for non-UAV seed '{name}'. Extracting variations only.")
+                    # This is handled correctly, so use debug level instead of warning
+                    bt.logging.debug(f"Gemini returned UAV format for non-UAV seed '{name}'. Extracting variations only.")
                     
                     # Ensure exact count
                     variation_count = requirements['variation_count']

@@ -143,7 +143,7 @@ class Miner(BaseMinerNeuron):
         
         # Initialize Gemini if available
         self.gemini_api_key = os.getenv("GEMINI_API_KEY") or getattr(self.config.neuron, 'gemini_api_key', None)
-        self.gemini_model = getattr(self.config.neuron, 'gemini_model_name', 'gemini-2.0-flash-exp')
+        self.gemini_model = getattr(self.config.neuron, 'gemini_model_name', 'gemini-2.5-flash-lite')
         
         if self.gemini_api_key and GEMINI_AVAILABLE:
             bt.logging.info(f"✅ Gemini configured: {self.gemini_model}")
