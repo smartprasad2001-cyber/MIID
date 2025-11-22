@@ -5,7 +5,7 @@
 ### Basic Command (with Gemini)
 
 ```bash
-export GEMINI_API_KEY=AIzaSyDsCTkdmpb_XIl80NiDX3mr-7l9Ke3qJrA
+export GEMINI_API_KEY=YOUR_API_KEY_HERE
 
 python neurons/miner.py \
   --netuid 54 \
@@ -20,7 +20,7 @@ python neurons/miner.py \
 ### Run in Background (Recommended)
 
 ```bash
-export GEMINI_API_KEY=AIzaSyDsCTkdmpb_XIl80NiDX3mr-7l9Ke3qJrA
+export GEMINI_API_KEY=YOUR_API_KEY_HERE
 
 nohup python neurons/miner.py \
   --netuid 54 \
@@ -39,7 +39,7 @@ tail -f miner_mainnet.log
 ### Using Screen (Alternative)
 
 ```bash
-export GEMINI_API_KEY=AIzaSyDsCTkdmpb_XIl80NiDX3mr-7l9Ke3qJrA
+export GEMINI_API_KEY=YOUR_API_KEY_HERE
 
 screen -S miner_mainnet
 

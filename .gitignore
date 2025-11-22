@@ -203,6 +203,17 @@ testing/
 #logs and results
 ~/.bittensor/
 
+# Test results and logs (may contain sensitive data)
+test_*.log
+*_test.log
+*_results.json
+test_*_output*.log
+test_*_output*.json
+miner_*.log
+*_format_test.json
+*_synapse_results.json
+*_synapse_output*.log
+
 
 # ollama
 ~/.ollama/
