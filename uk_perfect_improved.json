@@ -1,0 +1,27 @@
+{
+  "country": "United Kingdom",
+  "perfect_addresses": [
+    "12 Kynance Mews, London, SW7 4QR, United Kingdom",
+    "21 Clyde Road, Manchester, M20 2WW, United Kingdom",
+    "10 Portugal Place, Cambridge, CB5 8AF, United Kingdom",
+    "62 Falkner Street, Liverpool, L8 7PZ, United Kingdom",
+    "3 Precentor's Court, York, YO1 7EJ, United Kingdom",
+    "14 Portugal Place, Cambridge, CB5 8AF, United Kingdom",
+    "33 Holly Walk, Leamington Spa, CV32 4JG, United Kingdom",
+    "15 Circus Lane, Edinburgh, EH3 6SU, United Kingdom",
+    "21 Dagmar Terrace, London, N1 2BN, United Kingdom",
+    "10 Circus Lane, Edinburgh, EH3 6SU, United Kingdom",
+    "4 Queen's Mews, London, W2 4BZ, United Kingdom",
+    "16 Circus Lane, Edinburgh, EH3 6SU, United Kingdom",
+    "4 Precentor's Court, York, YO1 7EJ, United Kingdom",
+    "5 Devonshire Mews South, London, W1G 6HS, United Kingdom",
+    "7 Kynance Mews, London, SW7 4QR, United Kingdom"
+  ],
+  "count": 15,
+  "stats": {
+    "attempts": 6,
+    "candidates_tested": 48,
+    "perfect_found": 15
+  },
+  "timestamp": "2025-11-24T20:41:47Z"
+}

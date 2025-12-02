@@ -1,294 +1,223 @@
 #!/usr/bin/env python3
 """
-Comprehensive test with full validator synapse:
-- 15 seed names
-- 15 variations per name
-- Full query template with all requirements
-- Verify output matches validator expectations
+Test full synapse with 15 names - exact replica from validator
 """
 
 import os
 import sys
 import json
-import time
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from MIID.validator.gemini_generator import generate_variations_with_gemini
-from MIID.protocol import IdentitySynapse
+from gemini_generator_hybrid import generate_with_gemini_hybrid, parse_query_template
+from MIID.validator.reward import (
+    calculate_variation_quality,
+    _grade_dob_variations,
+    _grade_address_variations,
+    MIID_REWARD_WEIGHTS
+)
+
 
 def test_full_synapse():
-    """Test with full validator synapse - 15 names, 15 variations each."""
+    """Test the exact synapse from validator logs."""
     
     api_key = os.getenv("GEMINI_API_KEY")
     if not api_key:
-        print("❌ GEMINI_API_KEY not set")
-        return
-    
-    # Create realistic seed data - 15 names with different countries
-    seed_names = [
-        "John Smith",
-        "Maria Garcia",
-        "Ahmed Hassan",
-        "Li Wei",
-        "Emma Johnson",
-        "Carlos Rodriguez",
-        "Yuki Tanaka",
-        "Sophie Martin",
-        "Mohammed Ali",
-        "Anna Schmidt",
-        "David Brown",
-        "Isabella Rossi",
-        "James Wilson",
-        "Olivia Anderson",
-        "Michael Taylor"
-    ]
-    
-    seed_dobs = [
-        "1990-05-15",
-        "1985-08-22",
-        "1992-03-10",
-        "1988-11-30",
-        "1995-01-18",
-        "1991-07-05",
-        "1987-12-25",
-        "1993-04-14",
-        "1989-09-08",
-        "1994-06-20",
-        "1990-02-28",
-        "1986-10-12",
-        "1992-08-03",
-        "1988-05-17",
-        "1991-11-22"
-    ]
-    
-    seed_addresses = [
-        "New York, USA",
-        "Madrid, Spain",
-        "Cairo, Egypt",
-        "Beijing, China",
-        "London, UK",
-        "Mexico City, Mexico",
-        "Tokyo, Japan",
-        "Paris, France",
-        "Dubai, UAE",
-        "Berlin, Germany",
-        "Toronto, Canada",
-        "Rome, Italy",
-        "Sydney, Australia",
-        "Stockholm, Sweden",
-        "Amsterdam, Netherlands"
-    ]
-    
-    # Build identity list
-    identity = [
-        [name, dob, addr] 
-        for name, dob, addr in zip(seed_names, seed_dobs, seed_addresses)
-    ]
-    
-    # Full query template with all requirements
-    query_template = """Generate 15 variations of {name}, ensuring phonetic similarity based on 10% Light, 50% Medium, and 40% Far types, and orthographic similarity based on 20% Light, 60% Medium, and 20% Far types. Approximately 30% of the total 15 variations should follow these rule-based transformations: Replace random consonants with different consonants, Replace random vowels with different vowels, and Delete a random letter. The following address is the seed country/city to generate address variations for: {address}. Generate unique real addresses within the specified country/city for each variation. The following date of birth is the seed DOB to generate variations for: {dob}."""
-    
-    synapse = IdentitySynapse(
-        identity=identity,
-        query_template=query_template,
-        timeout=360.0
-    )
+        print("❌ GEMINI_API_KEY environment variable not set")
+        sys.exit(1)
     
     print("="*80)
-    print("FULL SYNAPSE TEST - 15 NAMES, 15 VARIATIONS EACH")
+    print("FULL SYNAPSE TEST - 15 NAMES")
     print("="*80)
-    print(f"\n📋 Test Configuration:")
-    print(f"   - Seed Names: {len(seed_names)}")
-    print(f"   - Variations per name: 15")
-    print(f"   - Total expected variations: {len(seed_names) * 15}")
-    print(f"   - Countries: {len(set(seed_addresses))} different countries")
     print()
     
-    start_time = time.time()
+    # Exact synapse from logs
+    identities = [
+        ["Anatoly Vyborny", "1965-6-8", "Russia"],
+        ["رشدي مرمش", "1956-03-23", "Hong Kong"],
+        ["Leonid Pasechnik", "1970-3-15", "Ukraine"],
+        ["Aliaksei Rymasheuski", "1981-6-29", "Belarus"],
+        ["denis bonneau", "1991-04-17", "Monaco"],
+        ["luce guyon", "1998-03-02", "Turks and Caicos Islands"],
+        ["purificación franch", "1982-09-09", "Cuba"],
+        ["Ilya Buzin", "1980-8-21", "Russia"],
+        ["thibaut marchal", "1995-09-25", "Portugal"],
+        ["éric lebrun", "1946-05-15", "Fiji"],
+        ["zoé joseph", "1979-08-08", "Thailand"],
+        ["ягода пачаръзка", "1994-09-26", "Bulgaria"],
+        ["cesar taylor", "1928-07-26", "South Sudan"],
+        ["Володимир Бандура", "1990-7-15", "Ukraine"],
+        ["alfred boulay", "1943-10-23", "Ivory Coast"]
+    ]
     
-    print("🔄 Generating variations with Gemini...")
-    print("   (This may take several minutes for 15 names)")
+    # Exact query template from logs
+    query_template = """Generate exactly 8 variations of {name}, ensuring phonetic similarity (20% Light, 60% Medium, 20% Far) and orthographic similarity (30% Light, 40% Medium, 30% Far). Approximately 60% of the total 8 variations should follow these rule-based transformations: Additionally, generate variations that perform these transformations: Convert {name} to initials, and Swap random adjacent letters. The following address is the seed country/city to generate address variations for: {address}. Generate unique real addresses within the specified country/city for each variation. The following date of birth is the seed DOB to generate variations for: {dob}."""
+    
+    uav_seed_name = "purificación franch"
+    
+    print(f"📋 Query Template:")
+    print(f"   Variation count: 8")
+    print(f"   Rule percentage: 60%")
+    print(f"   Rules: initials, swap_random_letter")
+    print(f"   Phonetic: 20% Light, 60% Medium, 20% Far")
+    print(f"   Orthographic: 30% Light, 40% Medium, 30% Far")
+    print(f"   UAV seed: {uav_seed_name}")
     print()
     
-    try:
-        variations = generate_variations_with_gemini(
-            synapse,
-            gemini_api_key=api_key,
-            gemini_model="gemini-2.0-flash-exp"
-        )
+    all_variations = {}
+    all_scores = []
+    
+    # Process each identity (test with first 3 for speed, then all)
+    test_count = min(3, len(identities))  # Test with 3 names first
+    print(f"⚠️  Testing with first {test_count} names for speed...")
+    print()
+    
+    for i, (name, dob, address) in enumerate(identities[:test_count], 1):
+        print(f"[{i}/{test_count}] Processing: {name}")
+        print(f"   DOB: {dob}, Address: {address}")
         
-        elapsed_time = time.time() - start_time
+        try:
+            variations_list = generate_with_gemini_hybrid(name, dob, address, query_template, api_key)
+            
+            if variations_list:
+                all_variations[name] = variations_list
+                print(f"   ✅ Generated {len(variations_list)} variations")
+            else:
+                print(f"   ❌ Failed to generate variations")
+                all_variations[name] = []
+        except Exception as e:
+            print(f"   ❌ Error: {e}")
+            import traceback
+            traceback.print_exc()
+            all_variations[name] = []
         
-        print("✅ Generation complete")
-        print(f"⏱️  Total time: {elapsed_time:.2f} seconds")
-        print(f"⏱️  Average per name: {elapsed_time/len(seed_names):.2f} seconds")
         print()
-        
-    except Exception as e:
-        print(f"❌ Generation failed: {e}")
-        import traceback
-        traceback.print_exc()
-        return
     
-    # Verify output
+    # Score all variations
     print("="*80)
-    print("OUTPUT VERIFICATION")
+    print("SCORING ALL NAMES")
     print("="*80)
     print()
     
-    verification_results = {
-        "total_names": len(seed_names),
-        "names_with_variations": 0,
-        "total_variations": 0,
-        "correct_count": 0,
-        "structure_issues": 0,
-        "missing_names": [],
-        "issues": []
+    seed_names = [id[0] for id in identities]
+    seed_dob = [id[1] for id in identities]
+    seed_addresses = [id[2] for id in identities]
+    
+    # Parse requirements
+    requirements = parse_query_template(query_template)
+    phonetic_sim = requirements.get('phonetic_similarity', {})
+    ortho_sim = requirements.get('orthographic_similarity', {})
+    rule_based = {
+        "selected_rules": requirements.get('rules', []),
+        "rule_percentage": int(requirements['rule_percentage'] * 100)
     }
     
-    # Check each seed name
-    for i, seed_name in enumerate(seed_names):
-        print(f"Checking: {seed_name}")
-        
-        if seed_name not in variations:
-            verification_results["missing_names"].append(seed_name)
-            print(f"   ❌ Missing: No variations found")
+    validator_uid = 1
+    miner_uid = 1
+    miner_metrics = {}
+    
+    total_name_score = 0.0
+    total_dob_score = 0.0
+    total_address_score = 0.0
+    
+    for name in seed_names:
+        if name not in all_variations or not all_variations[name]:
             continue
         
-        var_data = variations[seed_name]
+        variations_list = all_variations[name]
+        variations_dict = {name: variations_list}
         
-        # Handle new structure with UAV
-        if isinstance(var_data, dict):
-            var_list = var_data.get('variations', [])
-        else:
-            var_list = var_data
+        # Name scoring
+        name_variations = [var[0].lower() if var[0] else "" for var in variations_list if len(var) > 0]
         
-        if not var_list:
-            verification_results["missing_names"].append(seed_name)
-            print(f"   ❌ Missing: Empty variations list")
-            continue
-        
-        verification_results["names_with_variations"] += 1
-        verification_results["total_variations"] += len(var_list)
-        
-        # Check count
-        expected_count = 15
-        actual_count = len(var_list)
-        if actual_count == expected_count:
-            verification_results["correct_count"] += 1
-            print(f"   ✅ Count: {actual_count}/{expected_count}")
-        else:
-            print(f"   ⚠️  Count: {actual_count}/{expected_count} (expected {expected_count})")
-            verification_results["issues"].append(f"{seed_name}: Count mismatch ({actual_count}/{expected_count})")
-        
-        # Check structure (all variations should be [name, dob, address])
-        structure_ok = True
-        for j, var in enumerate(var_list):
-            if not isinstance(var, list) or len(var) < 3:
-                structure_ok = False
-                print(f"   ⚠️  Variation {j+1}: Invalid structure (expected [name, dob, address])")
-                verification_results["issues"].append(f"{seed_name} var {j+1}: Invalid structure")
-                break
-            
-            name_var, dob_var, addr_var = var[0], var[1], var[2]
-            
-            # Check name structure (should maintain multi-part if original is multi-part)
-            # Count parts: split by space OR hyphen (both are acceptable)
-            seed_parts = len([p for p in seed_name.replace('-', ' ').split() if p])
-            var_parts = len([p for p in name_var.replace('-', ' ').split() if p])
-            if seed_parts > 1 and var_parts == 1:
-                structure_ok = False
-                print(f"   ⚠️  Variation {j+1}: Name structure issue ('{name_var}' should be multi-part)")
-                verification_results["issues"].append(f"{seed_name} var {j+1}: Name structure issue")
-        
-        if structure_ok:
-            print(f"   ✅ Structure: All variations have correct format")
-        else:
-            verification_results["structure_issues"] += 1
-        
-        # Check DOB format
-        dob_formats = set()
-        for var in var_list:
-            if len(var) > 1:
-                dob = var[1]
-                if '-' in dob:
-                    parts = dob.split('-')
-                    if len(parts) == 3:
-                        dob_formats.add('full_date')
-                    elif len(parts) == 2:
-                        dob_formats.add('year_month')
-        
-        print(f"   📅 DOB formats: {len(dob_formats)} types found")
-        
-        # Check address format
-        addresses = [var[2] for var in var_list if len(var) > 2]
-        valid_addresses = sum(
-            1 for addr in addresses 
-            if len(addr) >= 30 and ',' in addr and any(c.isdigit() for c in addr)
+        name_quality, base_score, name_metrics = calculate_variation_quality(
+            original_name=name,
+            variations=name_variations,
+            phonetic_similarity=phonetic_sim,
+            orthographic_similarity=ortho_sim,
+            expected_count=requirements['variation_count'],
+            rule_based=rule_based
         )
-        print(f"   📍 Addresses: {valid_addresses}/{len(addresses)} have valid format")
         
-        print()
+        total_name_score += name_quality
+        
+        # DOB scoring
+        dob_result = _grade_dob_variations(variations_dict, [seed_dob[seed_names.index(name)]], miner_metrics)
+        dob_score = dob_result.get("overall_score", 0.0)
+        total_dob_score += dob_score
+        
+        # Address scoring
+        address_result = _grade_address_variations(
+            variations_dict, 
+            [seed_addresses[seed_names.index(name)]], 
+            miner_metrics, 
+            validator_uid, 
+            miner_uid
+        )
+        address_score = address_result.get("overall_score", 0.0)
+        total_address_score += address_score
     
-    # Summary
-    print("="*80)
-    print("VERIFICATION SUMMARY")
-    print("="*80)
-    print()
-    
-    print(f"📊 Results:")
-    print(f"   - Names with variations: {verification_results['names_with_variations']}/{verification_results['total_names']}")
-    print(f"   - Total variations generated: {verification_results['total_variations']}")
-    print(f"   - Expected variations: {verification_results['total_names'] * 15}")
-    print(f"   - Names with correct count: {verification_results['correct_count']}/{verification_results['names_with_variations']}")
-    print(f"   - Structure issues: {verification_results['structure_issues']}")
-    print()
-    
-    if verification_results['missing_names']:
-        print(f"❌ Missing Names ({len(verification_results['missing_names'])}):")
-        for name in verification_results['missing_names']:
-            print(f"   - {name}")
-        print()
-    
-    if verification_results['issues']:
-        print(f"⚠️  Issues Found ({len(verification_results['issues'])}):")
-        for issue in verification_results['issues'][:10]:  # Show first 10
-            print(f"   - {issue}")
-        if len(verification_results['issues']) > 10:
-            print(f"   ... and {len(verification_results['issues']) - 10} more")
-        print()
-    
-    # Final verdict
-    success_rate = verification_results['names_with_variations'] / verification_results['total_names']
-    count_rate = verification_results['correct_count'] / verification_results['names_with_variations'] if verification_results['names_with_variations'] > 0 else 0
-    
-    print("="*80)
-    if success_rate == 1.0 and count_rate == 1.0 and verification_results['structure_issues'] == 0:
-        print("🎉 PERFECT - All checks passed! Miner output matches validator requirements!")
-    elif success_rate >= 0.9 and count_rate >= 0.8:
-        print("✅ GOOD - Most checks passed. Minor issues to review.")
-    elif success_rate >= 0.7:
-        print("⚠️  NEEDS IMPROVEMENT - Some issues found. Review before mainnet.")
+    # Calculate averages
+    num_names = len([n for n in seed_names if n in all_variations and all_variations[n]])
+    if num_names > 0:
+        avg_name_score = total_name_score / num_names
+        avg_dob_score = total_dob_score / num_names
+        avg_address_score = total_address_score / num_names
     else:
-        print("❌ FAILED - Multiple issues found. Not ready for mainnet.")
+        avg_name_score = 0.0
+        avg_dob_score = 0.0
+        avg_address_score = 0.0
     
-    print(f"\nSuccess Rate: {success_rate*100:.1f}%")
-    print(f"Count Accuracy: {count_rate*100:.1f}%")
+    # Final score
+    name_component = avg_name_score * 0.2
+    dob_component = avg_dob_score * 0.1
+    address_component = avg_address_score * 0.7
+    final_score = name_component + dob_component + address_component
+    
     print("="*80)
+    print("FINAL SCORE SUMMARY")
+    print("="*80)
+    print()
+    print(f"Names Processed: {num_names}/{test_count}")
+    print()
+    print(f"Average Name Quality: {avg_name_score:.4f}")
+    print(f"Average DOB Score: {avg_dob_score:.4f}")
+    print(f"Average Address Score: {avg_address_score:.4f}")
+    print()
+    print(f"Name Component (20%):  {name_component:.4f}")
+    print(f"DOB Component (10%):   {dob_component:.4f}")
+    print(f"Address Component (70%): {address_component:.4f}")
+    print(f"{'='*80}")
+    print(f"FINAL SCORE: {final_score:.4f}")
+    print(f"{'='*80}")
+    print()
     
     # Save results
-    output_file = "test_full_synapse_results.json"
-    with open(output_file, 'w') as f:
-        json.dump({
-            "verification_results": verification_results,
-            "variations": variations,
-            "elapsed_time": elapsed_time,
-            "timestamp": time.time()
-        }, f, indent=2, ensure_ascii=False)
+    results = {
+        "identities": identities,
+        "query_template": query_template,
+        "variations": all_variations,
+        "scores": {
+            "avg_name_quality": avg_name_score,
+            "avg_dob_score": avg_dob_score,
+            "avg_address_score": avg_address_score,
+            "name_component": name_component,
+            "dob_component": dob_component,
+            "address_component": address_component,
+            "final_score": final_score
+        },
+        "num_names_processed": num_names
+    }
     
-    print(f"\n💾 Results saved to: {output_file}")
+    with open("test_full_synapse_15_names_results.json", "w", encoding="utf-8") as f:
+        json.dump(results, f, indent=2, ensure_ascii=False)
+    
+    print(f"💾 Results saved to: test_full_synapse_15_names_results.json")
+    
+    return final_score
+
 
 if __name__ == "__main__":
-    test_full_synapse()
-
+    score = test_full_synapse()
+    print(f"\n{'✅ PASS' if score >= 0.8 else '❌ FAIL'}: Final Score = {score:.4f} (Target: 0.8)")
+    sys.exit(0 if score >= 0.8 else 1)

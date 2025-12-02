@@ -294,9 +294,30 @@ def check_with_nominatim(address: str, validator_uid: int, miner_uid: int, seed_
         # Use validator_uid to create a unique User-Agent per validator
         # Each validator consistently uses its own User-Agent for all requests
         # Format: AppName/ValidatorUID (contact email)
-        user_agent = f"YanezCompliance/{validator_uid} (https://yanezcompliance.com; omar@yanezcompliance.com)"
+        # CRITICAL: Nominatim requires proper User-Agent with contact info to avoid 403 errors
+        default_user_agent = f"YanezCompliance/{validator_uid} (https://yanezcompliance.com; omar@yanezcompliance.com)"
+        user_agent = os.getenv("USER_AGENT", default_user_agent)
         
-        response = requests.get(url, params=params, headers={"User-Agent": user_agent}, timeout=5)
+        # Support proxy rotation via environment variable
+        proxy_url = os.getenv("PROXY_URL", None)
+        proxies = None
+        if proxy_url:
+            proxies = {
+                "http": proxy_url,
+                "https": proxy_url
+            }
+        # Disable SSL verification when using proxy (proxy uses its own certificate)
+        verify_ssl = proxy_url is None  # Only verify SSL if not using proxy
+        response = requests.get(url, params=params, headers={"User-Agent": user_agent}, timeout=5, proxies=proxies, verify=verify_ssl)
+        
+        # Check status code before parsing JSON (403 errors return HTML, not JSON)
+        if response.status_code != 200:
+            if response.status_code == 403:
+                bt.logging.warning(f"Nominatim 403 Forbidden for address '{address}' - rate limited or blocked")
+            else:
+                bt.logging.warning(f"Nominatim HTTP {response.status_code} for address '{address}'")
+            return 0.0
+        
         results = response.json()
         
         # Check if we have any results

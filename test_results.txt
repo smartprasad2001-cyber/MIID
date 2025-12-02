@@ -1,0 +1,175 @@
+================================================================================
+TESTING AFGHANISTAN ADDRESSES
+================================================================================
+Total addresses to test: 100
+
+[1/100] Testing: 12, Darulaman Road, Kabul, 1003, Afghanistan...
+[34m2025-12-01 13:12:46.051[39m | [1m[33m    WARNING     [0m | Nominatim 403 Forbidden for address '12, Darulaman Road, Kabul, 1003, Afghanistan' - rate limited or blocked
+  ❌ Looks like address: True, Region: True, API: 0.0
+
+[2/100] Testing: 34, Karte Parwan Street, Kabul, 1005, Afghanistan...
+  ❌ Looks like address: True, Region: True, API: 0.0
+
+[3/100] Testing: 7, Chicken Street, Kabul, 1009, Afghanistan...
+[34m2025-12-01 13:12:48.893[39m | [1m[33m    WARNING     [0m | Nominatim 403 Forbidden for address '34, Karte Parwan Street, Kabul, 1005, Afghanistan' - rate limited or blocked
+  ❌ Looks like address: True, Region: True, API: 0.0
+
+[4/100] Testing: Ariana Hotel, Shahre Now, Kabul, 1006, Afghanistan...
+[34m2025-12-01 13:12:51.891[39m | [1m[33m    WARNING     [0m | Nominatim 403 Forbidden for address '7, Chicken Street, Kabul, 1009, Afghanistan' - rate limited or blocked
+  ❌ Looks like address: True, Region: True, API: 0.0
+
+[5/100] Testing: 45, Wazir Akbar Khan Road, Kabul, 1007, Afghanistan...
+[34m2025-12-01 13:12:55.079[39m | [1m[33m    WARNING     [0m | Nominatim 403 Forbidden for address 'Ariana Hotel, Shahre Now, Kabul, 1006, Afghanistan' - rate limited or blocked
+  ❌ Looks like address: True, Region: True, API: 0.0
+
+[6/100] Testing: 6, Flower Street, Shar-e-Naw, Kabul, 1006, Afghanistan...
+[34m2025-12-01 13:12:58.157[39m | [1m[33m    WARNING     [0m | Nominatim 403 Forbidden for address '45, Wazir Akbar Khan Road, Kabul, 1007, Afghanistan' - rate limited or blocked
+[34m2025-12-01 13:13:01.514[39m | [1m[33m    WARNING     [0m | Nominatim 403 Forbidden for address '6, Flower Street, Shar-e-Naw, Kabul, 1006, Afghanistan' - rate limited or blocked
+  ❌ Looks like address: True, Region: True, API: 0.0
+
+[7/100] Testing: Ministry of Education, Pashtunistan Watt, Kabul, 1001, Afgha...
+[34m2025-12-01 13:13:04.558[39m | [1m[33m    WARNING     [0m | Nominatim 403 Forbidden for address 'Ministry of Education, Pashtunistan Watt, Kabul, 1001, Afghanistan' - rate limited or blocked
+  ❌ Looks like address: True, Region: True, API: 0.0
+
+[8/100] Testing: 101, Macrorayan Roundabout, Kabul, 1004, Afghanistan...
+  ❌ Looks like address: True, Region: True, API: 0.0
+
+[9/100] Testing: 88, Street 2, Karte Seh, Kabul, 1008, Afghanistan...
+[34m2025-12-01 13:13:07.416[39m | [1m[33m    WARNING     [0m | Nominatim 403 Forbidden for address '101, Macrorayan Roundabout, Kabul, 1004, Afghanistan' - rate limited or blocked
+[34m2025-12-01 13:13:10.496[39m | [1m[33m    WARNING     [0m | Nominatim 403 Forbidden for address '88, Street 2, Karte Seh, Kabul, 1008, Afghanistan' - rate limited or blocked
+  ❌ Looks like address: True, Region: True, API: 0.0
+
+[10/100] Testing: 3, Jalalabad Road, Kabul, 1002, Afghanistan...
+  ❌ Looks like address: True, Region: True, API: 0.0
+
+[11/100] Testing: 22, Taimani Street, Kabul, 1009, Afghanistan...
+[34m2025-12-01 13:13:13.575[39m | [1m[33m    WARNING     [0m | Nominatim 403 Forbidden for address '3, Jalalabad Road, Kabul, 1002, Afghanistan' - rate limited or blocked
+[34m2025-12-01 13:13:16.482[39m | [1m[33m    WARNING     [0m | Nominatim 403 Forbidden for address '22, Taimani Street, Kabul, 1009, Afghanistan' - rate limited or blocked
+  ❌ Looks like address: True, Region: True, API: 0.0
+
+[12/100] Testing: 17, Bagh-e Bala Road, Kabul, 1003, Afghanistan...
+[34m2025-12-01 13:13:19.671[39m | [1m[33m    WARNING     [0m | Nominatim 403 Forbidden for address '17, Bagh-e Bala Road, Kabul, 1003, Afghanistan' - rate limited or blocked
+  ❌ Looks like address: True, Region: True, API: 0.0
+
+[13/100] Testing: French Cultural Center, Shahr-e Naw, Kabul, 1006, Afghanista...
+[34m2025-12-01 13:13:22.676[39m | [1m[33m    WARNING     [0m | Nominatim 403 Forbidden for address 'French Cultural Center, Shahr-e Naw, Kabul, 1006, Afghanistan' - rate limited or blocked
+  ❌ Looks like address: True, Region: True, API: 0.0
+
+[14/100] Testing: 56, Qalai-Fathullah Street, Kabul, 1002, Afghanistan...
+  ❌ Looks like address: True, Region: True, API: 0.0
+
+[15/100] Testing: 199, Darulaman Palace Road, Kabul, 1003, Afghanistan...
+[34m2025-12-01 13:13:25.578[39m | [1m[33m    WARNING     [0m | Nominatim 403 Forbidden for address '56, Qalai-Fathullah Street, Kabul, 1002, Afghanistan' - rate limited or blocked
+[34m2025-12-01 13:13:28.580[39m | [1m[33m    WARNING     [0m | Nominatim 403 Forbidden for address '199, Darulaman Palace Road, Kabul, 1003, Afghanistan' - rate limited or blocked
+  ❌ Looks like address: True, Region: True, API: 0.0
+
+[16/100] Testing: 8, Ansari Watt, Kabul, 1007, Afghanistan...
+  ❌ Looks like address: True, Region: True, API: 0.0
+
+[17/100] Testing: 27, Kart-e-Char, Kabul, 1008, Afghanistan...
+[34m2025-12-01 13:13:31.516[39m | [1m[33m    WARNING     [0m | Nominatim 403 Forbidden for address '8, Ansari Watt, Kabul, 1007, Afghanistan' - rate limited or blocked
+  ❌ Looks like address: True, Region: True, API: 0.0
+
+[18/100] Testing: 5, Karta-e-Now Bridge Road, Kabul, 1006, Afghanistan...
+[34m2025-12-01 13:13:34.588[39m | [1m[33m    WARNING     [0m | Nominatim 403 Forbidden for address '27, Kart-e-Char, Kabul, 1008, Afghanistan' - rate limited or blocked
+  ❌ Looks like address: True, Region: True, API: 0.0
+
+[19/100] Testing: Sultani Hospital, District 3, Kabul, 1002, Afghanistan...
+[34m2025-12-01 13:13:37.627[39m | [1m[33m    WARNING     [0m | Nominatim 403 Forbidden for address '5, Karta-e-Now Bridge Road, Kabul, 1006, Afghanistan' - rate limited or blocked
+  ❌ Looks like address: True, Region: True, API: 0.0
+
+[20/100] Testing: 14, University Road, Kabul, 1004, Afghanistan...
+[34m2025-12-01 13:13:40.672[39m | [1m[33m    WARNING     [0m | Nominatim 403 Forbidden for address 'Sultani Hospital, District 3, Kabul, 1002, Afghanistan' - rate limited or blocked
+  ❌ Looks like address: True, Region: True, API: 0.0
+
+[21/100] Testing: 9, Tapa-e-Mardan, Herat, 7001, Afghanistan...
+[34m2025-12-01 13:13:43.840[39m | [1m[33m    WARNING     [0m | Nominatim 403 Forbidden for address '14, University Road, Kabul, 1004, Afghanistan' - rate limited or blocked
+  ❌ Looks like address: True, Region: False, API: N/A
+
+[22/100] Testing: 33, Ahmad Shah Baba Mina, Herat, 7002, Afghanistan...
+[34m2025-12-01 13:13:46.971[39m | [1m[33m    WARNING     [0m | Nominatim 403 Forbidden for address '33, Ahmad Shah Baba Mina, Herat, 7002, Afghanistan' - rate limited or blocked
+  ❌ Looks like address: True, Region: True, API: 0.0
+
+[23/100] Testing: Blue Mosque, Herat Old City, Herat, 7001, Afghanistan...
+  ❌ Looks like address: True, Region: False, API: N/A
+
+[24/100] Testing: 70, Malikzada Street, Herat, 7003, Afghanistan...
+  ❌ Looks like address: True, Region: False, API: N/A
+
+[25/100] Testing: Central Hospital, Char-Rahi Herat, Herat, 7001, Afghanistan...
+  ❌ Looks like address: True, Region: False, API: N/A
+
+[26/100] Testing: 4, Sultani Watt, Herat, 7002, Afghanistan...
+  ❌ Looks like address: True, Region: False, API: N/A
+
+[27/100] Testing: 165, Road 7, Herat Industrial Area, Herat, 7004, Afghanistan...
+  ❌ Looks like address: True, Region: False, API: N/A
+
+[28/100] Testing: 12, Pul-e-Khushk, Mazar-e-Sharif, 1701, Afghanistan...
+  ❌ Looks like address: True, Region: False, API: N/A
+
+[29/100] Testing: Blue Mosque Rd, Mazar-e-Sharif, 1701, Afghanistan...
+  ❌ Looks like address: True, Region: True, API: 0.0
+
+[30/100] Testing: 55, Balkh Street, Mazar-e-Sharif, 1702, Afghanistan...
+[34m2025-12-01 13:13:49.935[39m | [1m[33m    WARNING     [0m | Nominatim 403 Forbidden for address 'Blue Mosque Rd, Mazar-e-Sharif, 1701, Afghanistan' - rate limited or blocked
+[34m2025-12-01 13:13:53.037[39m | [1m[33m    WARNING     [0m | Nominatim 403 Forbidden for address '55, Balkh Street, Mazar-e-Sharif, 1702, Afghanistan' - rate limited or blocked
+  ❌ Looks like address: True, Region: True, API: 0.0
+
+[31/100] Testing: 8, Adina Market Street, Mazar-e-Sharif, 1703, Afghanistan...
+  ❌ Looks like address: True, Region: False, API: N/A
+
+[32/100] Testing: Balkh University, Sholgara Road, Mazar-e-Sharif, 1701, Afgha...
+  ❌ Looks like address: True, Region: True, API: 0.0
+
+[33/100] Testing: 21, Taloqan Road, Kunduz, 3501, Afghanistan...
+[34m2025-12-01 13:13:55.947[39m | [1m[33m    WARNING     [0m | Nominatim 403 Forbidden for address 'Balkh University, Sholgara Road, Mazar-e-Sharif, 1701, Afghanistan' - rate limited or blocked
+  ❌ Looks like address: True, Region: True, API: 0.0
+
+[34/100] Testing: Kunduz Regional Hospital, Kunduz City, Kunduz, 3501, Afghani...
+[34m2025-12-01 13:13:58.826[39m | [1m[33m    WARNING     [0m | Nominatim 403 Forbidden for address '21, Taloqan Road, Kunduz, 3501, Afghanistan' - rate limited or blocked
+[34m2025-12-01 13:14:01.830[39m | [1m[33m    WARNING     [0m | Nominatim 403 Forbidden for address 'Kunduz Regional Hospital, Kunduz City, Kunduz, 3501, Afghanistan' - rate limited or blocked
+  ❌ Looks like address: True, Region: True, API: 0.0
+
+[35/100] Testing: 3, City Center Road, Kunduz, 3502, Afghanistan...
+[34m2025-12-01 13:14:04.900[39m | [1m[33m    WARNING     [0m | Nominatim 403 Forbidden for address '3, City Center Road, Kunduz, 3502, Afghanistan' - rate limited or blocked
+  ❌ Looks like address: True, Region: True, API: 0.0
+
+[36/100] Testing: 48, Kandahar Road, Lashkar Gah, Helmand, 3801, Afghanistan...
+[34m2025-12-01 13:14:07.887[39m | [1m[33m    WARNING     [0m | Nominatim 403 Forbidden for address '48, Kandahar Road, Lashkar Gah, Helmand, 3801, Afghanistan' - rate limited or blocked
+  ❌ Looks like address: True, Region: True, API: 0.0
+
+[37/100] Testing: Provincial Hospital, Lashkar Gah, Helmand, 3801, Afghanistan...
+  ❌ Looks like address: True, Region: True, API: 0.0
+
+[38/100] Testing: 9, Kandahar Bazaar Road, Kandahar, 3802, Afghanistan...
+  ❌ Looks like address: True, Region: False, API: N/A
+
+[39/100] Testing: Kandahar University Campus, Kandahar, 3803, Afghanistan...
+[34m2025-12-01 13:14:11.072[39m | [1m[33m    WARNING     [0m | Nominatim 403 Forbidden for address 'Provincial Hospital, Lashkar Gah, Helmand, 3801, Afghanistan' - rate limited or blocked
+  ❌ Looks like address: True, Region: False, API: N/A
+
+[40/100] Testing: 125, Shahid Street, Kandahar, 3802, Afghanistan...
+  ❌ Looks like address: True, Region: False, API: N/A
+
+[41/100] Testing: 16, Jalalabad Main Road, Jalalabad, Nangarhar, 3101, Afghani...
+  ❌ Looks like address: True, Region: False, API: N/A
+
+[42/100] Testing: Nangarhar Provincial Hospital, Jalalabad, Nangarhar, 3101, A...
+  ❌ Looks like address: True, Region: False, API: N/A
+
+[43/100] Testing: 7, Torkham Road, Jalalabad, Nangarhar, 3102, Afghanistan...
+  ❌ Looks like address: True, Region: False, API: N/A
+
+[44/100] Testing: 44, Ghazi Road, Ghazni City, Ghazni, 2301, Afghanistan...
+  ❌ Looks like address: True, Region: True, API: 0.0
+
+[45/100] Testing: Ghazni University, Central Ghazni, Ghazni, 2301, Afghanistan...
+[34m2025-12-01 13:14:13.886[39m | [1m[33m    WARNING     [0m | Nominatim 403 Forbidden for address '44, Ghazi Road, Ghazni City, Ghazni, 2301, Afghanistan' - rate limited or blocked
+  ❌ Looks like address: True, Region: True, API: 0.0
+
+[46/100] Testing: 2, Bamiyan Road, Bamiyan, 2101, Afghanistan...
+  ❌ Looks like address: True, Region: False, API: N/A
+
+[47/100] Testing: Buddhas Viewpoint, Bamiyan Valley, Bamiyan, 2101, Afghanista...
+[34m2025-12-01 13:14:17.010[39m | [1m[33m    WARNING     [0m | Nominatim 403 Forbidden for address 'Ghazni University, Central Ghazni, Ghazni, 2301, Afghanistan' - rate limited or blocked

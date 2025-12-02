@@ -1,0 +1,6096 @@
+[
+  {
+    "type": "node",
+    "id": 1950180889,
+    "lat": 39.5240292,
+    "lon": -84.7636343,
+    "tags": {
+      "addr:city": "Oxford",
+      "addr:housenumber": "5450",
+      "addr:postcode": "45056",
+      "addr:state": "OH",
+      "addr:street": "College Corner Pike",
+      "air_conditioning": "yes",
+      "amenity": "place_of_worship",
+      "baby_feeding": "room",
+      "denomination": "pentecostal",
+      "email": "info@oxfordap.org",
+      "internet_access": "wlan",
+      "internet_access:ssid": "AP Church Guest",
+      "name": "Ambassador's Pointe Church",
+      "phone": "+1 (513) 523-6136",
+      "religion": "christian",
+      "service_times": "Sunday 10:30 AM",
+      "website": "https://oxfordap.church/",
+      "wheelchair": "limited"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2241669875,
+    "lat": -43.2969888,
+    "lon": 172.1981242,
+    "tags": {
+      "addr:city": "Oxford",
+      "addr:housenumber": "2",
+      "addr:postcode": "7430",
+      "addr:street": "Main Street",
+      "addr:suburb": "Oxford",
+      "amenity": "fuel",
+      "brand": "G.A.S.",
+      "brand:wikidata": "Q112189761",
+      "name": "G.A.S.",
+      "phone": "+64 3 312 4019",
+      "website": "https://www.gas.kiwi/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2400937918,
+    "lat": 42.8226273,
+    "lon": -83.2687217,
+    "tags": {
+      "addr:housenumber": "64",
+      "addr:postcode": "48371",
+      "addr:street": "Dennison St",
+      "building": "house"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2400938901,
+    "lat": 42.8229852,
+    "lon": -83.2694674,
+    "tags": {
+      "addr:housenumber": "75",
+      "addr:postcode": "48371",
+      "addr:street": "Dennison St",
+      "building": "house"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2537453058,
+    "lat": 42.8242338,
+    "lon": -83.2667554,
+    "tags": {
+      "addr:city": "Oxford",
+      "addr:housenumber": "22",
+      "addr:postcode": "48371",
+      "addr:state": "MI",
+      "addr:street": "West Burdick Street",
+      "government": "register_office",
+      "name": "Village of Oxford Clerk",
+      "office": "government"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2542011263,
+    "lat": 42.8247858,
+    "lon": -83.2727922,
+    "tags": {
+      "addr:city": "Oxford",
+      "addr:housenumber": "95",
+      "addr:postcode": "48370",
+      "addr:state": "MI",
+      "addr:street": "West Burdick",
+      "amenity": "fast_food",
+      "brand": "Subway",
+      "brand:wikidata": "Q244457",
+      "cuisine": "sandwich",
+      "name": "Subway",
+      "opening_hours": "09:00-22:00",
+      "phone": "+1 248-969-6920",
+      "takeaway": "yes",
+      "website": "https://restaurants.subway.com/united-states/mi/oxford/95-w-burdick"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2542020443,
+    "lat": 42.8249039,
+    "lon": -83.2721833,
+    "tags": {
+      "addr:city": "Oxford",
+      "addr:housenumber": "81",
+      "addr:postcode": "48371",
+      "addr:state": "MI",
+      "addr:street": "West Burdick Street",
+      "name": "Art & Dick's Party Store",
+      "shop": "convenience"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2723619110,
+    "lat": 39.5078259,
+    "lon": -84.7456351,
+    "tags": {
+      "addr:city": "Oxford",
+      "addr:housenumber": "212",
+      "addr:postcode": "45056",
+      "addr:street": "South College Avenue"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2769001245,
+    "lat": -43.2969529,
+    "lon": 172.1944982,
+    "tags": {
+      "addr:city": "Oxford",
+      "addr:housenumber": "4",
+      "addr:postcode": "7430",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "amenity": "fire_station",
+      "name": "Oxford Volunteer Fire Brigade",
+      "operator": "Fire and Emergency New Zealand",
+      "operator:wikidata": "Q28180518",
+      "operator:wikipedia": "en:Fire and Emergency New Zealand",
+      "phone": "+64 3 312 4005",
+      "website": "https://fireandemergency.nz/stations/show/oxford-volunteer-fire-brigade"
+    }
+  },
+  {
+    "type": "node",
+    "id": 2954417771,
+    "lat": 42.8184129,
+    "lon": -83.2593439,
+    "tags": {
+      "addr:city": "Oxford",
+      "addr:housenumber": "157",
+      "addr:postcode": "48371",
+      "addr:street": "South Washington Street",
+      "name": "Clean Cars and Credit Oxford",
+      "shop": "car",
+      "website": "https://www.cleancarsandcredit.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3123354242,
+    "lat": 42.8268526,
+    "lon": -83.2693388,
+    "tags": {
+      "addr:city": "Oxford",
+      "addr:housenumber": "33",
+      "addr:postcode": "48371",
+      "addr:state": "MI",
+      "addr:street": "Pleasant Street",
+      "amenity": "cafe",
+      "cuisine": "coffee_shop",
+      "name": "White Pine Coffee"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3394743127,
+    "lat": 39.5057365,
+    "lon": -84.7505323,
+    "tags": {
+      "addr:city": "Oxford",
+      "addr:housenumber": "540",
+      "addr:postcode": "45056",
+      "addr:state": "OH",
+      "addr:street": "South Locust Street",
+      "brand": "Dollar Tree",
+      "brand:wikidata": "Q5289230",
+      "check_date": "2024-07-11",
+      "check_date:opening_hours": "2024-07-11",
+      "name": "Dollar Tree",
+      "opening_hours": "Mo-Sa 08:00-22:00; Su 09:00-20:00",
+      "ref": "4414",
+      "shop": "variety_store",
+      "website": "https://www.dollartree.com/locations/oh/oxford/4414/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 3394743129,
+    "lat": 39.5058983,
+    "lon": -84.7505626,
+    "tags": {
+      "addr:city": "Oxford",
+      "addr:housenumber": "512",
+      "addr:postcode": "45056",
+      "addr:state": "OH",
+      "addr:street": "South Locust Street",
+      "name": "Moon Co-Op",
+      "opening_hours": "Mo-Sa 09:00-20:00,Su 10:00-18:00",
+      "organic": "yes",
+      "phone": "+1-513-280-5020",
+      "shop": "supermarket",
+      "website": "https://www.mooncoop.coop/",
+      "wheelchair": "yes"
+    }
+  },
+  {
+    "type": "node",
+    "id": 4806642206,
+    "lat": -43.2981095,
+    "lon": 172.1922317,
+    "tags": {
+      "addr:housenumber": "51",
+      "addr:street": "Main Street",
+      "addr:suburb": "Oxford",
+      "amenity": "cafe",
+      "email": "cafe51nz@gmail.com",
+      "fax": "+64 3 312 1651",
+      "name": "Café51",
+      "phone": "+64 3 312 1751",
+      "ref:linz:address_id": "152595",
+      "website": "www.cafe51.co.nz"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5069155963,
+    "lat": 39.5107813,
+    "lon": -84.7438152,
+    "tags": {
+      "addr:city": "Oxford",
+      "addr:housenumber": "9",
+      "addr:postcode": "45056",
+      "addr:state": "OH",
+      "addr:street": "North Beech Street",
+      "name": "BikeWise",
+      "phone": "+1-513-523-4880",
+      "service:bicycle:parts": "yes",
+      "service:bicycle:pump": "yes",
+      "service:bicycle:rental": "yes",
+      "service:bicycle:repair": "yes",
+      "service:bicycle:retail": "yes",
+      "service:bicycle:tools": "yes",
+      "shop": "bicycle",
+      "website": "https://www.bikewiseoxford.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5311506088,
+    "lat": -43.2983166,
+    "lon": 172.1889196,
+    "tags": {
+      "addr:housenumber": "76",
+      "addr:street": "Main Street",
+      "amenity": "restaurant",
+      "cuisine": "indian",
+      "name": "Hindikitchen"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5502514875,
+    "lat": -43.2977936,
+    "lon": 172.1924583,
+    "tags": {
+      "addr:housenumber": "46",
+      "addr:street": "Main Street",
+      "amenity": "bar",
+      "name": "Black Beech Wine Bar",
+      "opening_hours": "We, Th 16:00-21:00; Fr, Sa 16:00-22:00; Su 16:00-21:00",
+      "phone": "+64 3 312 3338",
+      "website": "https://www.blackbeechbar.com/"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594415,
+    "lat": -43.2980276,
+    "lon": 172.1867379,
+    "tags": {
+      "addr:housenumber": "88A",
+      "addr:street": "Main Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "2036753"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594416,
+    "lat": -43.2985624,
+    "lon": 172.1868765,
+    "tags": {
+      "addr:housenumber": "88",
+      "addr:street": "Main Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152653"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594419,
+    "lat": -43.3000373,
+    "lon": 172.1743544,
+    "tags": {
+      "addr:housenumber": "1",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1575336"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594420,
+    "lat": -43.2989307,
+    "lon": 172.1698425,
+    "tags": {
+      "addr:housenumber": "49",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1573988"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594621,
+    "lat": -43.299037,
+    "lon": 172.1703228,
+    "tags": {
+      "addr:housenumber": "45",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1573987"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594622,
+    "lat": -43.2999043,
+    "lon": 172.1678709,
+    "tags": {
+      "addr:housenumber": "49E",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1436029"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594623,
+    "lat": -43.3000449,
+    "lon": 172.1684134,
+    "tags": {
+      "addr:housenumber": "49C",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1436024"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594624,
+    "lat": -43.2996332,
+    "lon": 172.1689722,
+    "tags": {
+      "addr:housenumber": "49A",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1436022"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594625,
+    "lat": -43.2994846,
+    "lon": 172.1725283,
+    "tags": {
+      "addr:housenumber": "25B",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1357035"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594626,
+    "lat": -43.2995206,
+    "lon": 172.1726387,
+    "tags": {
+      "addr:housenumber": "23",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1022440"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594627,
+    "lat": -43.2995981,
+    "lon": 172.1728728,
+    "tags": {
+      "addr:housenumber": "21",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1022439"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594628,
+    "lat": -43.3047325,
+    "lon": 172.1838974,
+    "tags": {
+      "addr:housename": "Matapuna",
+      "addr:housenumber": "81",
+      "addr:street": "Burnt Hill Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "621724",
+      "ref:linz:topo50_id": "5399426"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594629,
+    "lat": -43.2997997,
+    "lon": 172.1751142,
+    "tags": {
+      "addr:housenumber": "6",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152262"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594630,
+    "lat": -43.2987031,
+    "lon": 172.1691011,
+    "tags": {
+      "addr:housenumber": "57",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152115"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594631,
+    "lat": -43.2988125,
+    "lon": 172.1695327,
+    "tags": {
+      "addr:housenumber": "53",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152114"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594632,
+    "lat": -43.2979555,
+    "lon": 172.1700183,
+    "tags": {
+      "addr:housenumber": "50",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152113"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594633,
+    "lat": -43.2985478,
+    "lon": 172.1697902,
+    "tags": {
+      "addr:housenumber": "48",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152112"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594634,
+    "lat": -43.2990877,
+    "lon": 172.170672,
+    "tags": {
+      "addr:housenumber": "43",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152111"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594635,
+    "lat": -43.2991262,
+    "lon": 172.1709253,
+    "tags": {
+      "addr:housenumber": "41",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152110"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594636,
+    "lat": -43.2981723,
+    "lon": 172.1710449,
+    "tags": {
+      "addr:housenumber": "40",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152109"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594637,
+    "lat": -43.2993661,
+    "lon": 172.1710164,
+    "tags": {
+      "addr:housenumber": "39",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152108"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594638,
+    "lat": -43.299362,
+    "lon": 172.1708846,
+    "tags": {
+      "addr:housenumber": "39A",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152107"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594639,
+    "lat": -43.2988058,
+    "lon": 172.1709734,
+    "tags": {
+      "addr:housenumber": "38",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152106"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594640,
+    "lat": -43.2991781,
+    "lon": 172.1711629,
+    "tags": {
+      "addr:housenumber": "37",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152105"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594641,
+    "lat": -43.2990518,
+    "lon": 172.1719176,
+    "tags": {
+      "addr:housenumber": "36",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152104"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594642,
+    "lat": -43.29941,
+    "lon": 172.1713878,
+    "tags": {
+      "addr:housenumber": "35",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152103"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594643,
+    "lat": -43.299401,
+    "lon": 172.171255,
+    "tags": {
+      "addr:housenumber": "35A",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152102"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594644,
+    "lat": -43.2984708,
+    "lon": 172.1721036,
+    "tags": {
+      "addr:housenumber": "34A",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152101"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594645,
+    "lat": -43.2992825,
+    "lon": 172.171614,
+    "tags": {
+      "addr:housenumber": "33",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152100"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594646,
+    "lat": -43.2994265,
+    "lon": 172.1715161,
+    "tags": {
+      "addr:housenumber": "33A",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152099"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594647,
+    "lat": -43.2993359,
+    "lon": 172.1718763,
+    "tags": {
+      "addr:housenumber": "31",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152098"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594648,
+    "lat": -43.2994498,
+    "lon": 172.1717719,
+    "tags": {
+      "addr:housenumber": "31B",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152097"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594649,
+    "lat": -43.2994591,
+    "lon": 172.1718939,
+    "tags": {
+      "addr:housenumber": "31A",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152096"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594650,
+    "lat": -43.2991861,
+    "lon": 172.1725161,
+    "tags": {
+      "addr:housenumber": "30",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152095"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594651,
+    "lat": -43.2994893,
+    "lon": 172.1721433,
+    "tags": {
+      "addr:housenumber": "29",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152094"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594652,
+    "lat": -43.2994728,
+    "lon": 172.1720145,
+    "tags": {
+      "addr:housenumber": "29A",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152093"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594653,
+    "lat": -43.2992925,
+    "lon": 172.1728752,
+    "tags": {
+      "addr:housenumber": "28",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152092"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594654,
+    "lat": -43.2994348,
+    "lon": 172.1722931,
+    "tags": {
+      "addr:housenumber": "27",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152091"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594655,
+    "lat": -43.2995108,
+    "lon": 172.1722613,
+    "tags": {
+      "addr:housenumber": "27A",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152090"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594656,
+    "lat": -43.2993421,
+    "lon": 172.1730674,
+    "tags": {
+      "addr:housenumber": "26",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152089"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594657,
+    "lat": -43.299527,
+    "lon": 172.1725119,
+    "tags": {
+      "addr:housenumber": "25",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152088"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594658,
+    "lat": -43.299381,
+    "lon": 172.1732645,
+    "tags": {
+      "addr:housenumber": "24",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152087"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594659,
+    "lat": -43.2994228,
+    "lon": 172.1734547,
+    "tags": {
+      "addr:housenumber": "22",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152086"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594660,
+    "lat": -43.2994653,
+    "lon": 172.1736386,
+    "tags": {
+      "addr:housenumber": "20",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152085"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594661,
+    "lat": -43.2995251,
+    "lon": 172.1738281,
+    "tags": {
+      "addr:housenumber": "18",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152084"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594662,
+    "lat": -43.2996876,
+    "lon": 172.1732264,
+    "tags": {
+      "addr:housenumber": "17",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152083"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594663,
+    "lat": -43.2996655,
+    "lon": 172.1731124,
+    "tags": {
+      "addr:housenumber": "19",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152082"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594664,
+    "lat": -43.2995695,
+    "lon": 172.1740174,
+    "tags": {
+      "addr:housenumber": "16",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152081"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594665,
+    "lat": -43.299748,
+    "lon": 172.1734778,
+    "tags": {
+      "addr:housenumber": "15A",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152080"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594666,
+    "lat": -43.2997217,
+    "lon": 172.1733508,
+    "tags": {
+      "addr:housenumber": "15B",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152079"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594667,
+    "lat": -43.2996069,
+    "lon": 172.1742038,
+    "tags": {
+      "addr:housenumber": "14",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152078"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594668,
+    "lat": -43.2998007,
+    "lon": 172.1737045,
+    "tags": {
+      "addr:housenumber": "13",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152077"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594669,
+    "lat": -43.2996522,
+    "lon": 172.1743926,
+    "tags": {
+      "addr:housenumber": "12",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152076"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594670,
+    "lat": -43.3007571,
+    "lon": 172.1735507,
+    "tags": {
+      "addr:housenumber": "1230",
+      "addr:street": "Depot Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152075"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594671,
+    "lat": -43.3004588,
+    "lon": 172.1733289,
+    "tags": {
+      "addr:housenumber": "1227",
+      "addr:street": "Depot Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152074"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594672,
+    "lat": -43.3005158,
+    "lon": 172.1729073,
+    "tags": {
+      "addr:housenumber": "1223",
+      "addr:street": "Depot Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152073"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594673,
+    "lat": -43.3008403,
+    "lon": 172.1728923,
+    "tags": {
+      "addr:housenumber": "1222",
+      "addr:street": "Depot Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152072"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594674,
+    "lat": -43.3009273,
+    "lon": 172.172222,
+    "tags": {
+      "addr:housenumber": "1220",
+      "addr:street": "Depot Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152071"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594675,
+    "lat": -43.3005594,
+    "lon": 172.1723628,
+    "tags": {
+      "addr:housenumber": "1219",
+      "addr:street": "Depot Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152070"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594676,
+    "lat": -43.3006434,
+    "lon": 172.1718077,
+    "tags": {
+      "addr:housenumber": "1215",
+      "addr:street": "Depot Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152069"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594677,
+    "lat": -43.3010143,
+    "lon": 172.1716543,
+    "tags": {
+      "addr:housenumber": "1214",
+      "addr:street": "Depot Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152068"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594678,
+    "lat": -43.3007297,
+    "lon": 172.171224,
+    "tags": {
+      "addr:housenumber": "1209",
+      "addr:street": "Depot Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152067"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594679,
+    "lat": -43.3010813,
+    "lon": 172.171097,
+    "tags": {
+      "addr:housenumber": "1208",
+      "addr:street": "Depot Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152066"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594680,
+    "lat": -43.3007984,
+    "lon": 172.1706575,
+    "tags": {
+      "addr:housenumber": "1205",
+      "addr:street": "Depot Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152065"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594681,
+    "lat": -43.3011068,
+    "lon": 172.1705347,
+    "tags": {
+      "addr:housenumber": "1204",
+      "addr:street": "Depot Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152064"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594682,
+    "lat": -43.3012039,
+    "lon": 172.1701976,
+    "tags": {
+      "addr:housenumber": "1202",
+      "addr:street": "Depot Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152063"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594683,
+    "lat": -43.30085,
+    "lon": 172.1701298,
+    "tags": {
+      "addr:housenumber": "1201",
+      "addr:street": "Depot Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152062"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594684,
+    "lat": -43.3012407,
+    "lon": 172.1700547,
+    "tags": {
+      "addr:housenumber": "1198",
+      "addr:street": "Depot Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152061"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594685,
+    "lat": -43.3009433,
+    "lon": 172.1695551,
+    "tags": {
+      "addr:housenumber": "1197",
+      "addr:street": "Depot Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152060"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594686,
+    "lat": -43.3009321,
+    "lon": 172.1691977,
+    "tags": {
+      "addr:housenumber": "1195",
+      "addr:street": "Depot Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152059"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594687,
+    "lat": -43.2999973,
+    "lon": 172.1653743,
+    "tags": {
+      "addr:housenumber": "1195K",
+      "addr:street": "Depot Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152058"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594688,
+    "lat": -43.3000663,
+    "lon": 172.1658691,
+    "tags": {
+      "addr:housenumber": "1195J",
+      "addr:street": "Depot Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152057"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594689,
+    "lat": -43.301085,
+    "lon": 172.1688823,
+    "tags": {
+      "addr:housenumber": "1193",
+      "addr:street": "Depot Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152056"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594690,
+    "lat": -43.3018699,
+    "lon": 172.168285,
+    "tags": {
+      "addr:housenumber": "1166",
+      "addr:street": "Depot Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152055"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594691,
+    "lat": -43.3020207,
+    "lon": 172.1665346,
+    "tags": {
+      "addr:housenumber": "1165",
+      "addr:street": "Depot Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152054"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594692,
+    "lat": -43.3029615,
+    "lon": 172.1659555,
+    "tags": {
+      "addr:housenumber": "1163",
+      "addr:street": "Depot Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152053"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594693,
+    "lat": -43.3029547,
+    "lon": 172.1667689,
+    "tags": {
+      "addr:housenumber": "1162",
+      "addr:street": "Depot Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152052"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594694,
+    "lat": -43.303307,
+    "lon": 172.166263,
+    "tags": {
+      "addr:housenumber": "1158",
+      "addr:street": "Depot Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152051"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594695,
+    "lat": -43.3032545,
+    "lon": 172.1657252,
+    "tags": {
+      "addr:housenumber": "1157",
+      "addr:street": "Depot Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152050"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594696,
+    "lat": -43.2999427,
+    "lon": 172.1643569,
+    "tags": {
+      "addr:housenumber": "1195M",
+      "addr:street": "Depot Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "151992"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594697,
+    "lat": -43.2999778,
+    "lon": 172.164873,
+    "tags": {
+      "addr:housenumber": "1195L",
+      "addr:street": "Depot Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "151991"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594699,
+    "lat": -43.2945399,
+    "lon": 172.1877066,
+    "tags": {
+      "addr:housenumber": "52",
+      "addr:street": "Bay Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1634670"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594700,
+    "lat": -43.3015431,
+    "lon": 172.1810753,
+    "tags": {
+      "addr:housenumber": "9",
+      "addr:street": "Cheapside Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152270"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594701,
+    "lat": -43.2959493,
+    "lon": 172.1882134,
+    "tags": {
+      "addr:housenumber": "28",
+      "addr:street": "Bay Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "2102186"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594702,
+    "lat": -43.3009235,
+    "lon": 172.1809301,
+    "tags": {
+      "addr:housenumber": "5",
+      "addr:street": "Cheapside Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "2101505"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594703,
+    "lat": -43.2768841,
+    "lon": 172.1946718,
+    "tags": {
+      "addr:housenumber": "77",
+      "addr:street": "Sales Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152308"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594704,
+    "lat": -43.2772153,
+    "lon": 172.1943858,
+    "tags": {
+      "addr:housenumber": "74",
+      "addr:street": "Ashley Gorge Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152307"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594705,
+    "lat": -43.2766434,
+    "lon": 172.1945193,
+    "tags": {
+      "addr:housenumber": "83",
+      "addr:street": "Sales Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "2095230"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594706,
+    "lat": -43.3004868,
+    "lon": 172.1886035,
+    "tags": {
+      "addr:housenumber": "15",
+      "addr:street": "Burnt Hill Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1543262"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594707,
+    "lat": -43.3005961,
+    "lon": 172.1882382,
+    "tags": {
+      "addr:housenumber": "13",
+      "addr:street": "Burnt Hill Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1543261"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594708,
+    "lat": -43.2991136,
+    "lon": 172.189262,
+    "tags": {
+      "addr:housenumber": "5",
+      "addr:street": "Coney Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "906837"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594709,
+    "lat": -43.2990305,
+    "lon": 172.1858594,
+    "tags": {
+      "addr:housenumber": "97",
+      "addr:street": "Main Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152668"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594710,
+    "lat": -43.2989196,
+    "lon": 172.1866877,
+    "tags": {
+      "addr:housenumber": "89",
+      "addr:street": "Main Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152654"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594711,
+    "lat": -43.2985703,
+    "lon": 172.1891806,
+    "tags": {
+      "addr:housenumber": "75",
+      "addr:street": "Main Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152631"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594712,
+    "lat": -43.298532,
+    "lon": 172.1895918,
+    "tags": {
+      "addr:housenumber": "71",
+      "addr:street": "Main Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152628"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594713,
+    "lat": -43.2997352,
+    "lon": 172.1871913,
+    "tags": {
+      "addr:housenumber": "6",
+      "addr:street": "Burnt Hill Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152618"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594714,
+    "lat": -43.2996972,
+    "lon": 172.1859783,
+    "tags": {
+      "addr:housenumber": "3",
+      "addr:street": "Harewood Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152555"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594715,
+    "lat": -43.2997293,
+    "lon": 172.1860365,
+    "tags": {
+      "addr:housenumber": "3B",
+      "addr:street": "Harewood Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152554"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594716,
+    "lat": -43.3001764,
+    "lon": 172.1868931,
+    "tags": {
+      "addr:housenumber": "11",
+      "addr:street": "Harewood Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152445"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594717,
+    "lat": -43.2991093,
+    "lon": 172.1852059,
+    "tags": {
+      "addr:housenumber": "103",
+      "addr:street": "Main Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152434"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594718,
+    "lat": -43.2990903,
+    "lon": 172.1854548,
+    "tags": {
+      "addr:housenumber": "101",
+      "addr:street": "Main Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152432"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594720,
+    "lat": -43.2970624,
+    "lon": 172.1921216,
+    "tags": {
+      "addr:housenumber": "10/5",
+      "addr:street": "Meyer Place",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1759819"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594722,
+    "lat": -43.2982401,
+    "lon": 172.1891352,
+    "tags": {
+      "addr:housenumber": "74",
+      "addr:street": "Main Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1690820"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594725,
+    "lat": -43.2998751,
+    "lon": 172.1895405,
+    "tags": {
+      "addr:housenumber": "7G",
+      "addr:street": "Olivea Place",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1543243"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594726,
+    "lat": -43.2996862,
+    "lon": 172.1894901,
+    "tags": {
+      "addr:housenumber": "7F",
+      "addr:street": "Olivea Place",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1543242"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594727,
+    "lat": -43.2913635,
+    "lon": 172.1885772,
+    "tags": {
+      "addr:housenumber": "59",
+      "addr:street": "Church Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1533665"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594731,
+    "lat": -43.3002374,
+    "lon": 172.1893632,
+    "tags": {
+      "addr:housenumber": "4",
+      "addr:street": "Olivea Place",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1378764"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594732,
+    "lat": -43.3001537,
+    "lon": 172.1890367,
+    "tags": {
+      "addr:housenumber": "5",
+      "addr:street": "Olivea Place",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1378763"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594733,
+    "lat": -43.2986266,
+    "lon": 172.1900785,
+    "tags": {
+      "addr:housenumber": "2A",
+      "addr:street": "Park Avenue",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1378255"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594743,
+    "lat": -43.3014336,
+    "lon": 172.1899018,
+    "tags": {
+      "addr:housenumber": "9",
+      "addr:street": "Matai Place",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152674"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594744,
+    "lat": -43.3012793,
+    "lon": 172.1899241,
+    "tags": {
+      "addr:housenumber": "8",
+      "addr:street": "Matai Place",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152657"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594745,
+    "lat": -43.298287,
+    "lon": 172.1888892,
+    "tags": {
+      "addr:housenumber": "76",
+      "addr:street": "Main Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152632"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594746,
+    "lat": -43.2981537,
+    "lon": 172.1898577,
+    "tags": {
+      "addr:housenumber": "70",
+      "addr:street": "Main Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152627"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594747,
+    "lat": -43.2992128,
+    "lon": 172.1901674,
+    "tags": {
+      "addr:housenumber": "6",
+      "addr:street": "Park Avenue",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152622"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594748,
+    "lat": -43.3008994,
+    "lon": 172.1896672,
+    "tags": {
+      "addr:housenumber": "5",
+      "addr:street": "Matai Place",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152607"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594749,
+    "lat": -43.2973901,
+    "lon": 172.1939536,
+    "tags": {
+      "addr:housenumber": "5B",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152603"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594750,
+    "lat": -43.2978247,
+    "lon": 172.1922749,
+    "tags": {
+      "addr:housenumber": "48",
+      "addr:street": "Main Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152577"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594751,
+    "lat": -43.2976899,
+    "lon": 172.1932057,
+    "tags": {
+      "addr:housenumber": "42",
+      "addr:street": "Main Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152569"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594752,
+    "lat": -43.3017362,
+    "lon": 172.1908562,
+    "tags": {
+      "addr:housenumber": "34",
+      "addr:street": "Park Avenue",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152540"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594753,
+    "lat": -43.2979191,
+    "lon": 172.1885538,
+    "tags": {
+      "addr:housenumber": "2",
+      "addr:street": "Bay Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152527"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594754,
+    "lat": -43.3021725,
+    "lon": 172.1905322,
+    "tags": {
+      "addr:housenumber": "29",
+      "addr:street": "Harewood Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152517"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594755,
+    "lat": -43.3002804,
+    "lon": 172.1904646,
+    "tags": {
+      "addr:housenumber": "18",
+      "addr:street": "Park Avenue",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152479"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594756,
+    "lat": -43.2969567,
+    "lon": 172.1882988,
+    "tags": {
+      "addr:housenumber": "14",
+      "addr:street": "Bay Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152463"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594757,
+    "lat": -43.2971158,
+    "lon": 172.1883331,
+    "tags": {
+      "addr:housenumber": "12",
+      "addr:street": "Bay Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152452"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594758,
+    "lat": -43.299571,
+    "lon": 172.1902688,
+    "tags": {
+      "addr:housenumber": "10",
+      "addr:street": "Park Avenue",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152440"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594759,
+    "lat": -43.290842,
+    "lon": 172.1924571,
+    "tags": {
+      "addr:housenumber": "71",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152420"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594760,
+    "lat": -43.2913201,
+    "lon": 172.1925851,
+    "tags": {
+      "addr:housenumber": "65",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152411"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594761,
+    "lat": -43.2915591,
+    "lon": 172.192647,
+    "tags": {
+      "addr:housenumber": "61",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152401"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594762,
+    "lat": -43.2917073,
+    "lon": 172.192684,
+    "tags": {
+      "addr:housenumber": "57",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152394"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594763,
+    "lat": -43.2910112,
+    "lon": 172.1890125,
+    "tags": {
+      "addr:housenumber": "55",
+      "addr:street": "Church Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152392"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594764,
+    "lat": -43.2922492,
+    "lon": 172.1928269,
+    "tags": {
+      "addr:housenumber": "51",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152383"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594765,
+    "lat": -43.290896,
+    "lon": 172.1906006,
+    "tags": {
+      "addr:housenumber": "43",
+      "addr:street": "Church Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152367"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594766,
+    "lat": -43.2930104,
+    "lon": 172.1929935,
+    "tags": {
+      "addr:housenumber": "35A",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152347"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594767,
+    "lat": -43.2933369,
+    "lon": 172.1925022,
+    "tags": {
+      "addr:housenumber": "31B",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152340"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594768,
+    "lat": -43.294326,
+    "lon": 172.1926665,
+    "tags": {
+      "addr:housenumber": "15",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152319"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594769,
+    "lat": -43.3010271,
+    "lon": 172.1906662,
+    "tags": {
+      "addr:housenumber": "26",
+      "addr:street": "Park Avenue",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152512"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594770,
+    "lat": -43.2913834,
+    "lon": 172.194398,
+    "tags": {
+      "addr:housenumber": "187A",
+      "addr:street": "High Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1750969"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594771,
+    "lat": -43.2956871,
+    "lon": 172.1942462,
+    "tags": {
+      "addr:housenumber": "27",
+      "addr:street": "Transport Lane",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1707833"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594772,
+    "lat": -43.2956451,
+    "lon": 172.1945336,
+    "tags": {
+      "addr:housenumber": "25",
+      "addr:street": "Transport Lane",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1707832"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594773,
+    "lat": -43.2955304,
+    "lon": 172.1953055,
+    "tags": {
+      "addr:housenumber": "19",
+      "addr:street": "Transport Lane",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1707829"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594774,
+    "lat": -43.2952875,
+    "lon": 172.1970673,
+    "tags": {
+      "addr:housenumber": "7",
+      "addr:street": "Transport Lane",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1707823"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594775,
+    "lat": -43.2952283,
+    "lon": 172.197498,
+    "tags": {
+      "addr:housenumber": "3",
+      "addr:street": "Transport Lane",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1707821"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594776,
+    "lat": -43.2913286,
+    "lon": 172.1953253,
+    "tags": {
+      "addr:housenumber": "187E",
+      "addr:street": "High Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1656350"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594777,
+    "lat": -43.2913207,
+    "lon": 172.1955496,
+    "tags": {
+      "addr:housenumber": "187F",
+      "addr:street": "High Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1656349"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594778,
+    "lat": -43.294243,
+    "lon": 172.1968721,
+    "tags": {
+      "addr:housenumber": "159",
+      "addr:street": "High Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1642671"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594779,
+    "lat": -43.2961498,
+    "lon": 172.1949413,
+    "tags": {
+      "addr:housenumber": "13",
+      "addr:street": "Stonebridge Lane",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1621487"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594780,
+    "lat": -43.29627,
+    "lon": 172.1952313,
+    "tags": {
+      "addr:housenumber": "10",
+      "addr:street": "Stonebridge Lane",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1621484"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594781,
+    "lat": -43.2963557,
+    "lon": 172.1959058,
+    "tags": {
+      "addr:housenumber": "8",
+      "addr:street": "Stonebridge Lane",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1621482"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594782,
+    "lat": -43.2959581,
+    "lon": 172.1960775,
+    "tags": {
+      "addr:housenumber": "3",
+      "addr:street": "Stonebridge Lane",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1621477"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594783,
+    "lat": -43.2952474,
+    "lon": 172.1954098,
+    "tags": {
+      "addr:housenumber": "8B",
+      "addr:street": "Transport Lane",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1621475"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594784,
+    "lat": -43.2910354,
+    "lon": 172.1966606,
+    "tags": {
+      "addr:housenumber": "189",
+      "addr:street": "High Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1321748"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594785,
+    "lat": -43.2909505,
+    "lon": 172.1966496,
+    "tags": {
+      "addr:housenumber": "189A",
+      "addr:street": "High Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1321747"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594786,
+    "lat": -43.2933835,
+    "lon": 172.1947334,
+    "tags": {
+      "addr:housenumber": "7A",
+      "addr:street": "Knight Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "951840"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594787,
+    "lat": -43.2926836,
+    "lon": 172.1962296,
+    "tags": {
+      "addr:housenumber": "20",
+      "addr:street": "Knight Street East",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "395361"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594788,
+    "lat": -43.2974203,
+    "lon": 172.1951923,
+    "tags": {
+      "addr:housenumber": "28",
+      "addr:street": "Main Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152931"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594789,
+    "lat": -43.2973675,
+    "lon": 172.1956793,
+    "tags": {
+      "addr:housenumber": "22B",
+      "addr:street": "Main Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152923"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594790,
+    "lat": -43.2973068,
+    "lon": 172.1961568,
+    "tags": {
+      "addr:housenumber": "18B",
+      "addr:street": "Main Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152915"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594791,
+    "lat": -43.2957415,
+    "lon": 172.1978806,
+    "tags": {
+      "addr:housenumber": "143",
+      "addr:street": "High Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152903"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594792,
+    "lat": -43.2955851,
+    "lon": 172.1972181,
+    "tags": {
+      "addr:housenumber": "143A",
+      "addr:street": "High Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152902"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594793,
+    "lat": -43.2959128,
+    "lon": 172.1979216,
+    "tags": {
+      "addr:housenumber": "141",
+      "addr:street": "High Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152901"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594794,
+    "lat": -43.2962572,
+    "lon": 172.1979008,
+    "tags": {
+      "addr:housenumber": "137",
+      "addr:street": "High Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152898"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594795,
+    "lat": -43.2925517,
+    "lon": 172.1970469,
+    "tags": {
+      "addr:housenumber": "173",
+      "addr:street": "High Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152837"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594796,
+    "lat": -43.2930476,
+    "lon": 172.1971659,
+    "tags": {
+      "addr:housenumber": "169",
+      "addr:street": "High Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152834"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594797,
+    "lat": -43.2935121,
+    "lon": 172.1972886,
+    "tags": {
+      "addr:housenumber": "165",
+      "addr:street": "High Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152829"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594798,
+    "lat": -43.294673,
+    "lon": 172.1950423,
+    "tags": {
+      "addr:housenumber": "12",
+      "addr:street": "Transport Lane",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152820"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594799,
+    "lat": -43.2953123,
+    "lon": 172.1946825,
+    "tags": {
+      "addr:housenumber": "18",
+      "addr:street": "Transport Lane",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152481"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594800,
+    "lat": -43.2928851,
+    "lon": 172.1947959,
+    "tags": {
+      "addr:housenumber": "9",
+      "addr:street": "Knight Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152430"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594801,
+    "lat": -43.2928276,
+    "lon": 172.1938842,
+    "tags": {
+      "addr:housenumber": "4",
+      "addr:street": "Knight Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152380"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594802,
+    "lat": -43.2932562,
+    "lon": 172.1934883,
+    "tags": {
+      "addr:housenumber": "42",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152365"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594803,
+    "lat": -43.2907802,
+    "lon": 172.1930696,
+    "tags": {
+      "addr:housenumber": "29",
+      "addr:street": "Church Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152336"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594804,
+    "lat": -43.2921041,
+    "lon": 172.1944944,
+    "tags": {
+      "addr:housenumber": "10",
+      "addr:street": "Knight Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152315"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594805,
+    "lat": -43.2972736,
+    "lon": 172.1964002,
+    "tags": {
+      "addr:housenumber": "16",
+      "addr:street": "Main Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152912"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594806,
+    "lat": -43.300229,
+    "lon": 172.1885173,
+    "tags": {
+      "addr:housenumber": "9C",
+      "addr:street": "Burnt Hill Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1644773"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594807,
+    "lat": -43.3002397,
+    "lon": 172.1882174,
+    "tags": {
+      "addr:housenumber": "9B",
+      "addr:street": "Burnt Hill Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1644772"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594808,
+    "lat": -43.2990034,
+    "lon": 172.1860704,
+    "tags": {
+      "addr:housenumber": "95",
+      "addr:street": "Main Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152666"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594809,
+    "lat": -43.3000016,
+    "lon": 172.1872576,
+    "tags": {
+      "addr:housenumber": "8",
+      "addr:street": "Burnt Hill Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152655"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594810,
+    "lat": -43.2988083,
+    "lon": 172.1874753,
+    "tags": {
+      "addr:housenumber": "85",
+      "addr:street": "Main Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152651"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594811,
+    "lat": -43.2987638,
+    "lon": 172.1878105,
+    "tags": {
+      "addr:housenumber": "83",
+      "addr:street": "Main Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152649"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594812,
+    "lat": -43.298717,
+    "lon": 172.188125,
+    "tags": {
+      "addr:housenumber": "81",
+      "addr:street": "Main Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152647"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594813,
+    "lat": -43.2999144,
+    "lon": 172.1864236,
+    "tags": {
+      "addr:housenumber": "7",
+      "addr:street": "Harewood Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152636"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594814,
+    "lat": -43.2985006,
+    "lon": 172.1897786,
+    "tags": {
+      "addr:housenumber": "69",
+      "addr:street": "Main Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152617"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594819,
+    "lat": -43.2969752,
+    "lon": 172.1919551,
+    "tags": {
+      "addr:housenumber": "13/5",
+      "addr:street": "Meyer Place",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1759822"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623594820,
+    "lat": -43.2970076,
+    "lon": 172.1920178,
+    "tags": {
+      "addr:housenumber": "12/5",
+      "addr:street": "Meyer Place",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1759821"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595021,
+    "lat": -43.2970867,
+    "lon": 172.19217,
+    "tags": {
+      "addr:housenumber": "9/5",
+      "addr:street": "Meyer Place",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1759818"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595022,
+    "lat": -43.2971669,
+    "lon": 172.1921963,
+    "tags": {
+      "addr:housenumber": "7/5",
+      "addr:street": "Meyer Place",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1759816"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595023,
+    "lat": -43.2972832,
+    "lon": 172.1922277,
+    "tags": {
+      "addr:housenumber": "4/5",
+      "addr:street": "Meyer Place",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1759813"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595028,
+    "lat": -43.2995281,
+    "lon": 172.1889407,
+    "tags": {
+      "addr:housenumber": "7B",
+      "addr:street": "Olivea Place",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1543238"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595033,
+    "lat": -43.3003759,
+    "lon": 172.1894558,
+    "tags": {
+      "addr:housenumber": "2",
+      "addr:street": "Olivea Place",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1378766"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595034,
+    "lat": -43.2916214,
+    "lon": 172.186868,
+    "tags": {
+      "addr:housenumber": "124",
+      "addr:street": "Bay Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1318305"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595035,
+    "lat": -43.2921177,
+    "lon": 172.1870075,
+    "tags": {
+      "addr:housenumber": "70",
+      "addr:street": "Bay Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1312484"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595036,
+    "lat": -43.295637,
+    "lon": 172.1899004,
+    "tags": {
+      "addr:housenumber": "4",
+      "addr:street": "Showgate Drive",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1301708"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595045,
+    "lat": -43.2974689,
+    "lon": 172.1884274,
+    "tags": {
+      "addr:housenumber": "8",
+      "addr:street": "Bay Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152660"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595046,
+    "lat": -43.2965976,
+    "lon": 172.1939633,
+    "tags": {
+      "addr:housenumber": "7",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152642"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595047,
+    "lat": -43.2978079,
+    "lon": 172.1924187,
+    "tags": {
+      "addr:housenumber": "46",
+      "addr:street": "Main Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152575"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595048,
+    "lat": -43.297738,
+    "lon": 172.1929071,
+    "tags": {
+      "addr:housenumber": "44",
+      "addr:street": "Main Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152572"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595049,
+    "lat": -43.2976621,
+    "lon": 172.1934483,
+    "tags": {
+      "addr:housenumber": "40",
+      "addr:street": "Main Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152566"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595050,
+    "lat": -43.2965209,
+    "lon": 172.1890939,
+    "tags": {
+      "addr:housenumber": "3",
+      "addr:street": "Dohrmans Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152559"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595051,
+    "lat": -43.3022663,
+    "lon": 172.1909914,
+    "tags": {
+      "addr:housenumber": "38",
+      "addr:street": "Park Avenue",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152547"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595052,
+    "lat": -43.3012275,
+    "lon": 172.1894902,
+    "tags": {
+      "addr:housenumber": "2",
+      "addr:street": "Matai Place",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152520"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595053,
+    "lat": -43.3019809,
+    "lon": 172.1902034,
+    "tags": {
+      "addr:housenumber": "27",
+      "addr:street": "Harewood Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152514"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595054,
+    "lat": -43.3010577,
+    "lon": 172.1885152,
+    "tags": {
+      "addr:housenumber": "23",
+      "addr:street": "Harewood Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152507"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595055,
+    "lat": -43.3004458,
+    "lon": 172.1905266,
+    "tags": {
+      "addr:housenumber": "20",
+      "addr:street": "Park Avenue",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152495"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595056,
+    "lat": -43.2966146,
+    "lon": 172.1881801,
+    "tags": {
+      "addr:housenumber": "16",
+      "addr:street": "Bay Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152473"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595057,
+    "lat": -43.2971907,
+    "lon": 172.1925734,
+    "tags": {
+      "addr:housenumber": "16",
+      "addr:street": "Meyer Place",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152471"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595058,
+    "lat": -43.2968373,
+    "lon": 172.1924128,
+    "tags": {
+      "addr:housenumber": "14",
+      "addr:street": "Meyer Place",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152460"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595059,
+    "lat": -43.2997453,
+    "lon": 172.1903118,
+    "tags": {
+      "addr:housenumber": "12",
+      "addr:street": "Park Avenue",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152451"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595060,
+    "lat": -43.2912384,
+    "lon": 172.1877072,
+    "tags": {
+      "addr:housenumber": "63",
+      "addr:street": "Church Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152408"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595061,
+    "lat": -43.2910404,
+    "lon": 172.188764,
+    "tags": {
+      "addr:housenumber": "57",
+      "addr:street": "Church Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152395"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595062,
+    "lat": -43.2912613,
+    "lon": 172.1898825,
+    "tags": {
+      "addr:housenumber": "49",
+      "addr:street": "Church Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152377"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595063,
+    "lat": -43.2924464,
+    "lon": 172.192885,
+    "tags": {
+      "addr:housenumber": "45",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152370"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595064,
+    "lat": -43.2926031,
+    "lon": 172.1929161,
+    "tags": {
+      "addr:housenumber": "43",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152366"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595065,
+    "lat": -43.2927549,
+    "lon": 172.1923669,
+    "tags": {
+      "addr:housenumber": "41",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152362"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595066,
+    "lat": -43.290857,
+    "lon": 172.1914275,
+    "tags": {
+      "addr:housenumber": "37",
+      "addr:street": "Church Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152353"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595067,
+    "lat": -43.2933835,
+    "lon": 172.1925477,
+    "tags": {
+      "addr:housenumber": "27",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152333"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595068,
+    "lat": -43.2940024,
+    "lon": 172.1932551,
+    "tags": {
+      "addr:housenumber": "17",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152322"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595069,
+    "lat": -43.2961811,
+    "lon": 172.1881121,
+    "tags": {
+      "addr:housenumber": "26",
+      "addr:street": "Bay Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1301707"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595071,
+    "lat": -43.2959366,
+    "lon": 172.1975812,
+    "tags": {
+      "addr:housenumber": "141A",
+      "addr:street": "High Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1939508"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595072,
+    "lat": -43.2913697,
+    "lon": 172.1946413,
+    "tags": {
+      "addr:housenumber": "187B",
+      "addr:street": "High Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1750970"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595073,
+    "lat": -43.2955015,
+    "lon": 172.1955372,
+    "tags": {
+      "addr:housenumber": "17",
+      "addr:street": "Transport Lane",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1707828"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595074,
+    "lat": -43.2954406,
+    "lon": 172.1960192,
+    "tags": {
+      "addr:housenumber": "15",
+      "addr:street": "Transport Lane",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1707827"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595075,
+    "lat": -43.2952083,
+    "lon": 172.1977048,
+    "tags": {
+      "addr:housenumber": "149",
+      "addr:street": "High Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1686705"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595076,
+    "lat": -43.2972552,
+    "lon": 172.1967342,
+    "tags": {
+      "addr:housenumber": "12",
+      "addr:street": "Main Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1666565"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595077,
+    "lat": -43.2913002,
+    "lon": 172.1957783,
+    "tags": {
+      "addr:housenumber": "187G",
+      "addr:street": "High Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1656348"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595078,
+    "lat": -43.2962951,
+    "lon": 172.1942987,
+    "tags": {
+      "addr:housenumber": "12",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1621491"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595079,
+    "lat": -43.2961076,
+    "lon": 172.1951917,
+    "tags": {
+      "addr:housenumber": "14",
+      "addr:street": "Stonebridge Lane",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1621488"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595080,
+    "lat": -43.296299,
+    "lon": 172.1950088,
+    "tags": {
+      "addr:housenumber": "11",
+      "addr:street": "Stonebridge Lane",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1621485"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595081,
+    "lat": -43.2961682,
+    "lon": 172.1961627,
+    "tags": {
+      "addr:housenumber": "6",
+      "addr:street": "Stonebridge Lane",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1621480"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595082,
+    "lat": -43.2959546,
+    "lon": 172.1965587,
+    "tags": {
+      "addr:housenumber": "4",
+      "addr:street": "Stonebridge Lane",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1621478"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595083,
+    "lat": -43.292403,
+    "lon": 172.1943986,
+    "tags": {
+      "addr:housenumber": "8A",
+      "addr:street": "Knight Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1532177"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595084,
+    "lat": -43.2906876,
+    "lon": 172.1944343,
+    "tags": {
+      "addr:housenumber": "17",
+      "addr:street": "Church Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1385841"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595085,
+    "lat": -43.2906074,
+    "lon": 172.1950391,
+    "tags": {
+      "addr:housenumber": "9",
+      "addr:street": "Church Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1385840"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595086,
+    "lat": -43.290584,
+    "lon": 172.1953856,
+    "tags": {
+      "addr:housenumber": "7",
+      "addr:street": "Church Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1385839"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595087,
+    "lat": -43.2970326,
+    "lon": 172.1980172,
+    "tags": {
+      "addr:housenumber": "2",
+      "addr:street": "Main Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1312880"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595088,
+    "lat": -43.2909652,
+    "lon": 172.1950811,
+    "tags": {
+      "addr:housenumber": "13",
+      "addr:street": "Church Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1137237"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595089,
+    "lat": -43.2931169,
+    "lon": 172.1960575,
+    "tags": {
+      "addr:housenumber": "19",
+      "addr:street": "Knight Street East",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "395363"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595090,
+    "lat": -43.2928433,
+    "lon": 172.1962724,
+    "tags": {
+      "addr:housenumber": "21",
+      "addr:street": "Knight Street East",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "395362"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595091,
+    "lat": -43.2926603,
+    "lon": 172.1966203,
+    "tags": {
+      "addr:housenumber": "22",
+      "addr:street": "Knight Street East",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "395360"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595092,
+    "lat": -43.2970848,
+    "lon": 172.1976723,
+    "tags": {
+      "addr:housenumber": "6",
+      "addr:street": "Main Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152942"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595093,
+    "lat": -43.297394,
+    "lon": 172.1954401,
+    "tags": {
+      "addr:housenumber": "26",
+      "addr:street": "Main Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152928"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595094,
+    "lat": -43.29725,
+    "lon": 172.1965856,
+    "tags": {
+      "addr:housenumber": "14",
+      "addr:street": "Main Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152907"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595095,
+    "lat": -43.2915882,
+    "lon": 172.1961716,
+    "tags": {
+      "addr:housenumber": "179C",
+      "addr:street": "High Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152846"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595096,
+    "lat": -43.2916892,
+    "lon": 172.1961411,
+    "tags": {
+      "addr:housenumber": "179B",
+      "addr:street": "High Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152845"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595097,
+    "lat": -43.2921143,
+    "lon": 172.1962691,
+    "tags": {
+      "addr:housenumber": "177A",
+      "addr:street": "High Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152841"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595098,
+    "lat": -43.292849,
+    "lon": 172.1971446,
+    "tags": {
+      "addr:housenumber": "171",
+      "addr:street": "High Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152835"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595099,
+    "lat": -43.2933583,
+    "lon": 172.197265,
+    "tags": {
+      "addr:housenumber": "167",
+      "addr:street": "High Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152832"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595100,
+    "lat": -43.2932102,
+    "lon": 172.1972159,
+    "tags": {
+      "addr:housenumber": "167A",
+      "addr:street": "High Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152831"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595101,
+    "lat": -43.293999,
+    "lon": 172.1974036,
+    "tags": {
+      "addr:housenumber": "161B",
+      "addr:street": "High Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152827"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595102,
+    "lat": -43.294905,
+    "lon": 172.1950902,
+    "tags": {
+      "addr:housenumber": "14",
+      "addr:street": "Transport Lane",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152822"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595103,
+    "lat": -43.2973742,
+    "lon": 172.1946062,
+    "tags": {
+      "addr:housenumber": "30",
+      "addr:street": "Main Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152532"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595104,
+    "lat": -43.2952007,
+    "lon": 172.1940289,
+    "tags": {
+      "addr:housenumber": "22",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152504"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595105,
+    "lat": -43.2953651,
+    "lon": 172.1940777,
+    "tags": {
+      "addr:housenumber": "20",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152496"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595106,
+    "lat": -43.2927584,
+    "lon": 172.1944419,
+    "tags": {
+      "addr:housenumber": "8",
+      "addr:street": "Knight Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152428"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595107,
+    "lat": -43.2914526,
+    "lon": 172.1930367,
+    "tags": {
+      "addr:housenumber": "56",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152393"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595108,
+    "lat": -43.2916316,
+    "lon": 172.1930716,
+    "tags": {
+      "addr:housenumber": "54A",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152387"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595109,
+    "lat": -43.2925262,
+    "lon": 172.1933139,
+    "tags": {
+      "addr:housenumber": "48",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152375"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595110,
+    "lat": -43.2946043,
+    "lon": 172.1938546,
+    "tags": {
+      "addr:housenumber": "28",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152334"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595111,
+    "lat": -43.2948314,
+    "lon": 172.1939392,
+    "tags": {
+      "addr:housenumber": "26",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152332"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595112,
+    "lat": -43.2969669,
+    "lon": 172.1944608,
+    "tags": {
+      "addr:housenumber": "4",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152590"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595113,
+    "lat": -43.2986045,
+    "lon": 172.1889422,
+    "tags": {
+      "addr:housenumber": "75A",
+      "addr:street": "Main Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1847295"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595114,
+    "lat": -43.3001507,
+    "lon": 172.1877659,
+    "tags": {
+      "addr:housenumber": "9A",
+      "addr:street": "Burnt Hill Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1644774"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595115,
+    "lat": -43.3007031,
+    "lon": 172.1886269,
+    "tags": {
+      "addr:housenumber": "17",
+      "addr:street": "Burnt Hill Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1543263"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595116,
+    "lat": -43.2995313,
+    "lon": 172.1884001,
+    "tags": {
+      "addr:housenumber": "8",
+      "addr:street": "Coney Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1312881"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595117,
+    "lat": -43.3000129,
+    "lon": 172.1865955,
+    "tags": {
+      "addr:housenumber": "9",
+      "addr:street": "Harewood Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152672"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595118,
+    "lat": -43.2997819,
+    "lon": 172.1876917,
+    "tags": {
+      "addr:housenumber": "5",
+      "addr:street": "Burnt Hill Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152604"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595119,
+    "lat": -43.2993332,
+    "lon": 172.1870547,
+    "tags": {
+      "addr:housenumber": "2",
+      "addr:street": "Burnt Hill Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152519"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595120,
+    "lat": -43.2992924,
+    "lon": 172.1875518,
+    "tags": {
+      "addr:housenumber": "1",
+      "addr:street": "Burnt Hill Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152485"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595166,
+    "lat": -43.2954086,
+    "lon": 172.1962927,
+    "tags": {
+      "addr:housenumber": "13",
+      "addr:street": "Transport Lane",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1707826"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595167,
+    "lat": -43.2953622,
+    "lon": 172.1965372,
+    "tags": {
+      "addr:housenumber": "11",
+      "addr:street": "Transport Lane",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1707825"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595168,
+    "lat": -43.2907387,
+    "lon": 172.1934629,
+    "tags": {
+      "addr:housenumber": "23",
+      "addr:street": "Church Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1629441"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595169,
+    "lat": -43.2958472,
+    "lon": 172.1956717,
+    "tags": {
+      "addr:housenumber": "16",
+      "addr:street": "Stonebridge Lane",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1621490"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595170,
+    "lat": -43.296003,
+    "lon": 172.1957206,
+    "tags": {
+      "addr:housenumber": "15",
+      "addr:street": "Stonebridge Lane",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1621489"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595171,
+    "lat": -43.2962799,
+    "lon": 172.1946944,
+    "tags": {
+      "addr:housenumber": "12",
+      "addr:street": "Stonebridge Lane",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1621486"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595172,
+    "lat": -43.2951593,
+    "lon": 172.1959117,
+    "tags": {
+      "addr:housenumber": "6",
+      "addr:street": "Transport Lane",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1621473"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595173,
+    "lat": -43.3011584,
+    "lon": 172.1898892,
+    "tags": {
+      "addr:housenumber": "7",
+      "addr:street": "Matai Place",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152638"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595174,
+    "lat": -43.2961518,
+    "lon": 172.1942583,
+    "tags": {
+      "addr:housenumber": "14",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1554002"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595175,
+    "lat": -43.291922,
+    "lon": 172.1934068,
+    "tags": {
+      "addr:housenumber": "52",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1550505"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595176,
+    "lat": -43.2934694,
+    "lon": 172.1940289,
+    "tags": {
+      "addr:housenumber": "1",
+      "addr:street": "Knight Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1421575"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595177,
+    "lat": -43.2909679,
+    "lon": 172.1962391,
+    "tags": {
+      "addr:housenumber": "189B",
+      "addr:street": "High Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1321746"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595178,
+    "lat": -43.2938122,
+    "lon": 172.1936604,
+    "tags": {
+      "addr:housenumber": "36A",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1142983"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595179,
+    "lat": -43.2973329,
+    "lon": 172.1959415,
+    "tags": {
+      "addr:housenumber": "20",
+      "addr:street": "Main Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152920"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595181,
+    "lat": -43.2971809,
+    "lon": 172.1970416,
+    "tags": {
+      "addr:housenumber": "10",
+      "addr:street": "Main Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152892"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595182,
+    "lat": -43.2905732,
+    "lon": 172.1956533,
+    "tags": {
+      "addr:housenumber": "5",
+      "addr:street": "Church Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152887"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595183,
+    "lat": -43.2906264,
+    "lon": 172.196538,
+    "tags": {
+      "addr:housenumber": "193",
+      "addr:street": "High Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152857"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595184,
+    "lat": -43.2913882,
+    "lon": 172.1967517,
+    "tags": {
+      "addr:housenumber": "183",
+      "addr:street": "High Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152850"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595185,
+    "lat": -43.2916308,
+    "lon": 172.1968073,
+    "tags": {
+      "addr:housenumber": "179A",
+      "addr:street": "High Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152844"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595186,
+    "lat": -43.2919961,
+    "lon": 172.1968786,
+    "tags": {
+      "addr:housenumber": "177B",
+      "addr:street": "High Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152842"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595187,
+    "lat": -43.2940991,
+    "lon": 172.1974251,
+    "tags": {
+      "addr:housenumber": "161A",
+      "addr:street": "High Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152826"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595188,
+    "lat": -43.2945008,
+    "lon": 172.1975365,
+    "tags": {
+      "addr:housenumber": "155",
+      "addr:street": "High Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152824"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595189,
+    "lat": -43.2946792,
+    "lon": 172.1975682,
+    "tags": {
+      "addr:housenumber": "153",
+      "addr:street": "High Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152823"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595190,
+    "lat": -43.2965349,
+    "lon": 172.194384,
+    "tags": {
+      "addr:housenumber": "10",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152441"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595191,
+    "lat": -43.2930355,
+    "lon": 172.1945272,
+    "tags": {
+      "addr:housenumber": "7",
+      "addr:street": "Knight Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152426"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595192,
+    "lat": -43.2921894,
+    "lon": 172.193222,
+    "tags": {
+      "addr:housenumber": "50",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152381"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595193,
+    "lat": -43.2934424,
+    "lon": 172.1935433,
+    "tags": {
+      "addr:housenumber": "40",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152361"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595194,
+    "lat": -43.2930967,
+    "lon": 172.194037,
+    "tags": {
+      "addr:housenumber": "3",
+      "addr:street": "Knight Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152360"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595195,
+    "lat": -43.2936182,
+    "lon": 172.1936036,
+    "tags": {
+      "addr:housenumber": "38",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152355"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595196,
+    "lat": -43.2940724,
+    "lon": 172.1937362,
+    "tags": {
+      "addr:housenumber": "34",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152346"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595197,
+    "lat": -43.2945535,
+    "lon": 172.194976,
+    "tags": {
+      "addr:housenumber": "10",
+      "addr:street": "Transport Lane",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152313"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595198,
+    "lat": -43.2971308,
+    "lon": 172.1921851,
+    "tags": {
+      "addr:housenumber": "8/5",
+      "addr:street": "Meyer Place",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1759817"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595200,
+    "lat": -43.2949356,
+    "lon": 172.1922323,
+    "tags": {
+      "addr:housenumber": "11B",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1301699"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595202,
+    "lat": -43.297841,
+    "lon": 172.1921507,
+    "tags": {
+      "addr:housenumber": "50",
+      "addr:street": "Main Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152594"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595203,
+    "lat": -43.2999245,
+    "lon": 172.1903635,
+    "tags": {
+      "addr:housenumber": "14",
+      "addr:street": "Park Avenue",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152462"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595205,
+    "lat": -43.2915976,
+    "lon": 172.1783382,
+    "tags": {
+      "addr:housenumber": "74",
+      "addr:street": "Bush Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152181"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595206,
+    "lat": -43.2922708,
+    "lon": 172.1772559,
+    "tags": {
+      "addr:housenumber": "78",
+      "addr:street": "Bush Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "2041495"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595207,
+    "lat": -43.3008915,
+    "lon": 172.1771807,
+    "tags": {
+      "addr:housenumber": "6",
+      "addr:street": "Bath Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152265"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595208,
+    "lat": -43.3008393,
+    "lon": 172.1984216,
+    "tags": {
+      "addr:housenumber": "8",
+      "addr:street": "Korimako Close",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1954574"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595209,
+    "lat": -43.2951085,
+    "lon": 172.1577399,
+    "tags": {
+      "addr:housenumber": "158B",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1312496"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595210,
+    "lat": -43.2993635,
+    "lon": 172.1988234,
+    "tags": {
+      "addr:housenumber": "103",
+      "addr:street": "High Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1314424"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595211,
+    "lat": -43.2991881,
+    "lon": 172.1979026,
+    "tags": {
+      "addr:housenumber": "8",
+      "addr:street": "Kereru Close",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1986423"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595212,
+    "lat": -43.288804,
+    "lon": 172.182015,
+    "tags": {
+      "addr:housenumber": "641",
+      "addr:street": "Bay Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1945665"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595213,
+    "lat": -43.2997986,
+    "lon": 172.1981039,
+    "tags": {
+      "addr:housenumber": "38",
+      "addr:street": "Weka Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1767455"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595214,
+    "lat": -43.2876881,
+    "lon": 172.1950949,
+    "tags": {
+      "addr:housenumber": "2A",
+      "addr:street": "Queen Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1427721"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595215,
+    "lat": -43.2951351,
+    "lon": 172.1582328,
+    "tags": {
+      "addr:housenumber": "154B",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1312498"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595217,
+    "lat": -43.2905649,
+    "lon": 172.1913756,
+    "tags": {
+      "addr:housenumber": "44",
+      "addr:street": "Church Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152369"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595218,
+    "lat": -43.3006365,
+    "lon": 172.1821915,
+    "tags": {
+      "addr:housenumber": "27",
+      "addr:street": "Tawera Lane",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152259"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595220,
+    "lat": -43.3001187,
+    "lon": 172.1780267,
+    "tags": {
+      "addr:housenumber": "149",
+      "addr:street": "Main Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1690723"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595223,
+    "lat": -43.297032,
+    "lon": 172.1920666,
+    "tags": {
+      "addr:housenumber": "11/5",
+      "addr:street": "Meyer Place",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1759820"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595224,
+    "lat": -43.297203,
+    "lon": 172.192204,
+    "tags": {
+      "addr:housenumber": "6/5",
+      "addr:street": "Meyer Place",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1759815"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595225,
+    "lat": -43.2973634,
+    "lon": 172.1922512,
+    "tags": {
+      "addr:housenumber": "2/5",
+      "addr:street": "Meyer Place",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1759811"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595229,
+    "lat": -43.2936607,
+    "lon": 172.1925377,
+    "tags": {
+      "addr:housenumber": "21B",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1550489"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595230,
+    "lat": -43.2994007,
+    "lon": 172.1891184,
+    "tags": {
+      "addr:housenumber": "7D",
+      "addr:street": "Olivea Place",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1543240"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595231,
+    "lat": -43.2993567,
+    "lon": 172.1889547,
+    "tags": {
+      "addr:housenumber": "7C",
+      "addr:street": "Olivea Place",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1543239"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595237,
+    "lat": -43.3004357,
+    "lon": 172.1891353,
+    "tags": {
+      "addr:housenumber": "3",
+      "addr:street": "Olivea Place",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1378765"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595238,
+    "lat": -43.2912635,
+    "lon": 172.1873543,
+    "tags": {
+      "addr:housenumber": "65",
+      "addr:street": "Church Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1333060"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595239,
+    "lat": -43.2913892,
+    "lon": 172.1868126,
+    "tags": {
+      "addr:housenumber": "126",
+      "addr:street": "Bay Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1321750"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595240,
+    "lat": -43.2917864,
+    "lon": 172.1868995,
+    "tags": {
+      "addr:housenumber": "122",
+      "addr:street": "Bay Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1318304"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595241,
+    "lat": -43.2953195,
+    "lon": 172.1893648,
+    "tags": {
+      "addr:housenumber": "1",
+      "addr:street": "Showgate Drive",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1301711"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595242,
+    "lat": -43.295195,
+    "lon": 172.1898223,
+    "tags": {
+      "addr:housenumber": "10",
+      "addr:street": "Showgate Drive",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1301710"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595243,
+    "lat": -43.2956538,
+    "lon": 172.1894148,
+    "tags": {
+      "addr:housenumber": "2",
+      "addr:street": "Showgate Drive",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1301709"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595257,
+    "lat": -43.2968298,
+    "lon": 172.1890167,
+    "tags": {
+      "addr:housenumber": "8",
+      "addr:street": "Dohrmans Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152658"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595258,
+    "lat": -43.2972941,
+    "lon": 172.1883797,
+    "tags": {
+      "addr:housenumber": "10",
+      "addr:street": "Bay Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152442"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595259,
+    "lat": -43.2911826,
+    "lon": 172.1925323,
+    "tags": {
+      "addr:housenumber": "67",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152413"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595260,
+    "lat": -43.2919055,
+    "lon": 172.1927464,
+    "tags": {
+      "addr:housenumber": "55",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152391"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595261,
+    "lat": -43.2918259,
+    "lon": 172.1921127,
+    "tags": {
+      "addr:housenumber": "55B",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152390"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595262,
+    "lat": -43.2919012,
+    "lon": 172.1921337,
+    "tags": {
+      "addr:housenumber": "55A",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152389"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595263,
+    "lat": -43.2909938,
+    "lon": 172.1893234,
+    "tags": {
+      "addr:housenumber": "53",
+      "addr:street": "Church Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152386"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595264,
+    "lat": -43.2923968,
+    "lon": 172.1922739,
+    "tags": {
+      "addr:housenumber": "49",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152376"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595265,
+    "lat": -43.2909242,
+    "lon": 172.1903341,
+    "tags": {
+      "addr:housenumber": "45",
+      "addr:street": "Church Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152371"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595266,
+    "lat": -43.2908423,
+    "lon": 172.191673,
+    "tags": {
+      "addr:housenumber": "35",
+      "addr:street": "Church Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152349"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595267,
+    "lat": -43.2931033,
+    "lon": 172.1924574,
+    "tags": {
+      "addr:housenumber": "33",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152344"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595268,
+    "lat": -43.2931619,
+    "lon": 172.1930694,
+    "tags": {
+      "addr:housenumber": "29",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152335"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595269,
+    "lat": -43.2936074,
+    "lon": 172.1931413,
+    "tags": {
+      "addr:housenumber": "23",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152329"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595270,
+    "lat": -43.2943584,
+    "lon": 172.1933444,
+    "tags": {
+      "addr:housenumber": "13",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152317"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595272,
+    "lat": -43.3014224,
+    "lon": 172.1895285,
+    "tags": {
+      "addr:housenumber": "1",
+      "addr:street": "Matai Place",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152487"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595274,
+    "lat": -43.29662,
+    "lon": 172.1980881,
+    "tags": {
+      "addr:housenumber": "133",
+      "addr:street": "High Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "2016713"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595275,
+    "lat": -43.2963404,
+    "lon": 172.197478,
+    "tags": {
+      "addr:housenumber": "139A",
+      "addr:street": "High Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1939507"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595276,
+    "lat": -43.2961401,
+    "lon": 172.1969727,
+    "tags": {
+      "addr:housenumber": "139B",
+      "addr:street": "High Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1939506"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595277,
+    "lat": -43.2960398,
+    "lon": 172.1973605,
+    "tags": {
+      "addr:housenumber": "139C",
+      "addr:street": "High Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1939505"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595278,
+    "lat": -43.291351,
+    "lon": 172.1948239,
+    "tags": {
+      "addr:housenumber": "187C",
+      "addr:street": "High Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1750971"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595279,
+    "lat": -43.2953296,
+    "lon": 172.1967842,
+    "tags": {
+      "addr:housenumber": "9",
+      "addr:street": "Transport Lane",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1707824"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595280,
+    "lat": -43.2952462,
+    "lon": 172.1972693,
+    "tags": {
+      "addr:housenumber": "5",
+      "addr:street": "Transport Lane",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1707822"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595281,
+    "lat": -43.292248,
+    "lon": 172.1945684,
+    "tags": {
+      "addr:housenumber": "12",
+      "addr:street": "Knight Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1690749"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595282,
+    "lat": -43.2913651,
+    "lon": 172.195118,
+    "tags": {
+      "addr:housenumber": "187D",
+      "addr:street": "High Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1656351"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595283,
+    "lat": -43.2912418,
+    "lon": 172.1959945,
+    "tags": {
+      "addr:housenumber": "187H",
+      "addr:street": "High Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1656347"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595284,
+    "lat": -43.2942639,
+    "lon": 172.1974791,
+    "tags": {
+      "addr:housenumber": "157",
+      "addr:street": "High Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1642670"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595285,
+    "lat": -43.291315,
+    "lon": 172.1935731,
+    "tags": {
+      "addr:housenumber": "27",
+      "addr:street": "Church Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1629443"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595286,
+    "lat": -43.2910223,
+    "lon": 172.1934828,
+    "tags": {
+      "addr:housenumber": "25",
+      "addr:street": "Church Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1629442"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595287,
+    "lat": -43.2962397,
+    "lon": 172.1957361,
+    "tags": {
+      "addr:housenumber": "9",
+      "addr:street": "Stonebridge Lane",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1621483"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595288,
+    "lat": -43.2963367,
+    "lon": 172.1960865,
+    "tags": {
+      "addr:housenumber": "7",
+      "addr:street": "Stonebridge Lane",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1621481"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595289,
+    "lat": -43.2960696,
+    "lon": 172.1965804,
+    "tags": {
+      "addr:housenumber": "5",
+      "addr:street": "Stonebridge Lane",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1621479"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595290,
+    "lat": -43.2957989,
+    "lon": 172.1960286,
+    "tags": {
+      "addr:housenumber": "2",
+      "addr:street": "Stonebridge Lane",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1621476"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595291,
+    "lat": -43.2951916,
+    "lon": 172.1956892,
+    "tags": {
+      "addr:housenumber": "8A",
+      "addr:street": "Transport Lane",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1621474"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595292,
+    "lat": -43.2910157,
+    "lon": 172.194792,
+    "tags": {
+      "addr:housenumber": "15",
+      "addr:street": "Church Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1614918"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595293,
+    "lat": -43.292276,
+    "lon": 172.196976,
+    "tags": {
+      "addr:housenumber": "175A",
+      "addr:street": "High Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1524280"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595294,
+    "lat": -43.2922243,
+    "lon": 172.1962642,
+    "tags": {
+      "addr:housenumber": "175B",
+      "addr:street": "High Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1524279"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595295,
+    "lat": -43.2907441,
+    "lon": 172.1936556,
+    "tags": {
+      "addr:housenumber": "21",
+      "addr:street": "Church Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1425788"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595296,
+    "lat": -43.2937976,
+    "lon": 172.1941095,
+    "tags": {
+      "addr:housenumber": "36",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1142891"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595297,
+    "lat": -43.2909423,
+    "lon": 172.1954987,
+    "tags": {
+      "addr:housenumber": "11",
+      "addr:street": "Church Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1137234"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595298,
+    "lat": -43.2976192,
+    "lon": 172.1884573,
+    "tags": {
+      "addr:housenumber": "6",
+      "addr:street": "Bay Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152624"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595299,
+    "lat": -43.2980289,
+    "lon": 172.1907728,
+    "tags": {
+      "addr:housenumber": "54",
+      "addr:street": "Main Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152598"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595300,
+    "lat": -43.297774,
+    "lon": 172.1884951,
+    "tags": {
+      "addr:housenumber": "4",
+      "addr:street": "Bay Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152592"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595301,
+    "lat": -43.2990569,
+    "lon": 172.1901224,
+    "tags": {
+      "addr:housenumber": "4",
+      "addr:street": "Park Avenue",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152589"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595302,
+    "lat": -43.2976273,
+    "lon": 172.1936855,
+    "tags": {
+      "addr:housenumber": "38",
+      "addr:street": "Main Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152548"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595303,
+    "lat": -43.3019529,
+    "lon": 172.1909181,
+    "tags": {
+      "addr:housenumber": "36",
+      "addr:street": "Park Avenue",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152544"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595304,
+    "lat": -43.2971163,
+    "lon": 172.1974358,
+    "tags": {
+      "addr:housenumber": "8",
+      "addr:street": "Main Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152947"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595305,
+    "lat": -43.2951427,
+    "lon": 172.1961655,
+    "tags": {
+      "addr:housenumber": "4",
+      "addr:street": "Transport Lane",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152940"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595306,
+    "lat": -43.2950801,
+    "lon": 172.1969201,
+    "tags": {
+      "addr:housenumber": "2",
+      "addr:street": "Transport Lane",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152933"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595307,
+    "lat": -43.2952611,
+    "lon": 172.1950214,
+    "tags": {
+      "addr:housenumber": "16",
+      "addr:street": "Transport Lane",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152911"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595308,
+    "lat": -43.2953776,
+    "lon": 172.1977888,
+    "tags": {
+      "addr:housenumber": "147",
+      "addr:street": "High Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152905"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595309,
+    "lat": -43.2905478,
+    "lon": 172.1959613,
+    "tags": {
+      "addr:housenumber": "1",
+      "addr:street": "Church Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152865"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595310,
+    "lat": -43.2908123,
+    "lon": 172.1965934,
+    "tags": {
+      "addr:housenumber": "191",
+      "addr:street": "High Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152855"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595311,
+    "lat": -43.2912985,
+    "lon": 172.1967182,
+    "tags": {
+      "addr:housenumber": "185",
+      "addr:street": "High Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152852"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595312,
+    "lat": -43.291496,
+    "lon": 172.1967641,
+    "tags": {
+      "addr:housenumber": "181",
+      "addr:street": "High Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152848"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595313,
+    "lat": -43.2936875,
+    "lon": 172.1973246,
+    "tags": {
+      "addr:housenumber": "163",
+      "addr:street": "High Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152828"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595314,
+    "lat": -43.2950284,
+    "lon": 172.1939869,
+    "tags": {
+      "addr:housenumber": "24",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152509"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595315,
+    "lat": -43.2927965,
+    "lon": 172.1941593,
+    "tags": {
+      "addr:housenumber": "6",
+      "addr:street": "Knight Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152418"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595316,
+    "lat": -43.2930611,
+    "lon": 172.1942806,
+    "tags": {
+      "addr:housenumber": "5",
+      "addr:street": "Knight Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152399"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595317,
+    "lat": -43.2918758,
+    "lon": 172.1931311,
+    "tags": {
+      "addr:housenumber": "54",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152388"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595318,
+    "lat": -43.292788,
+    "lon": 172.1933601,
+    "tags": {
+      "addr:housenumber": "46",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152372"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595319,
+    "lat": -43.2928675,
+    "lon": 172.1933933,
+    "tags": {
+      "addr:housenumber": "44",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152368"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595320,
+    "lat": -43.2942651,
+    "lon": 172.1937685,
+    "tags": {
+      "addr:housenumber": "32",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152343"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595721,
+    "lat": -43.2944392,
+    "lon": 172.1938126,
+    "tags": {
+      "addr:housenumber": "30",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152339"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595722,
+    "lat": -43.2976454,
+    "lon": 172.1939968,
+    "tags": {
+      "addr:housenumber": "34",
+      "addr:street": "Main Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152541"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595723,
+    "lat": -43.3015628,
+    "lon": 172.1908036,
+    "tags": {
+      "addr:housenumber": "32",
+      "addr:street": "Park Avenue",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152536"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595724,
+    "lat": -43.3012133,
+    "lon": 172.1907072,
+    "tags": {
+      "addr:housenumber": "28",
+      "addr:street": "Park Avenue",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152515"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595725,
+    "lat": -43.3006284,
+    "lon": 172.1905718,
+    "tags": {
+      "addr:housenumber": "22",
+      "addr:street": "Park Avenue",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152502"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595726,
+    "lat": -43.2984609,
+    "lon": 172.1899635,
+    "tags": {
+      "addr:housenumber": "65",
+      "addr:street": "Main Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1378254"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595727,
+    "lat": -43.2990641,
+    "lon": 172.1856525,
+    "tags": {
+      "addr:housenumber": "99",
+      "addr:street": "Main Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152669"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595728,
+    "lat": -43.2989728,
+    "lon": 172.1862803,
+    "tags": {
+      "addr:housenumber": "93",
+      "addr:street": "Main Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152664"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595729,
+    "lat": -43.2989474,
+    "lon": 172.1865129,
+    "tags": {
+      "addr:housenumber": "91",
+      "addr:street": "Main Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152663"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595730,
+    "lat": -43.2988849,
+    "lon": 172.1869192,
+    "tags": {
+      "addr:housenumber": "87",
+      "addr:street": "Main Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152652"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595731,
+    "lat": -43.2986495,
+    "lon": 172.1886497,
+    "tags": {
+      "addr:housenumber": "77",
+      "addr:street": "Main Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152633"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595732,
+    "lat": -43.2987832,
+    "lon": 172.189428,
+    "tags": {
+      "addr:housenumber": "73",
+      "addr:street": "Main Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152630"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595733,
+    "lat": -43.2998145,
+    "lon": 172.1862316,
+    "tags": {
+      "addr:housenumber": "5",
+      "addr:street": "Harewood Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152605"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595734,
+    "lat": -43.2994672,
+    "lon": 172.1870888,
+    "tags": {
+      "addr:housenumber": "4",
+      "addr:street": "Burnt Hill Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152581"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595735,
+    "lat": -43.2997586,
+    "lon": 172.1860923,
+    "tags": {
+      "addr:housenumber": "3A",
+      "addr:street": "Harewood Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152552"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595736,
+    "lat": -43.2995283,
+    "lon": 172.1856686,
+    "tags": {
+      "addr:housenumber": "1",
+      "addr:street": "Harewood Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152486"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595737,
+    "lat": -43.3003097,
+    "lon": 172.1871326,
+    "tags": {
+      "addr:housenumber": "15",
+      "addr:street": "Harewood Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152465"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595738,
+    "lat": -43.3002458,
+    "lon": 172.187035,
+    "tags": {
+      "addr:housenumber": "13",
+      "addr:street": "Harewood Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152455"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595739,
+    "lat": -43.3005359,
+    "lon": 172.18788,
+    "tags": {
+      "addr:housenumber": "11",
+      "addr:street": "Burnt Hill Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152444"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595741,
+    "lat": -43.2972412,
+    "lon": 172.1922173,
+    "tags": {
+      "addr:housenumber": "5/5",
+      "addr:street": "Meyer Place",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1759814"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595742,
+    "lat": -43.2973253,
+    "lon": 172.1922381,
+    "tags": {
+      "addr:housenumber": "3/5",
+      "addr:street": "Meyer Place",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1759812"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595743,
+    "lat": -43.2974015,
+    "lon": 172.192259,
+    "tags": {
+      "addr:housenumber": "1/5",
+      "addr:street": "Meyer Place",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1759810"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595746,
+    "lat": -43.2938499,
+    "lon": 172.1926105,
+    "tags": {
+      "addr:housenumber": "21A",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1550488"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595747,
+    "lat": -43.2994329,
+    "lon": 172.1894348,
+    "tags": {
+      "addr:housenumber": "7E",
+      "addr:street": "Olivea Place",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1543241"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595748,
+    "lat": -43.2996742,
+    "lon": 172.1889975,
+    "tags": {
+      "addr:housenumber": "7A",
+      "addr:street": "Olivea Place",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1543237"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595749,
+    "lat": -43.2911392,
+    "lon": 172.1883863,
+    "tags": {
+      "addr:housenumber": "61",
+      "addr:street": "Church Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1533664"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595759,
+    "lat": -43.3000421,
+    "lon": 172.1897034,
+    "tags": {
+      "addr:housenumber": "8",
+      "addr:street": "Olivea Place",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1379996"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595760,
+    "lat": -43.3003889,
+    "lon": 172.1897581,
+    "tags": {
+      "addr:housenumber": "1",
+      "addr:street": "Olivea Place",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1378767"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595761,
+    "lat": -43.3000955,
+    "lon": 172.189316,
+    "tags": {
+      "addr:housenumber": "6",
+      "addr:street": "Olivea Place",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1378762"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595778,
+    "lat": -43.2993931,
+    "lon": 172.1902244,
+    "tags": {
+      "addr:housenumber": "8",
+      "addr:street": "Park Avenue",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152659"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595779,
+    "lat": -43.2967644,
+    "lon": 172.1894197,
+    "tags": {
+      "addr:housenumber": "7",
+      "addr:street": "Dohrmans Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152640"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595780,
+    "lat": -43.3009395,
+    "lon": 172.1899407,
+    "tags": {
+      "addr:housenumber": "6",
+      "addr:street": "Matai Place",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152620"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595781,
+    "lat": -43.2978982,
+    "lon": 172.1917507,
+    "tags": {
+      "addr:housenumber": "52",
+      "addr:street": "Main Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152596"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595782,
+    "lat": -43.2964634,
+    "lon": 172.1894209,
+    "tags": {
+      "addr:housenumber": "4",
+      "addr:street": "Dohrmans Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152586"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595783,
+    "lat": -43.296558,
+    "lon": 172.1887955,
+    "tags": {
+      "addr:housenumber": "2",
+      "addr:street": "Dohrmans Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152522"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595784,
+    "lat": -43.3018414,
+    "lon": 172.1899803,
+    "tags": {
+      "addr:housenumber": "25",
+      "addr:street": "Harewood Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152511"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595785,
+    "lat": -43.3008205,
+    "lon": 172.1906137,
+    "tags": {
+      "addr:housenumber": "24",
+      "addr:street": "Park Avenue",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152508"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595786,
+    "lat": -43.2970063,
+    "lon": 172.1924828,
+    "tags": {
+      "addr:housenumber": "15",
+      "addr:street": "Meyer Place",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152466"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595787,
+    "lat": -43.3015513,
+    "lon": 172.1898175,
+    "tags": {
+      "addr:housenumber": "10",
+      "addr:street": "Matai Place",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152438"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595788,
+    "lat": -43.291018,
+    "lon": 172.1924915,
+    "tags": {
+      "addr:housenumber": "69",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152415"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595789,
+    "lat": -43.2913998,
+    "lon": 172.1925995,
+    "tags": {
+      "addr:housenumber": "63",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152407"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595790,
+    "lat": -43.2920715,
+    "lon": 172.1927713,
+    "tags": {
+      "addr:housenumber": "53",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152385"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595791,
+    "lat": -43.2909765,
+    "lon": 172.1895979,
+    "tags": {
+      "addr:housenumber": "51",
+      "addr:street": "Church Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152384"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595792,
+    "lat": -43.2922191,
+    "lon": 172.1922304,
+    "tags": {
+      "addr:housenumber": "51A",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152382"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595793,
+    "lat": -43.2909447,
+    "lon": 172.1900376,
+    "tags": {
+      "addr:housenumber": "47",
+      "addr:street": "Church Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152374"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595794,
+    "lat": -43.2924698,
+    "lon": 172.1922944,
+    "tags": {
+      "addr:housenumber": "47",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152373"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595795,
+    "lat": -43.2908823,
+    "lon": 172.1908886,
+    "tags": {
+      "addr:housenumber": "41",
+      "addr:street": "Church Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152363"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595796,
+    "lat": -43.2908636,
+    "lon": 172.1911664,
+    "tags": {
+      "addr:housenumber": "39",
+      "addr:street": "Church Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152357"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595797,
+    "lat": -43.292828,
+    "lon": 172.1923837,
+    "tags": {
+      "addr:housenumber": "39",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152356"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595798,
+    "lat": -43.2928383,
+    "lon": 172.1929943,
+    "tags": {
+      "addr:housenumber": "37",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152352"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595799,
+    "lat": -43.2927747,
+    "lon": 172.1929778,
+    "tags": {
+      "addr:housenumber": "37A",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152351"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595800,
+    "lat": -43.2929414,
+    "lon": 172.1929894,
+    "tags": {
+      "addr:housenumber": "35B",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152348"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595801,
+    "lat": -43.2908246,
+    "lon": 172.1918959,
+    "tags": {
+      "addr:housenumber": "33",
+      "addr:street": "Church Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152345"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595802,
+    "lat": -43.2931714,
+    "lon": 172.1924637,
+    "tags": {
+      "addr:housenumber": "31",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152342"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595803,
+    "lat": -43.2908106,
+    "lon": 172.1921252,
+    "tags": {
+      "addr:housenumber": "31",
+      "addr:street": "Church Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152341"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595804,
+    "lat": -43.2933504,
+    "lon": 172.1930923,
+    "tags": {
+      "addr:housenumber": "25",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152331"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595805,
+    "lat": -43.2939282,
+    "lon": 172.1926289,
+    "tags": {
+      "addr:housenumber": "19",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152324"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595807,
+    "lat": -43.3009511,
+    "lon": 172.1894504,
+    "tags": {
+      "addr:housenumber": "4",
+      "addr:street": "Matai Place",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152584"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595808,
+    "lat": -43.3010834,
+    "lon": 172.1893879,
+    "tags": {
+      "addr:housenumber": "3",
+      "addr:street": "Matai Place",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152557"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595809,
+    "lat": -43.3013797,
+    "lon": 172.1907611,
+    "tags": {
+      "addr:housenumber": "30",
+      "addr:street": "Park Avenue",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152531"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595810,
+    "lat": -43.2988581,
+    "lon": 172.1900787,
+    "tags": {
+      "addr:housenumber": "2",
+      "addr:street": "Park Avenue",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152525"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595811,
+    "lat": -43.2960642,
+    "lon": 172.1978139,
+    "tags": {
+      "addr:housenumber": "139D",
+      "addr:street": "High Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1939504"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595812,
+    "lat": -43.2923575,
+    "lon": 172.1936995,
+    "tags": {
+      "addr:housenumber": "48A",
+      "addr:street": "Burnett Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1768175"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595813,
+    "lat": -43.295603,
+    "lon": 172.1948071,
+    "tags": {
+      "addr:housenumber": "23",
+      "addr:street": "Transport Lane",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1707831"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623595814,
+    "lat": -43.2955743,
+    "lon": 172.195062,
+    "tags": {
+      "addr:housenumber": "21",
+      "addr:street": "Transport Lane",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1707830"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623596421,
+    "lat": -43.2967962,
+    "lon": 172.1996916,
+    "tags": {
+      "addr:housenumber": "3128",
+      "addr:street": "Oxford Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1665896"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623596422,
+    "lat": -43.2997195,
+    "lon": 172.1823232,
+    "tags": {
+      "addr:housenumber": "119A",
+      "addr:street": "Main Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1479622"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623596424,
+    "lat": -43.2964396,
+    "lon": 172.2164002,
+    "tags": {
+      "addr:housenumber": "1",
+      "addr:street": "Barracks Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "153165"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623596425,
+    "lat": -43.2843355,
+    "lon": 172.1958461,
+    "tags": {
+      "addr:housenumber": "77",
+      "addr:street": "Victoria Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152818"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623596426,
+    "lat": -43.2924894,
+    "lon": 172.175981,
+    "tags": {
+      "addr:housenumber": "88",
+      "addr:street": "Bush Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152185"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623596427,
+    "lat": -43.2914435,
+    "lon": 172.1705161,
+    "tags": {
+      "addr:housenumber": "141",
+      "addr:street": "Bush Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152047"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623596429,
+    "lat": -43.3019249,
+    "lon": 172.1925381,
+    "tags": {
+      "addr:housenumber": "22C",
+      "addr:street": "Rata Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152501"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623596431,
+    "lat": -43.2892364,
+    "lon": 172.196623,
+    "tags": {
+      "addr:housenumber": "198",
+      "addr:street": "High Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152863"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623596433,
+    "lat": -43.298639,
+    "lon": 172.1688629,
+    "tags": {
+      "addr:housenumber": "59",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152119"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623596434,
+    "lat": -43.2990987,
+    "lon": 172.1667707,
+    "tags": {
+      "addr:housenumber": "49H",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1436028"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623596435,
+    "lat": -43.2984406,
+    "lon": 172.1651783,
+    "tags": {
+      "addr:housenumber": "85B",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152141"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623596436,
+    "lat": -43.29517,
+    "lon": 172.1588447,
+    "tags": {
+      "addr:housenumber": "150A",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152003"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623596437,
+    "lat": -43.2945954,
+    "lon": 172.1594467,
+    "tags": {
+      "addr:housenumber": "140C",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "151979"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623596438,
+    "lat": -43.2981689,
+    "lon": 172.1947017,
+    "tags": {
+      "addr:housenumber": "33A",
+      "addr:street": "Main Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152537"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623596440,
+    "lat": -43.2836576,
+    "lon": 172.1984623,
+    "tags": {
+      "addr:housenumber": "56B",
+      "addr:street": "Victoria Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "959042"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623596441,
+    "lat": -43.2991112,
+    "lon": 172.1919004,
+    "tags": {
+      "addr:housenumber": "4B",
+      "addr:street": "Rata Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152580"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623596442,
+    "lat": -43.2966437,
+    "lon": 172.1985297,
+    "tags": {
+      "addr:housenumber": "136",
+      "addr:street": "High Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152897"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623596443,
+    "lat": -43.2902651,
+    "lon": 172.2025881,
+    "tags": {
+      "addr:housenumber": "38",
+      "addr:street": "Weld Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152884"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623596444,
+    "lat": -43.3013662,
+    "lon": 172.1860252,
+    "tags": {
+      "addr:housenumber": "30",
+      "addr:street": "Burnt Hill Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152530"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623596445,
+    "lat": -43.3014433,
+    "lon": 172.1940289,
+    "tags": {
+      "addr:housenumber": "5B",
+      "addr:street": "Totara Drive",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "405350"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623596447,
+    "lat": -43.3013673,
+    "lon": 172.1866361,
+    "tags": {
+      "addr:housenumber": "18",
+      "addr:street": "Burnt Hill Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152480"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623596448,
+    "lat": -43.2997914,
+    "lon": 172.1953835,
+    "tags": {
+      "addr:housenumber": "7",
+      "addr:street": "Baxter Place",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1938949"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623596449,
+    "lat": -43.2992823,
+    "lon": 172.2035912,
+    "tags": {
+      "addr:housenumber": "1B",
+      "addr:street": "Campbell Lane",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1533804"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623596450,
+    "lat": -43.288153,
+    "lon": 172.1969632,
+    "tags": {
+      "addr:housenumber": "208",
+      "addr:street": "High Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1472982"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623596452,
+    "lat": -43.2942095,
+    "lon": 172.159191,
+    "tags": {
+      "addr:housenumber": "146D",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "1312525"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623596453,
+    "lat": -43.298874,
+    "lon": 172.1682495,
+    "tags": {
+      "addr:housenumber": "61C",
+      "addr:street": "Woodside Road",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152123"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623596454,
+    "lat": -43.2975782,
+    "lon": 172.1963786,
+    "tags": {
+      "addr:housenumber": "17",
+      "addr:street": "Main Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152913"
+    }
+  },
+  {
+    "type": "node",
+    "id": 5623596455,
+    "lat": -43.298548,
+    "lon": 172.1926662,
+    "tags": {
+      "addr:housenumber": "3",
+      "addr:street": "Rata Street",
+      "addr:suburb": "Oxford",
+      "ref:linz:address_id": "152565"
+    }
+  }
+]

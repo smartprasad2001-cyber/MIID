@@ -273,7 +273,7 @@ class Miner(BaseMinerNeuron):
                 )
             else:
                 bt.logging.info("Routing request to variation_generator_clean.py (fallback)")
-                variations = generate_variations_clean(synapse)
+            variations = generate_variations_clean(synapse)
             
             # Set the variations in the synapse for return to the validator
             synapse.variations = variations

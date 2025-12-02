@@ -40,10 +40,18 @@ def parse_query_template_for_gemini(query_template: str) -> Dict[str, Any]:
         'original_query': query_template
     }
     
-    # Extract variation count
-    count_match = re.search(r'Generate\s+(\d+)\s+variations', query_template, re.I)
-    if count_match:
-        requirements['variation_count'] = int(count_match.group(1))
+    # Extract variation count - handle multiple formats
+    count_patterns = [
+        r'Generate\s+exactly\s+(\d+)\s+(?:name\s+)?variations',  # "Generate exactly 8 variations" or "Generate exactly 8 name variations"
+        r'Generate\s+(\d+)\s+(?:name\s+)?variations',  # "Generate 8 variations" or "Generate 9 name variations"
+        r'exactly\s+(\d+)\s+(?:name\s+)?variations',  # "exactly 8 variations"
+        r'(\d+)\s+variations\s+of',  # "8 variations of {name}"
+    ]
+    for pattern in count_patterns:
+        count_match = re.search(pattern, query_template, re.I)
+        if count_match:
+            requirements['variation_count'] = int(count_match.group(1))
+            break
     
     # Extract rule percentage
     rule_pct_patterns = [
@@ -69,6 +77,18 @@ def parse_query_template_for_gemini(query_template: str) -> Dict[str, Any]:
         requirements['rules'].append('add_special_characters')
     if 'transliterate' in query_template.lower():
         requirements['rules'].append('transliterate')
+    if 'remove a random consonant' in query_template.lower() or 'remove random consonant' in query_template.lower():
+        requirements['rules'].append('remove_random_consonant')
+    if 'swap adjacent syllables' in query_template.lower() or 'swap adjacent syllable' in query_template.lower():
+        requirements['rules'].append('swap_adjacent_syllables')
+    if 'swap adjacent consonants' in query_template.lower() or 'swap adjacent consonant' in query_template.lower():
+        requirements['rules'].append('swap_adjacent_consonants')
+    if 'delete a random letter' in query_template.lower() or 'delete random letter' in query_template.lower():
+        requirements['rules'].append('delete_letter')
+    if 'convert' in query_template.lower() and 'initials' in query_template.lower():
+        requirements['rules'].append('shorten_name_to_initials')
+    if 'swap random adjacent letters' in query_template.lower() or 'swap.*adjacent.*letter' in query_template.lower():
+        requirements['rules'].append('swap_random_letter')
     
     # Extract phonetic similarity distribution
     phonetic_patterns = [
@@ -135,9 +155,19 @@ def build_gemini_prompt(
     phonetic_sim = requirements.get('phonetic_similarity', {})
     ortho_sim = requirements.get('orthographic_similarity', {})
     
-    # Calculate rule-based count
-    rule_count = int(variation_count * rule_percentage)
+    # Calculate rule-based count (round up to ensure we meet the percentage requirement)
+    import math
+    rule_count = math.ceil(variation_count * rule_percentage)
     non_rule_count = variation_count - rule_count
+    
+    # Calculate similarity distribution counts (used in multiple places)
+    phonetic_light_count = int(variation_count * phonetic_sim.get("Light", 0))
+    phonetic_medium_count = int(variation_count * phonetic_sim.get("Medium", 0))
+    phonetic_far_count = int(variation_count * phonetic_sim.get("Far", 0))
+    
+    ortho_light_count = int(variation_count * ortho_sim.get("Light", 0))
+    ortho_medium_count = int(variation_count * ortho_sim.get("Medium", 0))
+    ortho_far_count = int(variation_count * ortho_sim.get("Far", 0))
     
     # Build similarity distribution instructions
     phonetic_instructions = ""
@@ -163,10 +193,12 @@ def build_gemini_prompt(
         
         if light_count > 0:
             phonetic_instructions += f"- EXACTLY {light_count} variations with HIGH phonetic similarity (0.80-1.00):\n"
-            phonetic_instructions += f"  * Sound IDENTICAL or VERY similar (validator uses Soundex/Metaphone/NYSIIS)\n"
+            phonetic_instructions += f"  * Validator uses randomized subset of: Soundex, Metaphone, NYSIIS\n"
+            phonetic_instructions += f"  * Algorithm selection is deterministic per name (same algorithms used each time)\n"
+            phonetic_instructions += f"  * Sound IDENTICAL or VERY similar - variations should encode to SAME phonetic code\n"
             phonetic_instructions += f"  * Examples for '{name}': Single letter changes that sound the same\n"
             phonetic_instructions += f"  * Use: i↔y, ph↔f, c↔k, silent letters, same pronunciation\n"
-            phonetic_instructions += f"  * Goal: Variations that encode to SAME phonetic code\n"
+            phonetic_instructions += f"  * Goal: Variations that encode to SAME phonetic code in all selected algorithms\n"
         
         if medium_count > 0:
             phonetic_instructions += f"- EXACTLY {medium_count} variations with MEDIUM phonetic similarity (0.60-0.79):\n"
@@ -180,6 +212,11 @@ def build_gemini_prompt(
             phonetic_instructions += f"  * Examples: Abbreviations, significant sound changes, but still related\n"
             phonetic_instructions += f"  * Goal: Variations that encode to DIFFERENT phonetic codes\n"
         
+        phonetic_instructions += f"\n"
+        phonetic_instructions += f"EXECUTION PLAN FOR PHONETIC DISTRIBUTION:\n"
+        phonetic_instructions += f"- Variations 1-{light_count}: HIGH phonetic similarity (Light: 0.80-1.00)\n"
+        phonetic_instructions += f"- Variations {light_count+1}-{light_count+medium_count}: MEDIUM phonetic similarity (Medium: 0.60-0.79)\n"
+        phonetic_instructions += f"- Variations {light_count+medium_count+1}-{variation_count}: LOW phonetic similarity (Far: 0.30-0.59)\n"
         phonetic_instructions += f"\nCRITICAL: The validator checks if your variations match this EXACT distribution. Missing the distribution = low score!\n"
     
     ortho_instructions = ""
@@ -232,35 +269,136 @@ def build_gemini_prompt(
             ortho_instructions += f"  * Examples: {min_distance_far}-{max_distance_far} character changes, abbreviations\n"
             ortho_instructions += f"  * Goal: Significantly different spelling but still related\n"
         
+        ortho_instructions += f"\n"
+        ortho_instructions += f"EXECUTION PLAN FOR ORTHOGRAPHIC DISTRIBUTION:\n"
+        ortho_instructions += f"- Variations 1-{light_count}: HIGH orthographic similarity (Light: 0.70-1.00)\n"
+        ortho_instructions += f"- Variations {light_count+1}-{light_count+medium_count}: MEDIUM orthographic similarity (Medium: 0.50-0.69)\n"
+        ortho_instructions += f"- Variations {light_count+medium_count+1}-{variation_count}: LOW orthographic similarity (Far: 0.20-0.49)\n"
         ortho_instructions += f"\nCRITICAL: The validator checks if your variations match this EXACT distribution. Missing the distribution = low score!\n"
     
     # Build rule instructions
     rule_instructions = ""
     if rules and rule_count > 0:
-        rule_instructions = f"\nRULE-BASED VARIATIONS (CRITICAL - 20% WEIGHT):\n"
-        rule_instructions += f"You MUST apply rules to EXACTLY {rule_count} variations. Rule compliance is 20% of your score!\n"
-        rule_instructions += f"Apply these rules to generate variations:\n"
+        rule_instructions = f"\n{'='*80}\n"
+        rule_instructions += f"RULE-BASED VARIATIONS (CRITICAL - 20% WEIGHT - MUST FOLLOW EXACTLY)\n"
+        rule_instructions += f"{'='*80}\n"
+        rule_instructions += f"⚠️  CRITICAL: You MUST apply rules to EXACTLY {rule_count} out of {variation_count} variations!\n"
+        rule_instructions += f"⚠️  Rule compliance is 20% of your total score - missing this = 0.2 point loss!\n"
+        rule_instructions += f"⚠️  The validator checks rule compliance algorithmically - variations MUST be OBVIOUS!\n"
+        rule_instructions += f"\n"
+        rule_instructions += f"REQUIRED RULE DISTRIBUTION:\n"
+        rule_instructions += f"- Out of {variation_count} total variations, EXACTLY {rule_count} must follow these rules:\n"
+        
+        # Calculate how many variations should follow each rule
+        num_rules = len(rules)
+        if num_rules > 0:
+            variations_per_rule = rule_count // num_rules
+            extra_variations = rule_count % num_rules
+            
+            rule_instructions += f"\n"
+            for i, rule in enumerate(rules):
+                count_for_this_rule = variations_per_rule + (1 if i < extra_variations else 0)
+                rule_instructions += f"  - Rule {i+1}: Apply to EXACTLY {count_for_this_rule} variations\n"
+        
+        rule_instructions += f"\n"
+        rule_instructions += f"RULE DEFINITIONS (APPLY THESE EXACTLY):\n"
         for rule in rules:
             if rule == 'replace_spaces_with_special_characters':
-                rule_instructions += "- Replace spaces with special characters (e.g., 'John Smith' → 'John_Smith', 'John-Smith', 'John.Smith')\n"
+                rule_instructions += f"\n1. 'replace_spaces_with_special_characters':\n"
+                rule_instructions += f"   - Replace spaces with special characters\n"
+                rule_instructions += f"   - Examples: 'John Smith' → 'John_Smith', 'John-Smith', 'John.Smith'\n"
+                rule_instructions += f"   - Validator checks: spaces replaced with _, -, ., etc.\n"
             elif rule == 'replace_vowels':
-                rule_instructions += "- Replace vowels with similar-looking characters (e.g., 'John' → 'J0hn', 'J@hn', 'J#hn')\n"
+                rule_instructions += f"\n1. 'replace_vowels':\n"
+                rule_instructions += f"   - Replace vowels with similar-looking characters\n"
+                rule_instructions += f"   - Examples: 'John' → 'J0hn', 'J@hn', 'J#hn'\n"
             elif rule == 'replace_consonants':
-                rule_instructions += "- Replace random consonants with different consonants (e.g., 'John' → 'Jonn', 'Jahn', 'Jokn')\n"
+                rule_instructions += f"\n1. 'replace_consonants':\n"
+                rule_instructions += f"   - Replace random consonants with different consonants\n"
+                rule_instructions += f"   - Examples: 'John' → 'Jonn', 'Jahn', 'Jokn'\n"
             elif rule == 'replace_random_consonants':
-                rule_instructions += "- Replace random consonants with different consonants (e.g., 'Smith' → 'Smoth', 'Smiph', 'Smizh')\n"
+                rule_instructions += f"\n1. 'replace_random_consonants':\n"
+                rule_instructions += f"   - Replace random consonants with different consonants\n"
+                rule_instructions += f"   - Examples: 'Smith' → 'Smoth', 'Smiph', 'Smizh'\n"
             elif rule == 'replace_random_vowels':
-                rule_instructions += "- Replace random vowels with different vowels (e.g., 'John' → 'Jahn', 'Jehn', 'Jihn')\n"
+                rule_instructions += f"\n1. 'replace_random_vowels':\n"
+                rule_instructions += f"   - Replace random vowels with different vowels\n"
+                rule_instructions += f"   - Examples: 'John' → 'Jahn', 'Jehn', 'Jihn'\n"
             elif rule == 'add_special_characters':
-                rule_instructions += "- Add special characters (e.g., 'John' → 'John!', 'John#', 'John$')\n"
+                rule_instructions += f"\n1. 'add_special_characters':\n"
+                rule_instructions += f"   - Add special characters\n"
+                rule_instructions += f"   - Examples: 'John' → 'John!', 'John#', 'John$'\n"
             elif rule == 'delete_letter' or rule == 'delete_a_random_letter':
-                rule_instructions += "- Delete a random letter (e.g., 'John' → 'Jhn', 'Jon', 'Joh')\n"
+                rule_instructions += f"\n1. 'delete_letter':\n"
+                rule_instructions += f"   - Delete a random letter\n"
+                rule_instructions += f"   - Examples: 'John' → 'Jhn', 'Jon', 'Joh'\n"
+                rule_instructions += f"   - CRITICAL: Length must be exactly 1 character shorter than original\n"
             elif rule == 'transliterate':
-                rule_instructions += "- Transliterate to different scripts (e.g., 'John' → 'Джон' (Cyrillic), 'جون' (Arabic))\n"
+                rule_instructions += f"\n1. 'transliterate':\n"
+                rule_instructions += f"   - Transliterate to different scripts\n"
+                rule_instructions += f"   - Examples: 'John' → 'Джон' (Cyrillic), 'جون' (Arabic)\n"
             elif rule == 'swap_adjacent_consonants':
-                rule_instructions += "- Swap adjacent consonants (e.g., 'Smith' → 'Smthi', 'Smhit')\n"
+                rule_instructions += f"\n1. 'swap_adjacent_consonants':\n"
+                rule_instructions += f"   - Swap adjacent consonants\n"
+                rule_instructions += f"   - Examples: 'Smith' → 'Smthi', 'Smhit'\n"
+                rule_instructions += f"   - CRITICAL: Must swap exactly 2 adjacent consonants, length must match\n"
+            elif rule == 'remove_random_consonant' or rule == 'remove_a_random_consonant':
+                rule_instructions += f"\n1. 'remove_random_consonant':\n"
+                rule_instructions += f"   - Remove a random consonant from the name\n"
+                rule_instructions += f"   - Examples: 'John' → 'Jhn', 'Jon', 'Joh'; 'Smith' → 'Sith', 'Smth', 'Smit'\n"
+                rule_instructions += f"   - CRITICAL: Length must be exactly 1 character shorter than original\n"
+            elif rule == 'swap_adjacent_syllables':
+                rule_instructions += f"\n1. 'swap_adjacent_syllables':\n"
+                rule_instructions += f"   - Swap adjacent syllables in the name\n"
+                rule_instructions += f"   - Examples: 'Miller' → 'Lermil', 'John Smith' → 'Smith John'\n"
+                rule_instructions += f"   - CRITICAL: Two adjacent letters must be swapped, length must match\n"
+            elif rule == 'swap_random_letter':
+                rule_instructions += f"\n1. 'swap_random_letter':\n"
+                rule_instructions += f"   - Swap random adjacent letters (ANY two adjacent letters)\n"
+                rule_instructions += f"   - Examples for '{name}':\n"
+                # Generate specific examples for this name
+                if len(name) >= 2:
+                    # Show a few swap examples
+                    for i in range(min(3, len(name)-1)):
+                        swapped = name[:i] + name[i+1] + name[i] + name[i+2:]
+                        rule_instructions += f"     * '{name}' → '{swapped}' (swapped positions {i} and {i+1})\n"
+                rule_instructions += f"   - CRITICAL: Must swap exactly 2 adjacent letters, length must match original\n"
+                rule_instructions += f"   - Validator checks: Levenshtein distance = 1 (exactly 1 swap operation)\n"
+            elif rule == 'shorten_name_to_initials':
+                rule_instructions += f"\n1. 'shorten_name_to_initials':\n"
+                rule_instructions += f"   - Convert name to initials (ALL name parts to first letter)\n"
+                # Generate specific example for this name
+                name_parts = name.split()
+                if len(name_parts) >= 2:
+                    initials_example = '.'.join([p[0].upper() for p in name_parts]) + '.'
+                    initials_example2 = ' '.join([p[0].upper() + '.' for p in name_parts])
+                    initials_example3 = ''.join([p[0].upper() for p in name_parts])
+                    rule_instructions += f"   - Examples for '{name}':\n"
+                    rule_instructions += f"     * '{name}' → '{initials_example}' (with periods)\n"
+                    rule_instructions += f"     * '{name}' → '{initials_example2}' (with spaces and periods)\n"
+                    rule_instructions += f"     * '{name}' → '{initials_example3}' (no separators)\n"
+                else:
+                    rule_instructions += f"   - Examples: 'John Smith' → 'J.S.', 'J S', 'JS'\n"
+                rule_instructions += f"   - CRITICAL: Must convert ALL name parts to their first letter\n"
+                rule_instructions += f"   - Validator checks: All parts reduced to single letters\n"
         
-        rule_instructions += f"\nCRITICAL: You MUST apply these rules to EXACTLY {rule_count} variations. Missing rule compliance = 0% for that component (20% weight loss)!\n"
+        rule_instructions += f"\n"
+        rule_instructions += f"{'='*80}\n"
+        rule_instructions += f"EXECUTION PLAN FOR '{name}':\n"
+        rule_instructions += f"{'='*80}\n"
+        rule_instructions += f"Generate {variation_count} variations in this order:\n"
+        rule_instructions += f"\n"
+        rule_instructions += f"Variations 1-{rule_count}: MUST follow the rules above (rule-compliant)\n"
+        rule_instructions += f"  - Apply rules explicitly and obviously\n"
+        rule_instructions += f"  - Make it CLEAR which rule each variation follows\n"
+        rule_instructions += f"  - Validator will check algorithmically - variations must be OBVIOUS\n"
+        rule_instructions += f"\n"
+        rule_instructions += f"Variations {rule_count+1}-{variation_count}: Regular variations (non-rule-compliant)\n"
+        rule_instructions += f"  - These should NOT follow the rules\n"
+        rule_instructions += f"  - Focus on phonetic/orthographic similarity distribution\n"
+        rule_instructions += f"\n"
+        rule_instructions += f"⚠️  FINAL CHECK: Count your rule-compliant variations - you MUST have EXACTLY {rule_count}!\n"
+        rule_instructions += f"⚠️  If you have fewer than {rule_count}, you will get 0% for rule compliance (loses 20% weight)!\n"
     
     # Build address instructions
     address_instructions = f"""
@@ -373,16 +511,34 @@ IMPORTANT: Missing any category reduces your score. Include ALL 6 categories!
 NAME VARIATION GENERATION (CRITICAL FOR MAXIMUM SCORE):
 - Original name: {name}
 - Generate EXACTLY {variation_count} unique variations
-- CRITICAL: Each variation must be UNIQUE (validator checks uniqueness - 10% weight)
-  * Validator checks: combined_similarity = (phonetic * 0.7) + (orthographic * 0.3)
-  * No two variations should have combined_similarity > 0.99
-  * Ensure variations are sufficiently different from each other
+- CRITICAL: Each variation must be UNIQUE and DIFFERENT from each other (validator checks uniqueness - 10% weight)
+  * ⚠️  DO NOT return the same name for all variations - this results in uniqueness score = 0!
+  * Validator checks uniqueness using pairwise comparison:
+    - For each pair of variations, calculates: combined_similarity = (phonetic * 0.7) + (orthographic * 0.3)
+    - If combined_similarity > 0.99, variations are considered duplicates
+    - Uniqueness score = unique_count / total_count
+    - If all variations are identical, uniqueness_score = 0 (loses 10% weight)
+  * CRITICAL: Ensure variations are sufficiently different from each other
+  * Strategy: Vary both first AND last name parts, use different transformation types
   * If variations are too similar, uniqueness score decreases (loses 10% weight)
+  * Examples of GOOD variations for "{name}":
+    - Apply different transformations: spelling changes, transliteration, abbreviations
+    - Vary both first and last name parts (if multi-part name)
+    - Use different phonetic/orthographic transformations
+  * Examples of BAD variations (DO NOT DO THIS):
+    - All variations being "{name}" (identical) ❌
+    - All variations being the same with only accent removed ❌
+    - All variations being identical except for DOB/address ❌
 - Length requirements (15% weight):
-  * Variations must be 60-140% of original length
+  * Validator uses adaptive thresholds based on original name length
+  * For '{name}' (length {len(name)}): min_ratio = {'0.6' if len(name) <= 5 else '0.7'} (more forgiving for short names)
+  * Validator calculates: length_ratio = min(var_len / original_len, original_len / var_len)
+  * Validator calculates: length_score = length_ratio * (1.0 - min(1.0, absolute_diff / original_len))
+  * Target: Variations should be 60-140% of original length for best scores
   * Original '{name}' length: {len(name)} characters
   * Acceptable range: {int(len(name) * 0.6)}-{int(len(name) * 1.4)} characters
   * Keep variations within this range for maximum score
+  * Short names (≤5 chars) are more forgiving (60% minimum), longer names need 70% minimum
 - CRITICAL: Maintain name structure - multi-part names MUST stay multi-part
 - For '{name}': Split into first name and last name
 - Generate variations for BOTH first and last names, then COMBINE them
@@ -475,10 +631,17 @@ The validator scores based on these weights:
    - This is the BIGGEST component - get this right!
    - Must match EXACT distribution percentages
 2. COUNT (15% weight): Must have EXACTLY {variation_count} variations
-   - Within 20-40% tolerance = 1.0, outside = exponential penalty
+   - Validator uses adaptive tolerance: base_tolerance = 20% + (5% per 10 expected), max 40%
+   - For {variation_count} variations: tolerance = {min(0.2 + (0.05 * (variation_count // 10)), 0.4):.1%}
+   - Tolerance range: {max(1, int(variation_count * (1 - min(0.2 + (0.05 * (variation_count // 10)), 0.4))))}-{int(variation_count * (1 + min(0.2 + (0.05 * (variation_count // 10)), 0.4)))}
+   - Within tolerance range = 1.0, outside = exponential penalty: score = exp(-deviation / expected_count)
+   - Target: Generate exactly {variation_count} variations for maximum score
 3. UNIQUENESS (10% weight): All variations must be unique
-   - Combined similarity between variations must be < 0.99
-   - If variations are too similar, score decreases
+   - Validator checks pairwise: combined_similarity = (phonetic * 0.7) + (orthographic * 0.3)
+   - If combined_similarity > 0.99 between any two variations, they're considered duplicates
+   - Uniqueness score = unique_count / total_count
+   - If all variations are identical, uniqueness_score = 0 (loses 10% weight)
+   - Strategy: Vary both first AND last name parts, use different transformation types
 4. LENGTH (15% weight): Variations must be 60-140% of original length
    - Original '{name}' length: {len(name)} characters
    - Acceptable: {int(len(name) * 0.6)}-{int(len(name) * 1.4)} characters
@@ -519,14 +682,17 @@ CRITICAL REMINDERS:
    - ❌ WRONG: "Jon", "John", "Johnny" (missing last name = penalty!)
 
 2. SIMILARITY DISTRIBUTION: The validator MEASURES similarity using algorithms
-   - Phonetic: Uses Soundex/Metaphone/NYSIIS (measures sound similarity)
-   - Orthographic: Uses Levenshtein distance (measures spelling similarity)
+   - Phonetic: Uses randomized subset of Soundex/Metaphone/NYSIIS (selection is deterministic per name)
+   - Orthographic: Uses Levenshtein distance: score = 1.0 - (distance / max_length)
+   - Distribution matching: Validator counts how many variations fall into each similarity range
    - You must generate variations that will MEASURE into the correct ranges
    - Test your variations mentally: will they fall into Light/Medium/Far ranges?
 
-3. UNIQUENESS: Each variation must be >1% different from all others
-   - Validator checks: (phonetic * 0.7) + (orthographic * 0.3) < 0.99
-   - Ensure variations are sufficiently different
+3. UNIQUENESS: Each variation must be sufficiently different from all others
+   - Validator checks pairwise: combined_similarity = (phonetic * 0.7) + (orthographic * 0.3)
+   - If combined_similarity > 0.99 between any two variations, they're considered duplicates
+   - Uniqueness score = unique_count / total_count
+   - Strategy: Vary both first AND last name parts, use different transformation types
 
 4. RULES: You MUST apply rules to EXACTLY {rule_count} variations
    - Missing rules = 0% for rule compliance (loses 20% weight!)
@@ -534,6 +700,28 @@ CRITICAL REMINDERS:
 
 5. COUNT: EXACTLY {variation_count} variations - no more, no less
    - Validator checks count strictly (15% weight)
+
+================================================================================
+UNIFIED EXECUTION PLAN (FOLLOW THIS EXACTLY):
+================================================================================
+Generate {variation_count} variations in this specific order:
+
+RULE-COMPLIANT VARIATIONS (Variations 1-{rule_count}):
+  - These MUST follow the rules specified above
+  - Apply rules clearly and obviously
+  - Still try to match similarity distributions where possible
+  - Examples: Use initials (rule) but keep phonetic similarity high
+
+NON-RULE-COMPLIANT VARIATIONS (Variations {rule_count+1}-{variation_count}):
+  - These should NOT follow the rules
+  - Focus on matching similarity distributions EXACTLY
+  - These are scored for similarity, count, uniqueness, and length
+  - Make sure these match the phonetic/orthographic distributions
+
+SIMILARITY DISTRIBUTION (applies to ALL variations, but especially non-rule ones):
+  - Phonetic: {phonetic_light_count} Light, {phonetic_medium_count} Medium, {phonetic_far_count} Far
+  - Orthographic: {ortho_light_count} Light, {ortho_medium_count} Medium, {ortho_far_count} Far
+  - Try to distribute rule-compliant variations across similarity ranges too
 
 ================================================================================
 FINAL CHECKLIST BEFORE RETURNING:
@@ -858,6 +1046,21 @@ def generate_variations_with_gemini(
                     }
                 else:
                     all_variations[name] = []
+            
+            # Validate uniqueness - check if all variations have identical names
+            if variations:
+                unique_names = set(var[0] if isinstance(var, list) and len(var) > 0 else str(var) for var in variations)
+                if len(unique_names) == 1:
+                    bt.logging.warning(
+                        f"⚠️  CRITICAL: All variations for '{name}' are identical: '{list(unique_names)[0]}'. "
+                        f"This will result in uniqueness score = 0 (loses 10% weight). "
+                        f"Gemini failed to generate proper variations."
+                    )
+                elif len(unique_names) < len(variations) * 0.5:
+                    bt.logging.warning(
+                        f"⚠️  Low uniqueness for '{name}': {len(unique_names)} unique names out of {len(variations)} variations. "
+                        f"This may reduce uniqueness score."
+                    )
             
             bt.logging.info(f"✅ Generated {len(variations)} variations for {name}")
             

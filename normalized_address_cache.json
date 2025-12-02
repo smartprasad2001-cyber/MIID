@@ -1,0 +1,1871 @@
+{
+  "addresses": {
+    "Afghanistan": [
+      {
+        "address": "8, جاده شهید مزاری, kabul, 5000, Afghanistan",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaabddfghhhhijklmnnrsstuyyz",
+        "source_city": "Kabul"
+      },
+      {
+        "address": "Seh Aqrab Road, Kabul, 1006, Afghanistan",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaabbdefghhiklnnoqrrsstu",
+        "source_city": "Kabul"
+      },
+      {
+        "address": "five star gas station, kabul, 1006, Afghanistan",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaabeffgghiiiklnnnorssssttttuv",
+        "source_city": "Kabul"
+      }
+    ],
+    "Albania": [
+      {
+        "address": "6, Rruga Gryka E Kaçanikut, Tirana, 1050, Albania",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaaaabceggiiikkklnnnrrrrttuuy",
+        "source_city": "Tirana"
+      },
+      {
+        "address": "8, Jeronim de Rada, Kashar, 1050, Albania",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaabddeehiijklmnnorrrs",
+        "source_city": "Tirana"
+      },
+      {
+        "address": "5, Rruga Jeronim de Rada, Kashar, 1050, Albania",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaaabddeeghiijklmnnorrrrrsu",
+        "source_city": "Tirana"
+      },
+      {
+        "address": "56, Rruga Agaveve, Durrës, 2008, Albania",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaabdeeeggilnrrrrsuuvv",
+        "source_city": "Durrës"
+      },
+      {
+        "address": "26, Bulevardi i Palmave, Golem, 2504, Albania",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaabbdeeegiiillllmmnopruvv",
+        "source_city": "Durrës"
+      },
+      {
+        "address": "13, Rruga Pavarësia, Durrës, 2001, Albania",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaabdeegiilnprrrrrssuuv",
+        "source_city": "Durrës"
+      },
+      {
+        "address": "784, Hysen Kërtusha, Durrës, 2000, Albania",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaabdeeehhiklnnrrrssstuuy",
+        "source_city": "Durrës"
+      },
+      {
+        "address": "10, Rruga Shtojzavallet, Durrës, 2021, Albania",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaabdeeghijlllnorrrrssttuuvz",
+        "source_city": "Durrës"
+      },
+      {
+        "address": "20, Rruga Mihal Grameno, Durrës, 2021, Albania",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaabdeegghiillmmnnorrrrrsuu",
+        "source_city": "Durrës"
+      },
+      {
+        "address": "62, Rruga Shkola Arapaj, Durrës, 2021, Albania",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaaabdeghijkllnoprrrrrssuu",
+        "source_city": "Durrës"
+      },
+      {
+        "address": "92, Bulevardi i Pishave, Golem, 2504, Albania",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaabbdeeeghiiiilllmnoprsuvv",
+        "source_city": "Durrës"
+      },
+      {
+        "address": "16, Rruga Ramazan Njala, Durrës, 2021, Albania",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaaaabdegijllmnnnrrrrrsuuz",
+        "source_city": "Durrës"
+      },
+      {
+        "address": "12, Rruga Bregu i Detit, Durrës, 2021, Albania",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaabbddeeeggiiilnrrrrrsttuuu",
+        "source_city": "Durrës"
+      },
+      {
+        "address": "3, Western Union, Durrës, 2000, Albania",
+        "score": 1.0,
+        "cheat_normalized_address": "aaabdeeeiilnnnnorrrsstuuw",
+        "source_city": "Durrës"
+      },
+      {
+        "address": "L13, Pula Në Prush, Durrës, 2001, Albania",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaabdeehilllnnpprrrssuuu",
+        "source_city": "Durrës"
+      }
+    ],
+    "Algeria": [
+      {
+        "address": "24, Cité 632 Logements, Mohammadia, 16058, Algeria",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaacdeeeegghiiillmmmmnoorstt",
+        "source_city": "Algiers"
+      },
+      {
+        "address": "16, Unité de Protection civile, 16000, Algeria",
+        "score": 1.0,
+        "cheat_normalized_address": "aaccdeeeeegiiiiillnnooprrtttuv",
+        "source_city": "Algiers"
+      },
+      {
+        "address": "BNP Paribas El Djazaïr, حيدرة, 16035, Algeria",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaabbddeeghiiijllnpprrrrsyz",
+        "source_city": "Algiers"
+      },
+      {
+        "address": "Bureau de poste de Birtouta, 16045, Algeria",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaabbdeeeegiilooprrrstttuuu",
+        "source_city": "Algiers"
+      },
+      {
+        "address": "Pizza Pino, Bir Mourad Raïs, 16035, Algeria",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaabdegiiiiilmnoopprrrrsuzz",
+        "source_city": "Algiers"
+      },
+      {
+        "address": "8 ème Sûreté urbaine, Oran, 31000, Algeria",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaabeeeeeegiilmnnorrrrstuu",
+        "source_city": "Oran"
+      },
+      {
+        "address": "Tabac Journeaux, Oran, 31000, Algeria",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaabceegijlnnoorrrtuux",
+        "source_city": "Oran"
+      },
+      {
+        "address": "Supermarché khawadja, Oran, 31000, Algeria",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaacdeeeghhijklmnoprrrrsuw",
+        "source_city": "Oran"
+      },
+      {
+        "address": "Mosquée Salman el Farissi, Oran, 31000, Algeria",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaeeeefgiiilllmmnnooqrrrssssu",
+        "source_city": "Oran"
+      },
+      {
+        "address": "Hôtel des finances, Oran, 31000, Algeria",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaacdeeeefghiillnnnoorrsst",
+        "source_city": "Oran"
+      },
+      {
+        "address": "Lingerie Giovanni, Oran, 31000, Algeria",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaeeegggiiiiillnnnnoorrrv",
+        "source_city": "Oran"
+      },
+      {
+        "address": "GSNautomotive, Bir El Djir, 31028, Algeria",
+        "score": 0.9,
+        "cheat_normalized_address": "aaabdeeeggiiiijllmnoorrrsttuv",
+        "source_city": "Oran"
+      },
+      {
+        "address": "Cabinet President d'APC, Oran, 31000, Algeria",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaabccddeeeegiiilnnnopprrrstt",
+        "source_city": "Oran"
+      },
+      {
+        "address": "Clinique El Abed, Oran, 31000, Algeria",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaabcdeeeegiiilllnnoqrru",
+        "source_city": "Oran"
+      },
+      {
+        "address": "SARL Ops (La voix de l'oranie), Oran, 31000, Algeria",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaadeeegiiillllnnooooprrrrssvx",
+        "source_city": "Oran"
+      }
+    ],
+    "Andorra": [
+      {
+        "address": "53, Avinguda de Tarragona, Andorra la Vella, AD500, Andorra",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaaaaaddddeeggilllnnnoorrrrtuvv",
+        "source_city": "Andorra la Vella"
+      },
+      {
+        "address": "3, Carrer de l'obac, Escaldes-Engordany, AD700, Andorra",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaabcccdddddeeeeegllnnnooorrrrrrssy",
+        "source_city": "Andorra la Vella"
+      },
+      {
+        "address": "15, Avinguda Doctor Mitjavila, Andorra la Vella, AD500, Andorra",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaaaacddddegiiijllllmnnooorrrttuvvv",
+        "source_city": "Andorra la Vella"
+      },
+      {
+        "address": "69, Avinguda Meritxell, Andorra la Vella, AD500, Andorra",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaadddeeegiilllllmnnorrrtuvvx",
+        "source_city": "Andorra la Vella"
+      },
+      {
+        "address": "51, Carrer Pau Casals, Andorra la Vella, AD500, Andorra",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaaaaccddeellllnoprrrrrssuv",
+        "source_city": "Andorra la Vella"
+      },
+      {
+        "address": "22, Carrer de la Geneta, Juberri, AD600, Andorra",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaabcdddeeeeegijlnnorrrrrrrtu",
+        "source_city": "Andorra la Vella"
+      },
+      {
+        "address": "87, Avinguda del Princep Benlloch, Andorra la Vella, AD500, Andorra",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaabccddddeeeeghiillllllnnnnoopprrruvv",
+        "source_city": "Andorra la Vella"
+      },
+      {
+        "address": "Carrer Esteve Dolsa Pujol, Andorra la Vella, AD500, Andorra",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaacdddeeeeejlllllnoooprrrrrsstuvv",
+        "source_city": "Andorra la Vella"
+      },
+      {
+        "address": "Sant Esteve de Juberri, Juberri, AD600, Andorra",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaabdddeeeeeijnnorrrrssttuv",
+        "source_city": "Andorra la Vella"
+      },
+      {
+        "address": "Residential de l'Aldosa, L’Aldosa, AD400, Andorra",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaadddddeeeiilllnnoorrrsst",
+        "source_city": "Andorra la Vella"
+      },
+      {
+        "address": "BonÀrea, Andorra la Vella, AD500, Andorra",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaabddeelllnnoorrrv",
+        "source_city": "Andorra la Vella"
+      },
+      {
+        "address": "Oficina de Turisme, Encamp, AD200, Andorra",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaccdddeeefiiimmnnnooprrrstu",
+        "source_city": "Andorra la Vella"
+      },
+      {
+        "address": "Sant Roc de Sornàs, Sornàs, AD300, Andorra",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaacdddennnooorrrrssst",
+        "source_city": "Andorra la Vella"
+      }
+    ],
+    "Angola": [
+      {
+        "address": "233, Largo Serpa Pinto, Luanda, Angola",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaadeggilllnnnooopprrstu",
+        "source_city": "Luanda"
+      },
+      {
+        "address": "19a, Avenida Pedro de C. Vandunem-Loy, Luanda, Angola",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaaacdddddeeeegilllmnnnnnooopruuvvy",
+        "source_city": "Luanda"
+      },
+      {
+        "address": "1, Avenida Pedro de C. Vandunem-Loy, Luanda, Angola",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaacdddddeeeegilllmnnnnnooopruuvvy",
+        "source_city": "Luanda"
+      },
+      {
+        "address": "21, Rua de José de Oliveira Barbosa, Luanda, Angola",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaabbddeeegiijlllnnoooorrrssuuv",
+        "source_city": "Luanda"
+      },
+      {
+        "address": "39, Rua Doutor José Maria Antunes, Luanda, Angola",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaddeegijllmnnnnoooorrrssttuuuu",
+        "source_city": "Luanda"
+      },
+      {
+        "address": "13A, Rua Doutor José Maria Antunes, Luanda, Angola",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaddeegijllmnnnnoooorrrssttuuuu",
+        "source_city": "Luanda"
+      },
+      {
+        "address": "2727, Rua da Madalena do Mar, Luanda, Angola",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaddddeglllmmnnnoorruu",
+        "source_city": "Luanda"
+      },
+      {
+        "address": "42, Rua das Construções, Luanda, Angola",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaccddegllnnnooorrssstuuu",
+        "source_city": "Luanda"
+      },
+      {
+        "address": "21, Comandante Eurico, Luanda, Angola",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaccddeegillmnnnnooortuu",
+        "source_city": "Luanda"
+      },
+      {
+        "address": "Avenida Samora Machel, Luanda, 6212, Angola",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaacddeeghilllmmnnnoorsuv",
+        "source_city": "Luanda"
+      },
+      {
+        "address": "8ª Esquadra da divisão do Rangel, Bairro ctt, rangel, Luanda, Angola",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaabcdddddeeggiiilllnnnooooqrrrrssttuuv",
+        "source_city": "Luanda"
+      },
+      {
+        "address": "1º Conservatório do Registo Civil, Luanda, Angola",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaccddeeggiiiilllnnnooooooorrrssttuvv",
+        "source_city": "Luanda"
+      },
+      {
+        "address": "4ª Conservatória do Registo Civil de Luanda - Valódia, Luanda, Angola",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaccddddeeeggiiiiillllnnnoooooorrrssttuvvv",
+        "source_city": "Luanda"
+      },
+      {
+        "address": "Comercial, Rua 1º de Agosto, Lubango, Angola",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaabccdeegggilllmnnoooooorrstuu",
+        "source_city": "Lubango"
+      },
+      {
+        "address": "Comercial, Rua 10 de Dezembro, Lubango, Angola",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaabbccddeeeeggilllmmnnoooorrruuz",
+        "source_city": "Lubango"
+      }
+    ],
+    "Argentina": [
+      {
+        "address": "901, Avenida del Libertador, Vicente López, 1638, Argentina",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaabcdddeeeeeeegiiiilllnnnnooprrrtttvvz",
+        "source_city": "Buenos Aires"
+      },
+      {
+        "address": "1200, Avenida Bartolomé Mitre, Avellaneda, 1870, Argentina",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaabddeeeeeegiiilllmmnnnnoorrrtttvv",
+        "source_city": "Buenos Aires"
+      },
+      {
+        "address": "446, San Jerónimo, Córdoba, 5000, Argentina",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaabcdeegiijmnnnnoooorrrst",
+        "source_city": "Córdoba"
+      },
+      {
+        "address": "502, Boulevard Chacabuco, Córdoba, 5000, Argentina",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaabbbccccddeeghilnnoooorrrtuuv",
+        "source_city": "Córdoba"
+      },
+      {
+        "address": "79, San Lorenzo, Córdoba, 5000, Argentina",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaabcdeegilnnnnoooorrrstz",
+        "source_city": "Córdoba"
+      },
+      {
+        "address": "Avenida Monseñor Pablo Cabrera, 5008, Argentina",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaabbcdeeeegiilmnnnnnoooprrrrstv",
+        "source_city": "Córdoba"
+      },
+      {
+        "address": "2502, Avenida Juan José Paso, 7600, Argentina",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaadeeegiijjnnnnooprsstuv",
+        "source_city": "Mar del Plata"
+      },
+      {
+        "address": "1401, Avenida Polonia, Mar del Plata, 7600, Argentina",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaaaddeeegiiilllmnnnnoopprrttv",
+        "source_city": "Mar del Plata"
+      },
+      {
+        "address": "811, Lavalle, San Miguel de Tucumán, T4000AXQ, Argentina",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaacdeeeeggiillllmmnnnnqrstttuuuvx",
+        "source_city": "San Miguel de Tucumán"
+      },
+      {
+        "address": "401, Córdoba, San Miguel de Tucumán, 4000, Argentina",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaabccddeeeggiilmmnnnnoorrsttuuu",
+        "source_city": "San Miguel de Tucumán"
+      },
+      {
+        "address": "799, San Martín, San Miguel de Tucumán, 4000, Argentina",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaacdeeeggiiilmmmnnnnnrrstttuuu",
+        "source_city": "San Miguel de Tucumán"
+      },
+      {
+        "address": "302, Santa Fe, San Miguel de Tucumán, T4000ENH, Argentina",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaacdeeeeefgghiilmmnnnnnnrssttttuuu",
+        "source_city": "San Miguel de Tucumán"
+      },
+      {
+        "address": "400, Jujuy, San Miguel de Tucumán, T4000IQH, Argentina",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaacdeeegghiiijjlmmnnnnqrstttuuuuuy",
+        "source_city": "San Miguel de Tucumán"
+      },
+      {
+        "address": "224, San Martín, San Miguel de Tucumán, T4000CVF, Argentina",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaccdeeefggiiilmmmnnnnnrrsttttuuuv",
+        "source_city": "San Miguel de Tucumán"
+      },
+      {
+        "address": "250, Avenida Brígido Teran, San Miguel de Tucumán, T4000HPP, Argentina",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaabcdddeeeeeggghiiiiilmmnnnnnnopprrrsttttuuuv",
+        "source_city": "San Miguel de Tucumán"
+      }
+    ],
+    "Armenia": [],
+    "Aruba": [],
+    "Australia": [
+      {
+        "address": "43-45, East Esplanade, Manly, 2095, Australia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaadeeeilllmnnprsssttuy",
+        "source_city": "Sydney"
+      },
+      {
+        "address": "20-24, Hall Street, Bondi Beach, 2026, Australia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaabbcdeeehhiilllnorrsstttu",
+        "source_city": "Sydney"
+      },
+      {
+        "address": "259, King Street, Newtown, 2042, Australia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaeeegiiklnnnorrssttttuww",
+        "source_city": "Sydney"
+      },
+      {
+        "address": "55, Harrington Street, The Rocks, 2000, Australia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaceeeghhiiklnnoorrrrrssstttttu",
+        "source_city": "Sydney"
+      },
+      {
+        "address": "259, George Street, Sydney, 2000, Australia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaadeeeeeggilnorrrssstttuyy",
+        "source_city": "Sydney"
+      },
+      {
+        "address": "147-151, Coxs Road, North Ryde, 2113, Australia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaacddehilnooorrrrssttuxy",
+        "source_city": "Sydney"
+      },
+      {
+        "address": "7 - 9, York Street, Sydney, 2000, Australia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaadeeeiklnorrrssstttuyyy",
+        "source_city": "Sydney"
+      },
+      {
+        "address": "107, Pitt Street, Sydney, 2000, Australia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaadeeeiilnprrssstttttuyy",
+        "source_city": "Sydney"
+      },
+      {
+        "address": "170, Pacific Highway, 2065, Australia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaccfghhiiiilprstuwy",
+        "source_city": "Sydney"
+      },
+      {
+        "address": "45, Lane Cove Road, Ryde, 2112, Australia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaacddeeeillnoorrrstuvy",
+        "source_city": "Sydney"
+      },
+      {
+        "address": "38 - 46, Albany Street, St Leonards, 2065, Australia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaabdeeeilllnnorrrssssttttuy",
+        "source_city": "Sydney"
+      },
+      {
+        "address": "21, Atchison Street, St Leonards, 2065, Australia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaacdeeehiillnnoorrrssssstttttu",
+        "source_city": "Sydney"
+      },
+      {
+        "address": "204, Victoria Street, Potts Point, 2011, Australia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaceeiiiilnooopprrrssstttttttuv",
+        "source_city": "Sydney"
+      },
+      {
+        "address": "142, Addison Road, Marrickville, 2204, Australia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaacdddeiiiiklllmnoorrrrsstuv",
+        "source_city": "Sydney"
+      },
+      {
+        "address": "542, Pacific Highway, St Leonards, 2065, Australia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaccdefghhiiiillnoprrsssttuwy",
+        "source_city": "Sydney"
+      }
+    ],
+    "Austria": [
+      {
+        "address": "180, Hütteldorfer Straße, Wien, 1140, Austria",
+        "score": 1.0,
+        "cheat_normalized_address": "aaadeeeefhiilnorrrrssssttttuuw",
+        "source_city": "Vienna"
+      },
+      {
+        "address": "216b, Hütteldorfer Straße, Wien, 1140, Austria",
+        "score": 1.0,
+        "cheat_normalized_address": "aaabdeeeefhiilnorrrrssssttttuuw",
+        "source_city": "Vienna"
+      },
+      {
+        "address": "41, Lerchenfelder Straße, Wien, 1070, Austria",
+        "score": 1.0,
+        "cheat_normalized_address": "aaacdeeeeeefhiillnnrrrrssssttuw",
+        "source_city": "Vienna"
+      },
+      {
+        "address": "63, Gumpendorfer Straße, Wien, 1060, Austria",
+        "score": 1.0,
+        "cheat_normalized_address": "aaadeeeefgiimnnoprrrrssssttuuw",
+        "source_city": "Vienna"
+      },
+      {
+        "address": "2E, Hütteldorfer Straße, Wien, 1150, Austria",
+        "score": 1.0,
+        "cheat_normalized_address": "aaadeeeeefhiilnorrrrssssttttuuw",
+        "source_city": "Vienna"
+      },
+      {
+        "address": "276, Prager Straße, Wien, 1210, Austria",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaeeegiinprrrrssssttuw",
+        "source_city": "Vienna"
+      },
+      {
+        "address": "138, Brünner Straße, Wien, 1210, Austria",
+        "score": 1.0,
+        "cheat_normalized_address": "aaabeeeiinnnrrrrssssttuuw",
+        "source_city": "Vienna"
+      },
+      {
+        "address": "94, Altmannsdorfer Straße, Wien, 1120, Austria",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaadeeefiilmnnnorrrrssssstttuw",
+        "source_city": "Vienna"
+      },
+      {
+        "address": "79, Nussdorfer Straße, Wien, 1090, Austria",
+        "score": 1.0,
+        "cheat_normalized_address": "aaadeeefiinnorrrrssssssttuuw",
+        "source_city": "Vienna"
+      },
+      {
+        "address": "120, Sechshauser Straße, Wien, 1150, Austria",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaceeeehhiinrrrsssssssttuuw",
+        "source_city": "Vienna"
+      },
+      {
+        "address": "5, Leopoldauer Straße, Gerasdorf, 2201, Austria",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaddeeeefgilloooprrrrrsssssttuu",
+        "source_city": "Vienna"
+      },
+      {
+        "address": "254, Linzer Straße, Wien, 1140, Austria",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaeeeiiilnnrrrssssttuwz",
+        "source_city": "Vienna"
+      },
+      {
+        "address": "2, Josefstädter Straße, Wien, 1080, Austria",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaadeeeefiijnorrrssssssttttuw",
+        "source_city": "Vienna"
+      },
+      {
+        "address": "72A, Brünner Straße, Wien, 1210, Austria",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaabeeeiinnnrrrrssssttuuw",
+        "source_city": "Vienna"
+      },
+      {
+        "address": "51, Gersthofer Straße, Wien, 1180, Austria",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaeeeefghiinorrrrssssstttuw",
+        "source_city": "Vienna"
+      }
+    ],
+    "Azerbaijan": [
+      {
+        "address": "103, Mirzə Məhəmməd Xan, Bakı, AZ1113, Azerbaijan",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaabbdehiiijkmmmmnnrrxzzz",
+        "source_city": "Baku"
+      },
+      {
+        "address": "74, Üzeyir Hacıbəyov, Baku, AZ1010, Azerbaijan",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaabbbceehiiijknorruuvyyzzz",
+        "source_city": "Baku"
+      },
+      {
+        "address": "25A, Məmməd Araz, Baku, AZ1069, Azerbaijan",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaaabbdeijkmmmnrruzzz",
+        "source_city": "Baku"
+      },
+      {
+        "address": "74, İbrahimpaşa Dadaşov, Baku, AZ1124, Azerbaijan",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaaaaabbbddehiiijkmnoprrssuvzz",
+        "source_city": "Baku"
+      },
+      {
+        "address": "16, Abbas Mirzə Şərifzadə küç., Baku, AZ1100, Azerbaijan",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaaabbbbcdefiiijkkmnrrrssuuzzzz",
+        "source_city": "Baku"
+      },
+      {
+        "address": "120/23, Fətəli xan Xoyski, Azerbaijan",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaabefiiijklnnorstxxyz",
+        "source_city": "Baku"
+      },
+      {
+        "address": "4, Abbasqulu ağa Bakıxanov, Azerbaijan",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaaaabbbbegiijklnnoqrsuuvxz",
+        "source_city": "Baku"
+      },
+      {
+        "address": "13, Sabit Orucov, Baku, 1025, Azerbaijan",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaabbbceiijknoorrstuuvz",
+        "source_city": "Baku"
+      },
+      {
+        "address": "34 saylı poçt şöbəsinin agentliyi, Sabunçu, AZ1034, Azerbaijan",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaabbbcceegiiiiiijllnnnnnooprssssttuuyyzz",
+        "source_city": "Baku"
+      },
+      {
+        "address": "3 saylı poçt filialının 34 saylı poçt şöbəsi, Sabunçu, AZ1034, Azerbaijan",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaabbbccefiiiiiiijlllnnnnooprsssstuuyzz",
+        "source_city": "Baku"
+      },
+      {
+        "address": "Fedeks Ekspress poçt xidməti \\ Bakı Nərimanov, AZ1025, Azerbaijan",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaabbcddeeeeefiiiiijkkkmmnnnoopprrrssssttvxzz",
+        "source_city": "Baku"
+      },
+      {
+        "address": "Baku Jazz Center, Baku, AZ1005, Azerbaijan",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaabbceeeijjknnrrtuzzzz",
+        "source_city": "Baku"
+      },
+      {
+        "address": "12/17, Sulh, Sumqayıt, 5006, Azerbaijan",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaabehiijlmnqrsstuuyz",
+        "source_city": "Sumqayıt"
+      },
+      {
+        "address": "57N, Bulvar, Sumqayıt, 5000, Azerbaijan",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaabbeiijlmnnqrrstuuvyz",
+        "source_city": "Sumqayıt"
+      },
+      {
+        "address": "Sumqayıt Poçt Filialının 5 saylı poçt şöbəsi, Sumqayıt, AZ5005, Azerbaijan",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaabbcefiiiiiiiijlllmnnnoopqrssssttuyyzz",
+        "source_city": "Sumqayıt"
+      }
+    ],
+    "Bahamas": [
+      {
+        "address": "14, Hampshire Street, Nassau, Bahamas",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaabeeehhhimmnprrsssssttu",
+        "source_city": "Nassau"
+      },
+      {
+        "address": "125, Yorkshire Street, Nassau, Bahamas",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaabeeehhikmnorrrsssssttuy",
+        "source_city": "Nassau"
+      },
+      {
+        "address": "1111, East Bay Street, Nassau, Bahamas",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaabbeeehmnrssssstttuy",
+        "source_city": "Nassau"
+      },
+      {
+        "address": "12, Tropical Gardens Road, Nassau, Bahamas",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaabcddeghilmnnooprrrsssstu",
+        "source_city": "Killarney"
+      }
+    ],
+    "Bahrain": [],
+    "Bangladesh": [
+      {
+        "address": "7, Road 99, Gulshan-2, Dhaka, 1212, Bangladesh",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaabdddegghhhkllnnorssu",
+        "source_city": "Dhaka"
+      },
+      {
+        "address": "1/G, Bashabo-Madartek Road, Dhaka, 1214, Bangladesh",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaabbbddddeegghhhkklmnoorrsst",
+        "source_city": "Dhaka"
+      },
+      {
+        "address": "Kha-198, Bir Uttam Rafiqul Islam Avenue, Middle Badda, Dhaka, 1212, Bangladesh",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaabbbddddddeeeefghhhiiiikkllllmmmnnqrrssttuuuv",
+        "source_city": "Dhaka"
+      },
+      {
+        "address": "House 31, Road 42, Gulshan-2, Dhaka, 1212, Bangladesh",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaabdddeegghhhhkllnnoorsssuu",
+        "source_city": "Dhaka"
+      },
+      {
+        "address": "121, Distilary Road, Dhaka, 1204, Bangladesh",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaabddddeghhiikllnorrssty",
+        "source_city": "Dhaka"
+      },
+      {
+        "address": "17/1, Babor Road, Shyamoli, Dhaka, 1207, Bangladesh",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaabbbdddeghhhikllmnooorrssy",
+        "source_city": "Dhaka"
+      },
+      {
+        "address": "619, Red Crescent Shorak, Bara Maghbazar,Dhaka, 1217, Bangladesh",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaabbbccdddeeeegghhhhkklmnnorrrrrssstz",
+        "source_city": "Dhaka"
+      },
+      {
+        "address": "69/1, Chandrashila Suvastu Tower, Dhaka, 1215, Bangladesh",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaabcdddeeghhhhikllnnorrssssttuuvw",
+        "source_city": "Dhaka"
+      },
+      {
+        "address": "124, স্ট্যান্ডার্ড ব্যাংক লিমিটেড, Dhaka, 1000, Bangladesh",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaabbddddddddeeghhiikkllmnnnrssttttyy",
+        "source_city": "Dhaka"
+      },
+      {
+        "address": "মিরপুর রোড, Mohammadpur, Dhaka, 1207, Bangladesh",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaabdddddeeghhhiklmmmmnopprrrrsuu",
+        "source_city": "Dhaka"
+      },
+      {
+        "address": "Asad Avenue, Mohammadpur, Dhaka, 1207, Bangladesh",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaabddddeeeghhhklmmmnnoprssuuv",
+        "source_city": "Dhaka"
+      },
+      {
+        "address": "Language Proficiency Center (LPC), Dhaka, 1212, Bangladesh",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaabccccddeeeeefggghhiiklllnnnnopprrstuy",
+        "source_city": "Dhaka"
+      },
+      {
+        "address": "Sobhanbagh Mosque, Dhaka, 1205, Bangladesh",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaabbbddeegghhhhklmnnooqsssu",
+        "source_city": "Dhaka"
+      },
+      {
+        "address": "DWASA MODEZone 8 office, Dhaka, 1212, Bangladesh",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaabcddddeeeeffghhiklmnnooosswz",
+        "source_city": "Dhaka"
+      },
+      {
+        "address": "ডাচ-বাংলা ব্যাংক, Banani, Dhaka, 1213, Bangladesh",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaaaaabbbbcddddeghhikkllnnnnnsy",
+        "source_city": "Dhaka"
+      }
+    ],
+    "Belarus": [],
+    "Belgium": [
+      {
+        "address": "136, Hector Henneaulaan, Zaventem, 1930, Belgium",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaabceeeeeeghhillmmnnnnorttuuvz",
+        "source_city": "Brussels"
+      },
+      {
+        "address": "2, Grote Daalstraat, Zaventem, 1930, Belgium",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaabdeeeeggillmmnorrsttttuvz",
+        "source_city": "Brussels"
+      },
+      {
+        "address": "17, Mechelsestraat, Vilvoorde, 1800, Belgium",
+        "score": 1.0,
+        "cheat_normalized_address": "aabcdeeeeeghiilllmmoorrssttuvv",
+        "source_city": "Brussels"
+      },
+      {
+        "address": "90, De Limburg Stirumlaan - Avenue de Limburg Stirum, Wemmel, 1780, Belgium",
+        "score": 1.0,
+        "cheat_normalized_address": "aaabbdeeeeeeggiiiillllmmmmmmnnrrrssttuuuuuvw",
+        "source_city": "Brussels"
+      },
+      {
+        "address": "66, Hoogstraat, Zaventem, 1930, Belgium",
+        "score": 1.0,
+        "cheat_normalized_address": "aaabeeegghilmmnoorstttuvz",
+        "source_city": "Brussels"
+      },
+      {
+        "address": "814, Brusselsesteenweg, Asse, 1731, Belgium",
+        "score": 1.0,
+        "cheat_normalized_address": "abbeeeeeeeggillmnrsssssstuuw",
+        "source_city": "Brussels"
+      },
+      {
+        "address": "133, Brusselsesteenweg, Grimbergen, 1850, Belgium",
+        "score": 1.0,
+        "cheat_normalized_address": "bbbeeeeeeeeggggiillmmnnrrrsssstuuw",
+        "source_city": "Brussels"
+      },
+      {
+        "address": "8, Hemelstraat, Beersel, 1651, Belgium",
+        "score": 1.0,
+        "cheat_normalized_address": "aabbeeeeeeghilllmmrrssttu",
+        "source_city": "Brussels"
+      },
+      {
+        "address": "Mechelsesteenweg, Vilvoorde, 1800, Belgium",
+        "score": 0.9,
+        "cheat_normalized_address": "bcdeeeeeeeegghiilllmmnoorsstuvvw",
+        "source_city": "Brussels"
+      },
+      {
+        "address": "Quick Zaventem Arrivals, 1930, Belgium",
+        "score": 1.0,
+        "cheat_normalized_address": "aaabceeegiiikllmmnqrrstuuvvz",
+        "source_city": "Brussels"
+      },
+      {
+        "address": "Brussels Airport Info, 1934, Belgium",
+        "score": 1.0,
+        "cheat_normalized_address": "abbeefgiiillmnooprrrssstuu",
+        "source_city": "Brussels"
+      },
+      {
+        "address": "8, Sint-Jansplein, Kontich, 2550, Belgium",
+        "score": 1.0,
+        "cheat_normalized_address": "abceeghiiiijkllmnnnnopssttu",
+        "source_city": "Antwerpen"
+      },
+      {
+        "address": "43, Groenplaats, Antwerpen, 2000, Belgium",
+        "score": 1.0,
+        "cheat_normalized_address": "aaabeeeeggillmnnnopprrsttuw",
+        "source_city": "Antwerpen"
+      },
+      {
+        "address": "170, Groenendaallaan, Merksem, 2170, Belgium",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaabdeeeeeggiklllmmmnnnorrsu",
+        "source_city": "Antwerpen"
+      },
+      {
+        "address": "192, Hovestraat, Edegem, 2650, Belgium",
+        "score": 1.0,
+        "cheat_normalized_address": "aabdeeeeegghilmmorsttuv",
+        "source_city": "Antwerpen"
+      }
+    ],
+    "Belize": [
+      {
+        "address": "165, Carl Lindberg Rogers Street, Belize City, Belize",
+        "score": 0.9,
+        "cheat_normalized_address": "abbccdeeeeeeggiiilllnorrrrrsstttyz",
+        "source_city": "Belize City"
+      },
+      {
+        "address": "57, Southern Foreshore, Belize City, 1021, Belize",
+        "score": 0.9,
+        "cheat_normalized_address": "bceeeeefhhiilnooorrrssttuyz",
+        "source_city": "Belize City"
+      },
+      {
+        "address": "748, Albert Street, Belize City, Belize",
+        "score": 0.9,
+        "cheat_normalized_address": "abbceeeeeiillrrsttttyz",
+        "source_city": "Belize City"
+      },
+      {
+        "address": "18, Daisy Hornby Street, Belize City, Belize",
+        "score": 0.9,
+        "cheat_normalized_address": "abbcdeeeehiiilnorrsstttyyyz",
+        "source_city": "Belize City"
+      },
+      {
+        "address": "19, Cemetery Road, Belize City, Belize",
+        "score": 0.9,
+        "cheat_normalized_address": "abccdeeeeeiilmorrttyyz",
+        "source_city": "Belize City"
+      },
+      {
+        "address": "1212, Barrack Road, Belize City, Belize",
+        "score": 0.9,
+        "cheat_normalized_address": "aaabbccdeeiiklorrrtyz",
+        "source_city": "Belize City"
+      },
+      {
+        "address": "114, North Front Street, Belize City, Belize",
+        "score": 0.9,
+        "cheat_normalized_address": "bceeeefhiilnnoorrrstttttyz",
+        "source_city": "Belize City"
+      },
+      {
+        "address": "2136, St. Thomas Street, Belize City, Belize",
+        "score": 0.9,
+        "cheat_normalized_address": "abceeeehiilmorssstttttyz",
+        "source_city": "Belize City"
+      },
+      {
+        "address": "22, Gabourel Lane, Belize City, Belize",
+        "score": 0.9,
+        "cheat_normalized_address": "aabbceeeegiilllnortuyz",
+        "source_city": "Belize City"
+      },
+      {
+        "address": "8, D Street, Kings Park, Belize City, Belize",
+        "score": 0.9,
+        "cheat_normalized_address": "abcdeeeegiiikklnprrsstttyz",
+        "source_city": "Belize City"
+      },
+      {
+        "address": "825, Dr. Dame Minita Gordon Drive, Belize City, Belize",
+        "score": 0.9,
+        "cheat_normalized_address": "aabcddddeeeegiiiiilmmnnoorrrttvyz",
+        "source_city": "Belize City"
+      },
+      {
+        "address": "592, Church Street, Belize City, Belize",
+        "score": 0.9,
+        "cheat_normalized_address": "bccceeeehhiilrrstttuyz",
+        "source_city": "Belize City"
+      },
+      {
+        "address": "1705, Dean Street, Belize City, Belize",
+        "score": 0.9,
+        "cheat_normalized_address": "abcdeeeeeiilnrstttyz",
+        "source_city": "Belize City"
+      },
+      {
+        "address": "80, Vernon Street, Belize City, Belize",
+        "score": 0.9,
+        "cheat_normalized_address": "bceeeeeiilnnorrstttvyz",
+        "source_city": "Belize City"
+      },
+      {
+        "address": "7015, Mangrove Street, Belize City, Belize",
+        "score": 0.9,
+        "cheat_normalized_address": "abceeeeegiilmnorrstttvyz",
+        "source_city": "Belize City"
+      }
+    ],
+    "Benin": [
+      {
+        "address": "Collège catholique Pierre Joseph de Clorivière, BP 586 Abomey-Calavi, Benin",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaabbbccccdeeeeeeeeeeeghhiiiiiijlllllmnnooooopppqrrrrstuvvy",
+        "source_city": "Cotonou"
+      },
+      {
+        "address": "BP 2199, Centre de formation professionelle d'Abomey, ABOMEY, 2199, Benin",
+        "score": 0.9,
+        "cheat_normalized_address": "aaabbbbcddeeeeeeeeeffiiillmmmnnnnnoooooopprrrssttyy",
+        "source_city": "Abomey"
+      },
+      {
+        "address": "Hôtel Cœur des Montagnes, LEGO, 40 Abomey, Benin",
+        "score": 0.9,
+        "cheat_normalized_address": "aabbcdeeeeeeegghillmmnnnnooooorssttuy",
+        "source_city": "Abomey"
+      }
+    ],
+    "Bhutan": [],
+    "Bolivia": [
+      {
+        "address": "938, Avenida Santa Cruz, La Paz, Bolivia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaabcdeiiillnnoprstuvvzz",
+        "source_city": "La Paz"
+      },
+      {
+        "address": "94, Calle Hugo Estrada, La Paz, Bolivia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaabcdeeghiillllooprstuvz",
+        "source_city": "La Paz"
+      },
+      {
+        "address": "859, Servicio Técnico Nelson P. Mamani, La Paz, Bolivia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaabccceeeiiiiiilllmmnnnnoooopprsstvvz",
+        "source_city": "La Paz"
+      },
+      {
+        "address": "Avenida 20 de Octubre, La Paz, Bolivia",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaabbcddeeeiiillnooprtuvvz",
+        "source_city": "La Paz"
+      },
+      {
+        "address": "Avenida 14 de Septiembre, La Paz, Bolivia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaabbddeeeeeiiiillmnopprstvvz",
+        "source_city": "La Paz"
+      },
+      {
+        "address": "Centro de Salud Biblioteca (1er Nivel), La Paz, Bolivia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaabbbccddeeeeeiiiiilllllnnoooprrsttuvvz",
+        "source_city": "La Paz"
+      },
+      {
+        "address": "571, Calle Barrón, Santa Cruz de la Sierra, Bolivia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaabbccdeeeiiillllnnoorrrrrsstuvz",
+        "source_city": "Santa Cruz de la Sierra"
+      },
+      {
+        "address": "# 2190, Avenida Ismael Montes, Bolivia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaabdeeeiiiillmmnnoosstvv",
+        "source_city": "Santa Cruz de la Sierra"
+      },
+      {
+        "address": "225, Calle Capitán Mariano Arrién, Santa Cruz de la Sierra, Bolivia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaabcccdeeeeiiiiiillllmnnnnooprrrrrrssttuvz",
+        "source_city": "Santa Cruz de la Sierra"
+      },
+      {
+        "address": "140, Calle Guajojó, Santa Cruz de la Sierra, Bolivia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaabccdeeegiiijjllllnooorrrsstuuvz",
+        "source_city": "Santa Cruz de la Sierra"
+      },
+      {
+        "address": "21, Calle Corumba, Santa Cruz de la Sierra, Bolivia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaabbcccdeeeiiillllmnoorrrrsstuuvz",
+        "source_city": "Santa Cruz de la Sierra"
+      },
+      {
+        "address": "478, Calle Florida, Santa Cruz de la Sierra, Bolivia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaabccddeeefiiiilllllnoorrrrsstuvz",
+        "source_city": "Santa Cruz de la Sierra"
+      },
+      {
+        "address": "642, Avenida Beni, Santa Cruz de la Sierra, Bolivia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaabbcddeeeeiiiiillnnnorrrsstuvvz",
+        "source_city": "Santa Cruz de la Sierra"
+      },
+      {
+        "address": "110, Calle Manuel Ignacio Salvatierra, Bolivia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaabcceeegiiiiilllllmnnoorrstuvv",
+        "source_city": "Santa Cruz de la Sierra"
+      },
+      {
+        "address": "411, Calle Manuel Ignacio Salvatierra, Santa Cruz de la Sierra, Bolivia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaabcccdeeeeegiiiiiillllllmnnnoorrrrrsssttuuvvz",
+        "source_city": "Santa Cruz de la Sierra"
+      }
+    ],
+    "Bonaire, Saint Eustatius and Saba": [],
+    "Bosnia and Herzegovina": [
+      {
+        "address": "2, Hasana Brkića, Sarajevo, 71000, Bosnia and Herzegovina",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaaaabbcdeeeghhiiijknnnnooorrrsssvvz",
+        "source_city": "Sarajevo"
+      },
+      {
+        "address": "131, Grbavička, Sarajevo, 71000, Bosnia and Herzegovina",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaabbcdeeegghiiijknnnooorrrssvvvz",
+        "source_city": "Sarajevo"
+      },
+      {
+        "address": "bb, Alipašina, Sarajevo, 71000, Bosnia and Herzegovina",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaaabbbdeeeghiiiijlnnnnoooprrsssvvz",
+        "source_city": "Sarajevo"
+      },
+      {
+        "address": "4, Geteova, Sarajevo, 71000, Bosnia and Herzegovina",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaabdeeeeegghiijnnnoooorrsstvvvz",
+        "source_city": "Sarajevo"
+      },
+      {
+        "address": "2, Čobanija, Sarajevo, 71000, Bosnia and Herzegovina",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaabbcdeeeghiiijjnnnnoooorrssvvz",
+        "source_city": "Sarajevo"
+      },
+      {
+        "address": "17, Trg ZAVNOBIH-a, Sarajevo, 71000, Bosnia and Herzegovina",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaabbdeeegghhiiijnnnnoooorrrsstvvvzz",
+        "source_city": "Sarajevo"
+      },
+      {
+        "address": "58, Butmirska cesta, Ilidža, 71214, Bosnia and Herzegovina",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaabbcddeeeghiiiiiklmnnnoorrsssttuvzz",
+        "source_city": "Sarajevo"
+      },
+      {
+        "address": "2, Aleja Bosne Srebrene, Sarajevo, 71000, Bosnia and Herzegovina",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaabbbdeeeeeeeeghiijjlnnnnnoooorrrrssssvvz",
+        "source_city": "Sarajevo"
+      },
+      {
+        "address": "4a, Zagrebačka, Sarajevo, 71000, Bosnia and Herzegovina",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaaaabbcdeeeegghiijknnnooorrrssvvzz",
+        "source_city": "Sarajevo"
+      },
+      {
+        "address": "195, Dobroševićka, Sarajevo, 71000, Bosnia and Herzegovina",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaabbcddeeeeghiiijknnnooooorrrsssvvvz",
+        "source_city": "Sarajevo"
+      },
+      {
+        "address": "14, Spasovdanska, Istočno Sarajevo, 71123, Bosnia and Herzegovina",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaaabcddeeeghiiijknnnnnooooooprrsssssstvvvz",
+        "source_city": "Sarajevo"
+      },
+      {
+        "address": "54, Maršala Tita, Sarajevo, 71000, Bosnia and Herzegovina",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaaaabdeeeghiiijlmnnnooorrrsssttvvz",
+        "source_city": "Sarajevo"
+      },
+      {
+        "address": "49a, Vojvode Živojina Mišića, Istočno Sarajevo, 71123, Bosnia and Herzegovina",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaaabccddeeeeghiiiiiiijjjmnnnnnoooooooorrsssstvvvvvzz",
+        "source_city": "Sarajevo"
+      },
+      {
+        "address": "11a, Kolodvorska, Sarajevo, 71000, Bosnia and Herzegovina",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaabddeeeghiijkklnnnoooooorrrsssvvvz",
+        "source_city": "Sarajevo"
+      },
+      {
+        "address": "15, Sulejmana Filipovića, Sarajevo, 71000, Bosnia and Herzegovina",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaaabcdeeeefghiiiiijjllmnnnnooooprrsssuvvvz",
+        "source_city": "Sarajevo"
+      }
+    ],
+    "Botswana": [
+      {
+        "address": "7886B, Maruapula Health, gaborone, Botswana",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaabbbeeghhllmnnoooprrsttuuw",
+        "source_city": "Mogoditshane"
+      },
+      {
+        "address": "A1 intersection link, Gaborone, Botswana",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaabbceeegiiiklnnnnnoooorrsstttw",
+        "source_city": "Mogoditshane"
+      }
+    ],
+    "Brazil": [
+      {
+        "address": "231, Avenida Valdemar Ferreira, São Paulo, 05501-000, Brazil",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaabddeeeefiiilllmnooprrrrrsuvvz",
+        "source_city": "São Paulo"
+      },
+      {
+        "address": "580, Avenida Brigadeiro Luís Antônio, São Paulo, 01318-000, Brazil",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaabbddeegiiiiiilllnnnoooooprrrsstuuvz",
+        "source_city": "São Paulo"
+      },
+      {
+        "address": "530, Avenida São João, São Paulo, 01036-000, Brazil",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaabdeiijllnooooprsuvz",
+        "source_city": "São Paulo"
+      },
+      {
+        "address": "2469, Rua Tuiuti, São Paulo, 03307-005, Brazil",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaabiiillooprrsttuuuuz",
+        "source_city": "São Paulo"
+      },
+      {
+        "address": "128, Rua do Carmo, São Paulo, 01019-020, Brazil",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaabcdillmooooprrrsuuz",
+        "source_city": "São Paulo"
+      },
+      {
+        "address": "914, Rua Fradique Coutinho, São Paulo, 05416-001, Brazil",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaabcdefhiiillnoooopqrrrstuuuuz",
+        "source_city": "São Paulo"
+      },
+      {
+        "address": "1307, Rua Bela Cintra, São Paulo, 01415-005, Brazil",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaabbceiilllnooprrrstuuz",
+        "source_city": "São Paulo"
+      },
+      {
+        "address": "1567, Rua Cantagalo, São Paulo, 03319-001, Brazil",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaabcgilllnoooprrstuuz",
+        "source_city": "São Paulo"
+      },
+      {
+        "address": "87, Rua São Carlos do Pinhal, São Paulo, 01333-001, Brazil",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaabcdhiillllnoooopprrrssuuz",
+        "source_city": "São Paulo"
+      },
+      {
+        "address": "1102, Rua Apinajés, São Paulo, 05017-000, Brazil",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaabeiijllnoopprrssuuz",
+        "source_city": "São Paulo"
+      },
+      {
+        "address": "379, Rua Heitor Penteado, São Paulo, 05437-000, Brazil",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaabdeeehiillnoooopprrrsttuuz",
+        "source_city": "São Paulo"
+      },
+      {
+        "address": "15, Rua Jericó, São Paulo, 05435-040, Brazil",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaabceiijlloooprrrsuuz",
+        "source_city": "São Paulo"
+      },
+      {
+        "address": "305, Rua Harmonia, São Paulo, 05435-000, Brazil",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaabhiillmnoooprrrsuuz",
+        "source_city": "São Paulo"
+      },
+      {
+        "address": "177, Rua Original, São Paulo, 05435-050, Brazil",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaabgiiilllnoooprrrsuuz",
+        "source_city": "São Paulo"
+      },
+      {
+        "address": "509, Avenida Paulista, São Paulo, 01311-000, Brazil",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaabdeiiilllnoopprsstuuvz",
+        "source_city": "São Paulo"
+      }
+    ],
+    "British Virgin Islands": [],
+    "Brunei": [],
+    "Bulgaria": [
+      {
+        "address": "Low Cost Cars Varna Airport, Община Варна, 9000, Bulgaria",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaabbcccghhiiillnnooooprrrrrsssttuvw",
+        "source_city": "Varna"
+      },
+      {
+        "address": "Top Rent A Car Varna Airport, Варна, 9154, Bulgaria",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaabcegiilnnoopprrrrrrtttuv",
+        "source_city": "Varna"
+      },
+      {
+        "address": "10, Княз Борис I, Бургас, 8000, Bulgaria",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaabbbggiiiiklnorrrssuuz",
+        "source_city": "Burgas"
+      },
+      {
+        "address": "121, Цар Симеон I, Бургас, 8000, Bulgaria",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaabbeggiiilmnorrrssstuu",
+        "source_city": "Burgas"
+      },
+      {
+        "address": "18, бул. Св. Св. Кирил и Методий, Blagoevgrad, 2700, Bulgaria",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaabbbddeegggiiiiiikllllmoorrrstuuvv",
+        "source_city": "Blagoevgrad"
+      }
+    ]
+  },
+  "generated_at": "2025-12-02 19:24:35",
+  "total_countries": 196,
+  "cached_countries": 27,
+  "failed_countries": [
+    "Afghanistan",
+    "Andorra",
+    "Armenia",
+    "Aruba",
+    "Bahamas",
+    "Bahrain",
+    "Belarus",
+    "Benin",
+    "Bhutan",
+    "Bonaire, Saint Eustatius and Saba",
+    "Botswana",
+    "British Virgin Islands",
+    "Brunei",
+    "Bulgaria"
+  ],
+  "cities_processed": {
+    "Afghanistan": [
+      "Kabul",
+      "Herāt",
+      "Mazār-e Sharīf",
+      "Kandahār",
+      "Jalālābād",
+      "Kunduz",
+      "Ghazni",
+      "Balkh",
+      "Baghlān",
+      "Gardez",
+      "Khōst",
+      "Maymana",
+      "Khanabad",
+      "Bāzār-e Yakāwlang",
+      "Bāzārak",
+      "Khulm",
+      "Taloqan",
+      "Bāmyān",
+      "Pul-e Khumrī",
+      "Shibirghān"
+    ],
+    "Albania": [
+      "Tirana",
+      "Durrës",
+      "Vlorë",
+      "Elbasan",
+      "Shkodër",
+      "Lushnjë",
+      "Berat",
+      "Fier-Çifçi",
+      "Korçë",
+      "Fier",
+      "Krujë",
+      "Pogradec",
+      "Kukës",
+      "Kuçovë",
+      "Kavajë",
+      "Bulqizë",
+      "Gjirokastër",
+      "Librazhd",
+      "Patos Fshat",
+      "Sarandë"
+    ],
+    "Algeria": [
+      "Algiers",
+      "Oran",
+      "Constantine",
+      "Annaba",
+      "Blida",
+      "Batna City",
+      "Bab Ezzouar",
+      "Djelfa",
+      "Sétif",
+      "Sidi Bel Abbes",
+      "Biskra",
+      "Tébessa",
+      "El Oued",
+      "Skikda",
+      "Tiaret",
+      "Chlef",
+      "Béjaïa",
+      "Tlemcen",
+      "Ouargla",
+      "Béchar"
+    ],
+    "Andorra": [
+      "Andorra la Vella",
+      "les Escaldes"
+    ],
+    "Angola": [
+      "Luanda",
+      "Lubango",
+      "Huambo",
+      "Benguela",
+      "Cabinda",
+      "Malanje",
+      "Saurimo",
+      "Lobito",
+      "Cuíto",
+      "Uíge",
+      "Luena",
+      "Mossamedes",
+      "Menongue",
+      "Chitato",
+      "Sumbe",
+      "Soyo",
+      "Dundo",
+      "N'dalatando",
+      "Mbanza Kongo",
+      "Caála"
+    ],
+    "Argentina": [
+      "Buenos Aires",
+      "Córdoba",
+      "Rosario",
+      "Mar del Plata",
+      "San Miguel de Tucumán",
+      "Salta",
+      "Santa Fe",
+      "Corrientes",
+      "Posadas",
+      "Bahía Blanca",
+      "Resistencia",
+      "Merlo",
+      "Quilmes",
+      "San Salvador de Jujuy",
+      "Santiago del Estero",
+      "Paraná",
+      "Neuquén",
+      "José C. Paz",
+      "Formosa",
+      "La Plata"
+    ],
+    "Armenia": [
+      "Yerevan",
+      "Malatia-Sebastia",
+      "Shengavit",
+      "Nor Nork",
+      "Kentron",
+      "Erebuni",
+      "Ajapnyak",
+      "Arabkir",
+      "Gyumri",
+      "Vanadzor",
+      "Kanaker-Zeytun",
+      "Avan",
+      "Davtashen",
+      "Hrazdan",
+      "Abovyan",
+      "Vagharshapat",
+      "Kapan",
+      "Armavir",
+      "Artashat",
+      "Charentsavan"
+    ],
+    "Aruba": [
+      "Oranjestad",
+      "Noord",
+      "Tanki Leendert",
+      "San Nicolas"
+    ],
+    "Australia": [
+      "Sydney",
+      "Melbourne",
+      "Brisbane",
+      "Perth",
+      "Adelaide",
+      "Gold Coast",
+      "Newcastle",
+      "Canberra",
+      "Sunshine Coast",
+      "Logan City",
+      "Wollongong",
+      "Geelong",
+      "Hobart",
+      "Townsville",
+      "Cairns",
+      "Toowoomba",
+      "Darwin",
+      "Mackay",
+      "Ballarat",
+      "City of Port Phillip"
+    ],
+    "Austria": [
+      "Vienna",
+      "Graz",
+      "Linz",
+      "Favoriten",
+      "Donaustadt",
+      "Floridsdorf",
+      "Salzburg",
+      "Innsbruck",
+      "Ottakring",
+      "Simmering",
+      "Klagenfurt am Wörthersee",
+      "Landstraße",
+      "Penzing",
+      "Meidling",
+      "Brigittenau",
+      "Fünfhaus",
+      "Döbling",
+      "Villach",
+      "Hernals",
+      "Margareten"
+    ],
+    "Azerbaijan": [
+      "Baku",
+      "Sumqayıt",
+      "Ganja",
+      "Lankaran",
+      "Tovuz",
+      "Yevlakh",
+      "Mingelchaur",
+      "Naxçıvan",
+      "Saatlı",
+      "Lerik",
+      "Qaraçuxur",
+      "Şirvan",
+      "Sheki",
+      "Bakıxanov",
+      "Agdzhabedy",
+      "Göyçay",
+      "Bilajari",
+      "Maştağa",
+      "Ağdam",
+      "Khirdalan"
+    ],
+    "Bahamas": [
+      "Nassau",
+      "Lucaya",
+      "Freeport",
+      "Killarney"
+    ],
+    "Bahrain": [
+      "Ar Rifā‘",
+      "Manama",
+      "Al Muharraq",
+      "Dār Kulayb",
+      "Madīnat Ḩamad",
+      "Madīnat ‘Īsá",
+      "Sitrah",
+      "Jidd Ḩafş"
+    ],
+    "Bangladesh": [
+      "Dhaka",
+      "Chattogram",
+      "Gazipur",
+      "Khulna",
+      "Rangpur",
+      "Comilla",
+      "Rajshahi",
+      "Pallabi",
+      "Mirpur Model Thana",
+      "Mohāmmadpur",
+      "Hāthazāri",
+      "Bāndarban",
+      "Shibganj",
+      "Natore",
+      "Kāfrul",
+      "Tungi",
+      "Bhātāra",
+      "Savar",
+      "Narsingdi",
+      "Nagar Naluākot"
+    ],
+    "Belarus": [
+      "Minsk",
+      "Homyel'",
+      "Hrodna",
+      "Vitebsk",
+      "Mahilyow",
+      "Brest",
+      "Bobruysk",
+      "Baranovichi",
+      "Barysaw",
+      "Pinsk",
+      "Mazyr",
+      "Lida",
+      "Orsha",
+      "Soligorsk",
+      "Novopolotsk",
+      "Maladziečna",
+      "Polotsk",
+      "Zhlobin",
+      "Rechytsa",
+      "Horad Zhodzina"
+    ],
+    "Belgium": [
+      "Brussels",
+      "Antwerpen",
+      "Gent",
+      "Charleroi",
+      "Liège",
+      "Anderlecht",
+      "Schaerbeek",
+      "Brugge",
+      "Namur",
+      "Leuven",
+      "Molenbeek-Saint-Jean",
+      "Mons",
+      "Ixelles",
+      "Uccle",
+      "Deurne",
+      "Hasselt",
+      "Aalst",
+      "Mechelen",
+      "La Louvière",
+      "Kortrijk"
+    ],
+    "Belize": [
+      "Belize City",
+      "San Pedro",
+      "Orange Walk",
+      "Belmopan"
+    ],
+    "Benin": [
+      "Cotonou",
+      "Abomey-Calavi",
+      "Porto-Novo",
+      "Parakou",
+      "Godomè",
+      "Abomey",
+      "Djougou",
+      "Bohicon",
+      "Ekpé",
+      "Nikki",
+      "Malanville",
+      "Kandi",
+      "Kérou",
+      "Natitingou",
+      "Pobé",
+      "Ouidah",
+      "Lokossa",
+      "Bassila",
+      "Tchaourou",
+      "Cové"
+    ],
+    "Bhutan": [
+      "Thimphu",
+      "Phuntsholing",
+      "Tsirang",
+      "Punākha"
+    ],
+    "Bolivia": [
+      "La Paz",
+      "Santa Cruz de la Sierra",
+      "Cochabamba",
+      "Sucre",
+      "Oruro",
+      "Sacaba",
+      "Quillacollo",
+      "Tarija",
+      "Potosí",
+      "Riberalta",
+      "Montero",
+      "Viacha",
+      "Trinidad",
+      "Yacuiba",
+      "Tiquipaya",
+      "Vinto",
+      "Colcapirhua",
+      "Sipe Sipe",
+      "Caranavi",
+      "Villamontes"
+    ],
+    "Bonaire, Saint Eustatius and Saba": [
+      "Kralendijk"
+    ],
+    "Bosnia and Herzegovina": [
+      "Sarajevo",
+      "Banja Luka",
+      "Zenica",
+      "Tuzla",
+      "Mostar",
+      "Bihać",
+      "Ilidža",
+      "Lukavac",
+      "Bugojno",
+      "Brčko",
+      "Bijeljina",
+      "Prijedor",
+      "Trebinje",
+      "Travnik",
+      "Doboj",
+      "Cazin",
+      "Velika Kladuša",
+      "Visoko",
+      "Goražde",
+      "Konjic"
+    ],
+    "Botswana": [
+      "Gaborone",
+      "Francistown",
+      "Mogoditshane",
+      "Maun",
+      "Molepolole",
+      "Serowe",
+      "Tlokweng",
+      "Palapye",
+      "Mochudi",
+      "Mahalapye",
+      "Kanye",
+      "Selebi-Phikwe",
+      "Letlhakane",
+      "Ramotswa",
+      "Lobatse",
+      "Mmopone",
+      "Thamaga",
+      "Mosopa",
+      "Tonota",
+      "Bobonong"
+    ],
+    "Brazil": [
+      "São Paulo",
+      "Rio de Janeiro",
+      "Belo Horizonte",
+      "Salvador",
+      "Fortaleza",
+      "Manaus",
+      "Brasília",
+      "Curitiba",
+      "Recife",
+      "Goiânia",
+      "Belém",
+      "Porto Alegre",
+      "Guarulhos",
+      "Maceió",
+      "Campinas",
+      "São Luís",
+      "Campo Grande",
+      "Natal",
+      "Teresina",
+      "Nova Iguaçu"
+    ],
+    "British Virgin Islands": [
+      "Road Town"
+    ],
+    "Brunei": [
+      "Bandar Seri Begawan",
+      "Sengkurong",
+      "Mentiri",
+      "Kuala Belait",
+      "Seria",
+      "Tutong",
+      "Serasa",
+      "Liang"
+    ],
+    "Bulgaria": [
+      "Sofia",
+      "Plovdiv",
+      "Varna",
+      "Burgas",
+      "Stara Zagora",
+      "Ruse",
+      "Pleven",
+      "Sliven",
+      "Pernik",
+      "Dobrich",
+      "Shumen",
+      "Blagoevgrad",
+      "Haskovo",
+      "Veliko Tŭrnovo",
+      "Gabrovo",
+      "Pazardzhik",
+      "Vratsa",
+      "Yambol",
+      "Asenovgrad",
+      "Kardzhali"
+    ]
+  }
+}

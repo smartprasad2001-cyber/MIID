@@ -244,3 +244,7 @@ announcements/
 #MIID/validator/SanctionedIndividulas.json
 MIID/validator/test.txt
 unittest/
+
+# Large OSM PBF files
+geofabrik_cache/*.osm.pbf
+*.osm.pbf
