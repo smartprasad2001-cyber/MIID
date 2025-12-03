@@ -1,0 +1,113 @@
+{
+  "Asma Al-Akhras": {
+    "original": "Asma Al-Akhras",
+    "first_name": "Asma",
+    "last_name": "Al-Akhras",
+    "variations": [
+      {
+        "full_name": "Asna Al-Akhras",
+        "first_name": "Asna",
+        "last_name": "Al-Akhras",
+        "dob": "1985-03-14"
+      },
+      {
+        "full_name": "Asca Al-Akhras",
+        "first_name": "Asca",
+        "last_name": "Al-Akhras",
+        "dob": "1985-03-12"
+      },
+      {
+        "full_name": "Amma Al-Akhras",
+        "first_name": "Amma",
+        "last_name": "Al-Akhras",
+        "dob": "1985-02-13"
+      },
+      {
+        "full_name": "trsma Akhrakhras",
+        "first_name": "trsma",
+        "last_name": "Akhrakhras",
+        "dob": "1984-12-15"
+      },
+      {
+        "full_name": "jesma -Akhrkhras",
+        "first_name": "jesma",
+        "last_name": "-Akhrkhras",
+        "dob": "1984-03-15"
+      },
+      {
+        "full_name": "Aeema -Akhra-Akhras",
+        "first_name": "Aeema",
+        "last_name": "-Akhra-Akhras",
+        "dob": "1985-03"
+      },
+      {
+        "full_name": "Asgga l-Akhr-Akhras",
+        "first_name": "Asgga",
+        "last_name": "l-Akhr-Akhras",
+        "dob": "1985-03-16"
+      },
+      {
+        "full_name": "casma l-AkhrAkhras",
+        "first_name": "casma",
+        "last_name": "l-AkhrAkhras",
+        "dob": "1985-03-18"
+      },
+      {
+        "full_name": "ajsma l-Akhrashras",
+        "first_name": "ajsma",
+        "last_name": "l-Akhrashras",
+        "dob": "1985-04-14"
+      },
+      {
+        "full_name": "Ammma l-Akhrakhras",
+        "first_name": "Ammma",
+        "last_name": "l-Akhrakhras",
+        "dob": "1985-06-13"
+      },
+      {
+        "full_name": "hjsma AkhrasAkhras",
+        "first_name": "hjsma",
+        "last_name": "AkhrasAkhras",
+        "dob": "1986-03-15"
+      },
+      {
+        "full_name": "ibsma -AkhraAkhras",
+        "first_name": "ibsma",
+        "last_name": "-AkhraAkhras",
+        "dob": "1985-03-13"
+      },
+      {
+        "full_name": "oAsma Al-Askhras",
+        "first_name": "oAsma",
+        "last_name": "Al-Askhras",
+        "dob": "1985-03-17"
+      },
+      {
+        "full_name": "Asoma Al-Akhrads",
+        "first_name": "Asoma",
+        "last_name": "Al-Akhrads",
+        "dob": "1985-03-08"
+      },
+      {
+        "full_name": "Awsma Al-Aukhras",
+        "first_name": "Awsma",
+        "last_name": "Al-Aukhras",
+        "dob": "1985-03-22"
+      }
+    ]
+  },
+  "rule_based": {
+    "rule_percentage": 30,
+    "selected_rules": [
+      "replace_double_letters_with_single_letter",
+      "shorten_name_to_abbreviations",
+      "replace_random_consonant_with_random_consonant"
+    ],
+    "rule_descriptions": {
+      "replace_double_letters_with_single_letter": "Replace double letters with a single letter",
+      "shorten_name_to_abbreviations": "Abbreviate name parts",
+      "replace_random_consonant_with_random_consonant": "Replace random consonants with different consonants"
+    },
+    "percentage": 30
+  }
+}

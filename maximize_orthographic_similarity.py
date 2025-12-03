@@ -680,6 +680,7 @@ class OrthographicBruteForceGenerator:
         Select optimal combination of variations to match target distribution.
         
         Uses brute force to try different combinations and find the best match.
+        Handles cases where categories are missing (e.g., very short names).
         
         Args:
             categorized: Dictionary of categorized variations
@@ -701,6 +702,29 @@ class OrthographicBruteForceGenerator:
         print(f"   Target counts: Light={target_counts['Light']}, Medium={target_counts['Medium']}, Far={target_counts['Far']}")
         print()
         
+        # Check available counts
+        available_counts = {
+            "Light": len(categorized["Light"]),
+            "Medium": len(categorized["Medium"]),
+            "Far": len(categorized["Far"])
+        }
+        
+        # If a category is missing, redistribute proportionally
+        if available_counts["Light"] < target_counts["Light"]:
+            shortfall = target_counts["Light"] - available_counts["Light"]
+            print(f"   ⚠️  Warning: Only {available_counts['Light']} Light variations available (need {target_counts['Light']})")
+            print(f"   🔄 Redistributing {shortfall} slots to Medium/Far proportionally...")
+            
+            # Redistribute to Medium and Far based on their target ratios
+            medium_ratio = target_counts["Medium"] / (target_counts["Medium"] + target_counts["Far"]) if (target_counts["Medium"] + target_counts["Far"]) > 0 else 0.6
+            far_ratio = target_counts["Far"] / (target_counts["Medium"] + target_counts["Far"]) if (target_counts["Medium"] + target_counts["Far"]) > 0 else 0.2
+            
+            target_counts["Light"] = available_counts["Light"]  # Use what's available
+            target_counts["Medium"] += int(shortfall * medium_ratio)
+            target_counts["Far"] += shortfall - int(shortfall * medium_ratio)
+            
+            print(f"   📊 Adjusted targets: Light={target_counts['Light']}, Medium={target_counts['Medium']}, Far={target_counts['Far']}")
+        
         # Select variations from each category
         selected = []
         
@@ -711,60 +735,93 @@ class OrthographicBruteForceGenerator:
                 selected.extend([var for var, _ in light_candidates[:target_counts["Light"]]])
             else:
                 selected.extend([var for var, _ in light_candidates])
-                print(f"   ⚠️  Warning: Only {len(light_candidates)} Light variations available (need {target_counts['Light']})")
         
         # Medium variations (prioritize scores closest to 0.60)
         if target_counts["Medium"] > 0:
-            medium_candidates = categorized["Medium"]
+            medium_candidates = categorized["Medium"].copy()
             # Sort by closeness to 0.60 (middle of Medium range)
             medium_candidates.sort(key=lambda x: abs(x[1] - 0.60))
             if len(medium_candidates) >= target_counts["Medium"]:
                 selected.extend([var for var, _ in medium_candidates[:target_counts["Medium"]]])
             else:
                 selected.extend([var for var, _ in medium_candidates])
-                print(f"   ⚠️  Warning: Only {len(medium_candidates)} Medium variations available (need {target_counts['Medium']})")
+                if len(medium_candidates) < target_counts["Medium"]:
+                    print(f"   ⚠️  Warning: Only {len(medium_candidates)} Medium variations available (need {target_counts['Medium']})")
         
         # Far variations (prioritize scores closest to 0.35)
         if target_counts["Far"] > 0:
-            far_candidates = categorized["Far"]
+            far_candidates = categorized["Far"].copy()
             # Sort by closeness to 0.35 (middle of Far range)
             far_candidates.sort(key=lambda x: abs(x[1] - 0.35))
             if len(far_candidates) >= target_counts["Far"]:
                 selected.extend([var for var, _ in far_candidates[:target_counts["Far"]]])
             else:
                 selected.extend([var for var, _ in far_candidates])
-                print(f"   ⚠️  Warning: Only {len(far_candidates)} Far variations available (need {target_counts['Far']})")
+                if len(far_candidates) < target_counts["Far"]:
+                    print(f"   ⚠️  Warning: Only {len(far_candidates)} Far variations available (need {target_counts['Far']})")
         
-        # If we don't have enough, try brute force combinations
+        # If we still don't have enough, use brute force to find best combination
         if len(selected) < total_count:
-            print(f"   🔄 Trying brute force combinations to fill remaining {total_count - len(selected)} slots...")
+            print(f"   🔄 Using brute force to optimize distribution for {total_count - len(selected)} remaining slots...")
             
-            # Try combinations from remaining candidates
-            remaining_needed = total_count - len(selected)
-            all_remaining = (
-                categorized["Light"][len(selected):] +
-                categorized["Medium"][len(selected):] +
-                categorized["Far"][len(selected):]
+            # Collect all available candidates
+            all_candidates = (
+                [(var, score, "Light") for var, score in categorized["Light"]] +
+                [(var, score, "Medium") for var, score in categorized["Medium"]] +
+                [(var, score, "Far") for var, score in categorized["Far"]]
             )
             
-            # Try random combinations
-            best_combination = None
-            best_score = -1
+            # Remove duplicates (keep first occurrence)
+            seen = set()
+            unique_candidates = []
+            for var, score, cat in all_candidates:
+                if var not in seen:
+                    seen.add(var)
+                    unique_candidates.append((var, score, cat))
             
-            for _ in range(min(1000, 2 ** min(remaining_needed, 10))):  # Limit brute force attempts
-                combo = random.sample(all_remaining, min(remaining_needed, len(all_remaining)))
-                combo_vars = [var for var, _ in combo]
+            # Try multiple combinations to find best distribution match
+            best_combination = None
+            best_quality = -1
+            attempts = min(5000, max(100, len(unique_candidates) * 10))
+            
+            for _ in range(attempts):
+                # Randomly sample enough variations
+                sample_size = min(total_count, len(unique_candidates))
+                combo = random.sample(unique_candidates, sample_size)
+                combo_vars = [var for var, _, _ in combo]
                 
                 # Calculate distribution quality
                 scores = [self.calculate_orthographic_score(var) for var in combo_vars]
                 quality = self._calculate_distribution_quality(scores, self.target_distribution)
                 
-                if quality > best_score:
-                    best_score = quality
+                if quality > best_quality:
+                    best_quality = quality
                     best_combination = combo_vars
             
             if best_combination:
-                selected.extend(best_combination[:remaining_needed])
+                # Use the best combination, but ensure we have exactly total_count
+                if len(selected) > 0:
+                    # Combine selected with best combination, avoiding duplicates
+                    combined = selected.copy()
+                    for var in best_combination:
+                        if var not in combined and len(combined) < total_count:
+                            combined.append(var)
+                    selected = combined[:total_count]
+                else:
+                    selected = best_combination[:total_count]
+        
+        # Final check: ensure we have exactly total_count
+        if len(selected) < total_count:
+            # Fill remaining slots from any available category
+            all_remaining = (
+                [(var, score) for var, score in categorized["Light"] if var not in selected] +
+                [(var, score) for var, score in categorized["Medium"] if var not in selected] +
+                [(var, score) for var, score in categorized["Far"] if var not in selected]
+            )
+            
+            needed = total_count - len(selected)
+            for var, _ in all_remaining[:needed]:
+                selected.append(var)
         
         print(f"   ✅ Selected {len(selected)} variations")
         print()
@@ -939,12 +996,70 @@ def generate_full_name_variations(first_name: str, last_name: str,
     last_scores = [last_generator.calculate_orthographic_score(var) for var in last_selected]
     
     # Combine first and last name variations
-    # Match variations by similarity score to create realistic combinations
+    # Match variations by category to maintain distribution when combined
+    # Calculate full name scores to ensure combined distribution matches target
+    from MIID.validator.reward import calculate_orthographic_similarity
+    
+    original_full_name = f"{first_name} {last_name}"
+    
+    # Generate all possible combinations and score them
+    all_combinations = []
+    for fv in first_selected:
+        for lv in last_selected:
+            full_var = f"{fv} {lv}"
+            score = calculate_orthographic_similarity(original_full_name, full_var)
+            all_combinations.append((fv, lv, score))
+    
+    # Categorize combinations by full name score
+    combined_categorized = {
+        "Light": [],
+        "Medium": [],
+        "Far": []
+    }
+    
+    for fv, lv, score in all_combinations:
+        if score >= 0.7:
+            combined_categorized["Light"].append((fv, lv, score))
+        elif score >= 0.5:
+            combined_categorized["Medium"].append((fv, lv, score))
+        else:
+            combined_categorized["Far"].append((fv, lv, score))
+    
+    # Select optimal combination to match target distribution
+    combined_target_counts = {
+        "Light": int(target_distribution.get("Light", 0.0) * variation_count),
+        "Medium": int(target_distribution.get("Medium", 0.0) * variation_count),
+        "Far": int(target_distribution.get("Far", 0.0) * variation_count)
+    }
+    
     combined_variations = []
-    for i in range(variation_count):
-        first_var = first_selected[i % len(first_selected)]
-        last_var = last_selected[i % len(last_selected)]
-        combined_variations.append((first_var, last_var))
+    
+    # Select from each category
+    if combined_target_counts["Light"] > 0:
+        light_combos = sorted(combined_categorized["Light"], key=lambda x: x[2], reverse=True)
+        combined_variations.extend([(fv, lv) for fv, lv, _ in light_combos[:combined_target_counts["Light"]]])
+    
+    if combined_target_counts["Medium"] > 0:
+        medium_combos = sorted(combined_categorized["Medium"], key=lambda x: abs(x[2] - 0.60))
+        combined_variations.extend([(fv, lv) for fv, lv, _ in medium_combos[:combined_target_counts["Medium"]]])
+    
+    if combined_target_counts["Far"] > 0:
+        far_combos = sorted(combined_categorized["Far"], key=lambda x: abs(x[2] - 0.35))
+        combined_variations.extend([(fv, lv) for fv, lv, _ in far_combos[:combined_target_counts["Far"]]])
+    
+    # Ensure we have exactly variation_count
+    if len(combined_variations) < variation_count:
+        # Fill remaining slots from any category
+        remaining = []
+        for fv, lv, score in all_combinations:
+            if (fv, lv) not in combined_variations:
+                remaining.append((fv, lv, score))
+        
+        remaining.sort(key=lambda x: abs(x[2] - 0.60))  # Sort by closeness to medium
+        needed = variation_count - len(combined_variations)
+        combined_variations.extend([(fv, lv) for fv, lv, _ in remaining[:needed]])
+    
+    combined_variations = combined_variations[:variation_count]
     
     # Calculate detailed scores
     print()

@@ -1,0 +1,109 @@
+{
+  "Asma Al-Akhras": {
+    "original": "Asma Al-Akhras",
+    "first_name": "Asma",
+    "last_name": "Al-Akhras",
+    "variations": [
+      {
+        "full_name": "Asmga Al-Akhras",
+        "first_name": "Asmga",
+        "last_name": "Al-Akhras",
+        "dob": "1985-03-14"
+      },
+      {
+        "full_name": "tAsma Al-Akhras",
+        "first_name": "tAsma",
+        "last_name": "Al-Akhras",
+        "dob": "1985-03-12"
+      },
+      {
+        "full_name": "qAsma Al-Akhras",
+        "first_name": "qAsma",
+        "last_name": "Al-Akhras",
+        "dob": "1985-02-13"
+      },
+      {
+        "full_name": "elsma Akhrakhras",
+        "first_name": "elsma",
+        "last_name": "Akhrakhras",
+        "dob": "1984-12-15"
+      },
+      {
+        "full_name": "casma -Akhrkhras",
+        "first_name": "casma",
+        "last_name": "-Akhrkhras",
+        "dob": "1984-03-15"
+      },
+      {
+        "full_name": "bksma -Akhra-Akhras",
+        "first_name": "bksma",
+        "last_name": "-Akhra-Akhras",
+        "dob": "1985-03"
+      },
+      {
+        "full_name": "llsma l-Akhr-Akhras",
+        "first_name": "llsma",
+        "last_name": "l-Akhr-Akhras",
+        "dob": "1985-03-16"
+      },
+      {
+        "full_name": "fdsma l-Akhrashras",
+        "first_name": "fdsma",
+        "last_name": "l-Akhrashras",
+        "dob": "1985-03-18"
+      },
+      {
+        "full_name": "ljsma l-Akhrakhras",
+        "first_name": "ljsma",
+        "last_name": "l-Akhrakhras",
+        "dob": "1985-04-14"
+      },
+      {
+        "full_name": "cbsma l-AkhrAkhras",
+        "first_name": "cbsma",
+        "last_name": "l-AkhrAkhras",
+        "dob": "1985-06-13"
+      },
+      {
+        "full_name": "jcsma -AkhraAkhras",
+        "first_name": "jcsma",
+        "last_name": "-AkhraAkhras",
+        "dob": "1986-03-15"
+      },
+      {
+        "full_name": "mmsma AkhrasAkhras",
+        "first_name": "mmsma",
+        "last_name": "AkhrasAkhras",
+        "dob": "1985-03-13"
+      },
+      {
+        "full_name": "Asbma Aul-Akhras",
+        "first_name": "Asbma",
+        "last_name": "Aul-Akhras",
+        "dob": "1985-03-17"
+      },
+      {
+        "full_name": "Asmea vAl-Akhras",
+        "first_name": "Asmea",
+        "last_name": "vAl-Akhras",
+        "dob": "1985-03-08"
+      },
+      {
+        "full_name": "Atsma Alt-Akhras",
+        "first_name": "Atsma",
+        "last_name": "Alt-Akhras",
+        "dob": "1985-03-22"
+      }
+    ]
+  },
+  "rule_based": {
+    "rule_percentage": 30,
+    "selected_rules": [
+      "insert_random_letter"
+    ],
+    "rule_descriptions": {
+      "insert_random_letter": "Insert a random letter"
+    },
+    "percentage": 30
+  }
+}
