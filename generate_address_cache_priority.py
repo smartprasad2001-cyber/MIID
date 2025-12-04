@@ -378,39 +378,99 @@ def fetch_nodes_from_overpass_bbox(bbox: Tuple[float, float, float, float], time
     """
     
     start_time = time.time()
-    try:
-        # Don't use proxy for Overpass API (some proxies don't support it)
-        proxies = get_proxies(for_overpass=True)
-        # Always verify SSL for Overpass (no proxy)
-        r = requests.post(OVERPASS_URL, data={"data": q}, timeout=timeout + 10, proxies=proxies, verify=True)
-        r.raise_for_status()
-        data = r.json()
-        elems = data.get("elements", [])[:MAX_OVERPASS_NODES]
-        elapsed = time.time() - start_time
-        
-        # Count by type for reporting
-        nodes_count = sum(1 for e in elems if e.get("type") == "node")
-        ways_count = sum(1 for e in elems if e.get("type") == "way")
-        relations_count = sum(1 for e in elems if e.get("type") == "relation")
-        
-        if verbose:
-            print(f"     ⏱️  Overpass query completed in {elapsed:.2f}s, received {len(elems)} elements (limited to {MAX_OVERPASS_NODES})")
-            print(f"        📊 Breakdown: {nodes_count} nodes, {ways_count} ways, {relations_count} relations")
-        
-        time.sleep(OVERPASS_SLEEP)
-        return elems
-    except requests.exceptions.Timeout as e:
-        if verbose:
-            print(f"     ⚠️  Overpass timeout error after {timeout}s: {e}")
-        return []
-    except requests.exceptions.RequestException as e:
-        if verbose:
-            print(f"     ⚠️  Overpass request error: {e}")
-        return []
-    except Exception as e:
-        if verbose:
-            print(f"     ⚠️  Overpass error: {type(e).__name__}: {e}")
-        return []
+    max_retries = 3
+    retry_delay = 1.0  # 1 second wait before retry
+    
+    for attempt in range(max_retries):
+        try:
+            # Don't use proxy for Overpass API (some proxies don't support it)
+            proxies = get_proxies(for_overpass=True)
+            # Always verify SSL for Overpass (no proxy)
+            r = requests.post(OVERPASS_URL, data={"data": q}, timeout=timeout + 10, proxies=proxies, verify=True)
+            
+            # Check for 429 (Too Many Requests) or 504 (Gateway Timeout) errors
+            if r.status_code == 429:
+                if attempt < max_retries - 1:
+                    if verbose:
+                        print(f"     ⚠️  Overpass 429 (Too Many Requests) - waiting {retry_delay}s and retrying (attempt {attempt + 1}/{max_retries})...")
+                    time.sleep(retry_delay)
+                    continue
+                else:
+                    if verbose:
+                        print(f"     ❌ Overpass 429 error after {max_retries} attempts")
+                    return []
+            
+            if r.status_code == 504:
+                if attempt < max_retries - 1:
+                    if verbose:
+                        print(f"     ⚠️  Overpass 504 (Gateway Timeout) - waiting {retry_delay}s and retrying (attempt {attempt + 1}/{max_retries})...")
+                    time.sleep(retry_delay)
+                    continue
+                else:
+                    if verbose:
+                        print(f"     ❌ Overpass 504 error after {max_retries} attempts")
+                    return []
+            
+            # Raise for other HTTP errors
+            r.raise_for_status()
+            data = r.json()
+            elems = data.get("elements", [])[:MAX_OVERPASS_NODES]
+            elapsed = time.time() - start_time
+            
+            # Count by type for reporting
+            nodes_count = sum(1 for e in elems if e.get("type") == "node")
+            ways_count = sum(1 for e in elems if e.get("type") == "way")
+            relations_count = sum(1 for e in elems if e.get("type") == "relation")
+            
+            if verbose:
+                print(f"     ⏱️  Overpass query completed in {elapsed:.2f}s, received {len(elems)} elements (limited to {MAX_OVERPASS_NODES})")
+                print(f"        📊 Breakdown: {nodes_count} nodes, {ways_count} ways, {relations_count} relations")
+            
+            time.sleep(OVERPASS_SLEEP)
+            return elems
+            
+        except requests.exceptions.Timeout as e:
+            if attempt < max_retries - 1:
+                if verbose:
+                    print(f"     ⚠️  Overpass timeout error - waiting {retry_delay}s and retrying (attempt {attempt + 1}/{max_retries})...")
+                time.sleep(retry_delay)
+                continue
+            else:
+                if verbose:
+                    print(f"     ❌ Overpass timeout error after {timeout}s and {max_retries} attempts: {e}")
+                return []
+        except requests.exceptions.HTTPError as e:
+            # Handle HTTP errors (429 and 504 should be caught above, but check here as fallback)
+            status_code = getattr(e.response, 'status_code', 'unknown') if hasattr(e, 'response') and e.response is not None else 'unknown'
+            
+            # Retry for 429 or 504 even if caught here (fallback)
+            if status_code in [429, 504] and attempt < max_retries - 1:
+                if verbose:
+                    print(f"     ⚠️  Overpass {status_code} error - waiting {retry_delay}s and retrying (attempt {attempt + 1}/{max_retries})...")
+                time.sleep(retry_delay)
+                continue
+            
+            # Other HTTP errors - return empty
+            if verbose:
+                print(f"     ⚠️  Overpass HTTP error {status_code}: {e}")
+            return []
+        except requests.exceptions.RequestException as e:
+            if attempt < max_retries - 1:
+                if verbose:
+                    print(f"     ⚠️  Overpass request error - waiting {retry_delay}s and retrying (attempt {attempt + 1}/{max_retries}): {e}")
+                time.sleep(retry_delay)
+                continue
+            else:
+                if verbose:
+                    print(f"     ❌ Overpass request error after {max_retries} attempts: {e}")
+                return []
+        except Exception as e:
+            if verbose:
+                print(f"     ⚠️  Overpass error: {type(e).__name__}: {e}")
+            return []
+    
+    # If we get here, all retries failed
+    return []
 
 # Helper: reverse-geocode lat/lon with Nominatim (zoom=19)
 def reverse_geocode(lat: float, lon: float, zoom: int = 19, verbose: bool = False, max_retries: int = 3) -> dict:
@@ -1022,7 +1082,23 @@ def generate_synthetic_addresses(country: str, count: int, verbose: bool = False
     return results
 
 # High-level per-country generator (Option A: Overpass -> reverse nodes)
-def generate_addresses_for_country(country: str, per_country: int = 15, verbose: bool = True) -> List[str]:
+def generate_addresses_for_country(
+    country: str,
+    per_country: int = 15,
+    verbose: bool = True,
+    skip_cities: List[str] | None = None,
+    existing_addresses: List[dict] | None = None,
+) -> tuple[List[dict], List[str], bool]:
+    """
+    Returns:
+        (results, cities_queried, all_cities_exhausted)
+        - results: List of address dicts
+        - cities_queried: List of city names that were actually queried
+        - all_cities_exhausted: True if all cities were processed but still < per_country addresses
+    
+    Args:
+        existing_addresses: List of existing address dicts to check duplicates against
+    """
     if verbose:
         print(f"\n  🚀 Starting address generation for {country}...")
         sys.stdout.flush()
@@ -1041,32 +1117,79 @@ def generate_addresses_for_country(country: str, per_country: int = 15, verbose:
         print(f"  📍 Country code: {country_code}")
         print(f"  🔄 Loading all cities (this may take a few seconds)...")
         sys.stdout.flush()
-    cities = [c for c in gc.get_cities().values() if c.get("countrycode", "").upper() == (country_code or "").upper()]
+    cities = [
+        c
+        for c in gc.get_cities().values()
+        if c.get("countrycode", "").upper() == (country_code or "").upper()
+    ]
     if verbose:
         print(f"  ✅ Found {len(cities)} cities for {country}")
         sys.stdout.flush()
-    # Progressive city expansion: Start with 20, expand to 60 if needed, then use all cities
+
+    # If we have a list of cities that were already processed for this country
+    # (from the existing cache's `cities_processed`), skip them so we don't
+    # query Overpass for the same cities again.
+    if skip_cities:
+        before = len(cities)
+        cities = [c for c in cities if c.get("name") not in skip_cities]
+        after = len(cities)
+        if verbose:
+            skipped = before - after
+            print(f"  ⏭️  Skipping {skipped} cities already processed in previous runs")
+            print(f"  🔄 Remaining cities to process: {after}")
+            sys.stdout.flush()
+
+    # For failed-country reprocessing we want to consider ALL remaining cities
+    # (not just the top 20), so `center_cities` is the full sorted list.
     if cities:
-        cities_sorted = sorted(cities, key=lambda x: x.get("population", 0) or 0, reverse=True)
-        # Start with first 20 cities
-        center_cities = cities_sorted[:20]
+        cities_sorted = sorted(
+            cities, key=lambda x: x.get("population", 0) or 0, reverse=True
+        )
+        center_cities = cities_sorted
     else:
         cities_sorted = []
         center_cities = []
 
     if verbose:
-        print(f"  📍 Using only {len(center_cities)} cities (no progressive expansion)")
+        print(f"  📍 Using {len(center_cities)} cities (all remaining cities from Geonames)")
         if USE_LOCAL_NODES_ONLY or country in DISABLE_REVERSE_COUNTRIES:
-            print(f"  🚫 Reverse geocoding DISABLED for {country} (only local nodes with complete address tags will be accepted)")
+            print(
+                f"  🚫 Reverse geocoding DISABLED for {country} "
+                f"(only local nodes with complete address tags will be accepted)"
+            )
         sys.stdout.flush()
 
     results = []
     tried_nodes = set()
+    cities_queried = []  # Track which cities were actually queried
     # Track normalized addresses for duplicate detection (validator-level, in-memory only)
     normalized_addresses_seen = set()
     # Track aggressively-normalized addresses (cheat_detection-level) so cache
     # entries are also unique under cheat detection's normalization.
     cheat_normalized_addresses_seen = set()
+    
+    # Pre-populate seen sets with existing addresses to avoid duplicates
+    # This ensures we don't waste time finding addresses that match existing ones
+    if existing_addresses:
+        preloaded_count = 0
+        for existing_addr in existing_addresses:
+            if isinstance(existing_addr, dict):
+                addr_str = existing_addr.get("address", "")
+                if addr_str:
+                    # Get cheat_normalized_address if already computed, otherwise compute it
+                    cheat_norm = existing_addr.get("cheat_normalized_address") or (
+                        normalize_address_for_deduplication(addr_str)
+                    )
+                    normalized = normalize_address(addr_str)
+                    if cheat_norm:
+                        cheat_normalized_addresses_seen.add(cheat_norm)
+                    if normalized:
+                        normalized_addresses_seen.add(normalized)
+                    preloaded_count += 1
+        if verbose:
+            print(f"  🔍 Pre-loaded {preloaded_count} existing addresses into duplicate detection sets")
+            print(f"     📊 Normalized strings loaded: {len(cheat_normalized_addresses_seen)} cheat-normalized, {len(normalized_addresses_seen)} normalized")
+            print(f"     ✅ All new addresses will be checked against these existing addresses")
     stats = {
         "overpass_queries": 0,
         "nodes_fetched": 0,
@@ -1297,6 +1420,9 @@ def generate_addresses_for_country(country: str, per_country: int = 15, verbose:
             bbox = (lat - lat_delta, lon - lon_delta, lat + lat_delta, lon + lon_delta)
             if verbose:
                 print(f"  📍 City {city_idx}/{len(center_cities)}: {city_name} ({lat:.4f}, {lon:.4f})")
+            # Track that we're querying this city
+            if city_name not in cities_queried:
+                cities_queried.append(city_name)
             nodes = fetch_nodes_from_overpass_bbox(bbox, verbose=verbose)
             stats["overpass_queries"] += 1
             stats["nodes_fetched"] += len(nodes)
@@ -1431,16 +1557,37 @@ def generate_addresses_for_country(country: str, per_country: int = 15, verbose:
                             is_valid, address_dict = validate_address_complete(display, country, verbose=verbose and processed % 5 == 0)
                             
                             if is_valid:
-                                # Check duplicate AFTER validation (4th level - normalized address check)
-                                normalized = address_dict.get("normalized_address", "")
-                                if normalized in normalized_addresses_seen:
+                                # Check duplicate AFTER validation (4th level - normalized address checks)
+                                # This checks against BOTH existing addresses (pre-loaded) AND newly found addresses
+                                addr_str = address_dict.get("address", "")
+                                cheat_norm = address_dict.get("cheat_normalized_address", "") or (
+                                    normalize_address_for_deduplication(addr_str) if addr_str else ""
+                                )
+                                normalized = address_dict.get("normalized_address", "") or (
+                                    normalize_address(addr_str) if addr_str else ""
+                                )
+                                
+                                # First guard against aggressive (cheat-detection level) duplicates
+                                if cheat_norm and cheat_norm in cheat_normalized_addresses_seen:
                                     stats["duplicates_skipped"] += 1
                                     if verbose and processed % 10 == 0:
-                                        print(f"     ⚠️  SKIPPING (normalized address already seen): {display[:60]}...")
+                                        print(f"     ⚠️  SKIPPING (cheat-normalized address already seen - duplicate of existing): {display[:60]}...")
                                     continue
                                 
-                                # Add to results and track normalized address
-                                normalized_addresses_seen.add(normalized)
+                                # Also check simple normalized address
+                                if normalized and normalized in normalized_addresses_seen:
+                                    stats["duplicates_skipped"] += 1
+                                    if verbose and processed % 10 == 0:
+                                        print(f"     ⚠️  SKIPPING (normalized address already seen - duplicate of existing): {display[:60]}...")
+                                    continue
+                                
+                                # Add to results and track both normalization variants
+                                if normalized:
+                                    normalized_addresses_seen.add(normalized)
+                                if cheat_norm:
+                                    cheat_normalized_addresses_seen.add(cheat_norm)
+                                # Track which city produced this address
+                                address_dict["source_city"] = city_name
                                 results.append(address_dict)
                                 stats["validation_passed"] += 1
                                 if verbose:
@@ -1638,17 +1785,23 @@ def generate_addresses_for_country(country: str, per_country: int = 15, verbose:
                 print(f"  ❌ FAILED VALIDATION: Score {overall_score:.4f} < 1.0")
                 print(f"     Rejecting addresses - will continue searching for valid ones")
             # Return empty list to force regeneration
-            return []
+            all_cities_exhausted = len(cities_queried) >= len(center_cities)
+            return ([], cities_queried, all_cities_exhausted)
 
-    return results
+    # Check if all cities were exhausted
+    all_cities_exhausted = len(cities_queried) >= len(center_cities) and len(results) < per_country
+    
+    return (results, cities_queried, all_cities_exhausted)
 
 # Global variables for signal handling
 _cache_save_lock = False
 _current_address_cache = None
 _current_failed_countries = None
+_current_manual_work_needed = None
+_current_cities_processed = None
 _current_cache_file = None
 
-def save_cache_safely(address_cache: dict, failed_countries: list, cache_file: str, total_countries: int, force: bool = False):
+def save_cache_safely(address_cache: dict, failed_countries: list, cache_file: str, total_countries: int, force: bool = False, cities_processed: dict = None, manual_work_needed: list = None):
     """Safely save cache to disk with error handling and backup."""
     global _cache_save_lock
     if _cache_save_lock and not force:
@@ -1664,32 +1817,34 @@ def save_cache_safely(address_cache: dict, failed_countries: list, cache_file: s
             except Exception:
                 pass  # Backup is optional
         
-        # Derive which cities were *targeted* per country using the same
-        # Geonames logic as in generate_addresses_for_country (top 20 cities).
-        # This includes cities even if they ultimately produced 0 accepted addresses.
-        gc = geonamescache.GeonamesCache()
-        cities_processed = {}
-        for country in address_cache.keys():
-            code = country_to_code(country)
-            if not code:
-                continue
-            all_cities = [
-                c
-                for c in gc.get_cities().values()
-                if c.get("countrycode", "").upper() == code.upper()
-            ]
-            if not all_cities:
-                continue
-            cities_sorted = sorted(
-                all_cities, key=lambda x: x.get("population", 0) or 0, reverse=True
-            )
-            names = [
-                c.get("name", "")
-                for c in cities_sorted[:20]
-                if c.get("name")
-            ]
-            if names:
-                cities_processed[country] = names
+        # Use provided cities_processed, or derive it if not provided
+        if cities_processed is None:
+            # Derive which cities were *targeted* per country using the same
+            # Geonames logic as in generate_addresses_for_country (top 20 cities).
+            # This includes cities even if they ultimately produced 0 accepted addresses.
+            gc = geonamescache.GeonamesCache()
+            cities_processed = {}
+            for country in address_cache.keys():
+                code = country_to_code(country)
+                if not code:
+                    continue
+                all_cities = [
+                    c
+                    for c in gc.get_cities().values()
+                    if c.get("countrycode", "").upper() == code.upper()
+                ]
+                if not all_cities:
+                    continue
+                cities_sorted = sorted(
+                    all_cities, key=lambda x: x.get("population", 0) or 0, reverse=True
+                )
+                names = [
+                    c.get("name", "")
+                    for c in cities_sorted[:20]
+                    if c.get("name")
+                ]
+                if names:
+                    cities_processed[country] = names
 
         cache_data = {
             "addresses": address_cache,
@@ -1697,8 +1852,9 @@ def save_cache_safely(address_cache: dict, failed_countries: list, cache_file: s
             "total_countries": total_countries,
             "cached_countries": len(address_cache),
             "failed_countries": failed_countries,
+            "manual_work_needed": manual_work_needed or [],
             # New: record which cities were processed to obtain the cached addresses
-            "cities_processed": cities_processed,
+            "cities_processed": cities_processed or {},
         }
         
         # Write to temporary file first, then rename (atomic operation)
@@ -1722,23 +1878,76 @@ def save_cache_safely(address_cache: dict, failed_countries: list, cache_file: s
 
 def signal_handler(signum, frame):
     """Handle Ctrl+C gracefully by saving cache before exiting."""
-    global _current_address_cache, _current_failed_countries, _current_cache_file
+    global _current_address_cache, _current_failed_countries, _current_manual_work_needed, _current_cities_processed, _current_cache_file
     print("\n\n  ⚠️  Interrupt signal received (Ctrl+C)")
     if _current_address_cache is not None:
         print("  💾 Saving cache before exit...")
-        # Get total_countries from cache if available
+        cache_file = _current_cache_file or CACHE_FILE
+        
+        # Get total_countries and preserve existing manual_work_needed from cache file
         total_countries = len(_current_address_cache) + 50  # Estimate if not available
-        if _current_cache_file and os.path.exists(_current_cache_file):
+        existing_manual_work_needed = []
+        existing_cities_processed = {}
+        existing_failed_countries = []
+        
+        if cache_file and os.path.exists(cache_file):
             try:
-                with open(_current_cache_file, "r", encoding="utf-8") as f:
+                with open(cache_file, "r", encoding="utf-8") as f:
                     existing = json.load(f)
                     total_countries = existing.get("total_countries", total_countries)
-            except Exception:
-                pass
+                    # CRITICAL: Preserve existing manual_work_needed from cache file
+                    existing_manual_work_needed = existing.get("manual_work_needed", []) or []
+                    existing_cities_processed = existing.get("cities_processed", {}) or {}
+                    existing_failed_countries = existing.get("failed_countries", []) or []
+            except Exception as e:
+                print(f"  ⚠️  Could not load existing cache: {e}")
         
-        save_cache_safely(_current_address_cache, _current_failed_countries or [], 
-                         _current_cache_file or CACHE_FILE, total_countries, force=True)
-        print(f"  ✅ Cache saved: {len(_current_address_cache)} countries")
+        # Merge manual_work_needed: preserve existing + add any new from in-memory
+        # CRITICAL: Always preserve existing manual_work_needed from cache file
+        final_manual_work_needed = list(set(existing_manual_work_needed))
+        if _current_manual_work_needed and isinstance(_current_manual_work_needed, list):
+            # Merge: add any new countries from in-memory that aren't already in existing
+            final_manual_work_needed = list(set(final_manual_work_needed + _current_manual_work_needed))
+        
+        # Merge cities_processed: preserve existing + merge with in-memory
+        final_cities_processed = existing_cities_processed.copy()
+        if _current_cities_processed:
+            for country, cities in _current_cities_processed.items():
+                if country in final_cities_processed:
+                    # Merge cities lists
+                    existing_cities_set = set(final_cities_processed[country])
+                    new_cities_set = set(cities)
+                    final_cities_processed[country] = sorted(list(existing_cities_set | new_cities_set))
+                else:
+                    final_cities_processed[country] = cities
+        
+        # Merge failed_countries: use in-memory if available, otherwise preserve existing
+        final_failed_countries = _current_failed_countries if _current_failed_countries is not None else existing_failed_countries
+        
+        # Count total addresses being saved
+        total_addresses = sum(len(addrs) for addrs in _current_address_cache.values())
+        
+        # Save with merged data
+        if save_cache_safely(
+            _current_address_cache, 
+            final_failed_countries or [], 
+            cache_file, 
+            total_countries, 
+            force=True,
+            cities_processed=final_cities_processed, 
+            manual_work_needed=final_manual_work_needed
+        ):
+            print(f"  ✅ Cache saved successfully!")
+            print(f"  📊 Countries: {len(_current_address_cache)}")
+            print(f"  📊 Total addresses: {total_addresses}")
+            print(f"  📊 Failed countries: {len(final_failed_countries)}")
+            print(f"  📊 Manual work needed: {len(final_manual_work_needed)}")
+            if final_manual_work_needed:
+                print(f"     Countries: {', '.join(final_manual_work_needed[:10])}")
+                if len(final_manual_work_needed) > 10:
+                    print(f"     ... and {len(final_manual_work_needed) - 10} more")
+        else:
+            print(f"  ❌ Failed to save cache!")
     print("  👋 Exiting gracefully...")
     sys.exit(0)
 
@@ -1783,9 +1992,11 @@ def generate_address_cache(force_reprocess: bool = False):
 
     valid_countries = sorted(valid_countries)
 
-    # Load incremental cache if exists (but start fresh for new location)
-    address_cache = {}
-    failed_countries = []
+    # Load incremental cache if exists
+    address_cache: dict = {}
+    failed_countries: list[str] = []
+    manual_work_needed: list[str] = []  # Countries where all cities exhausted but still < 15 addresses
+    cities_processed: dict = {}
     cache_file_path = os.path.abspath(CACHE_FILE)
     print(f"📂 Cache file path: {cache_file_path}")
     print(f"🆕 Using new cache location for normalized addresses: {os.path.basename(CACHE_FILE)}")
@@ -1799,13 +2010,22 @@ def generate_address_cache(force_reprocess: bool = False):
                 existing = json.load(f)
                 address_cache = existing.get("addresses", {}) or {}
                 failed_countries = existing.get("failed_countries", []) or []
-                complete = len([c for c in address_cache.keys() if len(address_cache[c]) >= 15])
+                manual_work_needed = existing.get("manual_work_needed", []) or []
+                cities_processed = existing.get("cities_processed", {}) or {}
+                complete = len(
+                    [c for c in address_cache.keys() if len(address_cache[c]) >= 15]
+                )
                 partial = len(address_cache) - complete
-                print(f"🔁 Resuming from existing cache: {len(address_cache)} countries cached ({complete} complete, {partial} partial)")
+                print(
+                    f"🔁 Resuming from existing cache: {len(address_cache)} countries "
+                    f"cached ({complete} complete, {partial} partial)"
+                )
                 if len(address_cache) > 0:
                     # Show first few countries as verification
                     sample_countries = list(address_cache.keys())[:5]
-                    print(f"   📋 Sample cached countries: {', '.join(sample_countries)}")
+                    print(
+                        f"   📋 Sample cached countries: {', '.join(sample_countries)}"
+                    )
         except json.JSONDecodeError as e:
             print(f"⚠️ Cache file is corrupted (invalid JSON): {e}")
             # Try to load from backup if main cache is corrupted
@@ -1817,7 +2037,11 @@ def generate_address_cache(force_reprocess: bool = False):
                         existing = json.load(f)
                         address_cache = existing.get("addresses", {}) or {}
                         failed_countries = existing.get("failed_countries", []) or []
-                        print(f"   ✅ Loaded {len(address_cache)} countries from backup")
+                        manual_work_needed = existing.get("manual_work_needed", []) or []
+                        cities_processed = existing.get("cities_processed", {}) or {}
+                        print(
+                            f"   ✅ Loaded {len(address_cache)} countries from backup"
+                        )
                 except Exception as e2:
                     print(f"   ⚠️ Could not load backup either: {e2}")
         except Exception as e:
@@ -1830,103 +2054,231 @@ def generate_address_cache(force_reprocess: bool = False):
     # Update global variables for signal handler
     _current_address_cache = address_cache
     _current_failed_countries = failed_countries
+    _current_manual_work_needed = manual_work_needed
+    _current_cities_processed = cities_processed
     _current_cache_file = CACHE_FILE
 
     total_countries = len(valid_countries)
     # Count complete countries (15+ addresses) and partial countries (< 15 addresses)
-    complete_countries = [c for c in address_cache.keys() if len(address_cache[c]) >= 15]
-    partial_countries = [c for c in address_cache.keys() if len(address_cache[c]) < 15]
-    remaining_countries = [c for c in valid_countries 
-                           if c not in address_cache or len(address_cache.get(c, [])) < 15]
-    start_time = time.time()
-    
-    # Convert failed_countries list to set for faster lookup
-    failed_countries_set = set(failed_countries)
-    
-    print("\n" + "="*80)
-    print("ADDRESS CACHE GENERATION STARTED")
-    print("="*80)
-    print(f"Total countries: {total_countries}")
-    print(f"Already cached (complete): {len(complete_countries)} countries with 15+ addresses")
-    print(f"Already cached (partial): {len(partial_countries)} countries with < 15 addresses")
-    print(f"Remaining to process: {len(remaining_countries)}")
-    if failed_countries_set:
-        print(f"Countries to skip (failed previously): {len(failed_countries_set)} countries")
-        print(f"   {', '.join(sorted(failed_countries_set))}")
-    print(f"Cache file: {CACHE_FILE}")
-    print("="*80 + "\n")
+    complete_countries = [
+        c for c in address_cache.keys() if len(address_cache[c]) >= 15
+    ]
+    partial_countries = [
+        c for c in address_cache.keys() if len(address_cache[c]) < 15
+    ]
 
-    for idx, country in enumerate(valid_countries, 1):
-        # Skip countries that are in the failed_countries list
-        if country in failed_countries_set:
-            print(f"[{idx}/{total_countries}] ⏭️  SKIP (failed previously): {country}")
-            continue
-        
-        # Skip if country is already cached with enough addresses (15 or more)
-        # Unless force_reprocess is True
-        if not force_reprocess and country in address_cache and len(address_cache[country]) >= 15:
-            print(f"[{idx}/{total_countries}] ⏭️  SKIP (cached): {country} ({len(address_cache[country])}/15 addresses)")
-            continue
-        elif force_reprocess and country in address_cache and len(address_cache[country]) >= 15:
-            print(f"[{idx}/{total_countries}] 🔄 RE-PROCESSING (--force): {country} (existing: {len(address_cache[country])}/15 addresses)")
-        
+    # We only process the countries currently listed in failed_countries.
+    # BUT skip countries that are in manual_work_needed (all cities exhausted)
+    original_failed = [c for c in failed_countries if c in valid_countries and c not in manual_work_needed]
+    current_failed = original_failed.copy()
+    
+    if manual_work_needed:
+        print(f"⚠️  Skipping {len(manual_work_needed)} countries in 'manual_work_needed' (all cities exhausted):")
+        print(f"   {', '.join(manual_work_needed[:10])}")
+        if len(manual_work_needed) > 10:
+            print(f"   ... and {len(manual_work_needed) - 10} more")
+
+    start_time = time.time()
+
+    print("\n" + "=" * 80)
+    print("ADDRESS CACHE GENERATION (FAILED COUNTRIES ONLY)")
+    print("=" * 80)
+    print(f"Total countries: {total_countries}")
+    print(
+        f"Already cached (complete): {len(complete_countries)} countries with 15+ addresses"
+    )
+    print(
+        f"Already cached (partial): {len(partial_countries)} countries with < 15 addresses"
+    )
+    print(f"Failed countries to process: {len(original_failed)}")
+    if original_failed:
+        print(f"   First few: {', '.join(original_failed[:10])}")
+        if len(original_failed) > 10:
+            print(f"   ... and {len(original_failed) - 10} more")
+    print(f"Cache file: {CACHE_FILE}")
+    print("=" * 80 + "\n")
+
+    if not original_failed:
+        print("⚠️  No failed countries to process. Exiting.")
+        return CACHE_FILE
+
+    for idx, country in enumerate(original_failed, 1):
+        existing_addresses = address_cache.get(country, [])
+        existing_count = len(existing_addresses)
+
+        # Cities that were already processed in previous runs for this country
+        skip_cities = cities_processed.get(country, [])
+
         country_start_time = time.time()
-        print("\n" + "="*80)
-        print(f"[{idx}/{total_countries}] 🏳️  PROCESSING COUNTRY: {country}")
-        print(f"Started at: {time.strftime('%H:%M:%S')}")
-        print("="*80)
+        print("\n" + "=" * 80)
+        print(f"[{idx}/{len(original_failed)}] 🏳️  PROCESSING FAILED COUNTRY: {country}")
+        print(f"   Existing addresses: {existing_count}/15")
+        print(f"   Cities already processed (skip): {len(skip_cities)}")
+        print(f"   Started at: {time.strftime('%H:%M:%S')}")
+        print("=" * 80)
+
+        # We only need the *remaining* number of addresses for this country.
+        remaining_needed = max(0, 15 - existing_count)
 
         try:
-            addresses = generate_addresses_for_country(country, per_country=15, verbose=True)
+            new_addresses: List[dict] = []
+            cities_queried_for_country: List[str] = []
+            all_cities_exhausted = False
+            if remaining_needed > 0:
+                new_addresses, cities_queried_for_country, all_cities_exhausted = generate_addresses_for_country(
+                    country,
+                    per_country=remaining_needed,
+                    verbose=True,
+                    skip_cities=skip_cities,
+                    existing_addresses=existing_addresses,
+                )
         except KeyboardInterrupt:
             print(f"\n  ⚠️  Interrupted by user")
             # Save cache before exiting
             print("  💾 Saving cache before exit...")
             _current_address_cache = address_cache
-            _current_failed_countries = failed_countries
-            if save_cache_safely(address_cache, failed_countries, CACHE_FILE, total_countries, force=True):
+            _current_failed_countries = current_failed
+            if save_cache_safely(
+                address_cache, current_failed, CACHE_FILE, total_countries, force=True,
+                cities_processed=cities_processed, manual_work_needed=manual_work_needed
+            ):
                 print(f"  ✅ Cache saved: {len(address_cache)} countries")
             raise
         except Exception as e:
             import traceback
-            print(f"  ❌ Error generating for {country}: {type(e).__name__}: {e}")
+
+            print(
+                f"  ❌ Error generating for {country}: {type(e).__name__}: {e}"
+            )
             print(f"  Traceback: {traceback.format_exc()}")
-            addresses = []
+            new_addresses = []
+            cities_queried_for_country = []
+            all_cities_exhausted = False
+
+        # Merge existing + new and enforce uniqueness on cheat_normalized_address
+        combined = []
+        if isinstance(existing_addresses, list):
+            combined.extend(existing_addresses)
+        if isinstance(new_addresses, list):
+            combined.extend(new_addresses)
+
+        seen_norms = set()
+        final_addresses: List[dict] = []
+
+        for addr in combined:
+            if not isinstance(addr, dict):
+                # Backward-compat: addr is a plain string
+                addr_str = str(addr)
+                cheat_norm = normalize_address_for_deduplication(addr_str)
+                addr_dict = {
+                    "address": addr_str,
+                    "score": 1.0,
+                    "cheat_normalized_address": cheat_norm,
+                }
+            else:
+                addr_dict = addr
+                addr_str = addr_dict.get("address", "")
+                cheat_norm = addr_dict.get("cheat_normalized_address") or (
+                    normalize_address_for_deduplication(addr_str) if addr_str else ""
+                )
+
+            if not cheat_norm:
+                continue
+
+            if cheat_norm in seen_norms:
+                continue
+
+            seen_norms.add(cheat_norm)
+            final_addresses.append(addr_dict)
+
+            if len(final_addresses) >= 15:
+                break
 
         country_elapsed = time.time() - country_start_time
-        if len(addresses) >= 15:
-            address_cache[country] = addresses[:15]
-            print(f"\n  ✅ COUNTRY COMPLETED: {country} ({len(addresses[:15])}/15 addresses in {country_elapsed:.1f}s)")
+
+        # Update cities_processed with cities that were queried
+        if cities_queried_for_country:
+            existing_cities = set(cities_processed.get(country, []))
+            existing_cities.update(cities_queried_for_country)
+            cities_processed[country] = sorted(list(existing_cities))
+        
+        if len(final_addresses) >= 15:
+            address_cache[country] = final_addresses[:15]
+            if country in current_failed:
+                current_failed.remove(country)
+            # Remove from manual_work_needed if it was there
+            if country in manual_work_needed:
+                manual_work_needed.remove(country)
+            print(
+                f"\n  ✅ COUNTRY COMPLETED: {country} "
+                f"({len(final_addresses[:15])}/15 unique addresses in {country_elapsed:.1f}s)"
+            )
+            print(f"  🎉 Removed from failed_countries list!")
         else:
-            failed_countries.append(country)
-            address_cache[country] = addresses  # store partial results
-            print(f"\n  ❌ COUNTRY FAILED: {country} ({len(addresses)}/15 addresses in {country_elapsed:.1f}s)")
+            # Still failed: keep whatever unique addresses we managed to collect
+            address_cache[country] = final_addresses
+            if country not in current_failed:
+                current_failed.append(country)
+            
+            # If all cities were exhausted, add to manual_work_needed
+            if all_cities_exhausted:
+                if country not in manual_work_needed:
+                    manual_work_needed.append(country)
+                print(
+                    f"\n  ❌ COUNTRY STILL FAILED (ALL CITIES EXHAUSTED): {country} "
+                    f"({len(final_addresses)}/15 unique addresses in {country_elapsed:.1f}s)"
+                )
+                print(
+                    "  ⚠️  All available cities were exhausted. Added to 'manual_work_needed' list."
+                )
+            else:
+                print(
+                    f"\n  ❌ COUNTRY STILL FAILED: {country} "
+                    f"({len(final_addresses)}/15 unique addresses in {country_elapsed:.1f}s)"
+                )
+                print(
+                    "  ⚠️  Insufficient unique addresses found. Will retry on next run."
+                )
 
         # Update global variables for signal handler
         _current_address_cache = address_cache
-        _current_failed_countries = failed_countries
-        
+        _current_failed_countries = current_failed
+        _current_manual_work_needed = manual_work_needed
+        _current_cities_processed = cities_processed
+
         # Save incremental cache safely
-        if save_cache_safely(address_cache, failed_countries, CACHE_FILE, total_countries):
-            print(f"   💾 Cache saved incrementally ({len(address_cache)}/{total_countries} countries)")
+        if save_cache_safely(
+            address_cache, current_failed, CACHE_FILE, total_countries,
+            cities_processed=cities_processed, manual_work_needed=manual_work_needed
+        ):
+            print(
+                f"   💾 Cache saved incrementally "
+                f"({len(address_cache)}/{total_countries} countries)"
+            )
         else:
             print(f"   ⚠️ Failed to save cache (check permissions)")
 
         # Progress summary
         elapsed_total = time.time() - start_time
-        # Count remaining countries (not cached or have less than 15 addresses)
-        remaining = len([c for c in valid_countries[idx:] 
-                        if c not in address_cache or len(address_cache.get(c, [])) < 15])
+        remaining = len(original_failed) - idx
         avg_time_per_country = elapsed_total / idx if idx > 0 else 0
         estimated_remaining = avg_time_per_country * remaining if remaining > 0 else 0
-        
-        print(f"   ⏱️  Progress: {idx}/{total_countries} countries | "
-              f"Elapsed: {elapsed_total/60:.1f}m | "
-              f"Avg: {avg_time_per_country:.1f}s/country | "
-              f"Est. remaining: {estimated_remaining/60:.1f}m")
+
+        print(
+            f"   ⏱️  Progress: {idx}/{len(original_failed)} failed countries | "
+            f"Elapsed: {elapsed_total/60:.1f}m | "
+            f"Avg: {avg_time_per_country:.1f}s/country | "
+            f"Est. remaining: {estimated_remaining/60:.1f}m"
+        )
 
         # polite pause between countries
         time.sleep(0.5)
+
+    # Replace failed_countries with the updated list
+    failed_countries[:] = current_failed
+    
+    # Calculate how many countries were cleared
+    countries_cleared = len(original_failed) - len(current_failed)
 
     overall_elapsed = time.time() - start_time
     
@@ -1939,6 +2291,12 @@ def generate_address_cache(force_reprocess: bool = False):
     print("🎉 ALL DONE - FINAL SUMMARY")
     print("="*80)
     print(f"⏱️  Total time elapsed: {overall_elapsed/60:.1f} minutes ({overall_elapsed:.0f} seconds)")
+    print(f"✅ Countries cleared from failed_countries: {countries_cleared}")
+    print(f"⚠️  Countries in manual_work_needed: {len(manual_work_needed)}")
+    if manual_work_needed:
+        print(f"   {', '.join(manual_work_needed[:10])}")
+        if len(manual_work_needed) > 10:
+            print(f"   ... and {len(manual_work_needed) - 10} more")
     print(f"📊 Countries processed: {len(address_cache)}/{total_countries}")
     print(f"   ✅ Complete (15 addresses): {complete_countries}")
     print(f"   ⚠️  Partial (<15 addresses): {partial_countries}")
@@ -1964,6 +2322,12 @@ def generate_address_cache(force_reprocess: bool = False):
         if len(failed_countries) > 10:
             print(f"   ... and {len(failed_countries) - 10} more")
     print("="*80)
+    
+    # Final save to ensure manual_work_needed is persisted
+    save_cache_safely(
+        address_cache, failed_countries, CACHE_FILE, total_countries, force=True,
+        cities_processed=cities_processed, manual_work_needed=manual_work_needed
+    )
 
     return CACHE_FILE
 
