@@ -1,0 +1,1466 @@
+================================================================================
+TESTING SANCTIONED NAMES WITH RULE COMPLIANCE
+================================================================================
+
+📋 Loading 15 names from sanctioned list...
+✅ Loaded 15 names
+
+🔧 Generating variations for each name...
+--------------------------------------------------------------------------------
+
+[1/15] Processing: Brandon BERUSA
+================================================================================
+ORTHOGRAPHIC SIMILARITY MAXIMIZATION (BRUTE FORCE)
+WITH RULE COMPLIANCE (3 rules, 30%)
+================================================================================
+
+🔧 Generating rule-compliant variations for 3 rules...
+   Generated 37 rule-compliant variations
+
+🔍 Generating variations for: 'Brandon BERUSA'
+   Target distribution: {'Light': 0.2, 'Medium': 0.6, 'Far': 0.2}
+
+   Strategy 1: Single character substitution...
+      Generated: 50 variations
+   Strategy 2: Character insertion...
+      Generated: 200 variations
+   Strategy 3: Character deletion...
+      Generated: 214 variations
+   Strategy 4: Character transposition...
+      Generated: 227 variations
+   Strategy 5: Double character variations...
+      Generated: 231 variations
+   Strategy 6: Visual similar replacements...
+      Generated: 232 variations
+   Strategy 7: Comprehensive all-strategies generation (50 strategies, depth 6)...
+      Generated: 33001 total variations
+
+   Total unique variations generated: 33001
+   Calculating orthographic scores...
+
+   Categorized variations:
+      Light (0.70-1.00):   14492 variations
+      Medium (0.50-0.69):  17637 variations
+      Far (0.20-0.49):     866 variations
+      Below threshold:     6 variations
+
+🎯 Selecting optimal combination with rule compliance for 15 variations...
+   Target distribution: {'Light': 0.2, 'Medium': 0.6, 'Far': 0.2}
+   Rule percentage: 30.0%
+   Possible rules: ['replace_spaces_with_random_special_characters', 'replace_random_vowel_with_random_vowel', 'delete_random_letter']
+   Target rule-compliant: 4 variations
+   Target orthographic: Light=3, Medium=9, Far=3
+
+   ⚠️  Only 3 rule-compliant variations selected (need 4)
+   🔄 Adding more rule-compliant variations...
+   ✅ Selected 15 variations
+   Rule-compliant: 3 (20.0%)
+   By category: Light=3, Medium=9, Far=3
+
+================================================================================
+RESULTS
+================================================================================
+Original Name: Brandon BERUSA
+Variations Generated: 15
+
+Distribution:
+  Target:  Light=20.0%, Medium=60.0%, Far=20.0%
+  Actual:  Light=20.0%, Medium=60.0%, Far=20.0%
+
+Quality Score: 1.0000
+Average Orthographic Score: 0.6868
+Score Range: 0.4706 - 0.9286
+
+Rule Compliance:
+  Target: 30.0%
+  Actual: 20.0% (3 variations)
+  Rules satisfied: {'replace_spaces_with_random_special_characters': 3, 'replace_random_vowel_with_random_vowel': 0, 'delete_random_letter': 1}
+
+Selected Variations:
+   1. Brandon.BERUSA                 | Score: 0.9286 | Light
+   2. BrandonBERUSA                  | Score: 0.9286 | Light
+   3. Brandon_BERUSA                 | Score: 0.9286 | Light
+   4. ndon Bdon BERUSA               | Score: 0.6875 | Medium
+   5. ndon ndon BERUSA               | Score: 0.6875 | Medium
+   6. andonndon BERUSA               | Score: 0.6875 | Medium
+   7. andon don BERUSA               | Score: 0.6875 | Medium
+   8. randonrandon BERUSA            | Score: 0.6842 | Medium
+   9. randonandon BERUSA             | Score: 0.6667 | Medium
+  10. andon BERUSRUSA                | Score: 0.6667 | Medium
+  11. ndon Bon BERUSA                | Score: 0.6667 | Medium
+  12. randon Bdon BERUSA             | Score: 0.6667 | Medium
+  13. ndon BERUSAn BERUSA            | Score: 0.4737 | Far
+  14. do BERUSAo BERUSA              | Score: 0.4706 | Far
+  15. ndon BERUSABERUSA              | Score: 0.4706 | Far
+
+================================================================================
+   Generated 15 variations
+   Rule compliance: 20.0% (3 variations)
+   Rules: ['replace_spaces_with_random_special_characters', 'replace_random_vowel_with_random_vowel', 'delete_random_letter']
+
+[2/15] Processing: Richard Herve FOURCAND
+================================================================================
+ORTHOGRAPHIC SIMILARITY MAXIMIZATION (BRUTE FORCE)
+WITH RULE COMPLIANCE (2 rules, 30%)
+================================================================================
+
+🔧 Generating rule-compliant variations for 2 rules...
+   Generated 8 rule-compliant variations
+
+🔍 Generating variations for: 'Richard Herve FOURCAND'
+   Target distribution: {'Light': 0.2, 'Medium': 0.6, 'Far': 0.2}
+
+   Strategy 1: Single character substitution...
+      Generated: 67 variations
+   Strategy 2: Character insertion...
+      Generated: 285 variations
+   Strategy 3: Character deletion...
+      Generated: 307 variations
+   Strategy 4: Character transposition...
+      Generated: 328 variations
+   Strategy 5: Double character variations...
+      Generated: 334 variations
+   Strategy 6: Visual similar replacements...
+      Generated: 336 variations
+   Strategy 7: Comprehensive all-strategies generation (50 strategies, depth 6)...
+      Generated: 73408 total variations
+
+   Total unique variations generated: 73408
+   Calculating orthographic scores...
+
+   Categorized variations:
+      Light (0.70-1.00):   53030 variations
+      Medium (0.50-0.69):  19789 variations
+      Far (0.20-0.49):     419 variations
+      Below threshold:     170 variations
+
+🎯 Selecting optimal combination with rule compliance for 15 variations...
+   Target distribution: {'Light': 0.2, 'Medium': 0.6, 'Far': 0.2}
+   Rule percentage: 30.0%
+   Possible rules: ['swap_adjacent_consonants', 'shorten_name_to_initials']
+   Target rule-compliant: 4 variations
+   Target orthographic: Light=3, Medium=9, Far=3
+
+   ✅ Selected 15 variations
+   Rule-compliant: 4 (26.7%)
+   By category: Light=3, Medium=9, Far=3
+
+================================================================================
+RESULTS
+================================================================================
+Original Name: Richard Herve FOURCAND
+Variations Generated: 15
+
+Distribution:
+  Target:  Light=20.0%, Medium=60.0%, Far=20.0%
+  Actual:  Light=20.0%, Medium=60.0%, Far=20.0%
+
+Quality Score: 0.3400
+Average Orthographic Score: 0.6786
+Score Range: 0.2273 - 0.9091
+
+Rule Compliance:
+  Target: 30.0%
+  Actual: 26.7% (4 variations)
+  Rules satisfied: {'swap_adjacent_consonants': 3, 'shorten_name_to_initials': 1}
+
+Selected Variations:
+   1. Richadr Herve FOURCAND         | Score: 0.9091 | Light
+   2. Richard Herve FOURCADN         | Score: 0.9091 | Light
+   3. Richard Hevre FOURCAND         | Score: 0.9091 | Light
+   4. ar Herve Herve FOURCAND        | Score: 0.6957 | Medium
+   5. hard Her Herve FOURCAND        | Score: 0.6957 | Medium
+   6. ard Herv Herve FOURCAND        | Score: 0.6957 | Medium
+   7. hard Herve FOU FOURCAND        | Score: 0.6957 | Medium
+   8. hard Herve FOURCANDCAND        | Score: 0.6957 | Medium
+   9. ar Herar Herve FOURCAND        | Score: 0.6957 | Medium
+  10. hard Herve Fve FOURCAND        | Score: 0.6957 | Medium
+  11. hard Herve FOURCANRCAND        | Score: 0.6957 | Medium
+  12. hard HervHerve FOURCAND        | Score: 0.6957 | Medium
+  13. R. H. F.                       | Score: 0.2273 | Far
+  14. rd Herve FOURCANve FOURCAND    | Score: 0.4815 | Far
+  15. ar Herve FOURCANve FOURCAND    | Score: 0.4815 | Far
+
+================================================================================
+   Generated 15 variations
+   Rule compliance: 26.7% (4 variations)
+   Rules: ['swap_adjacent_consonants', 'shorten_name_to_initials']
+
+[3/15] Processing: Varee KRADOOMPORN
+================================================================================
+ORTHOGRAPHIC SIMILARITY MAXIMIZATION (BRUTE FORCE)
+WITH RULE COMPLIANCE (1 rules, 30%)
+================================================================================
+
+🔧 Generating rule-compliant variations for 1 rules...
+   Generated 1 rule-compliant variations
+
+🔍 Generating variations for: 'Varee KRADOOMPORN'
+   Target distribution: {'Light': 0.2, 'Medium': 0.6, 'Far': 0.2}
+
+   Strategy 1: Single character substitution...
+      Generated: 63 variations
+   Strategy 2: Character insertion...
+      Generated: 241 variations
+   Strategy 3: Character deletion...
+      Generated: 256 variations
+   Strategy 4: Character transposition...
+      Generated: 270 variations
+   Strategy 5: Double character variations...
+      Generated: 279 variations
+   Strategy 6: Visual similar replacements...
+      Generated: 283 variations
+   Strategy 7: Comprehensive all-strategies generation (50 strategies, depth 6)...
+      Generated: 40343 total variations
+
+   Total unique variations generated: 40343
+   Calculating orthographic scores...
+
+   Categorized variations:
+      Light (0.70-1.00):   23778 variations
+      Medium (0.50-0.69):  15234 variations
+      Far (0.20-0.49):     1284 variations
+      Below threshold:     47 variations
+
+🎯 Selecting optimal combination with rule compliance for 15 variations...
+   Target distribution: {'Light': 0.2, 'Medium': 0.6, 'Far': 0.2}
+   Rule percentage: 30.0%
+   Possible rules: ['remove_all_spaces']
+   Target rule-compliant: 4 variations
+   Target orthographic: Light=3, Medium=9, Far=3
+
+   ⚠️  Only 1 rule-compliant variations selected (need 4)
+   🔄 Adding more rule-compliant variations...
+   ✅ Selected 15 variations
+   Rule-compliant: 1 (6.7%)
+   By category: Light=3, Medium=9, Far=3
+
+================================================================================
+RESULTS
+================================================================================
+Original Name: Varee KRADOOMPORN
+Variations Generated: 15
+
+Distribution:
+  Target:  Light=20.0%, Medium=60.0%, Far=20.0%
+  Actual:  Light=20.0%, Medium=60.0%, Far=20.0%
+
+Quality Score: 1.0000
+Average Orthographic Score: 0.6944
+Score Range: 0.4762 - 0.9444
+
+Rule Compliance:
+  Target: 30.0%
+  Actual: 6.7% (1 variations)
+  Rules satisfied: {'remove_all_spaces': 1}
+
+Selected Variations:
+   1. VareeKRADOOMPORN               | Score: 0.9412 | Light
+   2. Varee oKRADOOMPORN             | Score: 0.9444 | Light
+   3. Varepe KRADOOMPORN             | Score: 0.9444 | Light
+   4. ree KRADORADOOMPORN            | Score: 0.6842 | Medium
+   5. ree KRADOOMPOOMPORN            | Score: 0.6842 | Medium
+   6. ree KRADKRADOOMPORN            | Score: 0.6842 | Medium
+   7. ree KRe KRADOOMPORN            | Score: 0.6842 | Medium
+   8. ee KRAe KRADOOMPORN            | Score: 0.6842 | Medium
+   9. ree KRADOOADOOMPORN            | Score: 0.6842 | Medium
+  10. ree KRADOOMDOOMPORN            | Score: 0.6842 | Medium
+  11. ree KRADOOMPORMPORN            | Score: 0.6842 | Medium
+  12. e KRADe KRADOOMPORN            | Score: 0.6842 | Medium
+  13. e KADOOMPO KADOOMPORN          | Score: 0.4762 | Far
+  14. e KRADOOMPORADOOMPORN          | Score: 0.4762 | Far
+  15.  KRADOOMPORNADOOMPORN          | Score: 0.4762 | Far
+
+================================================================================
+   Generated 15 variations
+   Rule compliance: 6.7% (1 variations)
+   Rules: ['remove_all_spaces']
+
+[4/15] Processing: Miguel Angel URIBE URIBE
+================================================================================
+ORTHOGRAPHIC SIMILARITY MAXIMIZATION (BRUTE FORCE)
+WITH RULE COMPLIANCE (3 rules, 30%)
+================================================================================
+
+🔧 Generating rule-compliant variations for 3 rules...
+   Generated 134 rule-compliant variations
+
+🔍 Generating variations for: 'Miguel Angel URIBE URIBE'
+   Target distribution: {'Light': 0.2, 'Medium': 0.6, 'Far': 0.2}
+
+   Strategy 1: Single character substitution...
+      Generated: 81 variations
+   Strategy 2: Character insertion...
+      Generated: 323 variations
+   Strategy 3: Character deletion...
+      Generated: 347 variations
+   Strategy 4: Character transposition...
+      Generated: 370 variations
+   Strategy 5: Double character variations...
+      Generated: 375 variations
+   Strategy 6: Visual similar replacements...
+      Generated: 378 variations
+   Strategy 7: Comprehensive all-strategies generation (50 strategies, depth 6)...
+      Generated: 85239 total variations
+
+   Total unique variations generated: 85239
+   Calculating orthographic scores...
+
+   Categorized variations:
+      Light (0.70-1.00):   74783 variations
+      Medium (0.50-0.69):  9796 variations
+      Far (0.20-0.49):     512 variations
+      Below threshold:     148 variations
+
+🎯 Selecting optimal combination with rule compliance for 15 variations...
+   Target distribution: {'Light': 0.2, 'Medium': 0.6, 'Far': 0.2}
+   Rule percentage: 30.0%
+   Possible rules: ['remove_random_vowel', 'replace_random_consonant_with_random_consonant', 'swap_random_letter']
+   Target rule-compliant: 4 variations
+   Target orthographic: Light=3, Medium=9, Far=3
+
+   ⚠️  Only 3 rule-compliant variations selected (need 4)
+   🔄 Adding more rule-compliant variations...
+   ✅ Selected 15 variations
+   Rule-compliant: 3 (20.0%)
+   By category: Light=3, Medium=9, Far=3
+
+================================================================================
+RESULTS
+================================================================================
+Original Name: Miguel Angel URIBE URIBE
+Variations Generated: 15
+
+Distribution:
+  Target:  Light=20.0%, Medium=60.0%, Far=20.0%
+  Actual:  Light=20.0%, Medium=60.0%, Far=20.0%
+
+Quality Score: 0.3400
+Average Orthographic Score: 0.7016
+Score Range: 0.4583 - 0.9583
+
+Rule Compliance:
+  Target: 30.0%
+  Actual: 20.0% (3 variations)
+  Rules satisfied: {'remove_random_vowel': 3, 'replace_random_consonant_with_random_consonant': 0, 'swap_random_letter': 0}
+
+Selected Variations:
+   1. Miguel Angel URIBE URBE        | Score: 0.9583 | Light
+   2. Miguel Angel URIB URIBE        | Score: 0.9583 | Light
+   3. Miguel ngel URIBE URIBE        | Score: 0.9583 | Light
+   4. uel Angel URIBE URIB URIBE     | Score: 0.6923 | Medium
+   5. uel Ange Angel URIBE URIBE     | Score: 0.6923 | Medium
+   6. uel Angel URIBE URIE URIBE     | Score: 0.6923 | Medium
+   7. uel Angel URIBE UIBE URIBE     | Score: 0.6923 | Medium
+   8. uel AngelAngel URIBE URIBE     | Score: 0.6923 | Medium
+   9. uel Angel URIB URIBE URIBE     | Score: 0.6923 | Medium
+  10. uel Angel Ugel URIBE URIBE     | Score: 0.6923 | Medium
+  11. l Angel URIgel URIBE URIBE     | Score: 0.6923 | Medium
+  12. uel Angel ngel URIBE URIBE     | Score: 0.6923 | Medium
+  13. rniguel angel uribe uribe      | Score: 0.4800 | Far
+  14. nniguel angel uribe uribe      | Score: 0.4800 | Far
+  15. gl URIBE UE                    | Score: 0.4583 | Far
+
+================================================================================
+   Generated 15 variations
+   Rule compliance: 20.0% (3 variations)
+   Rules: ['remove_random_vowel', 'replace_random_consonant_with_random_consonant', 'swap_random_letter']
+
+[5/15] Processing: Jinee Huang
+================================================================================
+ORTHOGRAPHIC SIMILARITY MAXIMIZATION (BRUTE FORCE)
+WITH RULE COMPLIANCE (1 rules, 30%)
+================================================================================
+
+🔧 Generating rule-compliant variations for 1 rules...
+   Generated 4 rule-compliant variations
+
+🔍 Generating variations for: 'Jinee Huang'
+   Target distribution: {'Light': 0.2, 'Medium': 0.6, 'Far': 0.2}
+
+   Strategy 1: Single character substitution...
+      Generated: 38 variations
+   Strategy 2: Character insertion...
+      Generated: 148 variations
+   Strategy 3: Character deletion...
+      Generated: 158 variations
+   Strategy 4: Character transposition...
+      Generated: 167 variations
+   Strategy 5: Double character variations...
+      Generated: 168 variations
+   Strategy 6: Visual similar replacements...
+      Generated: 169 variations
+   Strategy 7: Comprehensive all-strategies generation (50 strategies, depth 6)...
+      Generated: 26146 total variations
+
+   Total unique variations generated: 26146
+   Calculating orthographic scores...
+
+   Categorized variations:
+      Light (0.70-1.00):   7480 variations
+      Medium (0.50-0.69):  7543 variations
+      Far (0.20-0.49):     11067 variations
+      Below threshold:     56 variations
+
+🎯 Selecting optimal combination with rule compliance for 15 variations...
+   Target distribution: {'Light': 0.2, 'Medium': 0.6, 'Far': 0.2}
+   Rule percentage: 30.0%
+   Possible rules: ['remove_random_vowel']
+   Target rule-compliant: 4 variations
+   Target orthographic: Light=3, Medium=9, Far=3
+
+   ⚠️  Only 3 rule-compliant variations selected (need 4)
+   🔄 Adding more rule-compliant variations...
+   ✅ Selected 15 variations
+   Rule-compliant: 3 (20.0%)
+   By category: Light=3, Medium=9, Far=3
+
+================================================================================
+RESULTS
+================================================================================
+Original Name: Jinee Huang
+Variations Generated: 15
+
+Distribution:
+  Target:  Light=20.0%, Medium=60.0%, Far=20.0%
+  Actual:  Light=20.0%, Medium=60.0%, Far=20.0%
+
+Quality Score: 0.3400
+Average Orthographic Score: 0.6905
+Score Range: 0.4667 - 0.9091
+
+Rule Compliance:
+  Target: 30.0%
+  Actual: 20.0% (3 variations)
+  Rules satisfied: {'remove_random_vowel': 3}
+
+Selected Variations:
+   1. Jine Huang                     | Score: 0.9091 | Light
+   2. Jinee Hang                     | Score: 0.9091 | Light
+   3. Jnee Huang                     | Score: 0.9091 | Light
+   4. inee Huanging                  | Score: 0.6923 | Medium
+   5. inee He Huang                  | Score: 0.6923 | Medium
+   6. inee HuaHuang                  | Score: 0.6923 | Medium
+   7. nee nee Huang                  | Score: 0.6923 | Medium
+   8. inee Hu Huang                  | Score: 0.6923 | Medium
+   9. ineenee Huang                  | Score: 0.6923 | Medium
+  10. inee Huangang                  | Score: 0.6923 | Medium
+  11. inee Huanuang                  | Score: 0.6923 | Medium
+  12. inee ee Huang                  | Score: 0.6923 | Medium
+  13. nee Huang Huang                | Score: 0.4667 | Far
+  14. nee Huane Huang                | Score: 0.4667 | Far
+  15. e aHuane aHuang                | Score: 0.4667 | Far
+
+================================================================================
+   Generated 15 variations
+   Rule compliance: 20.0% (3 variations)
+   Rules: ['remove_random_vowel']
+
+[6/15] Processing: Aleksandr Ermakov
+================================================================================
+ORTHOGRAPHIC SIMILARITY MAXIMIZATION (BRUTE FORCE)
+WITH RULE COMPLIANCE (3 rules, 30%)
+================================================================================
+
+🔧 Generating rule-compliant variations for 3 rules...
+   Generated 12 rule-compliant variations
+
+🔍 Generating variations for: 'Aleksandr Ermakov'
+   Target distribution: {'Light': 0.2, 'Medium': 0.6, 'Far': 0.2}
+
+   Strategy 1: Single character substitution...
+      Generated: 62 variations
+   Strategy 2: Character insertion...
+      Generated: 240 variations
+   Strategy 3: Character deletion...
+      Generated: 257 variations
+   Strategy 4: Character transposition...
+      Generated: 273 variations
+   Strategy 5: Double character variations...
+      Generated: 273 variations
+   Strategy 6: Visual similar replacements...
+      Generated: 276 variations
+   Strategy 7: Comprehensive all-strategies generation (50 strategies, depth 6)...
+      Generated: 42905 total variations
+
+   Total unique variations generated: 42905
+   Calculating orthographic scores...
+
+   Categorized variations:
+      Light (0.70-1.00):   25198 variations
+      Medium (0.50-0.69):  16021 variations
+      Far (0.20-0.49):     1629 variations
+      Below threshold:     57 variations
+
+🎯 Selecting optimal combination with rule compliance for 15 variations...
+   Target distribution: {'Light': 0.2, 'Medium': 0.6, 'Far': 0.2}
+   Rule percentage: 30.0%
+   Possible rules: ['initial_only_first_name', 'replace_spaces_with_random_special_characters', 'remove_random_vowel']
+   Target rule-compliant: 4 variations
+   Target orthographic: Light=3, Medium=9, Far=3
+
+   ✅ Selected 15 variations
+   Rule-compliant: 4 (26.7%)
+   By category: Light=3, Medium=9, Far=3
+
+================================================================================
+RESULTS
+================================================================================
+Original Name: Aleksandr Ermakov
+Variations Generated: 15
+
+Distribution:
+  Target:  Light=20.0%, Medium=60.0%, Far=20.0%
+  Actual:  Light=20.0%, Medium=60.0%, Far=20.0%
+
+Quality Score: 1.0000
+Average Orthographic Score: 0.6837
+Score Range: 0.4762 - 0.9412
+
+Rule Compliance:
+  Target: 30.0%
+  Actual: 26.7% (4 variations)
+  Rules satisfied: {'initial_only_first_name': 1, 'replace_spaces_with_random_special_characters': 3, 'remove_random_vowel': 0}
+
+Selected Variations:
+   1. Aleksandr_Ermakov              | Score: 0.9412 | Light
+   2. Aleksandr.Ermakov              | Score: 0.9412 | Light
+   3. AleksandrErmakov               | Score: 0.9412 | Light
+   4. A. Ermakov                     | Score: 0.5294 | Medium
+   5. eksandr Err Ermakov            | Score: 0.6842 | Medium
+   6. eksandsandr Ermakov            | Score: 0.6842 | Medium
+   7. eksandr Ermakomakov            | Score: 0.6842 | Medium
+   8. eksandr Ermakovakov            | Score: 0.6842 | Medium
+   9. eksandr Ermakrmakov            | Score: 0.6842 | Medium
+  10. eksandr ErmaErmakov            | Score: 0.6842 | Medium
+  11. ksandrsandr Ermakov            | Score: 0.6842 | Medium
+  12. eksandr ndr Ermakov            | Score: 0.6842 | Medium
+  13. sadr Ermakovr Ermakov          | Score: 0.4762 | Far
+  14. sand Ermakond Ermakov          | Score: 0.4762 | Far
+  15. sandr Ermakor Ermakov          | Score: 0.4762 | Far
+
+================================================================================
+   Generated 15 variations
+   Rule compliance: 26.7% (4 variations)
+   Rules: ['initial_only_first_name', 'replace_spaces_with_random_special_characters', 'remove_random_vowel']
+
+[7/15] Processing: Mohamed ABU DHESS
+================================================================================
+ORTHOGRAPHIC SIMILARITY MAXIMIZATION (BRUTE FORCE)
+WITH RULE COMPLIANCE (2 rules, 30%)
+================================================================================
+
+🔧 Generating rule-compliant variations for 2 rules...
+   Generated 23 rule-compliant variations
+
+🔍 Generating variations for: 'Mohamed ABU DHESS'
+   Target distribution: {'Light': 0.2, 'Medium': 0.6, 'Far': 0.2}
+
+   Strategy 1: Single character substitution...
+      Generated: 57 variations
+   Strategy 2: Character insertion...
+      Generated: 230 variations
+   Strategy 3: Character deletion...
+      Generated: 246 variations
+   Strategy 4: Character transposition...
+      Generated: 261 variations
+   Strategy 5: Double character variations...
+      Generated: 266 variations
+   Strategy 6: Visual similar replacements...
+      Generated: 269 variations
+   Strategy 7: Comprehensive all-strategies generation (50 strategies, depth 6)...
+      Generated: 41680 total variations
+
+   Total unique variations generated: 41680
+   Calculating orthographic scores...
+
+   Categorized variations:
+      Light (0.70-1.00):   24619 variations
+      Medium (0.50-0.69):  15623 variations
+      Far (0.20-0.49):     1375 variations
+      Below threshold:     63 variations
+
+🎯 Selecting optimal combination with rule compliance for 15 variations...
+   Target distribution: {'Light': 0.2, 'Medium': 0.6, 'Far': 0.2}
+   Rule percentage: 30.0%
+   Possible rules: ['swap_random_letter', 'remove_random_consonant']
+   Target rule-compliant: 4 variations
+   Target orthographic: Light=3, Medium=9, Far=3
+
+   ⚠️  Only 3 rule-compliant variations selected (need 4)
+   🔄 Adding more rule-compliant variations...
+   ✅ Selected 15 variations
+   Rule-compliant: 3 (20.0%)
+   By category: Light=3, Medium=9, Far=3
+
+================================================================================
+RESULTS
+================================================================================
+Original Name: Mohamed ABU DHESS
+Variations Generated: 15
+
+Distribution:
+  Target:  Light=20.0%, Medium=60.0%, Far=20.0%
+  Actual:  Light=20.0%, Medium=60.0%, Far=20.0%
+
+Quality Score: 1.0000
+Average Orthographic Score: 0.6822
+Score Range: 0.4762 - 0.8824
+
+Rule Compliance:
+  Target: 30.0%
+  Actual: 20.0% (3 variations)
+  Rules satisfied: {'swap_random_letter': 3, 'remove_random_consonant': 0}
+
+Selected Variations:
+   1. oMhamed ABU DHESS              | Score: 0.8824 | Light
+   2. Mohamed ABUD HESS              | Score: 0.8824 | Light
+   3. Mohamed ABU HDESS              | Score: 0.8824 | Light
+   4. hamed ABU DHESDHESS            | Score: 0.6842 | Medium
+   5. hamed ABU DHU DHESS            | Score: 0.6842 | Medium
+   6. hamed ABU DHESSHESS            | Score: 0.6842 | Medium
+   7. hamed ABU ABU DHESS            | Score: 0.6842 | Medium
+   8. hamed med ABU DHESS            | Score: 0.6842 | Medium
+   9. med ABmed ABU DHESS            | Score: 0.6842 | Medium
+  10. hamed ABd ABU DHESS            | Score: 0.6842 | Medium
+  11. hamed ABU DHE DHESS            | Score: 0.6842 | Medium
+  12. amed Amed ABU DHESS            | Score: 0.6842 | Medium
+  13. me ABU DHEe ABU DHESS          | Score: 0.4762 | Far
+  14. med ABU DHESABU DHESS          | Score: 0.4762 | Far
+  15. med BU DHEed BU DHESS          | Score: 0.4762 | Far
+
+================================================================================
+   Generated 15 variations
+   Rule compliance: 20.0% (3 variations)
+   Rules: ['swap_random_letter', 'remove_random_consonant']
+
+[8/15] Processing: Wassim Al-Assad
+================================================================================
+ORTHOGRAPHIC SIMILARITY MAXIMIZATION (BRUTE FORCE)
+WITH RULE COMPLIANCE (2 rules, 30%)
+================================================================================
+
+🔧 Generating rule-compliant variations for 2 rules...
+   Generated 9 rule-compliant variations
+
+🔍 Generating variations for: 'Wassim Al-Assad'
+   Target distribution: {'Light': 0.2, 'Medium': 0.6, 'Far': 0.2}
+
+   Strategy 1: Single character substitution...
+      Generated: 59 variations
+   Strategy 2: Character insertion...
+      Generated: 219 variations
+   Strategy 3: Character deletion...
+      Generated: 232 variations
+   Strategy 4: Character transposition...
+      Generated: 244 variations
+   Strategy 5: Double character variations...
+      Generated: 245 variations
+   Strategy 6: Visual similar replacements...
+      Generated: 250 variations
+   Strategy 7: Comprehensive all-strategies generation (50 strategies, depth 6)...
+      Generated: 34697 total variations
+
+   Total unique variations generated: 34697
+   Calculating orthographic scores...
+
+   Categorized variations:
+      Light (0.70-1.00):   14922 variations
+      Medium (0.50-0.69):  18767 variations
+      Far (0.20-0.49):     973 variations
+      Below threshold:     35 variations
+
+🎯 Selecting optimal combination with rule compliance for 15 variations...
+   Target distribution: {'Light': 0.2, 'Medium': 0.6, 'Far': 0.2}
+   Rule percentage: 30.0%
+   Possible rules: ['replace_spaces_with_random_special_characters', 'remove_random_vowel']
+   Target rule-compliant: 4 variations
+   Target orthographic: Light=3, Medium=9, Far=3
+
+   ⚠️  Only 3 rule-compliant variations selected (need 4)
+   🔄 Adding more rule-compliant variations...
+   ✅ Selected 15 variations
+   Rule-compliant: 3 (20.0%)
+   By category: Light=3, Medium=9, Far=3
+
+================================================================================
+RESULTS
+================================================================================
+Original Name: Wassim Al-Assad
+Variations Generated: 15
+
+Distribution:
+  Target:  Light=20.0%, Medium=60.0%, Far=20.0%
+  Actual:  Light=20.0%, Medium=60.0%, Far=20.0%
+
+Quality Score: 1.0000
+Average Orthographic Score: 0.6939
+Score Range: 0.4737 - 0.9333
+
+Rule Compliance:
+  Target: 30.0%
+  Actual: 20.0% (3 variations)
+  Rules satisfied: {'replace_spaces_with_random_special_characters': 3, 'remove_random_vowel': 0}
+
+Selected Variations:
+   1. Wassim.Al-Assad                | Score: 0.9333 | Light
+   2. Wassim_Al-Assad                | Score: 0.9333 | Light
+   3. WassimAl-Assad                 | Score: 0.9333 | Light
+   4. sim Aim Al-Assad               | Score: 0.6875 | Medium
+   5. wassllm al-assad               | Score: 0.6875 | Medium
+   6. ssim Al-Assassad               | Score: 0.6875 | Medium
+   7. ssim Al-As-Assad               | Score: 0.6875 | Medium
+   8. im Alim Al-Assad               | Score: 0.6875 | Medium
+   9. ssim Al-AssAssad               | Score: 0.6875 | Medium
+  10. ssim im Al-Assad               | Score: 0.6875 | Medium
+  11. wassinn al-assad               | Score: 0.6875 | Medium
+  12. ssim Al-Assadsad               | Score: 0.6875 | Medium
+  13. sim Al-Ass Al-Assad            | Score: 0.4737 | Far
+  14. im Al-AssadAl-Assad            | Score: 0.4737 | Far
+  15. sim Al-AssaAl-Assad            | Score: 0.4737 | Far
+
+================================================================================
+   Generated 15 variations
+   Rule compliance: 20.0% (3 variations)
+   Rules: ['replace_spaces_with_random_special_characters', 'remove_random_vowel']
+
+[9/15] Processing: Natalia Popova
+================================================================================
+ORTHOGRAPHIC SIMILARITY MAXIMIZATION (BRUTE FORCE)
+WITH RULE COMPLIANCE (2 rules, 30%)
+================================================================================
+
+🔧 Generating rule-compliant variations for 2 rules...
+   Generated 34 rule-compliant variations
+
+🔍 Generating variations for: 'Natalia Popova'
+   Target distribution: {'Light': 0.2, 'Medium': 0.6, 'Far': 0.2}
+
+   Strategy 1: Single character substitution...
+      Generated: 63 variations
+   Strategy 2: Character insertion...
+      Generated: 211 variations
+   Strategy 3: Character deletion...
+      Generated: 225 variations
+   Strategy 4: Character transposition...
+      Generated: 238 variations
+   Strategy 5: Double character variations...
+      Generated: 240 variations
+   Strategy 6: Visual similar replacements...
+      Generated: 242 variations
+   Strategy 7: Comprehensive all-strategies generation (50 strategies, depth 6)...
+      Generated: 31795 total variations
+
+   Total unique variations generated: 31795
+   Calculating orthographic scores...
+
+   Categorized variations:
+      Light (0.70-1.00):   14227 variations
+      Medium (0.50-0.69):  16832 variations
+      Far (0.20-0.49):     731 variations
+      Below threshold:     5 variations
+
+🎯 Selecting optimal combination with rule compliance for 15 variations...
+   Target distribution: {'Light': 0.2, 'Medium': 0.6, 'Far': 0.2}
+   Rule percentage: 30.0%
+   Possible rules: ['remove_random_consonant', 'replace_random_vowel_with_random_vowel']
+   Target rule-compliant: 4 variations
+   Target orthographic: Light=3, Medium=9, Far=3
+
+   ⚠️  Only 3 rule-compliant variations selected (need 4)
+   🔄 Adding more rule-compliant variations...
+   ✅ Selected 15 variations
+   Rule-compliant: 3 (20.0%)
+   By category: Light=3, Medium=9, Far=3
+
+================================================================================
+RESULTS
+================================================================================
+Original Name: Natalia Popova
+Variations Generated: 15
+
+Distribution:
+  Target:  Light=20.0%, Medium=60.0%, Far=20.0%
+  Actual:  Light=20.0%, Medium=60.0%, Far=20.0%
+
+Quality Score: 1.0000
+Average Orthographic Score: 0.6877
+Score Range: 0.4706 - 0.9286
+
+Rule Compliance:
+  Target: 30.0%
+  Actual: 20.0% (3 variations)
+  Rules satisfied: {'remove_random_consonant': 3, 'replace_random_vowel_with_random_vowel': 0}
+
+Selected Variations:
+   1. Natalia Poova                  | Score: 0.9286 | Light
+   2. Natalia Popoa                  | Score: 0.9286 | Light
+   3. Naalia Popova                  | Score: 0.9286 | Light
+   4. talia Pia Popova               | Score: 0.6875 | Medium
+   5. lia Polia Popova               | Score: 0.6875 | Medium
+   6. alia Plia Popova               | Score: 0.6875 | Medium
+   7. talia Ptalia Popova            | Score: 0.6842 | Medium
+   8. atalia talia Popova            | Score: 0.6842 | Medium
+   9. ataliaatalia Popova            | Score: 0.6842 | Medium
+  10. talia Po Popova                | Score: 0.6667 | Medium
+  11. atalia Popo Popova             | Score: 0.6667 | Medium
+  12. atalia PopovPopova             | Score: 0.6667 | Medium
+  13. alia Popovaa Popova            | Score: 0.4737 | Far
+  14. lia Ppovaia Ppova              | Score: 0.4706 | Far
+  15. alia Popov Popova              | Score: 0.4706 | Far
+
+================================================================================
+   Generated 15 variations
+   Rule compliance: 20.0% (3 variations)
+   Rules: ['remove_random_consonant', 'replace_random_vowel_with_random_vowel']
+
+[10/15] Processing: Ali Saade
+================================================================================
+ORTHOGRAPHIC SIMILARITY MAXIMIZATION (BRUTE FORCE)
+WITH RULE COMPLIANCE (2 rules, 30%)
+================================================================================
+
+🔧 Generating rule-compliant variations for 2 rules...
+   Generated 6 rule-compliant variations
+
+🔍 Generating variations for: 'Ali Saade'
+   Target distribution: {'Light': 0.2, 'Medium': 0.6, 'Far': 0.2}
+
+   Strategy 1: Single character substitution...
+      Generated: 45 variations
+   Strategy 2: Character insertion...
+      Generated: 146 variations
+   Strategy 3: Character deletion...
+      Generated: 154 variations
+   Strategy 4: Character transposition...
+      Generated: 161 variations
+   Strategy 5: Double character variations...
+      Generated: 162 variations
+   Strategy 6: Visual similar replacements...
+      Generated: 164 variations
+   Strategy 7: Comprehensive all-strategies generation (50 strategies, depth 6)...
+      Generated: 20610 total variations
+
+   Total unique variations generated: 20610
+   Calculating orthographic scores...
+
+   Categorized variations:
+      Light (0.70-1.00):   5043 variations
+      Medium (0.50-0.69):  3899 variations
+      Far (0.20-0.49):     11461 variations
+      Below threshold:     207 variations
+
+🎯 Selecting optimal combination with rule compliance for 15 variations...
+   Target distribution: {'Light': 0.2, 'Medium': 0.6, 'Far': 0.2}
+   Rule percentage: 30.0%
+   Possible rules: ['initial_only_first_name', 'remove_random_vowel']
+   Target rule-compliant: 4 variations
+   Target orthographic: Light=3, Medium=9, Far=3
+
+   ✅ Selected 15 variations
+   Rule-compliant: 4 (26.7%)
+   By category: Light=3, Medium=9, Far=3
+
+================================================================================
+RESULTS
+================================================================================
+Original Name: Ali Saade
+Variations Generated: 15
+
+Distribution:
+  Target:  Light=20.0%, Medium=60.0%, Far=20.0%
+  Actual:  Light=20.0%, Medium=60.0%, Far=20.0%
+
+Quality Score: 0.5600
+Average Orthographic Score: 0.6720
+Score Range: 0.4545 - 0.8889
+
+Rule Compliance:
+  Target: 30.0%
+  Actual: 26.7% (4 variations)
+  Rules satisfied: {'initial_only_first_name': 2, 'remove_random_vowel': 2}
+
+Selected Variations:
+   1. A. Saade                       | Score: 0.7778 | Light
+   2. Ali Sade                       | Score: 0.8889 | Light
+   3. Al Saade                       | Score: 0.8889 | Light
+   4. A.Saade                        | Score: 0.6667 | Medium
+   5. Ali SaadSaade                  | Score: 0.6923 | Medium
+   6. Ali Saadeaade                  | Score: 0.6923 | Medium
+   7. Ali Saa Saade                  | Score: 0.6923 | Medium
+   8. Ali Ali Saade                  | Score: 0.6923 | Medium
+   9. Ali Sai Saade                  | Score: 0.6923 | Medium
+  10. Ali Sli Saade                  | Score: 0.6923 | Medium
+  11. i Szade                        | Score: 0.6667 | Medium
+  12. i Saadeh                       | Score: 0.6667 | Medium
+  13. i Saade Saade                  | Score: 0.4615 | Far
+  14. aSaadaSaade                    | Score: 0.4545 | Far
+  15. i Saadeaade                    | Score: 0.4545 | Far
+
+================================================================================
+   Generated 15 variations
+   Rule compliance: 26.7% (4 variations)
+   Rules: ['initial_only_first_name', 'remove_random_vowel']
+
+[11/15] Processing: Adel Mansour
+================================================================================
+ORTHOGRAPHIC SIMILARITY MAXIMIZATION (BRUTE FORCE)
+WITH RULE COMPLIANCE (1 rules, 30%)
+================================================================================
+
+🔧 Generating rule-compliant variations for 1 rules...
+   Generated 3 rule-compliant variations
+
+🔍 Generating variations for: 'Adel Mansour'
+   Target distribution: {'Light': 0.2, 'Medium': 0.6, 'Far': 0.2}
+
+   Strategy 1: Single character substitution...
+      Generated: 46 variations
+   Strategy 2: Character insertion...
+      Generated: 174 variations
+   Strategy 3: Character deletion...
+      Generated: 186 variations
+   Strategy 4: Character transposition...
+      Generated: 197 variations
+   Strategy 5: Double character variations...
+      Generated: 198 variations
+   Strategy 6: Visual similar replacements...
+      Generated: 201 variations
+   Strategy 7: Comprehensive all-strategies generation (50 strategies, depth 6)...
+      Generated: 27166 total variations
+
+   Total unique variations generated: 27166
+   Calculating orthographic scores...
+
+   Categorized variations:
+      Light (0.70-1.00):   8251 variations
+      Medium (0.50-0.69):  12594 variations
+      Far (0.20-0.49):     6292 variations
+      Below threshold:     29 variations
+
+🎯 Selecting optimal combination with rule compliance for 15 variations...
+   Target distribution: {'Light': 0.2, 'Medium': 0.6, 'Far': 0.2}
+   Rule percentage: 30.0%
+   Possible rules: ['shorten_name_to_initials']
+   Target rule-compliant: 4 variations
+   Target orthographic: Light=3, Medium=9, Far=3
+
+   ⚠️  Only 1 rule-compliant variations selected (need 4)
+   🔄 Adding more rule-compliant variations...
+   ✅ Selected 15 variations
+   Rule-compliant: 1 (6.7%)
+   By category: Light=3, Medium=9, Far=3
+
+================================================================================
+RESULTS
+================================================================================
+Original Name: Adel Mansour
+Variations Generated: 15
+
+Distribution:
+  Target:  Light=20.0%, Medium=60.0%, Far=20.0%
+  Actual:  Light=20.0%, Medium=60.0%, Far=20.0%
+
+Quality Score: 0.7800
+Average Orthographic Score: 0.6705
+Score Range: 0.2500 - 0.9231
+
+Rule Compliance:
+  Target: 30.0%
+  Actual: 6.7% (1 variations)
+  Rules satisfied: {'shorten_name_to_initials': 1}
+
+Selected Variations:
+   1. Adel Maknsour                  | Score: 0.9231 | Light
+   2. Adel Manskour                  | Score: 0.9231 | Light
+   3. Adeul Mansour                  | Score: 0.9231 | Light
+   4. aclel mansour                  | Score: 0.6923 | Medium
+   5. l Mal Mansour                  | Score: 0.6923 | Medium
+   6. el Ml Mansour                  | Score: 0.6923 | Medium
+   7. del Mdel Mansour               | Score: 0.6875 | Medium
+   8. el Mansourgj                   | Score: 0.6667 | Medium
+   9. elfg Mansour                   | Score: 0.6667 | Medium
+  10. el jbMansour                   | Score: 0.6667 | Medium
+  11. l klMansour                    | Score: 0.6667 | Medium
+  12. el Mansoglur                   | Score: 0.6667 | Medium
+  13. A. M.                          | Score: 0.2500 | Far
+  14. el MansourMansour              | Score: 0.4706 | Far
+  15. el Mansou Mansour              | Score: 0.4706 | Far
+
+================================================================================
+   Generated 15 variations
+   Rule compliance: 6.7% (1 variations)
+   Rules: ['shorten_name_to_initials']
+
+[12/15] Processing: Mohammad Masood Azhar ALVI
+================================================================================
+ORTHOGRAPHIC SIMILARITY MAXIMIZATION (BRUTE FORCE)
+WITH RULE COMPLIANCE (3 rules, 30%)
+================================================================================
+
+🔧 Generating rule-compliant variations for 3 rules...
+   Generated 46 rule-compliant variations
+
+🔍 Generating variations for: 'Mohammad Masood Azhar ALVI'
+   Target distribution: {'Light': 0.2, 'Medium': 0.6, 'Far': 0.2}
+
+   Strategy 1: Single character substitution...
+      Generated: 97 variations
+   Strategy 2: Character insertion...
+      Generated: 357 variations
+   Strategy 3: Character deletion...
+      Generated: 381 variations
+   Strategy 4: Character transposition...
+      Generated: 404 variations
+   Strategy 5: Double character variations...
+      Generated: 408 variations
+   Strategy 6: Visual similar replacements...
+      Generated: 412 variations
+   Strategy 7: Comprehensive all-strategies generation (50 strategies, depth 6)...
+      Generated: 91717 total variations
+
+   Total unique variations generated: 91717
+   Calculating orthographic scores...
+
+   Categorized variations:
+      Light (0.70-1.00):   79647 variations
+      Medium (0.50-0.69):  11337 variations
+      Far (0.20-0.49):     495 variations
+      Below threshold:     238 variations
+
+🎯 Selecting optimal combination with rule compliance for 15 variations...
+   Target distribution: {'Light': 0.2, 'Medium': 0.6, 'Far': 0.2}
+   Rule percentage: 30.0%
+   Possible rules: ['shorten_name_to_abbreviations', 'name_parts_permutations', 'delete_random_letter']
+   Target rule-compliant: 4 variations
+   Target orthographic: Light=3, Medium=9, Far=3
+
+   ✅ Selected 15 variations
+   Rule-compliant: 4 (26.7%)
+   By category: Light=3, Medium=9, Far=3
+
+================================================================================
+RESULTS
+================================================================================
+Original Name: Mohammad Masood Azhar ALVI
+Variations Generated: 15
+
+Distribution:
+  Target:  Light=20.0%, Medium=60.0%, Far=20.0%
+  Actual:  Light=20.0%, Medium=60.0%, Far=20.0%
+
+Quality Score: 0.3400
+Average Orthographic Score: 0.6846
+Score Range: 0.4615 - 0.9615
+
+Rule Compliance:
+  Target: 30.0%
+  Actual: 13.3% (2 variations)
+  Rules satisfied: {'shorten_name_to_abbreviations': 0, 'name_parts_permutations': 1, 'delete_random_letter': 1}
+
+Selected Variations:
+   1. Mohammad Masood Azhar AL       | Score: 0.9231 | Light
+   2. Mo Masood Azhar ALVI           | Score: 0.7692 | Light
+   3. ohammad Masood Azhar ALVI      | Score: 0.9615 | Light
+   4. Mohammad Masood ALVI Azhar     | Score: 0.6923 | Medium
+   5. mmad Masood AharAL             | Score: 0.6923 | Medium
+   6. mmad Masoodzha ALI             | Score: 0.6923 | Medium
+   7. mmad soo Azha ALVI             | Score: 0.6923 | Medium
+   8. mmad aso Ahar ALVI             | Score: 0.6923 | Medium
+   9. mmad asood hr ALVI             | Score: 0.6923 | Medium
+  10. mma Masood AzharAL             | Score: 0.6923 | Medium
+  11. mmad Msood zhr ALV             | Score: 0.6923 | Medium
+  12. mmad asoodAzha LVI             | Score: 0.6923 | Medium
+  13. Mod Azhar AI                   | Score: 0.4615 | Far
+  14. Mood Azhar I                   | Score: 0.4615 | Far
+  15. hmmad MasooI                   | Score: 0.4615 | Far
+
+================================================================================
+   Generated 15 variations
+   Rule compliance: 13.3% (2 variations)
+   Rules: ['shorten_name_to_abbreviations', 'name_parts_permutations', 'delete_random_letter']
+
+[13/15] Processing: Abel BRIONES RUIZ
+================================================================================
+ORTHOGRAPHIC SIMILARITY MAXIMIZATION (BRUTE FORCE)
+WITH RULE COMPLIANCE (3 rules, 30%)
+================================================================================
+
+🔧 Generating rule-compliant variations for 3 rules...
+   Generated 130 rule-compliant variations
+
+🔍 Generating variations for: 'Abel BRIONES RUIZ'
+   Target distribution: {'Light': 0.2, 'Medium': 0.6, 'Far': 0.2}
+
+   Strategy 1: Single character substitution...
+      Generated: 58 variations
+   Strategy 2: Character insertion...
+      Generated: 235 variations
+   Strategy 3: Character deletion...
+      Generated: 252 variations
+   Strategy 4: Character transposition...
+      Generated: 268 variations
+   Strategy 5: Double character variations...
+      Generated: 274 variations
+   Strategy 6: Visual similar replacements...
+      Generated: 275 variations
+   Strategy 7: Comprehensive all-strategies generation (50 strategies, depth 6)...
+      Generated: 44029 total variations
+
+   Total unique variations generated: 44029
+   Calculating orthographic scores...
+
+   Categorized variations:
+      Light (0.70-1.00):   25780 variations
+      Medium (0.50-0.69):  16516 variations
+      Far (0.20-0.49):     1672 variations
+      Below threshold:     61 variations
+
+🎯 Selecting optimal combination with rule compliance for 15 variations...
+   Target distribution: {'Light': 0.2, 'Medium': 0.6, 'Far': 0.2}
+   Rule percentage: 30.0%
+   Possible rules: ['replace_random_vowel_with_random_vowel', 'initial_only_first_name', 'replace_random_consonant_with_random_consonant']
+   Target rule-compliant: 4 variations
+   Target orthographic: Light=3, Medium=9, Far=3
+
+   ⚠️  Only 3 rule-compliant variations selected (need 4)
+   🔄 Adding more rule-compliant variations...
+   ✅ Selected 15 variations
+   Rule-compliant: 3 (20.0%)
+   By category: Light=3, Medium=9, Far=3
+
+================================================================================
+RESULTS
+================================================================================
+Original Name: Abel BRIONES RUIZ
+Variations Generated: 15
+
+Distribution:
+  Target:  Light=20.0%, Medium=60.0%, Far=20.0%
+  Actual:  Light=20.0%, Medium=60.0%, Far=20.0%
+
+Quality Score: 1.0000
+Average Orthographic Score: 0.6937
+Score Range: 0.4737 - 0.9412
+
+Rule Compliance:
+  Target: 30.0%
+  Actual: 20.0% (3 variations)
+  Rules satisfied: {'replace_random_vowel_with_random_vowel': 3, 'initial_only_first_name': 0, 'replace_random_consonant_with_random_consonant': 0}
+
+Selected Variations:
+   1. Abil BRIONES RUIZ              | Score: 0.9412 | Light
+   2. ebel BRIONES RUIZ              | Score: 0.9412 | Light
+   3. Abel BRIONES RaIZ              | Score: 0.9412 | Light
+   4. el BRI BRIONES RUIZ            | Score: 0.6842 | Medium
+   5.  BRION BRIONES RUIZ            | Score: 0.6842 | Medium
+   6. el BRIONEIONES RUIZ            | Score: 0.6842 | Medium
+   7. el BRIONES NES RUIZ            | Score: 0.6842 | Medium
+   8. l BRIO BRIONES RUIZ            | Score: 0.6842 | Medium
+   9. el BRIONRIONES RUIZ            | Score: 0.6842 | Medium
+  10. el BRIONES RUIZRUIZ            | Score: 0.6842 | Medium
+  11. el BRIONESONES RUIZ            | Score: 0.6842 | Medium
+  12. el BRIONES RUS RUIZ            | Score: 0.6842 | Medium
+  13.  BRIONES RUIZNES RUIZ          | Score: 0.4762 | Far
+  14. BRIONES RUINES RUIZ            | Score: 0.4737 | Far
+  15.  BRIONES RUIES RUIZ            | Score: 0.4737 | Far
+
+================================================================================
+   Generated 15 variations
+   Rule compliance: 20.0% (3 variations)
+   Rules: ['replace_random_vowel_with_random_vowel', 'initial_only_first_name', 'replace_random_consonant_with_random_consonant']
+
+[14/15] Processing: Sobhi Mahmoud FAYAD
+================================================================================
+ORTHOGRAPHIC SIMILARITY MAXIMIZATION (BRUTE FORCE)
+WITH RULE COMPLIANCE (3 rules, 30%)
+================================================================================
+
+🔧 Generating rule-compliant variations for 3 rules...
+   Generated 146 rule-compliant variations
+
+🔍 Generating variations for: 'Sobhi Mahmoud FAYAD'
+   Target distribution: {'Light': 0.2, 'Medium': 0.6, 'Far': 0.2}
+
+   Strategy 1: Single character substitution...
+      Generated: 67 variations
+   Strategy 2: Character insertion...
+      Generated: 257 variations
+   Strategy 3: Character deletion...
+      Generated: 276 variations
+   Strategy 4: Character transposition...
+      Generated: 294 variations
+   Strategy 5: Double character variations...
+      Generated: 298 variations
+   Strategy 6: Visual similar replacements...
+      Generated: 304 variations
+   Strategy 7: Comprehensive all-strategies generation (50 strategies, depth 6)...
+      Generated: 50013 total variations
+
+   Total unique variations generated: 50013
+   Calculating orthographic scores...
+
+   Categorized variations:
+      Light (0.70-1.00):   30555 variations
+      Medium (0.50-0.69):  18769 variations
+      Far (0.20-0.49):     614 variations
+      Below threshold:     75 variations
+
+🎯 Selecting optimal combination with rule compliance for 15 variations...
+   Target distribution: {'Light': 0.2, 'Medium': 0.6, 'Far': 0.2}
+   Rule percentage: 30.0%
+   Possible rules: ['swap_random_letter', 'insert_random_letter', 'replace_random_vowel_with_random_vowel']
+   Target rule-compliant: 4 variations
+   Target orthographic: Light=3, Medium=9, Far=3
+
+   ⚠️  Only 3 rule-compliant variations selected (need 4)
+   🔄 Adding more rule-compliant variations...
+   ✅ Selected 15 variations
+   Rule-compliant: 3 (20.0%)
+   By category: Light=3, Medium=9, Far=3
+
+================================================================================
+RESULTS
+================================================================================
+Original Name: Sobhi Mahmoud FAYAD
+Variations Generated: 15
+
+Distribution:
+  Target:  Light=20.0%, Medium=60.0%, Far=20.0%
+  Actual:  Light=20.0%, Medium=60.0%, Far=20.0%
+
+Quality Score: 0.6333
+Average Orthographic Score: 0.6889
+Score Range: 0.4783 - 0.8947
+
+Rule Compliance:
+  Target: 30.0%
+  Actual: 20.0% (3 variations)
+  Rules satisfied: {'swap_random_letter': 3, 'insert_random_letter': 0, 'replace_random_vowel_with_random_vowel': 0}
+
+Selected Variations:
+   1. Sobhi Mahomud FAYAD            | Score: 0.8947 | Light
+   2. Sobhi Mahmou dFAYAD            | Score: 0.8947 | Light
+   3. Sobhi Mahmoud FAAYD            | Score: 0.8947 | Light
+   4. hi Mahmoi Mahmoud FAYAD        | Score: 0.6957 | Medium
+   5. bhi Mahmi Mahmoud FAYAD        | Score: 0.6957 | Medium
+   6. i Mahmoui Mahmoud FAYAD        | Score: 0.6957 | Medium
+   7. bhi Mahhi Mahmoud FAYAD        | Score: 0.6957 | Medium
+   8. hi Mahmhi Mahmoud FAYAD        | Score: 0.6957 | Medium
+   9. bh ahmoudFAAD                  | Score: 0.6842 | Medium
+  10. i Mahmoud FAhiYAD              | Score: 0.6842 | Medium
+  11. i Mahmoud FjhAYAD              | Score: 0.6842 | Medium
+  12. i Mahmodkud FAYAD              | Score: 0.6842 | Medium
+  13.  Mahmoud FAYADoud FAYAD        | Score: 0.4783 | Far
+  14. i Mahmoud FAYADud FAYAD        | Score: 0.4783 | Far
+  15. i ahmoud FAYADoud FAYAD        | Score: 0.4783 | Far
+
+================================================================================
+   Generated 15 variations
+   Rule compliance: 20.0% (3 variations)
+   Rules: ['swap_random_letter', 'insert_random_letter', 'replace_random_vowel_with_random_vowel']
+
+[15/15] Processing: Tatyana Kusayko
+================================================================================
+ORTHOGRAPHIC SIMILARITY MAXIMIZATION (BRUTE FORCE)
+WITH RULE COMPLIANCE (1 rules, 30%)
+================================================================================
+
+🔧 Generating rule-compliant variations for 1 rules...
+   Generated 100 rule-compliant variations
+
+🔍 Generating variations for: 'Tatyana Kusayko'
+   Target distribution: {'Light': 0.2, 'Medium': 0.6, 'Far': 0.2}
+
+   Strategy 1: Single character substitution...
+      Generated: 63 variations
+   Strategy 2: Character insertion...
+      Generated: 219 variations
+   Strategy 3: Character deletion...
+      Generated: 234 variations
+   Strategy 4: Character transposition...
+      Generated: 248 variations
+   Strategy 5: Double character variations...
+      Generated: 250 variations
+   Strategy 6: Visual similar replacements...
+      Generated: 253 variations
+   Strategy 7: Comprehensive all-strategies generation (50 strategies, depth 6)...
+      Generated: 36283 total variations
+
+   Total unique variations generated: 36283
+   Calculating orthographic scores...
+
+   Categorized variations:
+      Light (0.70-1.00):   16008 variations
+      Medium (0.50-0.69):  19111 variations
+      Far (0.20-0.49):     1124 variations
+      Below threshold:     40 variations
+
+🎯 Selecting optimal combination with rule compliance for 15 variations...
+   Target distribution: {'Light': 0.2, 'Medium': 0.6, 'Far': 0.2}
+   Rule percentage: 30.0%
+   Possible rules: ['replace_random_consonant_with_random_consonant']
+   Target rule-compliant: 4 variations
+   Target orthographic: Light=3, Medium=9, Far=3
+
+   ⚠️  Only 3 rule-compliant variations selected (need 4)
+   🔄 Adding more rule-compliant variations...
+   ✅ Selected 15 variations
+   Rule-compliant: 3 (20.0%)
+   By category: Light=3, Medium=9, Far=3
+
+================================================================================
+RESULTS
+================================================================================
+Original Name: Tatyana Kusayko
+Variations Generated: 15
+
+Distribution:
+  Target:  Light=20.0%, Medium=60.0%, Far=20.0%
+  Actual:  Light=20.0%, Medium=60.0%, Far=20.0%
+
+Quality Score: 1.0000
+Average Orthographic Score: 0.6935
+Score Range: 0.4706 - 0.9333
+
+Rule Compliance:
+  Target: 30.0%
+  Actual: 20.0% (3 variations)
+  Rules satisfied: {'replace_random_consonant_with_random_consonant': 3}
+
+Selected Variations:
+   1. Tatwana Kusayko                | Score: 0.9333 | Light
+   2. Tatgana Kusayko                | Score: 0.9333 | Light
+   3. Takyana Kusayko                | Score: 0.9333 | Light
+   4. tyana Ku Kusayko               | Score: 0.6875 | Medium
+   5. ana Kuna Kusayko               | Score: 0.6875 | Medium
+   6. tyana Ka Kusayko               | Score: 0.6875 | Medium
+   7. tyana Kusaykayko               | Score: 0.6875 | Medium
+   8. na Kusna Kusayko               | Score: 0.6875 | Medium
+   9. tyana Kusaykoing               | Score: 0.6875 | Medium
+  10. tyana na Kusayko               | Score: 0.6875 | Medium
+  11. tyana KusKusayko               | Score: 0.6875 | Medium
+  12. tyana Kusaykoyko               | Score: 0.6875 | Medium
+  13. yana KusaykoKusayko            | Score: 0.4737 | Far
+  14. ana usayko usayko              | Score: 0.4706 | Far
+  15. ana Kusaykousayko              | Score: 0.4706 | Far
+
+================================================================================
+   Generated 15 variations
+   Rule compliance: 20.0% (3 variations)
+   Rules: ['replace_random_consonant_with_random_consonant']
+
+================================================================================
+CALCULATING SCORES USING VALIDATOR
+================================================================================
+
+================================================================================
+ORTHOGRAPHIC SIMILARITY MAXIMIZATION (BRUTE FORCE)
+WITH RULE COMPLIANCE (1 rules, 30%)
+================================================================================
+
+🔧 Generating rule-compliant variations for 1 rules...
+   Generated 2 rule-compliant variations
+
+🔍 Generating variations for: 'Brandon BERUSA'
+   Target distribution: {'Light': 0.2, 'Medium': 0.6, 'Far': 0.2}
+
+   Strategy 1: Single character substitution...
+      Generated: 50 variations
+   Strategy 2: Character insertion...
+      Generated: 200 variations
+   Strategy 3: Character deletion...
+      Generated: 214 variations
+   Strategy 4: Character transposition...
+      Generated: 227 variations
+   Strategy 5: Double character variations...
+      Generated: 231 variations
+   Strategy 6: Visual similar replacements...
+      Generated: 232 variations
+   Strategy 7: Comprehensive all-strategies generation (50 strategies, depth 6)...
+      Generated: 33001 total variations
+
+   Total unique variations generated: 33001
+   Calculating orthographic scores...
+
+   Categorized variations:
+      Light (0.70-1.00):   14492 variations
+      Medium (0.50-0.69):  17637 variations
+      Far (0.20-0.49):     866 variations
+      Below threshold:     6 variations
+
+🎯 Selecting optimal combination with rule compliance for 15 variations...
+   Target distribution: {'Light': 0.2, 'Medium': 0.6, 'Far': 0.2}
+   Rule percentage: 30.0%
+   Possible rules: ['swap_adjacent_consonants']
+   Target rule-compliant: 4 variations
+   Target orthographic: Light=3, Medium=9, Far=3
+
+   ⚠️  Only 2 rule-compliant variations selected (need 4)
+   🔄 Adding more rule-compliant variations...
+   ✅ Selected 15 variations
+   Rule-compliant: 2 (13.3%)
+   By category: Light=3, Medium=9, Far=3
+
+================================================================================
+RESULTS
+================================================================================
+Original Name: Brandon BERUSA
+Variations Generated: 15
+
+Distribution:
+  Target:  Light=20.0%, Medium=60.0%, Far=20.0%
+  Actual:  Light=20.0%, Medium=60.0%, Far=20.0%
+
+Quality Score: 1.0000
+Average Orthographic Score: 0.6776
+Score Range: 0.4706 - 0.9333
+
+Rule Compliance:
+  Target: 30.0%
+  Actual: 13.3% (2 variations)
+  Rules satisfied: {'swap_adjacent_consonants': 2}
+
+Selected Variations:
+   1. Bradnon BERUSA                 | Score: 0.8571 | Light
+   2. rBandon BERUSA                 | Score: 0.8571 | Light
+   3. iBrandon BERUSA                | Score: 0.9333 | Light
+   4. ndon Bdon BERUSA               | Score: 0.6875 | Medium
+   5. ndon ndon BERUSA               | Score: 0.6875 | Medium
+   6. andonndon BERUSA               | Score: 0.6875 | Medium
+   7. andon don BERUSA               | Score: 0.6875 | Medium
+   8. randonrandon BERUSA            | Score: 0.6842 | Medium
+   9. randonandon BERUSA             | Score: 0.6667 | Medium
+  10. andon BERUSRUSA                | Score: 0.6667 | Medium
+  11. ndon Bon BERUSA                | Score: 0.6667 | Medium
+  12. randon Bdon BERUSA             | Score: 0.6667 | Medium
+  13. ndon BERUSAn BERUSA            | Score: 0.4737 | Far
+  14. do BERUSAo BERUSA              | Score: 0.4706 | Far
+  15. ndon BERUSABERUSA              | Score: 0.4706 | Far
+
+================================================================================
+[34m2025-12-04 21:50:18.356[39m | [1m[33m    WARNING     [0m | Miner 1 returned invalid or empty response
+Traceback (most recent call last):
+  File "/Users/prasad/cursor/MIID-subnet/test_sanctioned_names_with_rules.py", line 426, in <module>
+    main()
+    ~~~~^^
+  File "/Users/prasad/cursor/MIID-subnet/test_sanctioned_names_with_rules.py", line 206, in main
+    rewards, reward_uids, detailed_metrics = validator.get_name_variation_rewards(
+                                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        seed_names=seed_names,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    ...<8 lines>...
+        rule_based=rule_based
+        ^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/prasad/cursor/MIID-subnet/test_sanctioned_names_with_rules.py", line 42, in get_name_variation_rewards
+    return get_name_variation_rewards(
+        self,
+    ...<9 lines>...
+        rule_based
+    )
+  File "/Users/prasad/cursor/MIID-subnet/MIID/validator/reward.py", line 2763, in get_name_variation_rewards
+    burn_fraction = getattr(self.config.neuron, 'burn_fraction', 0.40)
+                            ^^^^^^^^^^^
+AttributeError: 'MockValidator' object has no attribute 'config'

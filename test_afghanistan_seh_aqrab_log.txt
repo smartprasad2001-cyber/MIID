@@ -1,0 +1,357 @@
+================================================================================
+TESTING 15 CZECHIA ADDRESSES
+================================================================================
+
+Testing Address 1: Seh Aqrab Road, 3rd District Kabul, 1006, Afghanistan
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: True
+  ✓ Normalized: aaaaaaabbcdddefghhiiiklnnoqrrrrssstttu
+  ✓ UNIQUE normalized address
+  → Checking with Nominatim API...
+  → Request URL: https://nominatim.openstreetmap.org/search
+  → Query: Seh Aqrab Road, 3rd District Kabul, 1006, Afghanistan
+  → User-Agent: MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)
+  → HTTP Status: 200
+  → Total results from Nominatim: 4
+  → First result: Seh Aqrab Road, Nahri Darsan, ناحیه سوم, کابل, کابل ښاروالۍ, ولایت كابل, 1004, افغانستان
+  → First result place_rank: 26
+  → Numbers in address: {'1006', '3'}
+    Result 1: numbers mismatch (filtered out)
+    Result 2: numbers mismatch (filtered out)
+    Result 3: ✓ PASSED filters (place_rank=26)
+    Result 4: numbers mismatch (filtered out)
+  → Filtered results: 1
+  ✓ Nominatim score: 1.0
+  → Min bounding box area: N/A m²
+  ✅ PASSED (score: 1.0)
+
+Testing Address 2: Seh Aqrab Road, Kabul, 3rd District 1006, Afghanistan
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: True
+  ✓ Normalized: aaaaaaabbcdddefghhiiiklnnoqrrrrssstttu
+  ⚠ DUPLICATE: Same normalized address as Address 1
+  → Checking with Nominatim API...
+  ⏳ Waiting 1 second before API call (rate limiting)...
+  → Request URL: https://nominatim.openstreetmap.org/search
+  → Query: Seh Aqrab Road, Kabul, 3rd District 1006, Afghanistan
+  → User-Agent: MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)
+  → HTTP Status: 200
+  → Total results from Nominatim: 4
+  → First result: Seh Aqrab Road, Nahri Darsan, ناحیه سوم, کابل, کابل ښاروالۍ, ولایت كابل, 1004, افغانستان
+  → First result place_rank: 26
+  → Numbers in address: {'1006', '3'}
+    Result 1: numbers mismatch (filtered out)
+    Result 2: numbers mismatch (filtered out)
+    Result 3: ✓ PASSED filters (place_rank=26)
+    Result 4: numbers mismatch (filtered out)
+  → Filtered results: 1
+  ✓ Nominatim score: 1.0
+  → Min bounding box area: N/A m²
+  ✅ PASSED (score: 1.0)
+
+Testing Address 3: Seh Aqrab Road, 3rd District Kabul, 1009, Afghanistan
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: True
+  ✓ Normalized: aaaaaaabbcdddefghhiiiklnnoqrrrrssstttu
+  ⚠ DUPLICATE: Same normalized address as Address 1
+  → Checking with Nominatim API...
+  ⏳ Waiting 1 second before API call (rate limiting)...
+  → Request URL: https://nominatim.openstreetmap.org/search
+  → Query: Seh Aqrab Road, 3rd District Kabul, 1009, Afghanistan
+  → User-Agent: MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)
+  → HTTP Status: 200
+  → Total results from Nominatim: 2
+  → First result: Seh Aqrab Road, Nahri Darsan, ناحیه سوم, کابل, کابل ښاروالۍ, ولایت كابل, 1009, افغانستان
+  → First result place_rank: 26
+  → Numbers in address: {'1009', '3'}
+    Result 1: ✓ PASSED filters (place_rank=26)
+    Result 2: ✓ PASSED filters (place_rank=26)
+  → Filtered results: 2
+  ✓ Nominatim score: 1.0
+  → Min bounding box area: N/A m²
+  ✅ PASSED (score: 1.0)
+
+Testing Address 4: Seh Aqrab Road, Kabul District Kabul, 1006, Afghanistan
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: True
+  ✓ Normalized: aaaaaaabbcddefghhiiiklnnoqrrrssstttu
+  ✓ UNIQUE normalized address
+  → Checking with Nominatim API...
+  ⏳ Waiting 1 second before API call (rate limiting)...
+  → Request URL: https://nominatim.openstreetmap.org/search
+  → Query: Seh Aqrab Road, Kabul District Kabul, 1006, Afghanistan
+  → User-Agent: MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)
+  → HTTP Status: 200
+  → Total results from Nominatim: 4
+  → First result: Seh Aqrab Road, Nahri Darsan, ناحیه سوم, کابل, کابل ښاروالۍ, ولایت كابل, 1004, افغانستان
+  → First result place_rank: 26
+  → Numbers in address: {'1006'}
+    Result 1: numbers mismatch (filtered out)
+    Result 2: numbers mismatch (filtered out)
+    Result 3: ✓ PASSED filters (place_rank=26)
+    Result 4: numbers mismatch (filtered out)
+  → Filtered results: 1
+  ✓ Nominatim score: 1.0
+  → Min bounding box area: N/A m²
+  ✅ PASSED (score: 1.0)
+
+Testing Address 5: Seh Aqrab Road, Kabul, Kabul District 1006, Afghanistan
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: True
+  ✓ Normalized: aaaaaaabbcddefghhiiiklnnoqrrrssstttu
+  ⚠ DUPLICATE: Same normalized address as Address 4
+  → Checking with Nominatim API...
+  ⏳ Waiting 1 second before API call (rate limiting)...
+  → Request URL: https://nominatim.openstreetmap.org/search
+  → Query: Seh Aqrab Road, Kabul, Kabul District 1006, Afghanistan
+  → User-Agent: MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)
+  → HTTP Status: 200
+  → Total results from Nominatim: 4
+  → First result: Seh Aqrab Road, Nahri Darsan, ناحیه سوم, کابل, کابل ښاروالۍ, ولایت كابل, 1004, افغانستان
+  → First result place_rank: 26
+  → Numbers in address: {'1006'}
+    Result 1: numbers mismatch (filtered out)
+    Result 2: numbers mismatch (filtered out)
+    Result 3: ✓ PASSED filters (place_rank=26)
+    Result 4: numbers mismatch (filtered out)
+  → Filtered results: 1
+  ✓ Nominatim score: 1.0
+  → Min bounding box area: N/A m²
+  ✅ PASSED (score: 1.0)
+
+Testing Address 6: Seh Aqrab Road, Kabul District Kabul, 1004, Afghanistan
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: True
+  ✓ Normalized: aaaaaaabbcddefghhiiiklnnoqrrrssstttu
+  ⚠ DUPLICATE: Same normalized address as Address 4
+  → Checking with Nominatim API...
+  ⏳ Waiting 1 second before API call (rate limiting)...
+  → Request URL: https://nominatim.openstreetmap.org/search
+  → Query: Seh Aqrab Road, Kabul District Kabul, 1004, Afghanistan
+  → User-Agent: MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)
+  → HTTP Status: 200
+  → Total results from Nominatim: 4
+  → First result: Seh Aqrab Road, Nahri Darsan, ناحیه سوم, کابل, کابل ښاروالۍ, ولایت كابل, 1004, افغانستان
+  → First result place_rank: 26
+  → Numbers in address: {'1004'}
+    Result 1: ✓ PASSED filters (place_rank=26)
+    Result 2: numbers mismatch (filtered out)
+    Result 3: numbers mismatch (filtered out)
+    Result 4: numbers mismatch (filtered out)
+  → Filtered results: 1
+  ✓ Nominatim score: 1.0
+  → Min bounding box area: N/A m²
+  ✅ PASSED (score: 1.0)
+
+Testing Address 7: Seh Aqrab Road, Kabul District Kabul, 1009, Afghanistan
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: True
+  ✓ Normalized: aaaaaaabbcddefghhiiiklnnoqrrrssstttu
+  ⚠ DUPLICATE: Same normalized address as Address 4
+  → Checking with Nominatim API...
+  ⏳ Waiting 1 second before API call (rate limiting)...
+  → Request URL: https://nominatim.openstreetmap.org/search
+  → Query: Seh Aqrab Road, Kabul District Kabul, 1009, Afghanistan
+  → User-Agent: MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)
+  → HTTP Status: 200
+  → Total results from Nominatim: 2
+  → First result: Seh Aqrab Road, Nahri Darsan, ناحیه سوم, کابل, کابل ښاروالۍ, ولایت كابل, 1009, افغانستان
+  → First result place_rank: 26
+  → Numbers in address: {'1009'}
+    Result 1: ✓ PASSED filters (place_rank=26)
+    Result 2: ✓ PASSED filters (place_rank=26)
+  → Filtered results: 2
+  ✓ Nominatim score: 1.0
+  → Min bounding box area: N/A m²
+  ✅ PASSED (score: 1.0)
+
+Testing Address 8: Seh Aqrab Road, Kabul Province Kabul, 1006, Afghanistan
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: True
+  ✓ Normalized: aaaaaaabbcdeefghhiiklnnnoopqrrrsstuv
+  ✓ UNIQUE normalized address
+  → Checking with Nominatim API...
+  ⏳ Waiting 1 second before API call (rate limiting)...
+  → Request URL: https://nominatim.openstreetmap.org/search
+  → Query: Seh Aqrab Road, Kabul Province Kabul, 1006, Afghanistan
+  → User-Agent: MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)
+  → HTTP Status: 200
+  → Total results from Nominatim: 4
+  → First result: Seh Aqrab Road, Nahri Darsan, ناحیه سوم, کابل, کابل ښاروالۍ, ولایت كابل, 1004, افغانستان
+  → First result place_rank: 26
+  → Numbers in address: {'1006'}
+    Result 1: numbers mismatch (filtered out)
+    Result 2: numbers mismatch (filtered out)
+    Result 3: ✓ PASSED filters (place_rank=26)
+    Result 4: numbers mismatch (filtered out)
+  → Filtered results: 1
+  ✓ Nominatim score: 1.0
+  → Min bounding box area: N/A m²
+  ✅ PASSED (score: 1.0)
+
+Testing Address 9: Seh Aqrab Road, Kabul, Kabul Province 1006, Afghanistan
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: True
+  ✓ Normalized: aaaaaaabbcdeefghhiiklnnnoopqrrrsstuv
+  ⚠ DUPLICATE: Same normalized address as Address 8
+  → Checking with Nominatim API...
+  ⏳ Waiting 1 second before API call (rate limiting)...
+  → Request URL: https://nominatim.openstreetmap.org/search
+  → Query: Seh Aqrab Road, Kabul, Kabul Province 1006, Afghanistan
+  → User-Agent: MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)
+  → HTTP Status: 200
+  → Total results from Nominatim: 4
+  → First result: Seh Aqrab Road, Nahri Darsan, ناحیه سوم, کابل, کابل ښاروالۍ, ولایت كابل, 1004, افغانستان
+  → First result place_rank: 26
+  → Numbers in address: {'1006'}
+    Result 1: numbers mismatch (filtered out)
+    Result 2: numbers mismatch (filtered out)
+    Result 3: ✓ PASSED filters (place_rank=26)
+    Result 4: numbers mismatch (filtered out)
+  → Filtered results: 1
+  ✓ Nominatim score: 1.0
+  → Min bounding box area: N/A m²
+  ✅ PASSED (score: 1.0)
+
+Testing Address 10: Seh Aqrab Road, Kabul Province Kabul, 1009, Afghanistan
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: True
+  ✓ Normalized: aaaaaaabbcdeefghhiiklnnnoopqrrrsstuv
+  ⚠ DUPLICATE: Same normalized address as Address 8
+  → Checking with Nominatim API...
+  ⏳ Waiting 1 second before API call (rate limiting)...
+  → Request URL: https://nominatim.openstreetmap.org/search
+  → Query: Seh Aqrab Road, Kabul Province Kabul, 1009, Afghanistan
+  → User-Agent: MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)
+  → HTTP Status: 200
+  → Total results from Nominatim: 2
+  → First result: Seh Aqrab Road, Nahri Darsan, ناحیه سوم, کابل, کابل ښاروالۍ, ولایت كابل, 1009, افغانستان
+  → First result place_rank: 26
+  → Numbers in address: {'1009'}
+    Result 1: ✓ PASSED filters (place_rank=26)
+    Result 2: ✓ PASSED filters (place_rank=26)
+  → Filtered results: 2
+  ✓ Nominatim score: 1.0
+  → Min bounding box area: N/A m²
+  ✅ PASSED (score: 1.0)
+
+Testing Address 11: Seh Aqrab Road, Nahri Darsan Kabul, 1006, Afghanistan
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: True
+  ✓ Normalized: aaaaaaaaaabbddefghhhiiklnnnnoqrrrrssstu
+  ✓ UNIQUE normalized address
+  → Checking with Nominatim API...
+  ⏳ Waiting 1 second before API call (rate limiting)...
+  → Request URL: https://nominatim.openstreetmap.org/search
+  → Query: Seh Aqrab Road, Nahri Darsan Kabul, 1006, Afghanistan
+  → User-Agent: MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)
+  → HTTP Status: 200
+  → Total results from Nominatim: 2
+  → First result: Seh Aqrab Road, Nahri Darsan, ناحیه سوم, کابل, کابل ښاروالۍ, ولایت كابل, 1004, افغانستان
+  → First result place_rank: 26
+  → Numbers in address: {'1006'}
+    Result 1: numbers mismatch (filtered out)
+    Result 2: numbers mismatch (filtered out)
+  → Filtered results: 0
+  ✗ FAILED: No results passed filters (place_rank >= 20, name match, number match)
+
+Testing Address 12: Seh Aqrab Road, Kabul, Nahri Darsan 1006, Afghanistan
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: True
+  ✓ Normalized: aaaaaaaaaabbddefghhhiiklnnnnoqrrrrssstu
+  ⚠ DUPLICATE: Same normalized address as Address 11
+  → Checking with Nominatim API...
+  ⏳ Waiting 1 second before API call (rate limiting)...
+  → Request URL: https://nominatim.openstreetmap.org/search
+  → Query: Seh Aqrab Road, Kabul, Nahri Darsan 1006, Afghanistan
+  → User-Agent: MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)
+  → HTTP Status: 200
+  → Total results from Nominatim: 2
+  → First result: Seh Aqrab Road, Nahri Darsan, ناحیه سوم, کابل, کابل ښاروالۍ, ولایت كابل, 1004, افغانستان
+  → First result place_rank: 26
+  → Numbers in address: {'1006'}
+    Result 1: numbers mismatch (filtered out)
+    Result 2: numbers mismatch (filtered out)
+  → Filtered results: 0
+  ✗ FAILED: No results passed filters (place_rank >= 20, name match, number match)
+
+Testing Address 13: Seh Aqrab Road, Nahri Darsan Kabul, 1004, Afghanistan
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: True
+  ✓ Normalized: aaaaaaaaaabbddefghhhiiklnnnnoqrrrrssstu
+  ⚠ DUPLICATE: Same normalized address as Address 11
+  → Checking with Nominatim API...
+  ⏳ Waiting 1 second before API call (rate limiting)...
+  → Request URL: https://nominatim.openstreetmap.org/search
+  → Query: Seh Aqrab Road, Nahri Darsan Kabul, 1004, Afghanistan
+  → User-Agent: MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)
+  → HTTP Status: 200
+  → Total results from Nominatim: 2
+  → First result: Seh Aqrab Road, Nahri Darsan, ناحیه سوم, کابل, کابل ښاروالۍ, ولایت كابل, 1004, افغانستان
+  → First result place_rank: 26
+  → Numbers in address: {'1004'}
+    Result 1: ✓ PASSED filters (place_rank=26)
+    Result 2: numbers mismatch (filtered out)
+  → Filtered results: 1
+  ✓ Nominatim score: 1.0
+  → Min bounding box area: N/A m²
+  ✅ PASSED (score: 1.0)
+
+Testing Address 14: Seh Aqrab Road, Kabul, 1004, Afghanistan
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: True
+  ✓ Normalized: aaaaaaabbdefghhiklnnoqrrsstu
+  ✓ UNIQUE normalized address
+  → Checking with Nominatim API...
+  ⏳ Waiting 1 second before API call (rate limiting)...
+  → Request URL: https://nominatim.openstreetmap.org/search
+  → Query: Seh Aqrab Road, Kabul, 1004, Afghanistan
+  → User-Agent: MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)
+  → HTTP Status: 200
+  → Total results from Nominatim: 4
+  → First result: Seh Aqrab Road, Nahri Darsan, ناحیه سوم, کابل, کابل ښاروالۍ, ولایت كابل, 1004, افغانستان
+  → First result place_rank: 26
+  → Numbers in address: {'1004'}
+    Result 1: ✓ PASSED filters (place_rank=26)
+    Result 2: numbers mismatch (filtered out)
+    Result 3: numbers mismatch (filtered out)
+    Result 4: numbers mismatch (filtered out)
+  → Filtered results: 1
+  ✓ Nominatim score: 1.0
+  → Min bounding box area: N/A m²
+  ✅ PASSED (score: 1.0)
+
+Testing Address 15: Seh Aqrab Road, Kabul, 1009, Afghanistan
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: True
+  ✓ Normalized: aaaaaaabbdefghhiklnnoqrrsstu
+  ⚠ DUPLICATE: Same normalized address as Address 14
+  → Checking with Nominatim API...
+  ⏳ Waiting 1 second before API call (rate limiting)...
+  → Request URL: https://nominatim.openstreetmap.org/search
+  → Query: Seh Aqrab Road, Kabul, 1009, Afghanistan
+  → User-Agent: MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)
+  → HTTP Status: 200
+  → Total results from Nominatim: 2
+  → First result: Seh Aqrab Road, Nahri Darsan, ناحیه سوم, کابل, کابل ښاروالۍ, ولایت كابل, 1009, افغانستان
+  → First result place_rank: 26
+  → Numbers in address: {'1009'}
+    Result 1: ✓ PASSED filters (place_rank=26)
+    Result 2: ✓ PASSED filters (place_rank=26)
+  → Filtered results: 2
+  ✓ Nominatim score: 1.0
+  → Min bounding box area: N/A m²
+  ✅ PASSED (score: 1.0)
+
+================================================================================
+SUMMARY
+================================================================================
+
+Traceback (most recent call last):
+  File "/Users/prasad/cursor/MIID-subnet/test_czechia_addresses.py", line 327, in <module>
+    test_all_addresses()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/prasad/cursor/MIID-subnet/test_czechia_addresses.py", line 269, in test_all_addresses
+    passed = [r for r in results if r["status"] == "PASSED"]
+                                    ~^^^^^^^^^^
+KeyError: 'status'

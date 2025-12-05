@@ -27,7 +27,8 @@ def test_address_with_photon(address: str, timeout: int = 5) -> Tuple[bool, dict
             "limit": 1
         }
         
-        response = requests.get(PHOTON_API_URL, params=params, timeout=timeout)
+        headers = {"User-Agent": "MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)"}
+        response = requests.get(PHOTON_API_URL, params=params, headers=headers, timeout=timeout)
         
         if response.status_code != 200:
             return False, {

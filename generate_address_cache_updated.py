@@ -58,7 +58,7 @@ from reward import (
 OVERPASS_URL = os.getenv("OVERPASS_URL", "https://overpass-api.de/api/interpreter")
 NOMINATIM_URL = os.getenv("NOMINATIM_URL", "https://nominatim.openstreetmap.org/reverse")
 # Proper User-Agent with contact info (REQUIRED by Nominatim to avoid 403 errors)
-USER_AGENT = os.getenv("USER_AGENT", "MIIDSubnet/1.0 (contact: youremail@example.com)")
+USER_AGENT = os.getenv("USER_AGENT", "MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)")
 # New cache location - starting completely fresh
 CACHE_FILE = os.path.join(os.path.dirname(__file__), "validated_address_cache_fresh_psd.json")
 

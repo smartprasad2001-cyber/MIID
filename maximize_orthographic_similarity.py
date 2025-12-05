@@ -12,13 +12,20 @@ import os
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'MIID', 'validator'))
 
 import Levenshtein
-from typing import List, Set, Tuple, Dict, Optional
+from typing import List, Set, Tuple, Dict, Optional, Any
 import itertools
 import random
 import string
 
 # Import exact function from rewards.py
 from reward import calculate_orthographic_similarity
+
+# Import rule evaluator functions for filtering and checking
+from rule_evaluator import (
+    evaluate_rule_compliance,
+    has_double_letters,
+    has_diff_adjacent_consonants
+)
 
 # Orthographic boundaries from rewards.py (lines 773-777)
 ORTHOGRAPHIC_BOUNDARIES = {
@@ -34,16 +41,33 @@ class OrthographicBruteForceGenerator:
     Uses reverse engineering of rewards.py's Levenshtein-based calculation.
     """
     
-    def __init__(self, original_name: str, target_distribution: Dict[str, float] = None):
+    def __init__(self, original_name: str, target_distribution: Dict[str, float] = None, rule_based: Dict[str, Any] = None):
         """
         Initialize generator for a given original name.
         
         Args:
             original_name: Original name to generate variations for
             target_distribution: Target distribution, e.g., {"Light": 0.2, "Medium": 0.6, "Far": 0.2}
+            rule_based: Dictionary with rule compliance requirements:
+                - "selected_rules": List of rule names
+                - "rule_percentage": Percentage (0-100) of variations that should follow rules
         """
         self.original_name = original_name.strip()
         self.target_distribution = target_distribution or {"Light": 0.2, "Medium": 0.6, "Far": 0.2}
+        self.rule_based = rule_based or {}
+        
+        # Filter possible rules
+        target_rules = self.rule_based.get("selected_rules", []) if self.rule_based else []
+        self.possible_rules = self._filter_possible_rules(target_rules)
+        
+        # Rule percentage (convert to 0.0-1.0)
+        rule_percentage = self.rule_based.get("rule_percentage", 30) if self.rule_based else 0
+        if isinstance(rule_percentage, int):
+            self.rule_percentage = rule_percentage / 100.0
+        elif isinstance(rule_percentage, float):
+            self.rule_percentage = rule_percentage if rule_percentage <= 1.0 else rule_percentage / 100.0
+        else:
+            self.rule_percentage = 0.0
         
         # Character substitution maps for similar-looking characters
         self.similar_chars = {
@@ -116,6 +140,45 @@ class OrthographicBruteForceGenerator:
             return "Far"
         else:
             return "Below"
+    
+    def _filter_possible_rules(self, target_rules: List[str]) -> List[str]:
+        """
+        Filter out rules that are impossible for the given name structure.
+        
+        Args:
+            target_rules: List of rule names to check
+            
+        Returns:
+            List of rules that CAN be applied to this name
+        """
+        possible_rules = []
+        name_parts = self.original_name.split()
+        
+        for rule in target_rules:
+            # Rule: Name parts permutations / initials (require multi-part name)
+            if rule in ('name_parts_permutations', 'initial_only_first_name', 
+                       'shorten_name_to_initials', 'shorten_name_to_abbreviations'):
+                if len(name_parts) < 2:
+                    continue  # Skip - single-part name can't use this rule
+            
+            # Rule: Space removal/replacement (requires a space)
+            if rule in ('replace_spaces_with_random_special_characters', 'remove_all_spaces'):
+                if ' ' not in self.original_name:
+                    continue  # Skip - no spaces in name
+            
+            # Rule: Double letter replacement (requires double letters)
+            if rule == 'replace_double_letters_with_single_letter':
+                if not has_double_letters(self.original_name):
+                    continue  # Skip - no double letters
+            
+            # Rule: Adjacent consonant swap (requires swappable consonants)
+            if rule == 'swap_adjacent_consonants':
+                if not has_diff_adjacent_consonants(self.original_name):
+                    continue  # Skip - no swappable consonants
+            
+            possible_rules.append(rule)
+        
+        return possible_rules
     
     def generate_single_char_substitution(self, word: str, max_variations: int = 100) -> Set[str]:
         """
@@ -260,6 +323,632 @@ class OrthographicBruteForceGenerator:
                 new_word = word_lower.replace(replacement, pattern)
                 if new_word != word_lower:
                     variations.add(new_word)
+        
+        return variations
+    
+    # ============================================================================
+    # RULE-BASED GENERATION FUNCTIONS
+    # ============================================================================
+    
+    def _apply_double_letter_replacement(self, word: str, max_variations: int = 50) -> Set[str]:
+        """Generate variations by replacing double letters with single letters."""
+        variations = set()
+        word_lower = word.lower()
+        
+        for i in range(len(word) - 1):
+            if word_lower[i] == word_lower[i+1] and word_lower[i].isalpha():
+                # Remove one of the double letters
+                new_word = word[:i] + word[i+1:]
+                if new_word != word:
+                    variations.add(new_word)
+                    if len(variations) >= max_variations:
+                        break
+        
+        return variations
+    
+    def _apply_consonant_swap(self, word: str, max_variations: int = 50) -> Set[str]:
+        """Generate variations by swapping adjacent consonants."""
+        variations = set()
+        vowels = "aeiou"
+        word_lower = word.lower()
+        
+        for i in range(len(word) - 1):
+            char1 = word_lower[i]
+            char2 = word_lower[i+1]
+            
+            # Check if both are different consonants
+            if (char1.isalpha() and char1 not in vowels and
+                char2.isalpha() and char2 not in vowels and
+                char1 != char2):
+                
+                # Swap them
+                new_word = word[:i] + word[i+1] + word[i] + word[i+2:]
+                if new_word != word:
+                    variations.add(new_word)
+                    if len(variations) >= max_variations:
+                        break
+        
+        return variations
+    
+    def _apply_letter_deletion(self, word: str, max_variations: int = 50, aggression: int = 1) -> Set[str]:
+        """
+        Generate variations by deleting letters.
+        
+        Args:
+            word: Original word
+            max_variations: Maximum variations to generate
+            aggression: Number of letters to delete (1=Light, 2=Medium, 3+=Far)
+        """
+        variations = set()
+        
+        if aggression == 1:
+            # Light: Delete 1 letter
+            for i in range(len(word)):
+                if word[i].isalpha():
+                    new_word = word[:i] + word[i+1:]
+                    if new_word and new_word != word:
+                        variations.add(new_word)
+                        if len(variations) >= max_variations:
+                            break
+        elif aggression == 2:
+            # Medium: Delete 2 letters
+            for i in range(len(word)):
+                for j in range(i+1, len(word)):
+                    if word[i].isalpha() and word[j].isalpha():
+                        new_word = word[:i] + word[i+1:j] + word[j+1:]
+                        if new_word and new_word != word and len(new_word) > 0:
+                            variations.add(new_word)
+                            if len(variations) >= max_variations:
+                                return variations
+        else:
+            # Far: Delete 3+ letters
+            for i in range(len(word)):
+                for j in range(i+1, len(word)):
+                    for k in range(j+1, min(j+4, len(word))):  # Limit to avoid explosion
+                        if word[i].isalpha() and word[j].isalpha() and word[k].isalpha():
+                            new_word = word[:i] + word[i+1:j] + word[j+1:k] + word[k+1:]
+                            if new_word and new_word != word and len(new_word) > 0:
+                                variations.add(new_word)
+                                if len(variations) >= max_variations:
+                                    return variations
+        
+        return variations
+    
+    def _apply_vowel_deletion(self, word: str, max_variations: int = 50) -> Set[str]:
+        """Generate variations by deleting one vowel."""
+        variations = set()
+        vowels = "aeiou"
+        word_lower = word.lower()
+        
+        for i in range(len(word)):
+            if word_lower[i] in vowels:
+                new_word = word[:i] + word[i+1:]
+                if new_word and new_word != word:
+                    variations.add(new_word)
+                    if len(variations) >= max_variations:
+                        break
+        
+        return variations
+    
+    def _apply_consonant_deletion(self, word: str, max_variations: int = 50) -> Set[str]:
+        """Generate variations by deleting one consonant."""
+        variations = set()
+        vowels = "aeiou"
+        word_lower = word.lower()
+        
+        for i in range(len(word)):
+            if word_lower[i].isalpha() and word_lower[i] not in vowels:
+                new_word = word[:i] + word[i+1:]
+                if new_word and new_word != word:
+                    variations.add(new_word)
+                    if len(variations) >= max_variations:
+                        break
+        
+        return variations
+    
+    def _apply_vowel_replacement(self, word: str, max_variations: int = 50) -> Set[str]:
+        """Generate variations by replacing vowels with different vowels."""
+        variations = set()
+        vowels = "aeiou"
+        word_lower = word.lower()
+        
+        for i in range(len(word)):
+            if word_lower[i] in vowels:
+                for replacement in vowels:
+                    if replacement != word_lower[i]:
+                        new_word = word[:i] + replacement + word[i+1:]
+                        if new_word != word:
+                            variations.add(new_word)
+                            if len(variations) >= max_variations:
+                                return variations
+        
+        return variations
+    
+    def _apply_consonant_replacement(self, word: str, max_variations: int = 50) -> Set[str]:
+        """Generate variations by replacing consonants with different consonants."""
+        variations = set()
+        vowels = "aeiou"
+        consonants = "bcdfghjklmnpqrstvwxyz"
+        word_lower = word.lower()
+        
+        for i in range(len(word)):
+            if word_lower[i].isalpha() and word_lower[i] not in vowels:
+                for replacement in consonants:
+                    if replacement != word_lower[i]:
+                        new_word = word[:i] + replacement + word[i+1:]
+                        if new_word != word:
+                            variations.add(new_word)
+                            if len(variations) >= max_variations:
+                                return variations
+        
+        return variations
+    
+    def _apply_letter_swap(self, word: str, max_variations: int = 50, aggression: int = 1) -> Set[str]:
+        """
+        Generate variations by swapping letters.
+        
+        Args:
+            word: Original word
+            max_variations: Maximum variations to generate
+            aggression: Number of swaps (1=Light, 2=Medium, 3+=Far)
+        """
+        variations = set()
+        
+        if aggression == 1:
+            # Light: Swap 1 pair of adjacent letters
+            for i in range(len(word) - 1):
+                if word[i] != word[i+1]:
+                    new_word = word[:i] + word[i+1] + word[i] + word[i+2:]
+                    if new_word != word:
+                        variations.add(new_word)
+                        if len(variations) >= max_variations:
+                            break
+        elif aggression == 2:
+            # Medium: Swap 2 pairs of letters (can be non-adjacent)
+            for i in range(len(word) - 1):
+                for j in range(i+2, len(word) - 1):
+                    if word[i] != word[i+1] and word[j] != word[j+1]:
+                        # Swap first pair
+                        temp = word[:i] + word[i+1] + word[i] + word[i+2:j] + word[j+1] + word[j] + word[j+2:]
+                        if temp != word:
+                            variations.add(temp)
+                            if len(variations) >= max_variations:
+                                return variations
+        else:
+            # Far: Swap multiple pairs or non-adjacent letters
+            for i in range(len(word)):
+                for j in range(i+2, len(word)):
+                    # Swap non-adjacent letters
+                    new_word = word[:i] + word[j] + word[i+1:j] + word[i] + word[j+1:]
+                    if new_word != word:
+                        variations.add(new_word)
+                        if len(variations) >= max_variations:
+                            return variations
+        
+        return variations
+    
+    def _apply_letter_insertion(self, word: str, max_variations: int = 50, aggression: int = 1) -> Set[str]:
+        """
+        Generate variations by inserting letters.
+        
+        Args:
+            word: Original word
+            max_variations: Maximum variations to generate
+            aggression: Number of letters to insert (1=Light, 2=Medium, 3+=Far)
+        """
+        variations = set()
+        all_letters = string.ascii_lowercase
+        
+        if aggression == 1:
+            # Light: Insert 1 letter
+            for i in range(len(word) + 1):
+                for letter in all_letters:
+                    new_word = word[:i] + letter + word[i:]
+                    if new_word != word:
+                        variations.add(new_word)
+                        if len(variations) >= max_variations:
+                            return variations
+        elif aggression == 2:
+            # Medium: Insert 2 letters
+            for i in range(len(word) + 1):
+                for letter1 in all_letters[:13]:  # Limit to avoid explosion
+                    for letter2 in all_letters[:13]:
+                        new_word = word[:i] + letter1 + letter2 + word[i:]
+                        if new_word != word:
+                            variations.add(new_word)
+                            if len(variations) >= max_variations:
+                                return variations
+        else:
+            # Far: Insert 3+ letters
+            for i in range(len(word) + 1):
+                for letter1 in all_letters[:10]:
+                    for letter2 in all_letters[:10]:
+                        for letter3 in all_letters[:10]:
+                            new_word = word[:i] + letter1 + letter2 + letter3 + word[i:]
+                            if new_word != word:
+                                variations.add(new_word)
+                                if len(variations) >= max_variations:
+                                    return variations
+        
+        return variations
+    
+    def _apply_letter_duplication(self, word: str, max_variations: int = 50) -> Set[str]:
+        """Generate variations by duplicating a letter."""
+        variations = set()
+        
+        for i in range(len(word)):
+            if word[i].isalpha():
+                new_word = word[:i] + word[i] + word[i:]
+                if new_word != word:
+                    variations.add(new_word)
+                    if len(variations) >= max_variations:
+                        break
+        
+        return variations
+    
+    def _apply_space_removal(self, word: str, max_variations: int = 50) -> Set[str]:
+        """Generate variations by removing all spaces."""
+        variations = set()
+        if ' ' in word:
+            new_word = word.replace(' ', '')
+            if new_word != word:
+                variations.add(new_word)
+        return variations
+    
+    def _apply_space_replacement(self, word: str, max_variations: int = 50) -> Set[str]:
+        """Generate variations by replacing spaces with special characters."""
+        variations = set()
+        special_chars = ['_', '-', '.', '']
+        
+        if ' ' in word:
+            for char in special_chars:
+                new_word = word.replace(' ', char)
+                if new_word != word:
+                    variations.add(new_word)
+                    if len(variations) >= max_variations:
+                        break
+        
+        return variations
+    
+    def _apply_first_name_initial(self, word: str, max_variations: int = 50) -> Set[str]:
+        """Generate variations by converting first name to initial."""
+        variations = set()
+        parts = word.split()
+        
+        if len(parts) >= 2:
+            # First name initial with last name
+            new_word = parts[0][0] + ". " + " ".join(parts[1:])
+            if new_word != word:
+                variations.add(new_word)
+            # Alternative: no space after dot
+            new_word2 = parts[0][0] + "." + " ".join(parts[1:])
+            if new_word2 != word and new_word2 != new_word:
+                variations.add(new_word2)
+        
+        return variations
+    
+    def _apply_initials(self, word: str, max_variations: int = 50) -> Set[str]:
+        """Generate variations by converting name to initials."""
+        variations = set()
+        parts = word.split()
+        
+        if len(parts) >= 2:
+            # With dots and spaces: "J. S."
+            new_word = ". ".join([p[0] for p in parts]) + "."
+            if new_word != word:
+                variations.add(new_word)
+            # With dots no spaces: "J.S."
+            new_word2 = ".".join([p[0] for p in parts]) + "."
+            if new_word2 != word and new_word2 != new_word:
+                variations.add(new_word2)
+            # No dots: "JS"
+            new_word3 = "".join([p[0] for p in parts])
+            if new_word3 != word and new_word3 != new_word and new_word3 != new_word2:
+                variations.add(new_word3)
+        
+        return variations
+    
+    def _apply_abbreviation(self, word: str, max_variations: int = 50) -> Set[str]:
+        """Generate variations by abbreviating name parts."""
+        variations = set()
+        parts = word.split()
+        
+        if len(parts) >= 2:
+            # Abbreviate first name
+            if len(parts[0]) > 2:
+                abbrev = parts[0][:2] + " " + " ".join(parts[1:])
+                if abbrev != word:
+                    variations.add(abbrev)
+            # Abbreviate last name
+            if len(parts[-1]) > 2:
+                abbrev = " ".join(parts[:-1]) + " " + parts[-1][:2]
+                if abbrev != word:
+                    variations.add(abbrev)
+        
+        return variations
+    
+    def _apply_name_permutation(self, word: str, max_variations: int = 50) -> Set[str]:
+        """Generate variations by permuting name parts."""
+        variations = set()
+        parts = word.split()
+        
+        if len(parts) >= 2:
+            # Generate all permutations
+            from itertools import permutations
+            for perm in permutations(parts):
+                new_word = " ".join(perm)
+                if new_word != word:
+                    variations.add(new_word)
+                    if len(variations) >= max_variations:
+                        break
+        
+        return variations
+    
+    def _apply_special_character_replacement(self, word: str, max_variations: int = 50) -> Set[str]:
+        """Generate variations by replacing special characters with different special characters."""
+        variations = set()
+        special_chars = '!@#$%^&*()_+-=[]{}|;:,.<>?'
+        
+        for i in range(len(word)):
+            if word[i] in special_chars:
+                for replacement in special_chars:
+                    if replacement != word[i]:
+                        new_word = word[:i] + replacement + word[i+1:]
+                        if new_word != word:
+                            variations.add(new_word)
+                            if len(variations) >= max_variations:
+                                return variations
+        
+        return variations
+    
+    def _apply_special_character_removal(self, word: str, max_variations: int = 50) -> Set[str]:
+        """Generate variations by removing special characters."""
+        variations = set()
+        special_chars = '!@#$%^&*()_+-=[]{}|;:,.<>?'
+        
+        for i in range(len(word)):
+            if word[i] in special_chars:
+                new_word = word[:i] + word[i+1:]
+                if new_word and new_word != word:
+                    variations.add(new_word)
+                    if len(variations) >= max_variations:
+                        break
+        
+        return variations
+    
+    def _apply_title_removal(self, word: str, max_variations: int = 50) -> Set[str]:
+        """Generate variations by removing title prefix."""
+        variations = set()
+        titles = ["Mr.", "Mrs.", "Ms.", "Mr", "Mrs", "Ms", "Miss", "Dr.", "Dr",
+                  "Prof.", "Prof", "Sir", "Lady", "Lord", "Dame", "Master", "Mistress",
+                  "Rev.", "Hon.", "Capt.", "Col.", "Lt.", "Sgt.", "Maj."]
+        
+        word_lower = word.lower()
+        for title in titles:
+            title_lower = title.lower()
+            if word_lower.startswith(title_lower + " "):
+                # Remove title
+                new_word = word[len(title):].strip()
+                if new_word and new_word != word:
+                    variations.add(new_word)
+                    if len(variations) >= max_variations:
+                        break
+        
+        return variations
+    
+    def _apply_title_addition(self, word: str, max_variations: int = 50) -> Set[str]:
+        """Generate variations by adding title prefix."""
+        variations = set()
+        titles = ["Mr.", "Mrs.", "Ms.", "Mr", "Mrs", "Ms", "Miss", "Dr.", "Dr",
+                  "Prof.", "Prof", "Sir", "Lady", "Lord", "Dame", "Master", "Mistress",
+                  "Rev.", "Hon.", "Capt.", "Col.", "Lt.", "Sgt.", "Maj."]
+        
+        for title in titles:
+            new_word = f"{title} {word}"
+            if new_word != word:
+                variations.add(new_word)
+                if len(variations) >= max_variations:
+                    break
+        
+        return variations
+    
+    def _apply_suffix_addition(self, word: str, max_variations: int = 50) -> Set[str]:
+        """Generate variations by adding suffix."""
+        variations = set()
+        suffixes = ["Jr.", "Sr.", "III", "IV", "V", "PhD", "MD", "Esq.", "Jr", "Sr"]
+        
+        for suffix in suffixes:
+            new_word = f"{word} {suffix}"
+            if new_word != word:
+                variations.add(new_word)
+                if len(variations) >= max_variations:
+                    break
+        
+        return variations
+    
+    def _apply_syllable_swap(self, word: str, max_variations: int = 50) -> Set[str]:
+        """Generate variations by swapping adjacent syllables (simplified to adjacent letter swap)."""
+        # Simplified: same as letter swap since syllable detection is complex
+        return self._apply_letter_swap(word, max_variations)
+    
+    def generate_rule_compliant_variations(self, word: str, rules: List[str], max_per_rule: int = 100, aggression: int = 1) -> Set[str]:
+        """
+        Generate variations that follow specific rules.
+        
+        Args:
+            word: Original word
+            rules: List of rule names to apply
+            max_per_rule: Maximum variations per rule
+            aggression: Aggression level (1=Light, 2=Medium, 3+=Far)
+            
+        Returns:
+            Set of rule-compliant variations
+        """
+        variations = set()
+        
+        rule_generators = {
+            "replace_double_letters_with_single_letter": self._apply_double_letter_replacement,
+            "swap_adjacent_consonants": self._apply_consonant_swap,
+            "delete_random_letter": lambda w, m: self._apply_letter_deletion(w, m, aggression),
+            "remove_random_vowel": self._apply_vowel_deletion,
+            "remove_random_consonant": self._apply_consonant_deletion,
+            "replace_random_vowel_with_random_vowel": self._apply_vowel_replacement,
+            "replace_random_consonant_with_random_consonant": self._apply_consonant_replacement,
+            "replace_random_special_character_with_random_special_character": self._apply_special_character_replacement,
+            "swap_random_letter": lambda w, m: self._apply_letter_swap(w, m, aggression),
+            "swap_adjacent_syllables": self._apply_syllable_swap,
+            "insert_random_letter": lambda w, m: self._apply_letter_insertion(w, m, aggression),
+            "duplicate_random_letter_as_double_letter": self._apply_letter_duplication,
+            "remove_all_spaces": self._apply_space_removal,
+            "replace_spaces_with_random_special_characters": self._apply_space_replacement,
+            "remove_random_special_character": self._apply_special_character_removal,
+            "remove_title": self._apply_title_removal,
+            "add_random_leading_title": self._apply_title_addition,
+            "add_random_trailing_title": self._apply_suffix_addition,
+            "initial_only_first_name": self._apply_first_name_initial,
+            "shorten_name_to_initials": self._apply_initials,
+            "shorten_name_to_abbreviations": self._apply_abbreviation,
+            "name_parts_permutations": self._apply_name_permutation,
+        }
+        
+        for rule in rules:
+            if rule in rule_generators:
+                rule_variations = rule_generators[rule](word, max_per_rule)
+                variations.update(rule_variations)
+        
+        return variations
+    
+    def generate_rule_compliant_variations_with_scores(
+        self,
+        max_per_rule: int = 100
+    ) -> Dict[str, List[Tuple[str, float, str]]]:
+        """
+        Generate rule-compliant variations and score them for orthographic similarity.
+        
+        Returns:
+            Dictionary mapping rule_name -> [(variation, orthographic_score, category), ...]
+        """
+        rule_compliant_scored = {}
+        
+        for rule in self.possible_rules:
+            # Generate variations following this rule
+            rule_variations = self.generate_rule_compliant_variations(
+                self.original_name,
+                [rule],
+                max_per_rule
+            )
+            
+            # Score each variation for orthographic similarity
+            scored_variations = []
+            for var in rule_variations:
+                score = self.calculate_orthographic_score(var)
+                category = self.categorize_score(score)
+                scored_variations.append((var, score, category))
+            
+            # Sort by score (descending) to prioritize high-similarity variations
+            scored_variations.sort(key=lambda x: x[1], reverse=True)
+            
+            rule_compliant_scored[rule] = scored_variations
+        
+        return rule_compliant_scored
+    
+    def generate_rule_compliant_by_category(
+        self,
+        category: str,
+        rules: List[str],
+        max_per_rule: int = 50
+    ) -> List[Tuple[str, float, str]]:
+        """
+        Generate rule-compliant variations targeting a specific orthographic category.
+        
+        Strategy:
+        - Light: Use single-letter operations (delete/insert/swap 1 letter)
+        - Medium: Use rules that naturally produce medium similarity (space removal, vowel replacement)
+        - Far: Use rules that naturally produce far similarity (initials, abbreviations, permutations)
+        
+        Args:
+            category: Target category ("Light", "Medium", or "Far")
+            rules: List of rule names to apply
+            max_per_rule: Maximum variations per rule
+            
+        Returns:
+            List of (variation, score, category) tuples
+        """
+        target_range = {
+            "Light": (0.70, 1.00),
+            "Medium": (0.50, 0.69),
+            "Far": (0.20, 0.49)
+        }[category]
+        
+        variations = []
+        
+        # For Light: Use single-letter operations (aggression=1)
+        # For Medium/Far: Use rules that naturally produce those similarity levels
+        if category == "Light":
+            # Light: Single-letter operations
+            aggression = 1
+            rule_variations = self.generate_rule_compliant_variations(
+                self.original_name,
+                rules,
+                max_per_rule,
+                aggression=aggression
+            )
+        elif category == "Medium":
+            # Medium: Use rules that produce moderate changes
+            # Filter rules to those that can produce Medium similarity
+            medium_rules = [
+                r for r in rules if r in [
+                    "remove_all_spaces",
+                    "replace_spaces_with_random_special_characters",
+                    "replace_random_vowel_with_random_vowel",
+                    "replace_random_consonant_with_random_consonant",
+                    "duplicate_random_letter_as_double_letter"
+                ]
+            ]
+            if not medium_rules:
+                # Fallback: Use single-letter operations but filter for Medium scores
+                medium_rules = rules
+            
+            rule_variations = self.generate_rule_compliant_variations(
+                self.original_name,
+                medium_rules if medium_rules else rules,
+                max_per_rule,
+                aggression=1
+            )
+        else:  # Far
+            # Far: Use rules that produce large changes
+            far_rules = [
+                r for r in rules if r in [
+                    "shorten_name_to_initials",
+                    "shorten_name_to_abbreviations",
+                    "name_parts_permutations",
+                    "initial_only_first_name"
+                ]
+            ]
+            if not far_rules:
+                # Fallback: Use single-letter operations but filter for Far scores
+                far_rules = rules
+            
+            rule_variations = self.generate_rule_compliant_variations(
+                self.original_name,
+                far_rules if far_rules else rules,
+                max_per_rule,
+                aggression=1
+            )
+        
+        # Score and filter by target range
+        for var in rule_variations:
+            score = self.calculate_orthographic_score(var)
+            if target_range[0] <= score <= target_range[1]:
+                variations.append((var, score, category))
+        
+        # Sort by score (descending for Light, closest to middle for Medium/Far)
+        if category == "Light":
+            variations.sort(key=lambda x: x[1], reverse=True)
+        elif category == "Medium":
+            variations.sort(key=lambda x: abs(x[1] - 0.60))
+        else:  # Far
+            variations.sort(key=lambda x: abs(x[1] - 0.35))
         
         return variations
     
@@ -828,6 +1517,132 @@ class OrthographicBruteForceGenerator:
         
         return selected[:total_count]  # Ensure we don't exceed total_count
     
+    def select_optimal_combination_with_rules(
+        self,
+        categorized: Dict[str, List[Tuple[str, float]]],
+        rule_compliant_scored: Dict[str, List[Tuple[str, float, str]]],
+        total_count: int
+    ) -> List[str]:
+        """
+        Select optimal combination meeting BOTH constraints:
+        1. Orthographic distribution (Light/Medium/Far)
+        2. Rule compliance percentage
+        
+        ENHANCED: Uses category-targeted rule generation to distribute rule compliance.
+        
+        Args:
+            categorized: Non-rule variations by orthographic category
+            rule_compliant_scored: Rule-compliant variations with scores (legacy, may be empty)
+            total_count: Total number of variations needed
+            
+        Returns:
+            List of selected variation strings
+        """
+        print(f"🎯 Selecting optimal combination with rule compliance for {total_count} variations...")
+        print(f"   Target distribution: {self.target_distribution}")
+        print(f"   Rule percentage: {self.rule_percentage * 100:.1f}%")
+        print(f"   Possible rules: {self.possible_rules}")
+        
+        # Calculate targets
+        target_rule_count = max(1, int(total_count * self.rule_percentage))
+        target_orthographic = {
+            "Light": int(self.target_distribution.get("Light", 0.0) * total_count),
+            "Medium": int(self.target_distribution.get("Medium", 0.0) * total_count),
+            "Far": int(self.target_distribution.get("Far", 0.0) * total_count)
+        }
+        
+        print(f"   Target rule-compliant: {target_rule_count} variations")
+        print(f"   Target orthographic: Light={target_orthographic['Light']}, Medium={target_orthographic['Medium']}, Far={target_orthographic['Far']}")
+        print()
+        
+        # Generate rule-compliant variations for EACH category using aggression levels
+        print(f"   🔧 Generating category-targeted rule-compliant variations...")
+        rule_compliant_by_category = {}
+        for category in ["Light", "Medium", "Far"]:
+            rule_compliant_by_category[category] = self.generate_rule_compliant_by_category(
+                category=category,
+                rules=self.possible_rules,
+                max_per_rule=50
+            )
+            print(f"      {category}: {len(rule_compliant_by_category[category])} rule-compliant variations")
+        print()
+        
+        selected = []
+        rule_count = 0
+        rule_count_by_category = {"Light": 0, "Medium": 0, "Far": 0}
+        selected_by_category = {"Light": 0, "Medium": 0, "Far": 0}
+        
+        # Phase 1: Fill each category with rule-compliant variations (priority)
+        for category in ["Light", "Medium", "Far"]:
+            needed = target_orthographic[category]
+            selected_in_category = 0
+            available_rule_compliant = rule_compliant_by_category[category]
+            
+            # Take as many rule-compliant as possible (up to target_rule_count)
+            rule_taken = min(
+                needed,
+                len(available_rule_compliant),
+                target_rule_count - rule_count
+            )
+            
+            # Add rule-compliant variations
+            for var, score, cat in available_rule_compliant[:rule_taken]:
+                selected.append(var)
+                rule_count += 1
+                selected_in_category += 1
+                rule_count_by_category[category] += 1
+                selected_by_category[category] += 1
+            
+            # Fill remaining slots with non-rule-compliant variations
+            remaining = needed - selected_in_category
+            if remaining > 0:
+                non_rule_in_category = [
+                    (v, s) for v, s in categorized[category] 
+                    if v not in selected
+                ]
+                for var, score in non_rule_in_category[:remaining]:
+                    selected.append(var)
+                    selected_in_category += 1
+                    selected_by_category[category] += 1
+        
+        # Phase 2: If we need more rule-compliant, add from any category
+        if rule_count < target_rule_count:
+            print(f"   ⚠️  Only {rule_count} rule-compliant variations selected (need {target_rule_count})")
+            print(f"   🔄 Adding more rule-compliant variations from any category...")
+            
+            for category in ["Light", "Medium", "Far"]:
+                if rule_count >= target_rule_count:
+                    break
+                
+                available = rule_compliant_by_category[category]
+                for var, score, cat in available:
+                    if var not in selected and rule_count < target_rule_count and len(selected) < total_count:
+                        selected.append(var)
+                        rule_count += 1
+                        rule_count_by_category[category] += 1
+                        selected_by_category[category] += 1
+                        if rule_count >= target_rule_count:
+                            break
+        
+        # Phase 3: Fill remaining slots to reach total_count
+        if len(selected) < total_count:
+            all_remaining = (
+                [(v, s) for v, s in categorized["Light"] if v not in selected] +
+                [(v, s) for v, s in categorized["Medium"] if v not in selected] +
+                [(v, s) for v, s in categorized["Far"] if v not in selected]
+            )
+            needed = total_count - len(selected)
+            for var, _ in all_remaining[:needed]:
+                selected.append(var)
+        
+        print(f"   ✅ Selected {len(selected)} variations")
+        print(f"   Rule-compliant: {rule_count} ({rule_count/len(selected)*100:.1f}%)")
+        print(f"   Rule-compliant by category: Light={rule_count_by_category['Light']}, Medium={rule_count_by_category['Medium']}, Far={rule_count_by_category['Far']}")
+        print(f"   Total by category: Light={selected_by_category['Light']}, Medium={selected_by_category['Medium']}, Far={selected_by_category['Far']}")
+        print()
+        
+        return selected[:total_count]
+    
     def _calculate_distribution_quality(self, scores: List[float], targets: Dict[str, float]) -> float:
         """
         Calculate distribution quality (same logic as rewards.py).
@@ -866,6 +1681,7 @@ class OrthographicBruteForceGenerator:
     def generate_optimal_variations(self, variation_count: int = 15) -> Tuple[List[str], Dict]:
         """
         Main method: Generate optimal variations matching target distribution.
+        Supports rule compliance if rule_based parameter is provided.
         
         Args:
             variation_count: Total number of variations to generate
@@ -875,14 +1691,32 @@ class OrthographicBruteForceGenerator:
         """
         print("=" * 80)
         print("ORTHOGRAPHIC SIMILARITY MAXIMIZATION (BRUTE FORCE)")
+        if self.possible_rules:
+            print(f"WITH RULE COMPLIANCE ({len(self.possible_rules)} rules, {self.rule_percentage*100:.0f}%)")
         print("=" * 80)
         print()
         
-        # Generate all variations
+        # Step 1: Generate rule-compliant variations (if rules specified)
+        rule_compliant_scored = {}
+        if self.possible_rules:
+            print(f"🔧 Generating rule-compliant variations for {len(self.possible_rules)} rules...")
+            rule_compliant_scored = self.generate_rule_compliant_variations_with_scores(max_per_rule=100)
+            total_rule_variations = sum(len(v) for v in rule_compliant_scored.values())
+            print(f"   Generated {total_rule_variations} rule-compliant variations")
+            print()
+        
+        # Step 2: Generate all orthographic variations
         categorized = self.generate_all_variations(max_candidates=10000)
         
-        # Select optimal combination
-        selected = self.select_optimal_combination(categorized, variation_count)
+        # Step 3: Select optimal combination (with or without rules)
+        if rule_compliant_scored:
+            selected = self.select_optimal_combination_with_rules(
+                categorized,
+                rule_compliant_scored,
+                variation_count
+            )
+        else:
+            selected = self.select_optimal_combination(categorized, variation_count)
         
         # Calculate final metrics
         final_scores = [self.calculate_orthographic_score(var) for var in selected]
@@ -902,6 +1736,30 @@ class OrthographicBruteForceGenerator:
         # Calculate quality score
         quality_score = self._calculate_distribution_quality(final_scores, self.target_distribution)
         
+        # Calculate rule compliance metrics
+        rule_compliance_metrics = {}
+        if self.possible_rules:
+            from rule_evaluator import evaluate_rule_compliance
+            compliant_variations_by_rule, compliance_ratio = evaluate_rule_compliance(
+                self.original_name,
+                selected,
+                self.possible_rules
+            )
+            
+            # Count rule-compliant variations
+            all_compliant_variations = set()
+            for rule, variations_list in compliant_variations_by_rule.items():
+                all_compliant_variations.update(variations_list)
+            
+            rule_compliance_metrics = {
+                "possible_rules": self.possible_rules,
+                "rule_percentage_target": self.rule_percentage * 100,
+                "rule_compliant_count": len(all_compliant_variations),
+                "rule_compliant_percentage": len(all_compliant_variations) / len(selected) * 100 if selected else 0.0,
+                "compliant_variations_by_rule": {k: len(v) for k, v in compliant_variations_by_rule.items()},
+                "compliance_ratio": compliance_ratio
+            }
+        
         metrics = {
             "original_name": self.original_name,
             "variation_count": len(selected),
@@ -912,7 +1770,8 @@ class OrthographicBruteForceGenerator:
             "min_score": min(final_scores) if final_scores else 0.0,
             "max_score": max(final_scores) if final_scores else 0.0,
             "categorized_variations": final_categories,
-            "all_scores": final_scores
+            "all_scores": final_scores,
+            "rule_compliance": rule_compliance_metrics if rule_compliance_metrics else None
         }
         
         print("=" * 80)
@@ -932,6 +1791,15 @@ class OrthographicBruteForceGenerator:
         print(f"Quality Score: {quality_score:.4f}")
         print(f"Average Orthographic Score: {metrics['average_score']:.4f}")
         print(f"Score Range: {metrics['min_score']:.4f} - {metrics['max_score']:.4f}")
+        
+        # Print rule compliance info
+        if rule_compliance_metrics:
+            print()
+            print("Rule Compliance:")
+            print(f"  Target: {rule_compliance_metrics['rule_percentage_target']:.1f}%")
+            print(f"  Actual: {rule_compliance_metrics['rule_compliant_percentage']:.1f}% ({rule_compliance_metrics['rule_compliant_count']} variations)")
+            print(f"  Rules satisfied: {rule_compliance_metrics['compliant_variations_by_rule']}")
+        
         print()
         print("Selected Variations:")
         for i, (var, score) in enumerate(zip(selected, final_scores), 1):
@@ -1391,6 +2259,8 @@ def main():
     parser.add_argument("--medium", type=float, default=0.6, help="Target percentage for Medium (default: 0.6)")
     parser.add_argument("--far", type=float, default=0.2, help="Target percentage for Far (default: 0.2)")
     parser.add_argument("--full-name", action="store_true", help="Treat as full name (first + last)")
+    parser.add_argument("--rules", nargs="+", help="Rule names to apply (e.g., replace_double_letters_with_single_letter swap_adjacent_consonants)")
+    parser.add_argument("--rule-percentage", type=int, default=30, help="Percentage of variations that should follow rules (default: 30)")
     
     args = parser.parse_args()
     
@@ -1429,7 +2299,15 @@ def main():
         print(f"   Last Name Quality:  {metrics['last_name']['quality_score']:.4f}")
     else:
         # Single name
-        generator = OrthographicBruteForceGenerator(args.name, target_distribution)
+        # Parse rule-based parameters if provided
+        rule_based = None
+        if args.rules:
+            rule_based = {
+                "selected_rules": args.rules,
+                "rule_percentage": args.rule_percentage
+            }
+        
+        generator = OrthographicBruteForceGenerator(args.name, target_distribution, rule_based)
         variations, metrics = generator.generate_optimal_variations(args.count)
         
         print(f"\n✅ Generated {len(variations)} variations")

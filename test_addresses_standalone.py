@@ -318,7 +318,7 @@ def check_with_nominatim(address: str, validator_uid: int, miner_uid: int, seed_
         url = f"{nominatim_base_url}/search"
         params = {"q": address, "format": "json"}
         
-        default_user_agent = f"YanezCompliance/{validator_uid} (https://yanezcompliance.com; omar@yanezcompliance.com)"
+        default_user_agent = "MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)"
         user_agent = os.getenv("USER_AGENT", default_user_agent)
         
         proxy_url = os.getenv("PROXY_URL", None)

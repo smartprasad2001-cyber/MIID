@@ -403,7 +403,7 @@ def _generate_addresses_from_nominatim(seed_address: str, variation_count: int =
     seen_addresses = set()  # Avoid duplicates
     
     url = "https://nominatim.openstreetmap.org/search"
-    headers = {"User-Agent": "MIID-Miner/1.0"}
+    headers = {"User-Agent": "MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)"}
     
     # Build search queries based on seed format
     search_queries = []

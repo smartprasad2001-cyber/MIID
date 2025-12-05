@@ -1,0 +1,88 @@
+================================================================================
+TESTING 15 CZECHIA ADDRESSES
+================================================================================
+
+Testing Address 1: Five Star Gas Station, Kabul District, Kabul, 1006, Afghanistan
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: True
+  ✓ Normalized: aaaaaaabcdeffgghiiiiiklnnnorrsssssttttttuv
+  ✓ UNIQUE normalized address
+  → Checking with Nominatim API...
+  → Request URL: https://nominatim.openstreetmap.org/search
+  → Query: Five Star Gas Station, Kabul District, Kabul, 1006, Afghanistan
+  → User-Agent: MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)
+  → HTTP Status: 200
+  → Total results from Nominatim: 1
+  → First result: five star gas station, کوچه لیسه موزیک, ناحیه سوم, کابل, کابل ښاروالۍ, ولایت كابل, 1006, افغانستان
+  → First result place_rank: 30
+  → Numbers in address: {'1006'}
+    Result 1: ✓ PASSED filters (place_rank=30)
+  → Filtered results: 1
+  ✓ Nominatim score: 0.9
+  → Min bounding box area: N/A m²
+  ✅ PASSED (score: 0.9)
+
+Testing Address 2: Five Star Gas Station, Kabul District, Kabul Province, Afghanistan
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: False
+  ✗ FAILED: Does not look like an address
+
+Testing Address 3: Five Star Gas Station, Kabul Province, Kabul, 1006, Afghanistan
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: True
+  ✓ Normalized: aaaaaaabceeffgghiiiiklnnnnooprrssssttttuvv
+  ✓ UNIQUE normalized address
+  → Checking with Nominatim API...
+  ⏳ Waiting 1 second before API call (rate limiting)...
+  → Request URL: https://nominatim.openstreetmap.org/search
+  → Query: Five Star Gas Station, Kabul Province, Kabul, 1006, Afghanistan
+  → User-Agent: MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)
+  → HTTP Status: 200
+  → Total results from Nominatim: 1
+  → First result: five star gas station, کوچه لیسه موزیک, ناحیه سوم, کابل, کابل ښاروالۍ, ولایت كابل, 1006, افغانستان
+  → First result place_rank: 30
+  → Numbers in address: {'1006'}
+    Result 1: ✓ PASSED filters (place_rank=30)
+  → Filtered results: 1
+  ✓ Nominatim score: 0.9
+  → Min bounding box area: N/A m²
+  ✅ PASSED (score: 0.9)
+
+Testing Address 4: Five Star Gas Station, کوچه لیسه موزیک, Kabul, Afghanistan
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: False
+  ✗ FAILED: Does not look like an address
+
+Testing Address 5: Five Star Gas Station, کوچه لیسه موزیک, 3rd District, Kabul, 1006, Afghanistan
+--------------------------------------------------------------------------------
+  ✓ looks_like_address: True
+  ✓ Normalized: aaaaaaabccddeffgghhhhhhiiiiikkkllmnnnorrrssssssttttttuvwwyyz
+  ✓ UNIQUE normalized address
+  → Checking with Nominatim API...
+  ⏳ Waiting 1 second before API call (rate limiting)...
+  → Request URL: https://nominatim.openstreetmap.org/search
+  → Query: Five Star Gas Station, کوچه لیسه موزیک, 3rd District, Kabul, 1006, Afghanistan
+  → User-Agent: MIIDSubnet/1.0 (contact: prasadpsd2001@gmail.com)
+  → HTTP Status: 200
+  → Total results from Nominatim: 1
+  → First result: five star gas station, کوچه لیسه موزیک, ناحیه سوم, کابل, کابل ښاروالۍ, ولایت كابل, 1006, افغانستان
+  → First result place_rank: 30
+  → Numbers in address: {'3', '1006'}
+    Result 1: ✓ PASSED filters (place_rank=30)
+  → Filtered results: 1
+  ✓ Nominatim score: 0.9
+  → Min bounding box area: N/A m²
+  ✅ PASSED (score: 0.9)
+
+================================================================================
+SUMMARY
+================================================================================
+
+Traceback (most recent call last):
+  File "/Users/prasad/cursor/MIID-subnet/test_czechia_addresses.py", line 312, in <module>
+    test_all_addresses()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/prasad/cursor/MIID-subnet/test_czechia_addresses.py", line 254, in test_all_addresses
+    passed = [r for r in results if r["status"] == "PASSED"]
+                                    ~^^^^^^^^^^
+KeyError: 'status'
