@@ -51,6 +51,95 @@
     "Guinea": [],
     "Guyana": [],
     "Haiti": [],
-    "Honduras": []
+    "Honduras": [
+      {
+        "address": "11 Calle A SE, san pedro, 21103, Honduras",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaacddeeehllnnooprrsssu",
+        "source_city": "San Pedro Sula",
+        "referenced_from": "10, 11 Calle A SE, San Pedro Sula, 21103, Honduras",
+        "created_from": "Generated from Honduras cache address (variation)",
+        "country": "Honduras"
+      },
+      {
+        "address": "Calle Principal Rancho El Coco, san pedro, 20102, Honduras",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaacccccddeeehhiillllnnnnoooooppprrrrssu",
+        "source_city": "San Pedro Sula",
+        "referenced_from": "MIsical Garage, San Pedro Sula, 20102, Honduras",
+        "created_from": "Generated from Honduras cache address (variation)",
+        "country": "Honduras"
+      }
+    ],
+    "Hong Kong": [],
+    "Hungary": [],
+    "Iceland": [],
+    "India": [
+      {
+        "address": "Tamil Sangam Marg, delhi, 110022, India",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaddegghiiiillmmmnnrst",
+        "source_city": "New Delhi",
+        "referenced_from": "Tamil Sangam Marg, New Delhi, 110022, India",
+        "created_from": "Generated from India cache address (variation)",
+        "country": "India"
+      },
+      {
+        "address": "چاندنی چوک, chandni chowk, 110006, India",
+        "score": 0.9,
+        "cheat_normalized_address": "aaccccdddhhhhhiiikknnnnnowwy",
+        "source_city": "Delhi",
+        "referenced_from": "Chandni Chowk Metro Gate No. 1, 110006, India",
+        "created_from": "Generated from India cache address (variation)",
+        "country": "India"
+      }
+    ],
+    "Indonesia": [
+      {
+        "address": "Jalan Pesona Khayangan, depok, 16411, Indonesia",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaaddeeeghiijkklnnnnnnoooppssy",
+        "source_city": "Depok",
+        "referenced_from": "Jalan Pesona Khayangan, Depok, Jawa Barat, 16411, Indonesia",
+        "created_from": "Generated from Indonesia cache address (variation)",
+        "country": "Indonesia"
+      },
+      {
+        "address": "Otto Iskandardinata, tangerang, 15411, Indonesia",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaadddeeggiiiiknnnnnnooorrsstttt",
+        "source_city": "Tangerang Selatan",
+        "referenced_from": "Otto Iskandardinata, South Tangerang, 15411, Indonesia",
+        "created_from": "Generated from Indonesia cache address (variation)",
+        "country": "Indonesia"
+      },
+      {
+        "address": "Jalan Cabe Raya, tangerang, 15418, Indonesia",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaaabcdeeeggiijlnnnnnorrsty",
+        "source_city": "Tangerang Selatan",
+        "referenced_from": "Jalan Cabe Raya, South Tangerang, 15418, Indonesia",
+        "created_from": "Generated from Indonesia cache address (variation)",
+        "country": "Indonesia"
+      }
+    ],
+    "Israel": [],
+    "Italy": [],
+    "Ivory Coast": [],
+    "Jamaica": [],
+    "Japan": [],
+    "Jordan": [],
+    "Kazakhstan": [],
+    "Kenya": [
+      {
+        "address": "Post Office Walk, nairobi, 00609, Kenya",
+        "score": 1.0,
+        "cheat_normalized_address": "aaabceeffiiikklnnoooprstwy",
+        "source_city": "Nairobi",
+        "referenced_from": "Kenyatta University Post Office, Nairobi, 00609, Kenya",
+        "created_from": "Generated from Kenya cache address (variation)",
+        "country": "Kenya"
+      }
+    ]
   }
 }

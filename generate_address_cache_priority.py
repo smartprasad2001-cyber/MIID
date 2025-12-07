@@ -1088,6 +1088,7 @@ def generate_addresses_for_country(
     verbose: bool = True,
     skip_cities: List[str] | None = None,
     existing_addresses: List[dict] | None = None,
+    cache_data: dict | None = None,
 ) -> tuple[List[dict], List[str], bool]:
     """
     Returns:
@@ -1150,9 +1151,33 @@ def generate_addresses_for_country(
         cities_sorted = []
         center_cities = []
 
+    # Check if country has 0 addresses in cache - enable reverse geocoding for these
+    country_address_count = 0
+    if cache_data:
+        addresses_by_country = cache_data.get('addresses', {})
+        country_addresses = addresses_by_country.get(country, [])
+        country_address_count = len(country_addresses)
+    
+    # Enable reverse geocoding for countries with 0 addresses (unless in DISABLE_REVERSE_COUNTRIES)
+    # Priority: If country has 0 addresses and is not disabled → enable reverse geocoding
+    # Otherwise, follow the normal USE_LOCAL_NODES_ONLY logic
+    use_reverse_geocoding = False
+    if country_address_count == 0 and country not in DISABLE_REVERSE_COUNTRIES:
+        # Country has 0 addresses and is not in disabled list → enable reverse geocoding
+        use_reverse_geocoding = True
+    elif not (USE_LOCAL_NODES_ONLY or country in DISABLE_REVERSE_COUNTRIES):
+        # Normal logic: enable if USE_LOCAL_NODES_ONLY is False and country is not disabled
+        use_reverse_geocoding = True
+    # else: use_reverse_geocoding remains False
+    
     if verbose:
         print(f"  📍 Using {len(center_cities)} cities (all remaining cities from Geonames)")
-        if USE_LOCAL_NODES_ONLY or country in DISABLE_REVERSE_COUNTRIES:
+        if use_reverse_geocoding:
+            print(
+                f"  ✅ Reverse geocoding ENABLED for {country} "
+                f"(country has {country_address_count} addresses, using reverse geocoding to find more)"
+            )
+        elif not use_reverse_geocoding:
             print(
                 f"  🚫 Reverse geocoding DISABLED for {country} "
                 f"(only local nodes with complete address tags will be accepted)"
@@ -1243,7 +1268,8 @@ def generate_addresses_for_country(
             
             # For countries where reverse geocoding is disabled (or universal approach enabled), validate locally first, then with API
             # CRITICAL: We still need to do API validation to ensure score 1.0
-            if USE_LOCAL_NODES_ONLY or country in DISABLE_REVERSE_COUNTRIES:
+            # Exception: Enable reverse geocoding for countries with 0 addresses (unless in DISABLE_REVERSE_COUNTRIES)
+            if not use_reverse_geocoding:
                 tags = n.get("tags", {}) or {}
                 
                 # PROCESS ALL NODES - don't skip any based on tags
@@ -1302,7 +1328,7 @@ def generate_addresses_for_country(
             # Step 1: Prioritize nodes with house numbers, but use reverse geocoding to ensure Nominatim can find them
             # CRITICAL: We use reverse geocoding even for nodes with complete tags to ensure addresses are in Nominatim's index
             # This ensures API validation will find the addresses (score 1.0)
-            if not (USE_LOCAL_NODES_ONLY or country in DISABLE_REVERSE_COUNTRIES):
+            if use_reverse_geocoding:
                 # Check if node has house number (prioritize these for precise geocoding)
                 tags = n.get("tags", {}) or {}
                 has_housenumber = "addr:housenumber" in tags
@@ -1393,7 +1419,7 @@ def generate_addresses_for_country(
                 continue
             
             # Step 2: For disabled countries, skip reverse geocoding (already handled above)
-            if USE_LOCAL_NODES_ONLY or country in DISABLE_REVERSE_COUNTRIES:
+            if not use_reverse_geocoding:
                 # This should never happen if the check above worked, but adding as safeguard
                 stats["validation_failed"] += 1
                 if verbose:
@@ -1453,7 +1479,7 @@ def generate_addresses_for_country(
                 
                 # For countries where reverse geocoding is disabled (or universal approach enabled), validate locally first, then with API
                 # CRITICAL: We still need to do API validation to ensure score 1.0
-                if USE_LOCAL_NODES_ONLY or country in DISABLE_REVERSE_COUNTRIES:
+                if not use_reverse_geocoding:
                     tags = n.get("tags", {}) or {}
                     
                     # PROCESS ALL NODES - don't skip any based on tags
@@ -1512,7 +1538,7 @@ def generate_addresses_for_country(
                 # Step 1: Prioritize nodes with house numbers, but use reverse geocoding to ensure Nominatim can find them
                 # CRITICAL: We use reverse geocoding even for nodes with complete tags to ensure addresses are in Nominatim's index
                 # This ensures API validation will find the addresses (score 1.0)
-                if not (USE_LOCAL_NODES_ONLY or country in DISABLE_REVERSE_COUNTRIES):
+                if use_reverse_geocoding:
                     # Check if node has house number (prioritize these for precise geocoding)
                     tags = n.get("tags", {}) or {}
                     has_housenumber = "addr:housenumber" in tags
@@ -1607,7 +1633,7 @@ def generate_addresses_for_country(
                     continue
                 
                 # Step 2: For disabled countries, skip reverse geocoding (already handled above)
-                if USE_LOCAL_NODES_ONLY or country in DISABLE_REVERSE_COUNTRIES:
+                if not use_reverse_geocoding:
                     # This should never happen if the check above worked, but adding as safeguard
                     stats["validation_failed"] += 1
                     if verbose:
@@ -1620,7 +1646,7 @@ def generate_addresses_for_country(
     # 3) If still short, try random sampling (only for countries with reverse geocoding enabled)
     # NOTE: We only use REAL addresses from Overpass/Nominatim - no synthetic addresses
     if len(results) < per_country:
-        if USE_LOCAL_NODES_ONLY or country in DISABLE_REVERSE_COUNTRIES:
+        if not use_reverse_geocoding:
             if verbose:
                 remaining = per_country - len(results)
                 print(f"  ⚠️  Could not find enough real addresses: {len(results)}/{per_country}")
@@ -2131,6 +2157,7 @@ def generate_address_cache(force_reprocess: bool = False):
                     verbose=True,
                     skip_cities=skip_cities,
                     existing_addresses=existing_addresses,
+                    cache_data=address_cache,  # Pass cache data to check address count
                 )
         except KeyboardInterrupt:
             print(f"\n  ⚠️  Interrupted by user")
