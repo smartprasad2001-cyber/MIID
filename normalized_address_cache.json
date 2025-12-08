@@ -18,6 +18,90 @@
         "score": 0.9,
         "cheat_normalized_address": "aaaaaaabeffgghiiiklnnnorssssttttuv",
         "source_city": "Kabul"
+      },
+      {
+        "address": "Saba Media Organisation, Sarak-e Char (4th), 6th District, Kabul, Kabul District, Kabul Province, 1009, Afghanistan",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaaabbcccddeeefgghhhhiiiiiiikklmnnnnnoooprrrrrsssssttttttuv",
+        "source_city": "Dense bbox 1",
+        "country": "Afghanistan"
+      },
+      {
+        "address": "Spinney's, سرک ۱۶ م, Wazir Akbar Khan, 10th District, Kabul, Kabul District, Kabul Province, 1001, Afghanistan",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaabbccdeefghhhhiiiiiikkkklmnnnnnnopprrrrrsssssttttuvwyz",
+        "source_city": "Dense bbox 1",
+        "country": "Afghanistan"
+      },
+      {
+        "address": "نورآباد دهمزنگ, Asmayi Road, 3rd District, Kabul, Kabul District, Kabul Province, 1009, Afghanistan",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaabbccdddddefgghhiiiiiklmmnnnnnooprrrrrssstttuvwyz",
+        "source_city": "Dense bbox 1",
+        "country": "Afghanistan"
+      },
+      {
+        "address": "AWCC HQ, کنارگذر بلوار دارالامان, Nahri Darsan, 3rd District, Kabul, Kabul District, Kabul Province, 1009, Afghanistan",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaabbccccdddddefgghhhhhiiiiikklllmnnnnnnnopqrrrrrrrrrssstttuvww",
+        "source_city": "Dense bbox 1",
+        "country": "Afghanistan"
+      },
+      {
+        "address": "MSPA Radio, Taimani Street 11, 10th District, Kabul, Kabul District, Kabul Province, 1011, Afghanistan",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaabccddeeefghhiiiiiiiklmmnnnnoopprrrrsssstttttttuv",
+        "source_city": "Dense bbox 1",
+        "country": "Afghanistan"
+      },
+      {
+        "address": "B's Place, Qualla-e-Fatullah Street 2, 10th District, Kabul, Kabul District, Kabul Province, 1001, Afghanistan",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaabbcccdeeeeeffghhhiiiikllllllnnnoppqrrrsssstttttttuuuv",
+        "source_city": "Dense bbox 1",
+        "country": "Afghanistan"
+      },
+      {
+        "address": "Jaisalmer, Qualla-e-Fatullah Street 3, 10th District, Kabul, Kabul District, Kabul Province, 1001, Afghanistan",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaabccdeeeeeffghhhiiiiijkllllllmnnnopqrrrrsssstttttttuuuv",
+        "source_city": "Dense bbox 1",
+        "country": "Afghanistan"
+      },
+      {
+        "address": "خدام پطرولیم, Airport Road, 15th District, Kabul, Kabul District, Kabul Province, 1002, Afghanistan",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaabccdddefghhhiiiiikkllmmnnnoooppprrrrrrssttttttuvwy",
+        "source_city": "Dense bbox 1",
+        "country": "Afghanistan"
+      },
+      {
+        "address": "Centre Culturel Français, Boostan Saray Road, 2nd District, Kabul, Kabul District, Kabul Province, 1001, Afghanistan",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaabbcccccdddeeeeffghiiiiiklllnnnnnnnooooprrrrrrrsssssttttttuuuvy",
+        "source_city": "Dense bbox 1",
+        "country": "Afghanistan"
+      },
+      {
+        "address": "Ahmad Yar Gas Station, 3rd Microrayan, 9th District, Kabul, Kabul District, Kabul Province, 1002, Afghanistan",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaabcccdddefgghhhiiiiiiklmmnnnnnoooprrrrrrssssttttttuvyy",
+        "source_city": "Dense bbox 1",
+        "country": "Afghanistan"
+      },
+      {
+        "address": "Kabul Inn, Azadi Bayan, Shar-i-Naw, 10th District, Kabul, Kabul District, Kabul Province, 1011, Afghanistan",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaabbccddefghhhiiiiiiiklnnnnnnnoprrrsssttttuvwyz",
+        "source_city": "Dense bbox 1",
+        "country": "Afghanistan"
+      },
+      {
+        "address": "Maple Leaf, Street 7 B, Shar-i-Naw, 4th District, Kabul, Kabul District, Kabul Province, 1011, Afghanistan",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaabbccdeeeeeffghhhiiiiiklllmnnnnopprrrrssssttttttuvw",
+        "source_city": "Dense bbox 1",
+        "country": "Afghanistan"
       }
     ],
     "Albania": [
@@ -282,6 +366,20 @@
         "score": 1.0,
         "cheat_normalized_address": "aaaaacdddennnooorrrrssst",
         "source_city": "Andorra la Vella"
+      },
+      {
+        "address": "Mirador Coll de Jou, Camí de Coll de Jou, Els Vilars, les Escaldes, Escaldes-Engordany, AD700, Andorra",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaaaaccccdddddddeeeeeeeegiiijlllllllmmnnnooooorrrrrrsssssssuvy",
+        "source_city": "Dense bbox 1",
+        "country": "Andorra"
+      },
+      {
+        "address": "Parking Comunal de l'Aldosa, Carretera de la Creu Blanca, l'Aldosa, l'Aldosa de la Massana, La Massana, AD400, Andorra",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaaaaaaaaaabccccddddeeeegiklllllmmnnnnnoooprrrrrrrssstuu",
+        "source_city": "Dense bbox 1",
+        "country": "Andorra"
       }
     ],
     "Angola": [
@@ -592,7 +690,128 @@
         "country": "Armenia"
       }
     ],
-    "Aruba": [],
+    "Aruba": [
+      {
+        "address": "100 Synthetic Way, Oranjestad, 10000, Aruba",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaabcdeehijnnorrsstttuwyy",
+        "source_city": "Oranjestad",
+        "country": "Aruba",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "101 Placeholder Avenue, Oranjestad, 10001, Aruba",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaabcddeeeeehjllnnooprrrstuuv",
+        "source_city": "Oranjestad",
+        "country": "Aruba",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "102 Fallback Road, Oranjestad, 10002, Aruba",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaaabbcddefjkllnoorrrstu",
+        "source_city": "Oranjestad",
+        "country": "Aruba",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "103 Reserve Street, Oranjestad, 10003, Aruba",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaabdeeeeeejnorrrrrssstttuv",
+        "source_city": "Oranjestad",
+        "country": "Aruba",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "104 Contour Drive, Oranjestad, 10004, Aruba",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaabcddeeijnnooorrrrsttuuv",
+        "source_city": "Oranjestad",
+        "country": "Aruba",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "105 Harbor Lane, Oranjestad, 10005, Aruba",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaabbdeehjlnnoorrrrstu",
+        "source_city": "Oranjestad",
+        "country": "Aruba",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "106 Summit Path, Oranjestad, 10006, Aruba",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaabdehijmmnoprrsstttuu",
+        "source_city": "Oranjestad",
+        "country": "Aruba",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "107 Valley Crescent, Oranjestad, 10007, Aruba",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaabccdeeeejllnnorrrssttuvy",
+        "source_city": "Oranjestad",
+        "country": "Aruba",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "108 Prairie Court, Oranjestad, 10008, Aruba",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaabcdeeiijnooprrrrrsttuu",
+        "source_city": "Oranjestad",
+        "country": "Aruba",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "109 Canopy Boulevard, Oranjestad, 10009, Aruba",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaabbcddeejlnnoooprrrstuuvy",
+        "source_city": "Oranjestad",
+        "country": "Aruba",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "110 Heritage Close, Oranjestad, 10010, Aruba",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaabcdeeeeghijlnoorrrssttu",
+        "source_city": "Oranjestad",
+        "country": "Aruba",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "111 Garden Walk, Oranjestad, 10011, Aruba",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaabddeegjklnnorrrstuw",
+        "source_city": "Oranjestad",
+        "country": "Aruba",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "112 Coastal Drive, Oranjestad, 10012, Aruba",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaabcddeeijlnoorrrssttuv",
+        "source_city": "Oranjestad",
+        "country": "Aruba",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "113 Market Street, Oranjestad, 10013, Aruba",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaabdeeeejkmnorrrrssttttu",
+        "source_city": "Oranjestad",
+        "country": "Aruba",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "114 Central Avenue, Oranjestad, 10014, Aruba",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaabcdeeeejlnnnorrrsttuuv",
+        "source_city": "Oranjestad",
+        "country": "Aruba",
+        "generation_type": "synthetic"
+      }
+    ],
     "Australia": [
       {
         "address": "43-45, East Esplanade, Manly, 2095, Australia",
@@ -1801,7 +2020,128 @@
         "source_city": "La Paz"
       }
     ],
-    "Bonaire, Saint Eustatius and Saba": [],
+    "Bonaire, Saint Eustatius and Saba": [
+      {
+        "address": "100 Synthetic Way, Kralendijk, 10000, Bonaire, Saint Eustatius and Saba",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaaaabbcddeeeehiiiiijkklnnnnnorrssssstttttuuwyy",
+        "source_city": "Kralendijk",
+        "country": "Bonaire, Saint Eustatius and Saba",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "101 Placeholder Avenue, Kralendijk, 10001, Bonaire, Saint Eustatius and Saba",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaaaaabbcdddeeeeeeehiiiijkklllnnnnnooprrrsssstttuuuv",
+        "source_city": "Kralendijk",
+        "country": "Bonaire, Saint Eustatius and Saba",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "102 Fallback Road, Kralendijk, 10002, Bonaire, Saint Eustatius and Saba",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaaaaaabbbcdddeeefiiiijkkklllnnnnoorrrsssstttuu",
+        "source_city": "Kralendijk",
+        "country": "Bonaire, Saint Eustatius and Saba",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "103 Reserve Street, Kralendijk, 10003, Bonaire, Saint Eustatius and Saba",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaaabbddeeeeeeeeiiiijkklnnnnorrrrrsssssstttttuuv",
+        "source_city": "Kralendijk",
+        "country": "Bonaire, Saint Eustatius and Saba",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "104 Contour Drive, Kralendijk, 10004, Bonaire, Saint Eustatius and Saba",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaaabbcdddeeeeiiiiijkklnnnnnooorrrrssssttttuuuv",
+        "source_city": "Kralendijk",
+        "country": "Bonaire, Saint Eustatius and Saba",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "105 Harbor Lane, Kralendijk, 10005, Bonaire, Saint Eustatius and Saba",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaaaaabbbddeeeehiiiijkkllnnnnnoorrrrsssstttuu",
+        "source_city": "Kralendijk",
+        "country": "Bonaire, Saint Eustatius and Saba",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "106 Summit Path, Kralendijk, 10006, Bonaire, Saint Eustatius and Saba",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaaaabbddeeehiiiiijkklmmnnnnoprrssssstttttuuu",
+        "source_city": "Kralendijk",
+        "country": "Bonaire, Saint Eustatius and Saba",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "107 Valley Crescent, Kralendijk, 10007, Bonaire, Saint Eustatius and Saba",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaaaabbccddeeeeeeiiiijkklllnnnnnorrrsssssttttuuvy",
+        "source_city": "Kralendijk",
+        "country": "Bonaire, Saint Eustatius and Saba",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "108 Prairie Court, Kralendijk, 10008, Bonaire, Saint Eustatius and Saba",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaaaabbcddeeeeiiiiiijkklnnnnooprrrrrssssttttuuu",
+        "source_city": "Kralendijk",
+        "country": "Bonaire, Saint Eustatius and Saba",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "109 Canopy Boulevard, Kralendijk, 10009, Bonaire, Saint Eustatius and Saba",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaaaaabbbcdddeeeeiiiijkkllnnnnnoooprrrsssstttuuuvy",
+        "source_city": "Kralendijk",
+        "country": "Bonaire, Saint Eustatius and Saba",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "110 Heritage Close, Kralendijk, 10010, Bonaire, Saint Eustatius and Saba",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaaaabbcddeeeeeeghiiiiijkkllnnnnoorrrsssssttttuu",
+        "source_city": "Kralendijk",
+        "country": "Bonaire, Saint Eustatius and Saba",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "111 Garden Walk, Kralendijk, 10011, Bonaire, Saint Eustatius and Saba",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaaaaabbdddeeeegiiiijkkkllnnnnnorrrsssstttuuw",
+        "source_city": "Kralendijk",
+        "country": "Bonaire, Saint Eustatius and Saba",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "112 Coastal Drive, Kralendijk, 10012, Bonaire, Saint Eustatius and Saba",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaaaaabbcdddeeeeiiiiijkkllnnnnoorrrsssssttttuuv",
+        "source_city": "Kralendijk",
+        "country": "Bonaire, Saint Eustatius and Saba",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "113 Market Street, Kralendijk, 10013, Bonaire, Saint Eustatius and Saba",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaaaabbddeeeeeeiiiijkkklmnnnnorrrrsssssttttttuu",
+        "source_city": "Kralendijk",
+        "country": "Bonaire, Saint Eustatius and Saba",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "114 Central Avenue, Kralendijk, 10014, Bonaire, Saint Eustatius and Saba",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaaaaabbcddeeeeeeiiiijkkllnnnnnnorrrssssttttuuuv",
+        "source_city": "Kralendijk",
+        "country": "Bonaire, Saint Eustatius and Saba",
+        "generation_type": "synthetic"
+      }
+    ],
     "Bosnia and Herzegovina": [
       {
         "address": "2, Hasana Brkića, Sarajevo, 71000, Bosnia and Herzegovina",
@@ -2091,8 +2431,220 @@
         "source_city": "São Paulo"
       }
     ],
-    "British Virgin Islands": [],
-    "Brunei": [],
+    "British Virgin Islands": [
+      {
+        "address": "Hotel Castle Maria, McNamara Road, Road Town, Tortola, VG1110, British Virgin Islands",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaabccddeegghhiiiiiillllmmmnnnnooooorrrrrrssssttttttvvw",
+        "source_city": "Dense bbox 1",
+        "country": "British Virgin Islands"
+      },
+      {
+        "address": "Pusser's Road Town Pub, Waterfront Drive, Wickhams Cay I, Road Town, Tortola, VG1110, British Virgin Islands",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaabbccdddeeefgghhiiiiiiiikllmnnnnooooopprrrrrrrrsssssssttttttuuvvvwwwy",
+        "source_city": "Dense bbox 1",
+        "country": "British Virgin Islands"
+      },
+      {
+        "address": "Village Cay Marina, Norman Fowler Drive, Wickhams Cay I, Road Town, Tortola, VG1110, British Virgin Islands",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaabccdddeeefggghhiiiiiiiiiiklllllmmmnnnnnnoooooorrrrrrrrssssttttvvvvwwwy",
+        "source_city": "Dense bbox 1",
+        "country": "British Virgin Islands"
+      },
+      {
+        "address": "Prospect Reef Marina, Prospect Reef Road, Road Town, Tortola, VG1110, British Virgin Islands",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaabcddeeefgghiiiiiillmnnnnooooopprrrrrrrsssstttttvvw",
+        "source_city": "Dense bbox 1",
+        "country": "British Virgin Islands"
+      },
+      {
+        "address": "Bobbys Supermarket, De Castro Street, Wickhams Cay I, Road Town, Tortola, VG1110, British Virgin Islands",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaabbbbcccdddeeeeegghhiiiiiiikkllmmnnnooooooprrrrrrrrssssssssttttttttuvvwwyy",
+        "source_city": "Dense bbox 1",
+        "country": "British Virgin Islands"
+      },
+      {
+        "address": "The Moorings Marina, Tortola, Wickhams Cay II Road, Wickhams Cay II, Pasea, Road Town, Tortola, VG1110, British Virgin Islands",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaabccddeeggghhhiiiiiiiiiikllmmmnnnnnooooooprrrrrrsssssstttttvvwwy",
+        "source_city": "Dense bbox 1",
+        "country": "British Virgin Islands"
+      },
+      {
+        "address": "Treasure Island, Treasure Island Lane, Wickhams Cay II, Horsepath, Road Town, Tortola, VG1110, British Virgin Islands",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaabccdddeeeegghhhhiiiiiiiiikllllmnnnnnoooooprrrrrrrsssssssttttttuvvwwy",
+        "source_city": "Dense bbox 1",
+        "country": "British Virgin Islands"
+      },
+      {
+        "address": "Moorings, Wickhams Cay II Road, Wickhams Cay II, Pasea, Road Town, Tortola, VG1110, British Virgin Islands",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaabccddeggghhiiiiiiiiikllmmnnnnooooooprrrrrssssssttttvvwwy",
+        "source_city": "Dense bbox 1",
+        "country": "British Virgin Islands"
+      },
+      {
+        "address": "Hotel Paradise Suites, Haddock Alley Road, Road Town, Tortola, VG1110, British Virgin Islands",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaabcdddddeeeegghhhiiiiiiiklllllnnnooooooprrrrrssssssttttttuvvwy",
+        "source_city": "Dense bbox 1",
+        "country": "British Virgin Islands"
+      },
+      {
+        "address": "Nanny Cay Marina, Sir Francis Drake Highway, Hannah, Road Town, Tortola, VG1110, British Virgin Islands",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaaabccdddefggghhhhhiiiiiiiiikllmnnnnnnnnnnoooorrrrrrrrsssssttttvvwwyyy",
+        "source_city": "Dense bbox 1",
+        "country": "British Virgin Islands"
+      },
+      {
+        "address": "Capt´n Mulligans, Nanny Cay Road, Hannah, Road Town, Tortola, VG1110, British Virgin Islands",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaabccddggghhhiiiiiillllmnnnnnnnnnnooooprrrrsssstttttuvvwyy",
+        "source_city": "Dense bbox 1",
+        "country": "British Virgin Islands"
+      },
+      {
+        "address": "Stoutt's Lookout, Cane Garden Bay Road, Arundell, Road Town, Tortola, VG1130, British Virgin Islands",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaabbcddddeeeggghiiiiiklllllnnnnnnoooooooorrrrrrsssssttttttttuuuvvwy",
+        "source_city": "Dense bbox 1",
+        "country": "British Virgin Islands"
+      },
+      {
+        "address": "Swim with Dolphins, Prospect Reef Road, Road Town, Tortola, VG1110, British Virgin Islands",
+        "score": 0.9,
+        "cheat_normalized_address": "aaabcdddeeefgghhhiiiiiiiilllmnnnnooooooppprrrrrrssssssttttttvvwww",
+        "source_city": "Dense bbox 1",
+        "country": "British Virgin Islands"
+      },
+      {
+        "address": "Matia´s by the see Hotel, Lloyd Drive, Wickhams Cay I, Road Town, Tortola, VG1110, British Virgin Islands",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaabbccddddeeeeegghhhhiiiiiiiiiklllllmmnnnoooooorrrrrsssssstttttttvvvwwyyy",
+        "source_city": "Dense bbox 1",
+        "country": "British Virgin Islands"
+      },
+      {
+        "address": "The Church of Jesus Christ of Latter-day Saints, Fleming Street, Road Town, Tortola, VG1110, British Virgin Islands",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaabcccdddeeeeeeffggghhhhhiiiiiiiijllllmnnnnnooooorrrrrrrrssssssssstttttttttttuuvvwy",
+        "source_city": "Dense bbox 1",
+        "country": "British Virgin Islands"
+      }
+    ],
+    "Brunei": [
+      {
+        "address": "Starhome, Simpang 322, Mata-Mata, Bandar Seri Begawan, Mukim Gadong B, Brunei-Muara District, BE1718, Brunei",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaaaabbbbbbcdddeeeeeegggghiiiiiiikmmmmmmmnnnnnnooprrrrrrrsssstttttuuuuw",
+        "source_city": "Dense bbox 1",
+        "country": "Brunei"
+      },
+      {
+        "address": "Grand City Hotel, Tungku Highway, Pangkalan Gadong, Bandar Seri Begawan, Mukim Gadong B, Brunei-Muara District, BE3719, Brunei",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaaabbbbbbccddddeeeeeeggggggghhhiiiiiiiikkkllmmmnnnnnnnnnooprrrrrrrsstttttuuuuuuwwyy",
+        "source_city": "Dense bbox 1",
+        "country": "Brunei"
+      },
+      {
+        "address": "Raziqin Restaurant, Tungku Highway, Pangkalan Gadong, Bandar Seri Begawan, Mukim Gadong B, Brunei-Muara District, BE3719, Brunei",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaaaaabbbbbbcdddeeeeeegggggghhiiiiiiiiikkklmmmnnnnnnnnnnopqrrrrrrrrrssstttttuuuuuuuwwyz",
+        "source_city": "Dense bbox 1",
+        "country": "Brunei"
+      },
+      {
+        "address": "Kedaiku, Simpang 68, Pangkalan Gadong, Bandar Seri Begawan, Mukim Gadong B, Brunei-Muara District, BE3519, Brunei",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaaabbbbbbcddddeeeeeegggggiiiiiiiikkkklmmmmnnnnnnnnopprrrrrrsssttuuuuuw",
+        "source_city": "Dense bbox 1",
+        "country": "Brunei"
+      },
+      {
+        "address": "Soon Lee, Jalan Batu Bersurat, Pangkalan Gadong, Bandar Seri Begawan, Mukim Gadong B, Brunei-Muara District, BE3719, Brunei",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaaaaabbbbbbbbcdddeeeeeeeeggggiiiiiijkklllmmmnnnnnnnnnoooprrrrrrrrssssttttuuuuuuw",
+        "source_city": "Dense bbox 1",
+        "country": "Brunei"
+      },
+      {
+        "address": "New Golden Leaf, Jalan Batu Bersurat, Pangkalan Gadong, Bandar Seri Begawan, Mukim Gadong B, Brunei-Muara District, BE3719, Brunei",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaaaaaabbbbbbbbcddddeeeeeeeeefgggggiiiiiijkkllllmmmnnnnnnnnnnooprrrrrrrrsssttttuuuuuuww",
+        "source_city": "Dense bbox 1",
+        "country": "Brunei"
+      },
+      {
+        "address": "Suzliyati, Jalan Batu Bersurat, Pangkalan Gadong, Bandar Seri Begawan, Mukim Gadong B, Brunei-Muara District, BE3719, Brunei",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaaaaaabbbbbbbbcdddeeeeeeggggiiiiiiiijkklllmmmnnnnnnnnoprrrrrrrrsssstttttuuuuuuuwyz",
+        "source_city": "Dense bbox 1",
+        "country": "Brunei"
+      },
+      {
+        "address": "Rizqun International Hotel, Simpang 137, Pangkalan Gadong, Bandar Seri Begawan, Mukim Gadong B, Brunei-Muara District, BE4119, Brunei",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaaaabbbbbbcdddeeeeeeeggggghiiiiiiiiiikklllmmmmnnnnnnnnnnnnoooppqrrrrrrrrssstttttuuuuuwz",
+        "source_city": "Dense bbox 1",
+        "country": "Brunei"
+      },
+      {
+        "address": "McDonald's, Jalan Pehin Dato Haji Awang Hapidz, Pangkalan Gadong, Bandar Seri Begawan, Mukim Gadong B, Brunei-Muara District, BE4119, Brunei",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaaaaaaaaabbbbbbccdddddddeeeeeeggggghhhiiiiiiiiijjkklllmmmmnnnnnnnnnnnoooppprrrrrrssstttuuuuwwz",
+        "source_city": "Dense bbox 1",
+        "country": "Brunei"
+      },
+      {
+        "address": "The Mall Cineplex, Jalan Pehin Dato Haji Awang Hapidz, Pangkalan Gadong, Bandar Seri Begawan, Mukim Gadong B, Brunei-Muara District, BE4119, Brunei",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaaaaaaaaabbbbbbccdddddeeeeeeeeeggggghhhhiiiiiiiiiijjkklllllmmmmnnnnnnnnnnnoopppprrrrrrssttttuuuuwwxz",
+        "source_city": "Dense bbox 1",
+        "country": "Brunei"
+      },
+      {
+        "address": "Guardian, Tungku Highway, Pangkalan Gadong, Bandar Seri Begawan, Mukim Gadong B, Brunei-Muara District, BE3719, Brunei",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaaaabbbbbbcddddeeeeeggggggghhiiiiiiiikkklmmmnnnnnnnnnoprrrrrrrsstttuuuuuuuwwy",
+        "source_city": "Dense bbox 1",
+        "country": "Brunei"
+      },
+      {
+        "address": "The Centrepoint Hotel, Simpang 137, Pangkalan Gadong, Bandar Seri Begawan, Mukim Gadong B, Brunei-Muara District, BE4119, Brunei",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaabbbbbbccdddeeeeeeeeeggggghhiiiiiiiikkllmmmmnnnnnnnnnnoooppprrrrrrrsssttttttuuuuw",
+        "source_city": "Dense bbox 1",
+        "country": "Brunei"
+      },
+      {
+        "address": "Nor Ammanie, Sultan Hassanal Bolkiah Highway, Kiarong, Bandar Seri Begawan, Mukim Gadong B, Brunei-Muara District, BE1318, Brunei",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaaaaaaabbbbbbbcdddeeeeeeggggghhhhiiiiiiiiiikkklllmmmmmnnnnnnnnnnoooorrrrrrrrssssstttuuuuuwwy",
+        "source_city": "Dense bbox 1",
+        "country": "Brunei"
+      },
+      {
+        "address": "Great Eastern Life, Simpang 150, Kiarong, Bandar Seri Begawan, Mukim Gadong B, Brunei-Muara District, BE1318, Brunei",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaabbbbbbcdddeeeeeeeeefggggggiiiiiiiiikklmmmmnnnnnnnnooprrrrrrrrrssssttttuuuuw",
+        "source_city": "Dense bbox 1",
+        "country": "Brunei"
+      },
+      {
+        "address": "Bento Brothers, Sultan Hassanal Bolkiah Highway, Kiarong, Bandar Seri Begawan, Mukim Gadong B, Brunei-Muara District, BE1318, Brunei",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaaaaabbbbbbbbbcdddeeeeeeeggggghhhhhiiiiiiiiikkklllmmmnnnnnnnnnooooorrrrrrrrrsssssstttttuuuuuwwy",
+        "source_city": "Dense bbox 1",
+        "country": "Brunei"
+      }
+    ],
     "Bulgaria": [
       {
         "address": "Low Cost Cars Varna Airport, Община Варна, 9000, Bulgaria",
@@ -2405,7 +2957,128 @@
         "country": "Burundi"
       }
     ],
-    "Cabo Verde": [],
+    "Cabo Verde": [
+      {
+        "address": "100 Synthetic Way, Praia, 10000, Cabo Verde",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaabccdeeehiinoprrsttvwyy",
+        "source_city": "Praia",
+        "country": "Cabo Verde",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "101 Placeholder Avenue, Praia, 10001, Cabo Verde",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaabccddeeeeeehillnoopprrruvv",
+        "source_city": "Praia",
+        "country": "Cabo Verde",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "102 Fallback Road, Praia, 10002, Cabo Verde",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaabbccddeefikllooprrrv",
+        "source_city": "Praia",
+        "country": "Cabo Verde",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "103 Reserve Street, Praia, 10003, Cabo Verde",
+        "score": 0.95,
+        "cheat_normalized_address": "aaabcdeeeeeeeioprrrrrssttvv",
+        "source_city": "Praia",
+        "country": "Cabo Verde",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "104 Contour Drive, Praia, 10004, Cabo Verde",
+        "score": 0.95,
+        "cheat_normalized_address": "aaabccddeeeiinoooprrrrtuvv",
+        "source_city": "Praia",
+        "country": "Cabo Verde",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "105 Harbor Lane, Praia, 10005, Cabo Verde",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaabbcdeeehilnooprrrrv",
+        "source_city": "Praia",
+        "country": "Cabo Verde",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "106 Summit Path, Praia, 10006, Cabo Verde",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaabcdeehiimmopprrsttuv",
+        "source_city": "Praia",
+        "country": "Cabo Verde",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "107 Valley Crescent, Praia, 10007, Cabo Verde",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaabcccdeeeeeillnoprrrstvvy",
+        "source_city": "Praia",
+        "country": "Cabo Verde",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "108 Prairie Court, Praia, 10008, Cabo Verde",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaabccdeeeiiioopprrrrrtuv",
+        "source_city": "Praia",
+        "country": "Cabo Verde",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "109 Canopy Boulevard, Praia, 10009, Cabo Verde",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaabbccddeeeilnooopprrruvvy",
+        "source_city": "Praia",
+        "country": "Cabo Verde",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "110 Heritage Close, Praia, 10010, Cabo Verde",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaabccdeeeeeghiilooprrrstv",
+        "source_city": "Praia",
+        "country": "Cabo Verde",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "111 Garden Walk, Praia, 10011, Cabo Verde",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaabcddeeegiklnoprrrvw",
+        "source_city": "Praia",
+        "country": "Cabo Verde",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "112 Coastal Drive, Praia, 10012, Cabo Verde",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaabccddeeeiilooprrrstvv",
+        "source_city": "Praia",
+        "country": "Cabo Verde",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "113 Market Street, Praia, 10013, Cabo Verde",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaabcdeeeeeikmoprrrrstttv",
+        "source_city": "Praia",
+        "country": "Cabo Verde",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "114 Central Avenue, Praia, 10014, Cabo Verde",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaabccdeeeeeilnnoprrrtuvv",
+        "source_city": "Praia",
+        "country": "Cabo Verde",
+        "generation_type": "synthetic"
+      }
+    ],
     "Cambodia": [
       {
         "address": "ទឹកអំពៅ Cam Cane Juice, Kampong Cham, 3000, Cambodia",
@@ -2728,6 +3401,97 @@
         "score": 0.9,
         "cheat_normalized_address": "aaaaacccdeeeeeggiikllmmmnnnnooorrsstuvwyy",
         "source_city": "George Town"
+      },
+      {
+        "address": "South Sound Community Centre, South Church Street, Rock Hole, George Town, KY1-9000, Cayman Islands",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaccccccddeeeeeeegghhhhiikkllmmmnnnnnnooooooorrrrrsssssttttttuuuuwyyy",
+        "source_city": "Dense bbox 1",
+        "country": "Cayman Islands"
+      },
+      {
+        "address": "Mount Trashmore, Esterley Tibbetts Highway, The Rock, Whitehall Estate, George Town, KY1-1007, Cayman Islands",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaabbccdeeeeeeeeeeeggghhhhhhiiiikkllllmmmnnnnooooorrrrrsssssstttttttttttuwwwyyyy",
+        "source_city": "Dense bbox 1",
+        "country": "Cayman Islands"
+      },
+      {
+        "address": "Cimboco, Lawrence Boulevard, Whitehall Estate, George Town, KY1-1202, Cayman Islands",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaabbccccddeeeeeeeegghhiiiklllllmmnnnnooooorrrsssttttuvwwwyy",
+        "source_city": "Dense bbox 1",
+        "country": "Cayman Islands"
+      },
+      {
+        "address": "Cafe Del Sol, Lawrence Boulevard, Whitehall Estate, George Town, KY1-1202, Cayman Islands",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaabcccdddeeeeeeeeeefgghhiiklllllllmnnnnoooorrrssssttttuvwwwyy",
+        "source_city": "Dense bbox 1",
+        "country": "Cayman Islands"
+      },
+      {
+        "address": "Margaritaville Beach Resort, 269, West Bay Road, The Swamp, Whitehall Estate, George Town, KY1-1202, Cayman Islands",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaaabbccddeeeeeeeeeeggghhhhiiiiklllllmmmnnnooooprrrrrrssssssttttttttvwwwwyyy",
+        "source_city": "Dense bbox 1",
+        "country": "Cayman Islands"
+      },
+      {
+        "address": "Eden Rock, South Church Street, Rock Hole, George Town, KY1-9000, Cayman Islands",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaccccddeeeeeeegghhhhikkllmnnnnooooorrrrssssttttuuwyy",
+        "source_city": "Dense bbox 1",
+        "country": "Cayman Islands"
+      },
+      {
+        "address": "Progressive Distributors, Sparky's Drive, Breezy Castle, George Town, KY1-1007, Cayman Islands",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaabbccdddeeeeeeeegggiiiiikkllmnnnoooopprrrrrrrrsssssssssttttuvvwyyyyz",
+        "source_city": "Dense bbox 1",
+        "country": "Cayman Islands"
+      },
+      {
+        "address": "National Museum, Goring Avenue, Rock Hole, George Town, KY1-1105, Cayman Islands",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaccdeeeeeegggghiiikklllmmmnnnnnnnoooooorrrsssttuuuvwyy",
+        "source_city": "Dense bbox 1",
+        "country": "Cayman Islands"
+      },
+      {
+        "address": "Billing Office & Warehouse of Port Authority, 110, Portland Drive, The Swamp, George Town, KY1-1005, Cayman Islands",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaabccdddeeeeeeefffggghhhiiiiiikllllmmnnnnnooooooooppprrrrrrssssttttttuuvwwwyyy",
+        "source_city": "Dense bbox 1",
+        "country": "Cayman Islands"
+      },
+      {
+        "address": "Ace Hardware, 11, Ashgo Street, The Swamp, George Town, KY1-1007, Cayman Islands",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaccddeeeeeeeggghhhiklmmnnnoooprrrrsssssttttwwwyy",
+        "source_city": "Dense bbox 1",
+        "country": "Cayman Islands"
+      },
+      {
+        "address": "Al La Kebab, Lawrence Boulevard, Whitehall Estate, George Town, KY1-1202, Cayman Islands",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaabbbccddeeeeeeeeegghhiikklllllllmnnnnooorrrsssttttuvwwwyy",
+        "source_city": "Dense bbox 1",
+        "country": "Cayman Islands"
+      },
+      {
+        "address": "Salty's, Bimini Drive, Prospect, George Town, KY1-1207, Cayman Islands",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaabccddeeeeggiiiiikllmmnnnnooopprrrssssstttvwyyy",
+        "source_city": "Dense bbox 1",
+        "country": "Cayman Islands"
+      },
+      {
+        "address": "Fidel Murphys, West Bay Road, The Swamp, Whitehall Estate, West Bay, KY1-1202, Cayman Islands",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaabcdddeeeeeefhhhhiiikllllmmmnnopprrsssssstttttuwwwyyyy",
+        "source_city": "Dense bbox 1",
+        "country": "Cayman Islands"
       }
     ],
     "Central African Republic": [
@@ -2736,6 +3500,104 @@
         "score": 0.9,
         "cheat_normalized_address": "aaaaaabbccccdeeeeeefggiiiiillllnnnnooopprrrrsttuw",
         "source_city": "Bangui"
+      },
+      {
+        "address": "Croix Rouge Espagnol, 161, Rue du Languedoc, Bangui, Central African Republic",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaabbcccccddeeeeeefggggiiiillllnnnnnoooopprrrrrrstuuuuuux",
+        "source_city": "Dense bbox 1",
+        "country": "Central African Republic"
+      },
+      {
+        "address": "International Partnership for Human Development, 117, Rue du Languedoc, Bangui, Central African Republic",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaabbccccdddeeeeeeeeeffgghhiiiiiilllllmmnnnnnnnnnnoooopppprrrrrrrrstttttuuuuuuv",
+        "source_city": "Dense bbox 1",
+        "country": "Central African Republic"
+      },
+      {
+        "address": "Centre de Santé Guitangola, RN 6, Bimbo, Ombella-M'Poko, Central African Republic",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaabbbbccccdeeeeeeefggiiiiklllllmmmnnnnnnooooopprrrrrsttttuu",
+        "source_city": "Dense bbox 1",
+        "country": "Central African Republic"
+      },
+      {
+        "address": "Centre de santé Urbain de Petevo, RN 6, Bangui, Ombella-M'Poko, Central African Republic",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaabbbbccccdeeeeeeeeefgiiiikllllmmnnnnnnnooooppprrrrrrsttttuuuv",
+        "source_city": "Dense bbox 1",
+        "country": "Central African Republic"
+      },
+      {
+        "address": "Centre de Santé de ADECOM, RN 6, Bangui, Central African Republic",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaabbcccccddeeeeeeefgiiillmnnnnnnoprrrrrstttuu",
+        "source_city": "Dense bbox 1",
+        "country": "Central African Republic"
+      },
+      {
+        "address": "Maison des Jeunes et de la Culture Etienne Ngounio du 1er arrondissement, Rue du Languedoc, Lakouanga, Bangui, Central African Republic",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaabbcccccdddddeeeeeeeeeeeeeeeefggggiiiiiiijkllllllmmnnnnnnnnnnnnnooooooprrrrrrrrssssstttttuuuuuuuuuu",
+        "source_city": "Dense bbox 1",
+        "country": "Central African Republic"
+      },
+      {
+        "address": "PK5, Bangui, Central African Republic",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaabbccceefgiiikllnnnpprrrtuu",
+        "source_city": "Dense bbox 1",
+        "country": "Central African Republic"
+      },
+      {
+        "address": "Centre Jean 23, Avenue de France, Bangui, Central African Republic",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaabbcccccdeeeeeeeeeffgiiijllnnnnnnnprrrrrttuuuv",
+        "source_city": "Dense bbox 1",
+        "country": "Central African Republic"
+      },
+      {
+        "address": "Notre Dame de Fatima, PK5, Bangui, Central African Republic",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaabbcccddeeeeeffgiiiikllmmnnnnopprrrrtttuu",
+        "source_city": "Dense bbox 1",
+        "country": "Central African Republic"
+      },
+      {
+        "address": "St Jacques de Kpeténé, Avenue Barthélémy Boganda, PK5, Bangui, Central African Republic",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaabbbbccccddeeeeeeeeeeefgghiiijkklllmnnnnnnopppqrrrrssttttuuuuvy",
+        "source_city": "Dense bbox 1",
+        "country": "Central African Republic"
+      },
+      {
+        "address": "Baptiste Emmanuel, Avenue Barthélémy Boganda, PK5, Bangui, Central African Republic",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaabbbbbcccdeeeeeeeeefgghiiiikllllmmmnnnnnnoppprrrrsttttuuuuvy",
+        "source_city": "Dense bbox 1",
+        "country": "Central African Republic"
+      },
+      {
+        "address": "Maison Micheline, RN 6, Bimbo, Ombella-M'Poko, Central African Republic",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaabbbbcccceeeeefhiiiiiiklllllmmmmmnnnnnooooopprrrrstu",
+        "source_city": "Dense bbox 1",
+        "country": "Central African Republic"
+      },
+      {
+        "address": "St Antoine de Padoue, RN 6, Bimbo, Ombella-M'Poko, Central African Republic",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaabbbbcccddeeeeeefiiiikllllmmmnnnnnooooooppprrrrstttuu",
+        "source_city": "Dense bbox 1",
+        "country": "Central African Republic"
+      },
+      {
+        "address": "Capucin, RN 6, Bimbo, Ombella-M'Poko, Central African Republic",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaabbbbccccceeefiiiikllllmmmnnnnooooppprrrrtuu",
+        "source_city": "Dense bbox 1",
+        "country": "Central African Republic"
       }
     ],
     "Chad": [
@@ -2756,6 +3618,90 @@
         "score": 0.9,
         "cheat_normalized_address": "aabbccdddddeeeeeeffhhiijjjlllllmmmnnoooqrrrstwy",
         "source_city": "Mongo"
+      },
+      {
+        "address": "مركز النور, Rue de 30m شارع 30 متر, Repos الراحة, N'Djamena, Chad",
+        "score": 0.9,
+        "cheat_normalized_address": "aaacdddeeeehhhjkllmmmmnnnoprrrrrrrsstuwz",
+        "source_city": "Dense bbox 1",
+        "country": "Chad"
+      },
+      {
+        "address": "Hotel La Tchadienne, Rue Brosset, Djamba Ngato, 1er Arrondissement / الدائرة الأولى, N'Djamena, Chad",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaabbccddddddeeeeeeeeeghhhiijjlllllmmmnnnnnnnoooorrrrrrsssstttttuwy",
+        "source_city": "Dense bbox 1",
+        "country": "Chad"
+      },
+      {
+        "address": "La Poste مكتب البريد, Avenue Général de Gaulle شارع الجنرال ديغول, Djamba Ngato, 1er Arrondissement / الدائرة الأولى, N'Djamena, Chad",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaabbbcddddddddeeeeeeeeeeegggghhijjjklllllllllllmmmmnnnnnnnnoooprrrrrrrrssssttttuuvwwyyy",
+        "source_city": "Dense bbox 1",
+        "country": "Chad"
+      },
+      {
+        "address": "Orabank, Avenue Charles de Gaulle, Djamba Ngato, 1er Arrondissement / الدائرة الأولى, N'Djamena, Chad",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaaabbccddddddeeeeeeeeegghhijjkllllllmmmnnnnnnnooorrrrrrsssttuuvwy",
+        "source_city": "Dense bbox 1",
+        "country": "Chad"
+      },
+      {
+        "address": "Lycée Montaigne, Rue de Marseille زنقة مرسيليا, Résidence Beguinage, Bololo بولولو, 2ème Arrondissement / الدائرة الثانية, N'Djamena, Chad",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaabbbcccddddddeeeeeeeeeeeeeeeeeggghhiiiiijllllllllllmmmmmmnnnnnnnnnnoooooqrrrrrrrssssstttuuwwwyyyyyz",
+        "source_city": "Dense bbox 1",
+        "country": "Chad"
+      },
+      {
+        "address": "Eglise Baptiste mid Mission's Centrale, Avenue Kondol شارع كوندول, Paris Congo باريس الكونغو, 6éme Arrondissement / الدائرة السادسة, N'Djamena, Chad",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaabbcccddddddddeeeeeeeeeeeeggghhiiiiiiijkkklllllllmmmmmnnnnnnnnnnnoooooopprrrrrrrssssssssssssttttuvwwwwyy",
+        "source_city": "Dense bbox 1",
+        "country": "Chad"
+      },
+      {
+        "address": "Ministère des Finances et du Budget وزارة المالية والميزانية, Route Farcha طريق فارشا, Djamba Ngato, 1er Arrondissement / الدائرة الأولى, N'Djamena, Chad",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaabbcccddddddddeeeeeeeeeeefffgghhhiiiijjllllllmmmmmmnnnnnnnnnoooqrrrrrrrrrrsssssstttttttuuuwwwyyyyyzz",
+        "source_city": "Dense bbox 1",
+        "country": "Chad"
+      },
+      {
+        "address": "Cour Constitutionnelle المحكمة الدستورية, Boulevard François Tombalbaye, Nagat 2 / ناغات 2, 4ème Arrondissement, N'Djamena, Chad",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaabbbccccdddddeeeeeeeeefgghhiiiijkllllllmmmmmmnnnnnnnnnnooooooorrrrrrsssssttttttttuuuvwyy",
+        "source_city": "Dense bbox 1",
+        "country": "Chad"
+      },
+      {
+        "address": "Institut ISCAM, زنقة 1, Repos الراحة, N'Djamena, Chad",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaccddeehhiiijlmmnnnnopqrrssstttuz",
+        "source_city": "Dense bbox 1",
+        "country": "Chad"
+      },
+      {
+        "address": "Musée National المتحف الوطني, Sarh, Amriguebé أمريغيب, 5ème Arrondissement, N'Djamena, Chad",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaabbcdddeeeeeeeeefgghhhiiijlllmmmmmmmnnnnnnnoorrrrrssssttttuuwyyy",
+        "source_city": "Dense bbox 1",
+        "country": "Chad"
+      },
+      {
+        "address": "Palais de Justice قصر العدل, Boulevard Tombalbaye, Amriguebé أمريغيب, 5ème Arrondissement, N'Djamena, Chad",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaabbbbbccddddddeeeeeeeeeeegghiiiijjlllllmmmmmmnnnnooopqrrrrrrssssstttuuuvyyy",
+        "source_city": "Dense bbox 1",
+        "country": "Chad"
+      },
+      {
+        "address": "RNT, Boulevard du Maréchal du Tchad Idriss Deby Itno, 3ème Arrondissement / الدائرة الثالثة, Sabangali سابانقالي, N'Djamena, Chad",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaabbbbcccdddddddddeeeeeeeeghhhhhiiiiijlllllllmmmmnnnnnnnnoooqrrrrrrrssssssttttttuuvyyy",
+        "source_city": "Dense bbox 1",
+        "country": "Chad"
       }
     ],
     "Chile": [
@@ -3515,6 +4461,102 @@
         "score": 0.9,
         "cheat_normalized_address": "aaaaaabccdeeeiiklllmoorrstttuwy",
         "source_city": "Bandariba"
+      },
+      {
+        "address": "100 Synthetic Way,  Willemstad, 10000, Curacao",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaacccdeehiillmnorsstttuwwyy",
+        "source_city": " Willemstad",
+        "country": "Curacao",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "101 Placeholder Avenue,  Willemstad, 10001, Curacao",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaacccddeeeeehillllmnooprrstuuvw",
+        "source_city": " Willemstad",
+        "country": "Curacao",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "102 Fallback Road,  Willemstad, 10002, Curacao",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaabcccddefikllllmoorrstuw",
+        "source_city": " Willemstad",
+        "country": "Curacao",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "103 Reserve Street,  Willemstad, 10003, Curacao",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaccdeeeeeeillmorrrrssstttuvw",
+        "source_city": " Willemstad",
+        "country": "Curacao",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "104 Contour Drive,  Willemstad, 10004, Curacao",
+        "score": 0.95,
+        "cheat_normalized_address": "aaacccddeeiillmnooorrrsttuuvw",
+        "source_city": " Willemstad",
+        "country": "Curacao",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "105 Harbor Lane,  Willemstad, 10005, Curacao",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaabccdeehilllmnoorrrstuw",
+        "source_city": " Willemstad",
+        "country": "Curacao",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "106 Summit Path,  Willemstad, 10006, Curacao",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaccdehiillmmmoprsstttuuw",
+        "source_city": " Willemstad",
+        "country": "Curacao",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "107 Valley Crescent,  Willemstad, 10007, Curacao",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaccccdeeeeillllmnorrssttuvwy",
+        "source_city": " Willemstad",
+        "country": "Curacao",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "108 Prairie Court,  Willemstad, 10008, Curacao",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaacccdeeiiillmooprrrrsttuuw",
+        "source_city": " Willemstad",
+        "country": "Curacao",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "109 Canopy Boulevard,  Willemstad, 10009, Curacao",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaabcccddeeilllmnoooprrstuuvwy",
+        "source_city": " Willemstad",
+        "country": "Curacao",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "110 Heritage Close,  Willemstad, 10010, Curacao",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaacccdeeeeghiilllmoorrssttuw",
+        "source_city": " Willemstad",
+        "country": "Curacao",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "111 Garden Walk,  Willemstad, 10011, Curacao",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaccddeegiklllmnorrstuww",
+        "source_city": " Willemstad",
+        "country": "Curacao",
+        "generation_type": "synthetic"
       }
     ],
     "Cyprus": [
@@ -6131,6 +7173,110 @@
         "score": 0.9,
         "cheat_normalized_address": "aaaaaacegghhilmmnnnprstuuu",
         "source_city": "Tamuning"
+      },
+      {
+        "address": "100 Synthetic Way, Hagatna, 10000, Guam",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaacegghhimnnstttuwyy",
+        "source_city": "Hagatna",
+        "country": "Guam",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "101 Placeholder Avenue, Hagatna, 10001, Guam",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaacdeeeegghhllmnnoprtuuv",
+        "source_city": "Hagatna",
+        "country": "Guam",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "102 Fallback Road, Hagatna, 10002, Guam",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaaabcdfgghkllmnortu",
+        "source_city": "Hagatna",
+        "country": "Guam",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "103 Reserve Street, Hagatna, 10003, Guam",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaeeeeegghmnrrrsstttuv",
+        "source_city": "Hagatna",
+        "country": "Guam",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "104 Contour Drive, Hagatna, 10004, Guam",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaacdegghimnnoorrttuuv",
+        "source_city": "Hagatna",
+        "country": "Guam",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "107 Valley Crescent, Hagatna, 10007, Guam",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaacceeegghllmnnrsttuvy",
+        "source_city": "Hagatna",
+        "country": "Guam",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "108 Prairie Court, Hagatna, 10008, Guam",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaacegghiimnoprrrttuu",
+        "source_city": "Hagatna",
+        "country": "Guam",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "109 Canopy Boulevard, Hagatna, 10009, Guam",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaabcdegghlmnnooprtuuvy",
+        "source_city": "Hagatna",
+        "country": "Guam",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "110 Heritage Close, Hagatna, 10010, Guam",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaceeeggghhilmnorsttu",
+        "source_city": "Hagatna",
+        "country": "Guam",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "112 Coastal Drive, Hagatna, 10012, Guam",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaacdegghilmnorsttuv",
+        "source_city": "Hagatna",
+        "country": "Guam",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "113 Market Street, Hagatna, 10013, Guam",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaeeegghkmmnrrsttttu",
+        "source_city": "Hagatna",
+        "country": "Guam",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "114 Central Avenue, Hagatna, 10014, Guam",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaaceeegghlmnnnrttuuv",
+        "source_city": "Hagatna",
+        "country": "Guam",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "115 Harbor Street, Hagatna, 10015, Guam",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaabeegghhmnorrrstttu",
+        "source_city": "Hagatna",
+        "country": "Guam",
+        "generation_type": "synthetic"
       }
     ],
     "Guatemala": [
@@ -9201,6 +10347,97 @@
         "score": 0.9,
         "cheat_normalized_address": "abdfffhhijklllmotwwyyz",
         "source_city": "Az Zāwīyah"
+      },
+      {
+        "address": "Four Seasons 3, شارع الرصافي, Almaari, Assarim, Tripoli, Libya",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaabeffhiiiiillllmmnoooprrrrrrssssssstuyy",
+        "source_city": "Dense bbox 1",
+        "country": "Libya"
+      },
+      {
+        "address": "Four Seasons 1, Omar Al Mukhtar Street, Almaari, Old city of Tripoli, Tripoli, Libya",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaabcdeeeffhiiiiiklllllmmmnooooooprrrrrrsssstttttuuyy",
+        "source_city": "Dense bbox 1",
+        "country": "Libya"
+      },
+      {
+        "address": "4109, Saadoun Al Swehli Street, Dahra, Addahra, Tripoli, Libya",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaabddddeeehhhiiiillllnooprrrrssstttuwy",
+        "source_city": "Dense bbox 1",
+        "country": "Libya"
+      },
+      {
+        "address": "Libyan Spider, 064, Taqseem El-mayet, Al lansha, Bab Ben Chashir, Almadar, Bab Bin Ghashir, Tripoli, 82510, Libya",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaaaabbbbbbcddeeeeeeghhhhhiiiiiiiilllllllmmmnnnnoppqrrrrrssssstttyyy",
+        "source_city": "Dense bbox 1",
+        "country": "Libya"
+      },
+      {
+        "address": "Route 66 Cafe, University Road, Sidi Almissi, Almadar, Bab Sidi Al Massri, Tripoli, Libya",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaabbbcdddeeefiiiiiiiiiilllllmmmnoooprrrrrrsssssstttuuvyy",
+        "source_city": "Dense bbox 1",
+        "country": "Libya"
+      },
+      {
+        "address": "مدرسة طلائع التقدم, January 14th Street, Ben Ashour, Almadar, Bab Bin Ghashir, Tripoli, Libya",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaabbbbbdddeeeghhhhiiiiijlllllmmmnnnoopqrrrrrrrssssttttttuuyyy",
+        "source_city": "Dense bbox 1",
+        "country": "Libya"
+      },
+      {
+        "address": "صالة الامتياز 2, Bin Ashur, Ras Hassan, Zanatan, SIDI EL MASSRI, Bab Al Firnaj, Tripoli, Libya",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaaabbbbdefhhiiiiiiiijllllllmmnnnnnoprrrrrsssssssstttuyyzz",
+        "source_city": "Dense bbox 1",
+        "country": "Libya"
+      },
+      {
+        "address": "Shake up, January 14th Street, Ben Ashour, Almadar, Bab Bin Ghashir, Tripoli, Libya",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaabbbbbdeeeeghhhhhiiiiijklllmnnnoopprrrrrrssssttttuuuyy",
+        "source_city": "Dense bbox 1",
+        "country": "Libya"
+      },
+      {
+        "address": "New Era Co. for telecommunications & VSAT solutions, January 14th Street, Ben Ashour, Almadar, Bab Bin Ghashir, Tripoli, Libya",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaaabbbbbcccdeeeeeeefghhhhiiiiiiiijlllllmmmnnnnnnnooooooooprrrrrrrrsssssssttttttttuuuuvwyy",
+        "source_city": "Dense bbox 1",
+        "country": "Libya"
+      },
+      {
+        "address": "تشاركية أبناء عبادي للاتصالات الهاتفية, 0214908886, Abu Slim Road, Shuhada Damoun, Al Antisar, Abu Salim, Tripoli, Libya",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaabbbbddddfhhhhiiiiiiklllllllllmmmnnnoooprrrrssssssttttttuuuyyyy",
+        "source_city": "Dense bbox 1",
+        "country": "Libya"
+      },
+      {
+        "address": "أبطالنا 2, Second Ring Road, Alsaaba'a, Zanatan, Almadar, Zanata, Tripoli, Libya",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaaaaaaabbbcdddegiiiilllllmnnnnnnoooprrrrssttttyzz",
+        "source_city": "Dense bbox 1",
+        "country": "Libya"
+      },
+      {
+        "address": "8800, Al Madar Street, Ras Hassan, Sidi Almissi, Almadar, Ras Hassan, Tripoli, Libya",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaabdddeehiiiiiiilllllmmmnoprrrrrsssssssttty",
+        "source_city": "Dense bbox 1",
+        "country": "Libya"
+      },
+      {
+        "address": "أيوب 2, Al Madar Street, Ras Hassan, Sidi Almissi, Almadar, Ras Hassan, Tripoli, Libya",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaabbdddeehiiiiiiilllllmmmnoprrrrrssssssstttwyy",
+        "source_city": "Dense bbox 1",
+        "country": "Libya"
       }
     ],
     "Lithuania": [
@@ -9387,7 +10624,128 @@
         "source_city": "Luxembourg"
       }
     ],
-    "Macao": [],
+    "Macao": [
+      {
+        "address": "100 Synthetic Way, Macau, 10000, Macao",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaacccehimmnosttuwyy",
+        "source_city": "Macau",
+        "country": "Macao",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "101 Placeholder Avenue, Macau, 10001, Macao",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaacccdeeeehllmmnoopruuv",
+        "source_city": "Macau",
+        "country": "Macao",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "102 Fallback Road, Macau, 10002, Macao",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaaabcccdfkllmmooru",
+        "source_city": "Macau",
+        "country": "Macao",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "103 Reserve Street, Macau, 10003, Macao",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaacceeeeemmorrrssttuv",
+        "source_city": "Macau",
+        "country": "Macao",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "104 Contour Drive, Macau, 10004, Macao",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaacccdeimmnooorrtuuv",
+        "source_city": "Macau",
+        "country": "Macao",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "107 Valley Crescent, Macau, 10007, Macao",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaacccceeellmmnorstuvy",
+        "source_city": "Macau",
+        "country": "Macao",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "108 Prairie Court, Macau, 10008, Macao",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaccceiimmooprrrtuu",
+        "source_city": "Macau",
+        "country": "Macao",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "109 Canopy Boulevard, Macau, 10009, Macao",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaabcccdelmmnooopruuvy",
+        "source_city": "Macau",
+        "country": "Macao",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "110 Heritage Close, Macau, 10010, Macao",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaccceeeghilmmoorstu",
+        "source_city": "Macau",
+        "country": "Macao",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "112 Coastal Drive, Macau, 10012, Macao",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaacccdeilmmoorstuv",
+        "source_city": "Macau",
+        "country": "Macao",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "113 Market Street, Macau, 10013, Macao",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaacceeekmmmorrstttu",
+        "source_city": "Macau",
+        "country": "Macao",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "114 Central Avenue, Macau, 10014, Macao",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaaccceeelmmnnortuuv",
+        "source_city": "Macau",
+        "country": "Macao",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "115 Harbor Street, Macau, 10015, Macao",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaabcceehmmoorrrsttu",
+        "source_city": "Macau",
+        "country": "Macao",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "117 Peninsula Drive, Macau, 10017, Macao",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaccdeeiilmmnnoprsuuv",
+        "source_city": "Macau",
+        "country": "Macao",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "120 Harbor Crescent, Macau, 10020, Macao",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaabcccceehmmnoorrrstu",
+        "source_city": "Macau",
+        "country": "Macao",
+        "generation_type": "synthetic"
+      }
+    ],
     "Madagascar": [
       {
         "address": "Làlana Ravoninahitriniarivo, Antananarivo, 101, Madagascar",
@@ -9815,6 +11173,90 @@
         "score": 0.9,
         "cheat_normalized_address": "aaaaadegijjlllmnnoqqrssssttu",
         "source_city": "Żabbar"
+      },
+      {
+        "address": "Hompesch, Triq il-Mina ta' Hompesch, Qasam tad-Djar ta' Bulebel, Żabbar, Port Region, ZBR 1503, Malta",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaaaaabbbbbcddeeeeghhiiiijllllmmmmnnoooppqqrrrrrrsstttttuzz",
+        "source_city": "Dense bbox 1",
+        "country": "Malta"
+      },
+      {
+        "address": "Lourdes Service Station, Labour Road, Qasam tad-Djar ta' Bulebel, Żabbar, Port Region, ZBR 1503, Malta",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaaaaaaabbbbbbcddddeeeeeegiiijlllllmmnnoooooopqrrrrrrrrrssssttttttuuuvzz",
+        "source_city": "Dense bbox 1",
+        "country": "Malta"
+      },
+      {
+        "address": "Għassa tal-Pulizija Żabbar, Triq iċ-Ċawsli, Żabbar, Qasam tad-Djar ta' Bulebel, Żabbar, Port Region, ZBR 1017, Malta",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaaaaaaaaabbbbbccddeeegghiiiiiijjllllllmmnooppqqrrrrrrssssttttttuuwzzz",
+        "source_city": "Dense bbox 1",
+        "country": "Malta"
+      },
+      {
+        "address": "Bank of Valletta, Triq is-Santwarju, Żabbar, Qasam tad-Djar ta' Bulebel, Żabbar, Port Region, ZBR 1503, Malta",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaaaaaaaaabbbbbbddeeeefgiiijjklllllmmnnnooopqqrrrrrrrsssttttttttuuvwzz",
+        "source_city": "Dense bbox 1",
+        "country": "Malta"
+      },
+      {
+        "address": "HSBC, Triq is-Santwarju, Żabbar, Qasam tad-Djar ta' Bulebel, Żabbar, Port Region, ZBR 1503, Malta",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaaaaaabbbbbbcddeeeghiiijjlllmmnnoopqqrrrrrrrssssttttttuuwzz",
+        "source_city": "Dense bbox 1",
+        "country": "Malta"
+      },
+      {
+        "address": "224, Triq San Tumas, Fgura, Port Region, TXN 9034, Malta",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaefggiilmmnnnoopqrrrrsstttttuux",
+        "source_city": "Dense bbox 1",
+        "country": "Malta"
+      },
+      {
+        "address": "1743 Razzett l-Antik, Triq il-Wied, Tal-Ħandaq, Qormi, Southern Region, QRM 3613, Malta",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaaddeeeeghhiiiiiikllllmmmnnnnoooqqqqrrrrrrstttttttuwzz",
+        "source_city": "Dense bbox 1",
+        "country": "Malta"
+      },
+      {
+        "address": "Oratorju San Ġużepp, Wesgħet il-Kolleġġjata 1820, Birgu, Port Region, BRG 1425, Malta",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaabbeeeeeggggggghiiijjkllllmnnoooooppprrrrrrsstttttuuuwz",
+        "source_city": "Dense bbox 1",
+        "country": "Malta"
+      },
+      {
+        "address": "Ta' Kolina, Tower Road, Sliema, Eastern Region, SLM 1604, Malta",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaadeeeeegiiikllllmmmnnnoooorrrrsssttttw",
+        "source_city": "Dense bbox 1",
+        "country": "Malta"
+      },
+      {
+        "address": "Toy Museum, Saint Dominic Street, L-Arċipierku, Valletta, Port Region, VLT 1117, Malta",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaccdeeeeeegiiiiiiklllllmmmmnnnoooopprrrrrssstttttttttuuuvvy",
+        "source_city": "Dense bbox 1",
+        "country": "Malta"
+      },
+      {
+        "address": "Beijing, Triq id-Daħla ta' San Tumas, Marsascala, Southern Region, MSK 4070, Malta",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaaaaaabcddeeegghhiiiiijklllmmmmnnnnooqrrrrsssssstttttuu",
+        "source_city": "Dense bbox 1",
+        "country": "Malta"
+      },
+      {
+        "address": "Urban Jungle, Żabbar Road, Fgura, Port Region, FGT 1604, Malta",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaabbbdeeffggggijllmnnnoooprrrrrrtttuuuz",
+        "source_city": "Dense bbox 1",
+        "country": "Malta"
       }
     ],
     "Martinique": [
@@ -10377,7 +11819,113 @@
         "source_city": "Ungheni"
       }
     ],
-    "Monaco": [],
+    "Monaco": [
+      {
+        "address": "Parking du Chemin des Pêcheurs, Avenue Saint-Martin, Monaco City, Monaco, 98000, Monaco",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaccccddeeeeeeghhiiiiikmmmnnnnnnoopprrrssstttuuuvy",
+        "source_city": "Dense bbox 1",
+        "country": "Monaco"
+      },
+      {
+        "address": "Esso, Boulevard Charles III, Jardin Exotique, Monaco, 98020, Monaco",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaabccddeeeeehiiiiijllmnnoooooqrrrssstuuvx",
+        "source_city": "Dense bbox 1",
+        "country": "Monaco"
+      },
+      {
+        "address": "Parking du centre commercial, Avenue Albert II, Fontvieille, Monaco, 98020, Monaco",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaabccccdeeeeeeeefgiiiiiikllllmmmnnnnnooooprrrrtttuuvv",
+        "source_city": "Dense bbox 1",
+        "country": "Monaco"
+      },
+      {
+        "address": "Metropole, 4, Avenue de la Madone, Monte-Carlo, Monaco, 98000, Monaco",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaccddeeeeeeelllmmmmnnnnoooooooprrttuv",
+        "source_city": "Dense bbox 1",
+        "country": "Monaco"
+      },
+      {
+        "address": "UBS, Avenue de Grande-Bretagne, Monte-Carlo, Monaco, 98000, Monaco",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaabbccddeeeeeeegglmmnnnnnoooorrrsttuuv",
+        "source_city": "Dense bbox 1",
+        "country": "Monaco"
+      },
+      {
+        "address": "Marché U, 30, Boulevard Princesse Charlotte, Monte-Carlo, Monaco, 98000, Monaco",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaabcccccdeeeeeehhilllmmmnnnooooooprrrrrsstttuuv",
+        "source_city": "Dense bbox 1",
+        "country": "Monaco"
+      },
+      {
+        "address": "Metropole, Avenue des Citronniers, Monte-Carlo, Monaco, 98000, Monaco",
+        "score": 1.0,
+        "cheat_normalized_address": "aaacccdeeeeeeeiillmmmnnnnnoooooooprrrrsstttuv",
+        "source_city": "Dense bbox 1",
+        "country": "Monaco"
+      },
+      {
+        "address": "Stars ’n’ Bars, 6, Quai Antoine 1er, La Condamine, Monaco, 98000, Monaco",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaabccdeeeiiilmmnnnnnnooooqrrrsssttu",
+        "source_city": "Dense bbox 1",
+        "country": "Monaco"
+      },
+      {
+        "address": "Quai des Artistes, 4, Quai Antoine 1er, La Condamine, Monaco, 98000, Monaco",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaccddeeeeeiiiilmmnnnnnooooqrrssstttu",
+        "source_city": "Dense bbox 1",
+        "country": "Monaco"
+      },
+      {
+        "address": "Spar, Avenue des Spélugues, Monte-Carlo, Monaco, 98000, Monaco",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaccdeeeeeegllmmnnnoooopprrsssstuuuv",
+        "source_city": "Dense bbox 1",
+        "country": "Monaco"
+      },
+      {
+        "address": "Fnac, Avenue de Grande-Bretagne, Monte-Carlo, Monaco, 98000, Monaco",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaabcccddeeeeeeefgglmmnnnnnnoooorrrttuv",
+        "source_city": "Dense bbox 1",
+        "country": "Monaco"
+      },
+      {
+        "address": "Barclays, Avenue de la Costa, Monte-Carlo, Monaco, 98000, Monaco",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaabccccdeeeelllmmnnnooooorrssttuvy",
+        "source_city": "Dense bbox 1",
+        "country": "Monaco"
+      },
+      {
+        "address": "Terrazino, Rue des Iris, Monte-Carlo, Monaco, 98000, Monaco",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaccdeeeeiiilmmnnnooooorrrrrssttuz",
+        "source_city": "Dense bbox 1",
+        "country": "Monaco"
+      },
+      {
+        "address": "UBS, Avenue de La Quarantaine, La Condamine, Monaco, 98000, Monaco",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaabccddeeeeeiilmmnnnnnnoooqrstuuuv",
+        "source_city": "Dense bbox 1",
+        "country": "Monaco"
+      },
+      {
+        "address": "Carrefour, Avenue Albert II, Fontvieille, Monaco, 98020, Monaco",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaabcceeeeeeffiiiilllmnnnoooorrrrttuuvv",
+        "source_city": "Dense bbox 1",
+        "country": "Monaco"
+      }
+    ],
     "Mongolia": [
       {
         "address": "Computer Land, Peace Avenue, Chingeltei, Ulaanbaatar, 14250, Mongolia",
@@ -10577,7 +12125,128 @@
         "source_city": "Budva"
       }
     ],
-    "Montserrat": [],
+    "Montserrat": [
+      {
+        "address": "100 Synthetic Way, Plymouth, 10000, Montserrat",
+        "score": 0.95,
+        "cheat_normalized_address": "aaceehhilmmnnooprrsstttttuwyyy",
+        "source_city": "Plymouth",
+        "country": "Montserrat",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "101 Placeholder Avenue, Plymouth, 10001, Montserrat",
+        "score": 0.95,
+        "cheat_normalized_address": "aaacdeeeeehhlllmmnnooopprrrstttuuvy",
+        "source_city": "Plymouth",
+        "country": "Montserrat",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "102 Fallback Road, Plymouth, 10002, Montserrat",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaabcdefhklllmmnoooprrrstttuy",
+        "source_city": "Plymouth",
+        "country": "Montserrat",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "103 Reserve Street, Plymouth, 10003, Montserrat",
+        "score": 0.95,
+        "cheat_normalized_address": "aeeeeeehlmmnooprrrrrssstttttuvy",
+        "source_city": "Plymouth",
+        "country": "Montserrat",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "104 Contour Drive, Plymouth, 10004, Montserrat",
+        "score": 0.95,
+        "cheat_normalized_address": "acdeehilmmnnooooprrrrsttttuuvy",
+        "source_city": "Plymouth",
+        "country": "Montserrat",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "105 Harbor Lane, Plymouth, 10005, Montserrat",
+        "score": 0.95,
+        "cheat_normalized_address": "aaabeehhllmmnnoooprrrrstttuy",
+        "source_city": "Plymouth",
+        "country": "Montserrat",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "106 Summit Path, Plymouth, 10006, Montserrat",
+        "score": 0.95,
+        "cheat_normalized_address": "aaehhilmmmmnoopprrsstttttuuy",
+        "source_city": "Plymouth",
+        "country": "Montserrat",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "107 Valley Crescent, Plymouth, 10007, Montserrat",
+        "score": 0.95,
+        "cheat_normalized_address": "aacceeeehlllmmnnooprrrssttttuvyy",
+        "source_city": "Plymouth",
+        "country": "Montserrat",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "108 Prairie Court, Plymouth, 10008, Montserrat",
+        "score": 0.95,
+        "cheat_normalized_address": "aaceehiilmmnooopprrrrrsttttuuy",
+        "source_city": "Plymouth",
+        "country": "Montserrat",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "109 Canopy Boulevard, Plymouth, 10009, Montserrat",
+        "score": 0.95,
+        "cheat_normalized_address": "aaabcdeehllmmnnoooopprrrstttuuvyy",
+        "source_city": "Plymouth",
+        "country": "Montserrat",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "110 Heritage Close, Plymouth, 10010, Montserrat",
+        "score": 0.95,
+        "cheat_normalized_address": "aaceeeeghhillmmnoooprrrssttttuy",
+        "source_city": "Plymouth",
+        "country": "Montserrat",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "111 Garden Walk, Plymouth, 10011, Montserrat",
+        "score": 0.95,
+        "cheat_normalized_address": "aaadeeghkllmmnnooprrrstttuwy",
+        "source_city": "Plymouth",
+        "country": "Montserrat",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "112 Coastal Drive, Plymouth, 10012, Montserrat",
+        "score": 0.95,
+        "cheat_normalized_address": "aaacdeehillmmnoooprrrssttttuvy",
+        "source_city": "Plymouth",
+        "country": "Montserrat",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "113 Market Street, Plymouth, 10013, Montserrat",
+        "score": 0.95,
+        "cheat_normalized_address": "aaeeeehklmmmnooprrrrssttttttuy",
+        "source_city": "Plymouth",
+        "country": "Montserrat",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "114 Central Avenue, Plymouth, 10014, Montserrat",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaceeeehllmmnnnooprrrsttttuuvy",
+        "source_city": "Plymouth",
+        "country": "Montserrat",
+        "generation_type": "synthetic"
+      }
+    ],
     "Morocco": [
       {
         "address": "7, Rue Ibnou Yaala Al Ifrani زنقة ابن يعلى الإفراني, 20100, Morocco",
@@ -11608,6 +13277,78 @@
         "cheat_normalized_address": "aaccceeeghhiiijknnnnnnnnooooooprrrrttuuuuuyy",
         "source_city": "Uiju",
         "country": "North Korea"
+      },
+      {
+        "address": "100 Synthetic Way, Pyongyang, 10000, North Korea",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaceegghhiknnnnoooprrstttwyyyy",
+        "source_city": "Pyongyang",
+        "country": "North Korea",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "101 Placeholder Avenue, Pyongyang, 10001, North Korea",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaacdeeeeegghhkllnnnnoooopprrrtuvyy",
+        "source_city": "Pyongyang",
+        "country": "North Korea",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "102 Fallback Road, Pyongyang, 10002, North Korea",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaabcdefgghkkllnnnooooprrrtyy",
+        "source_city": "Pyongyang",
+        "country": "North Korea",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "103 Reserve Street, Pyongyang, 10003, North Korea",
+        "score": 0.95,
+        "cheat_normalized_address": "aaeeeeeegghknnnoooprrrrrsstttvyy",
+        "source_city": "Pyongyang",
+        "country": "North Korea",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "104 Contour Drive, Pyongyang, 10004, North Korea",
+        "score": 0.95,
+        "cheat_normalized_address": "aacdeegghiknnnnoooooprrrrttuvyy",
+        "source_city": "Pyongyang",
+        "country": "North Korea",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "105 Harbor Lane, Pyongyang, 10005, North Korea",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaabeegghhklnnnnooooprrrrtyy",
+        "source_city": "Pyongyang",
+        "country": "North Korea",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "106 Summit Path, Pyongyang, 10006, North Korea",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaegghhikmmnnnooopprrstttuyy",
+        "source_city": "Pyongyang",
+        "country": "North Korea",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "107 Valley Crescent, Pyongyang, 10007, North Korea",
+        "score": 0.95,
+        "cheat_normalized_address": "aaacceeeegghkllnnnnoooprrrsttvyyy",
+        "source_city": "Pyongyang",
+        "country": "North Korea",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "108 Prairie Court, Pyongyang, 10008, North Korea",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaceegghiiknnnoooopprrrrrttuyy",
+        "source_city": "Pyongyang",
+        "country": "North Korea",
+        "generation_type": "synthetic"
       }
     ],
     "North Macedonia": [
@@ -12018,6 +13759,110 @@
         "score": 0.9,
         "cheat_normalized_address": "aaaaaadeehhiiillnnoprrrsstttuy",
         "source_city": "Gaza"
+      },
+      {
+        "address": "100 Synthetic Way, East Jerusalem, 10000, Palestinian Territory",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaceeeeeehiiiijllmnnnoprrrrssssttttttuwyyy",
+        "source_city": "East Jerusalem",
+        "country": "Palestinian Territory",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "101 Placeholder Avenue, East Jerusalem, 10001, Palestinian Territory",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaacdeeeeeeeeehiiijllllmnnnoopprrrrrsssttttuuvy",
+        "source_city": "East Jerusalem",
+        "country": "Palestinian Territory",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "102 Fallback Road, East Jerusalem, 10002, Palestinian Territory",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaaabcdeeeeefiiijkllllmnnooprrrrrsssttttuy",
+        "source_city": "East Jerusalem",
+        "country": "Palestinian Territory",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "103 Reserve Street, East Jerusalem, 10003, Palestinian Territory",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaeeeeeeeeeeiiijllmnnoprrrrrrrsssssttttttuvy",
+        "source_city": "East Jerusalem",
+        "country": "Palestinian Territory",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "104 Contour Drive, East Jerusalem, 10004, Palestinian Territory",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaacdeeeeeeiiiijllmnnnoooprrrrrrssstttttuuvy",
+        "source_city": "East Jerusalem",
+        "country": "Palestinian Territory",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "105 Harbor Lane, East Jerusalem, 10005, Palestinian Territory",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaabeeeeeehiiijlllmnnnooprrrrrrsssttttuy",
+        "source_city": "East Jerusalem",
+        "country": "Palestinian Territory",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "106 Summit Path, East Jerusalem, 10006, Palestinian Territory",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaeeeeehiiiijllmmmnnopprrrrssssttttttuuy",
+        "source_city": "East Jerusalem",
+        "country": "Palestinian Territory",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "107 Valley Crescent, East Jerusalem, 10007, Palestinian Territory",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaacceeeeeeeeiiijllllmnnnoprrrrrsssstttttuvyy",
+        "source_city": "East Jerusalem",
+        "country": "Palestinian Territory",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "108 Prairie Court, East Jerusalem, 10008, Palestinian Territory",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaceeeeeeiiiiijllmnnoopprrrrrrrssstttttuuy",
+        "source_city": "East Jerusalem",
+        "country": "Palestinian Territory",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "109 Canopy Boulevard, East Jerusalem, 10009, Palestinian Territory",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaabcdeeeeeeiiijlllmnnnooopprrrrrsssttttuuvyy",
+        "source_city": "East Jerusalem",
+        "country": "Palestinian Territory",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "110 Heritage Close, East Jerusalem, 10010, Palestinian Territory",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaceeeeeeeeghiiiijlllmnnooprrrrrsssstttttuy",
+        "source_city": "East Jerusalem",
+        "country": "Palestinian Territory",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "111 Garden Walk, East Jerusalem, 10011, Palestinian Territory",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaadeeeeeegiiijklllmnnnoprrrrrsssttttuwy",
+        "source_city": "East Jerusalem",
+        "country": "Palestinian Territory",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "112 Coastal Drive, East Jerusalem, 10012, Palestinian Territory",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaacdeeeeeeiiiijlllmnnooprrrrrsssstttttuvy",
+        "source_city": "East Jerusalem",
+        "country": "Palestinian Territory",
+        "generation_type": "synthetic"
       }
     ],
     "Panama": [
@@ -12885,7 +14730,128 @@
         "country": "Qatar"
       }
     ],
-    "Republic of the Congo": [],
+    "Republic of the Congo": [
+      {
+        "address": "100 Synthetic Way, Brazzaville, 10000, Republic of the Congo",
+        "score": 0.95,
+        "cheat_normalized_address": "aaabbccceeeefghhiiilllnnoooprrstttuvwyyzz",
+        "source_city": "Brazzaville",
+        "country": "Republic of the Congo",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "101 Placeholder Avenue, Brazzaville, 10001, Republic of the Congo",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaabbcccdeeeeeeefghhiilllllnnoooopprrrtuuvvzz",
+        "source_city": "Brazzaville",
+        "country": "Republic of the Congo",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "102 Fallback Road, Brazzaville, 10002, Republic of the Congo",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaabbbcccdeeeffghiiklllllnooooprrrtuvzz",
+        "source_city": "Brazzaville",
+        "country": "Republic of the Congo",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "103 Reserve Street, Brazzaville, 10003, Republic of the Congo",
+        "score": 0.95,
+        "cheat_normalized_address": "aabbcceeeeeeeefghiilllnoooprrrrrsstttuvvzz",
+        "source_city": "Brazzaville",
+        "country": "Republic of the Congo",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "104 Contour Drive, Brazzaville, 10004, Republic of the Congo",
+        "score": 0.95,
+        "cheat_normalized_address": "aabbcccdeeeefghiiilllnnoooooprrrrttuuvvzz",
+        "source_city": "Brazzaville",
+        "country": "Republic of the Congo",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "105 Harbor Lane, Brazzaville, 10005, Republic of the Congo",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaabbbcceeeefghhiillllnnooooprrrrtuvzz",
+        "source_city": "Brazzaville",
+        "country": "Republic of the Congo",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "106 Summit Path, Brazzaville, 10006, Republic of the Congo",
+        "score": 0.95,
+        "cheat_normalized_address": "aaabbcceeefghhiiilllmmnooopprrstttuuvzz",
+        "source_city": "Brazzaville",
+        "country": "Republic of the Congo",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "107 Valley Crescent, Brazzaville, 10007, Republic of the Congo",
+        "score": 0.95,
+        "cheat_normalized_address": "aaabbcccceeeeeefghiilllllnnoooprrrsttuvvyzz",
+        "source_city": "Brazzaville",
+        "country": "Republic of the Congo",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "108 Prairie Court, Brazzaville, 10008, Republic of the Congo",
+        "score": 0.95,
+        "cheat_normalized_address": "aaabbccceeeefghiiiilllnoooopprrrrrttuuvzz",
+        "source_city": "Brazzaville",
+        "country": "Republic of the Congo",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "109 Canopy Boulevard, Brazzaville, 10009, Republic of the Congo",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaabbbcccdeeeefghiillllnnooooopprrrtuuvvyzz",
+        "source_city": "Brazzaville",
+        "country": "Republic of the Congo",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "110 Heritage Close, Brazzaville, 10010, Republic of the Congo",
+        "score": 0.95,
+        "cheat_normalized_address": "aaabbccceeeeeefgghhiiillllnooooprrrsttuvzz",
+        "source_city": "Brazzaville",
+        "country": "Republic of the Congo",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "111 Garden Walk, Brazzaville, 10011, Republic of the Congo",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaabbccdeeeefgghiikllllnnoooprrrtuvwzz",
+        "source_city": "Brazzaville",
+        "country": "Republic of the Congo",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "112 Coastal Drive, Brazzaville, 10012, Republic of the Congo",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaabbcccdeeeefghiiillllnooooprrrsttuvvzz",
+        "source_city": "Brazzaville",
+        "country": "Republic of the Congo",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "113 Market Street, Brazzaville, 10013, Republic of the Congo",
+        "score": 0.95,
+        "cheat_normalized_address": "aaabbcceeeeeefghiiklllmnoooprrrrsttttuvzz",
+        "source_city": "Brazzaville",
+        "country": "Republic of the Congo",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "114 Central Avenue, Brazzaville, 10014, Republic of the Congo",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaabbccceeeeeefghiillllnnnoooprrrttuuvvzz",
+        "source_city": "Brazzaville",
+        "country": "Republic of the Congo",
+        "generation_type": "synthetic"
+      }
+    ],
     "Reunion": [
       {
         "address": "12, Quai Gilbert, Saint Paul, 97460, Reunion",
@@ -13281,13 +15247,217 @@
         "country": "Rwanda"
       }
     ],
-    "Saint Lucia": [],
+    "Saint Lucia": [
+      {
+        "address": "Willo's Garage, Bagatelle Hill Road, Bagatelle Hill, Bishop's Gap, Castries, LC04 401, Saint Lucia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaabbcccdeeeegggghhiiiiiillllllllnooopprrrsssssstttuw",
+        "source_city": "Dense bbox 1",
+        "country": "Saint Lucia"
+      },
+      {
+        "address": "Saint Joseph's Court, Cedars Road, Parker's Hill, Cedars, Castries, LC04 101, Saint Lucia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaacccccddeeeehhiiiijkllllnooopprrrrrrssssssstttuu",
+        "source_city": "Dense bbox 1",
+        "country": "Saint Lucia"
+      },
+      {
+        "address": "Muscle Shop, Cedars Road, Parker's Hill, Cedars, Castries, LC04 401, Saint Lucia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaacccccddeeeehhiiiiklllllmnoopprrrrrsssssssttuu",
+        "source_city": "Dense bbox 1",
+        "country": "Saint Lucia"
+      },
+      {
+        "address": "Tapo's Garage, Bagatelle Hill Road, Bagatelle Hill, Bishop's Gap, Castries, LC04 401, Saint Lucia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaabbcccdeeeegggghhiiiiillllllnoooppprrrssssssttttu",
+        "source_city": "Dense bbox 1",
+        "country": "Saint Lucia"
+      },
+      {
+        "address": "Castries Ferry Terminal, Jeremie Street, Parker's Hill, City, Castries, LC04 101, Saint Lucia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaacccceeeeeeeeefhiiiiiiijklllllmmnnprrrrrrrrsssssttttttuyy",
+        "source_city": "Dense bbox 1",
+        "country": "Saint Lucia"
+      },
+      {
+        "address": "Casa del Vega, Clarke Avenue, Vigie, Castries, LC04 301, Saint Lucia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaacccccdeeeeeeeggiiiiikllllnnrrssssttuuvvv",
+        "source_city": "Dense bbox 1",
+        "country": "Saint Lucia"
+      },
+      {
+        "address": "First National Bank of St Lucia, Vigie, Nelson Mandela Drive, City Gate, Vigie, Castries, LC04 301, Saint Lucia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaabccccddeeeeeeffggiiiiiiiiiklllllmnnnnnnnooorrrsssssstttttttuvvy",
+        "source_city": "Dense bbox 1",
+        "country": "Saint Lucia"
+      },
+      {
+        "address": "Massy Waterfront, John Compton Highway, Conway, Castries, LC04 401, Saint Lucia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaccccceefghhhiiiijllmmnnnnnoooooprrrssssstttttuwwwyyy",
+        "source_city": "Dense bbox 1",
+        "country": "Saint Lucia"
+      },
+      {
+        "address": "The Pink Plantation, Chef Harry Drive, Bois Catchet, Morne Fortune, Castries, LC04 201, Saint Lucia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaabccccccdeeeeeeeffhhhhiiiiiiiklllmnnnnnnoooopprrrrrrssssttttttttuuvy",
+        "source_city": "Dense bbox 1",
+        "country": "Saint Lucia"
+      },
+      {
+        "address": "Falcons  Supermarket, Tapon Avenue, City Gate, La Clery, Castries, LC04 401, Saint Lucia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaacccccceeeeeeefgiiiiklllllmnnnnoopprrrrsssssttttttuuuvyy",
+        "source_city": "Dense bbox 1",
+        "country": "Saint Lucia"
+      },
+      {
+        "address": "La Clery Post Office, Tapon Avenue, City Gate, La Clery, Castries, LC04 401, Saint Lucia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaacccccceeeeeeffgiiiiillllnnnooopprrssssttttttuuvyy",
+        "source_city": "Dense bbox 1",
+        "country": "Saint Lucia"
+      },
+      {
+        "address": "Bakery, Waterworks Road, Parker's Hill, Waterwork, Castries, LC04 401, Saint Lucia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaabcccdeeeeehiiiikkkkllllnoooprrrrrrrrrsssssttttuwwwwy",
+        "source_city": "Dense bbox 1",
+        "country": "Saint Lucia"
+      },
+      {
+        "address": "Cell Fantasy, Bridge Street, Central business district, City, Castries, LC04 101, Saint Lucia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaabbcccccccddeeeeeeefgiiiiiiiilllllnnnnrrrrrssssssssstttttttttuuyy",
+        "source_city": "Dense bbox 1",
+        "country": "Saint Lucia"
+      },
+      {
+        "address": "Francis Compton Building, John Compton Highway, L'Anse Road, Conway, Castries, LC04 301, Saint Lucia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaabccccccddeefgghhhiiiiiiijllllmnnnnnnnoooooprrrssssstttuuwwyy",
+        "source_city": "Dense bbox 1",
+        "country": "Saint Lucia"
+      },
+      {
+        "address": "Marigot Bay, Waterfront Road, Marigot, Coolie Town, Castries, LC06 201, Saint Lucia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaabccccdeeefgiiiiilllmnnnoooooorrrrrsssttttttuwwy",
+        "source_city": "Dense bbox 1",
+        "country": "Saint Lucia"
+      }
+    ],
     "Saint Vincent and the Grenadines": [
       {
         "address": "Upper Bay Street, Kingstown, VC0100, Saint Vincent and the Grenadines",
         "score": 0.9,
         "cheat_normalized_address": "aaaabccddeeeeeeegghiiiiknnnnnnnnopprrrssssttttttuvvwy",
         "source_city": "Kingstown"
+      },
+      {
+        "address": "Kingstown, Grenadine Wharf, Arnos Vale, Saint George, VC0100, Saint Vincent and the Grenadines",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaccdddeeeeeeeeefggggghhiiiiiklnnnnnnnnnnnooorrrrrssssttttvvvww",
+        "source_city": "Dense bbox 1",
+        "country": "Saint Vincent and the Grenadines"
+      },
+      {
+        "address": "World War I Memorial - Iron Man, Bay Street, Kingstown, Saint George, VC0100, Saint Vincent and the Grenadines",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaabccdddeeeeeeeeegggghiiiiiiikllmmmnnnnnnnnnnooooorrrrrrrssssttttttvvwwwy",
+        "source_city": "Dense bbox 1",
+        "country": "Saint Vincent and the Grenadines"
+      },
+      {
+        "address": "Digicel, Halifax Street, Kingstown, Saint George, VC0100, Saint Vincent and the Grenadines",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaacccdddeeeeeeeeefggggghhiiiiiiikllnnnnnnnnoorrrssssttttttvvwx",
+        "source_city": "Dense bbox 1",
+        "country": "Saint Vincent and the Grenadines"
+      },
+      {
+        "address": "Subway, Grenville Street, Kingstown, Saint George, VC0100, Saint Vincent and the Grenadines",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaabccddeeeeeeeeeeggggghiiiiikllnnnnnnnnnoorrrrsssssttttttuvvvwwy",
+        "source_city": "Dense bbox 1",
+        "country": "Saint Vincent and the Grenadines"
+      },
+      {
+        "address": "Diamond Girl, Upper Bay Street, Kingstown, Saint George, VC0100, Saint Vincent and the Grenadines",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaabccddddeeeeeeeeeggggghiiiiiiklmnnnnnnnnnooopprrrrrssssttttttuvvwy",
+        "source_city": "Dense bbox 1",
+        "country": "Saint Vincent and the Grenadines"
+      },
+      {
+        "address": "Quality Paints & Supplies, Windward Highway, Arnos Vale, Villa, Calliaqua, Saint George, VC0100, Saint Vincent and the Grenadines",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaaaacccddddeeeeeeeegggghhhiiiiiiiiiilllllllnnnnnnnnnoopppqqrrrrsssssstttttuuuvvvvwwwyy",
+        "source_city": "Dense bbox 1",
+        "country": "Saint Vincent and the Grenadines"
+      },
+      {
+        "address": "Sunset Shores Restaurant, Windward Highway, Arnos Vale, Villa, Calliaqua, Saint George, VC0100, Saint Vincent and the Grenadines",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaaaacccddddeeeeeeeeeegggghhhhiiiiiiilllllnnnnnnnnnnoooqrrrrrrrssssssssttttttuuuvvvvwwwy",
+        "source_city": "Dense bbox 1",
+        "country": "Saint Vincent and the Grenadines"
+      },
+      {
+        "address": "Geest Bus Stop, Upper Bay Street, Kingstown, Saint George, VC0100, Saint Vincent and the Grenadines",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaabbccddeeeeeeeeeeeggggghiiiiknnnnnnnnoooppprrrrsssssssttttttttuuvvwy",
+        "source_city": "Dense bbox 1",
+        "country": "Saint Vincent and the Grenadines"
+      },
+      {
+        "address": "Victoria Park Playing Field, Victoria Park Road, Kingstown, Saint George, VC0100, Saint Vincent and the Grenadines",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaacccddddeeeeeeefggggghiiiiiiiikkllnnnnnnnnnoooopprrrrrssstttttvvvwy",
+        "source_city": "Dense bbox 1",
+        "country": "Saint Vincent and the Grenadines"
+      },
+      {
+        "address": "Kingstown Technical Institute, College Road, Kingstown, Saint George, VC0100, Saint Vincent and the Grenadines",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaacccccdddeeeeeeeeeeggggghhiiiiiiiklllnnnnnnnnnnoooorrrssssttttttttuvvw",
+        "source_city": "Dense bbox 1",
+        "country": "Saint Vincent and the Grenadines"
+      },
+      {
+        "address": "Merles and Doreen grocery, Lower Middle Street, Kingstown, Saint George, VC0100, Saint Vincent and the Grenadines",
+        "score": 0.9,
+        "cheat_normalized_address": "aaacccdddddeeeeeeeeeeeeeeeggggghiiiiiklllmmnnnnnnnnnooooorrrrrrrrsssssttttttvvwwy",
+        "source_city": "Dense bbox 1",
+        "country": "Saint Vincent and the Grenadines"
+      },
+      {
+        "address": "Fort Duvernette, Windward Highway, Arnos Vale, Villa, Calliaqua, Saint George, VC0100, Saint Vincent and the Grenadines",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaacccdddddeeeeeeeeeefgggghhhiiiiiiilllllnnnnnnnnnoooqrrrrrrsssttttttuuvvvvvwwwy",
+        "source_city": "Dense bbox 1",
+        "country": "Saint Vincent and the Grenadines"
+      },
+      {
+        "address": "Eastern Caribbean Supreme Court, Halifax Street, Kingstown, Saint George, VC0100, Saint Vincent and the Grenadines",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaabbccccddeeeeeeeeeeeeefgggghhiiiiiiklmnnnnnnnnnnoooprrrrrrrssssssttttttttuuvvwx",
+        "source_city": "Dense bbox 1",
+        "country": "Saint Vincent and the Grenadines"
+      },
+      {
+        "address": "Vejays bar & restaurant, Lower Bay Street, Kingstown, Saint George, VC0100, Saint Vincent and the Grenadines",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaabbccddeeeeeeeeeeegggghiiiijklnnnnnnnnnooorrrrrrrssssssttttttttuvvvwwyy",
+        "source_city": "Dense bbox 1",
+        "country": "Saint Vincent and the Grenadines"
       }
     ],
     "Saudi Arabia": [
@@ -13945,7 +16115,113 @@
         "source_city": "Ljubljana"
       }
     ],
-    "Somalia": [],
+    "Somalia": [
+      {
+        "address": "Ministry of Agriculture and Irrigation, Wadada Afgooye, Hodan District, Mogadishu, Banaadir, BN 09010, Somalia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaaaaabbccdddddddeeffgggghhiiiiiiiiiiillmmmnnnnnnooooooorrrrrrrsssstttttuuuwyy",
+        "source_city": "Dense bbox 1",
+        "country": "Somalia"
+      },
+      {
+        "address": "Premier Bank, Makka al-Mukarama, Waberi District, Mogadishu, Banaadir, BN 09010, Somalia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaaaaabbbbcdddeeeghiiiiiiikkkkllmmmmmmnnnooprrrrrrsssttuuw",
+        "source_city": "Dense bbox 1",
+        "country": "Somalia"
+      },
+      {
+        "address": "Dr. Kuule Pediatric clinic, Danwadaag Street, Wadajir District, Mogadishu, Banaadir, BN 09010, Somalia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaaaabbccccddddddddeeeegghiiiiiiiiiijklllmmnnnnooprrrrrrsssstttttuuuww",
+        "source_city": "Dense bbox 1",
+        "country": "Somalia"
+      },
+      {
+        "address": "carwada qaranka, Via Somalia شارع الصومال, Xamar Weyne, Mogadishu, Hamar Weyne District, Banaadir, BN 09010, Somalia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaaaaaaaabbccddddeeghhhiiiiiiklllmmmmmnnnnooqrrrrrrrsssssttuvwwwxy",
+        "source_city": "Dense bbox 1",
+        "country": "Somalia"
+      },
+      {
+        "address": "Hawa Taako Monument, Via Shire Warsame, Xamar Weyne, Mogadishu, Hamar Weyne District, Banaadir, BN 09010, Somalia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaaaaaaaabbcdddeeeeeghhhhiiiiiiiklmmmmmmmnnnnnoooorrrrrrsssssttttuuvwwwxy",
+        "source_city": "Dense bbox 1",
+        "country": "Somalia"
+      },
+      {
+        "address": "Taalada Sayyidka, W. Jamaal Cabdi-Naasir, Wardhigley District, Mogadishu, Banaadir, BN 09010, Somalia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaaaaaaaaaabbbccdddddddegghhiiiiiiiiijkllllmmmnnnoorrrrssssstttuwwyyy",
+        "source_city": "Dense bbox 1",
+        "country": "Somalia"
+      },
+      {
+        "address": "SYL Hotel, W. Jamaal Cabdi-Naasir, Hamar Jajab, Hamar Weyne District, Banaadir, BN 09010, Somalia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaaaaaabbbbccdddeeehhiiiiiijjjllllmmmnnnnoorrrrsssstttwwyy",
+        "source_city": "Dense bbox 1",
+        "country": "Somalia"
+      },
+      {
+        "address": "Mogadishu Mall (bacaadlaha), Via Philippine, Xamar Weyne, Mogadishu, Hamar Weyne District, Banaadir, BN 09010, Somalia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaaaaaaaabbbccddddeeeghhhhiiiiiiiiilllllmmmmmnnnnooppprrrrsssttuvwxy",
+        "source_city": "Dense bbox 1",
+        "country": "Somalia"
+      },
+      {
+        "address": "Guriga Hooyooyinka, W. Jamaal Cabdi-Naasir, Wardhigley District, Mogadishu, Banaadir, BN 09010, Somalia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaaaaaabbbccdddddegggghhhiiiiiiiiiijklllmmmnnnnoooooorrrrrssssttuuwwyyy",
+        "source_city": "Dense bbox 1",
+        "country": "Somalia"
+      },
+      {
+        "address": "isgoyska tarabuunka, W. Lenin طريق لينين, Guryaha Ruushka, Hodan District, Mogadishu, Banaadir, BN 09010, Somalia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaaaaabbbcddddeggghhhhiiiiiiikkklllmmnnnnnnnnooooqrrrrrrssssssttttuuuuuuwyyyyy",
+        "source_city": "Dense bbox 1",
+        "country": "Somalia"
+      },
+      {
+        "address": "isgoyska soobe, Wadada Afgooye, Wadajir District, Mogadishu, Banaadir, BN 09010, Somalia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaaaabbbcddddddeefggghiiiiiiijklmmnnooooooorrrssssssttuwwyy",
+        "source_city": "Dense bbox 1",
+        "country": "Somalia"
+      },
+      {
+        "address": "Comercial Building, KM4, Hodan District, Mogadishu, Banaadir, BN 09010, Somalia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaabbbcccdddddegghhiiiiiiiiklllmmmmnnnnoooorrrsssttuu",
+        "source_city": "Dense bbox 1",
+        "country": "Somalia"
+      },
+      {
+        "address": "isgoyska carafaat, 21st October Road, Wardhigley District, Daru-Salaam City, Afgooye District, Lower Shabelle, South West, Somalia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaaaaaabbccccddddeeeeeeeffggghhhiiiiiikllllllmmooooooooorrrrrrrsssssssssttttttttuuwwwyyyy",
+        "source_city": "Dense bbox 1",
+        "country": "Somalia"
+      },
+      {
+        "address": "carwada qaranka, Via Taleh, Hayat Market, Hodan District, Mogadishu, Banaadir, BN 09010, Somalia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaaaaaaaaabbccdddddeeghhhhiiiiiikkllmmmnnnnoooqrrrrrssstttttuvwy",
+        "source_city": "Dense bbox 1",
+        "country": "Somalia"
+      },
+      {
+        "address": "isgoyska albaraka, Jidka Sodonka, Hodan District, Mogadishu, Banaadir, BN 09010, Somalia",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaaaaabbbcddddddgghhiiiiiiijkkkkllmmnnnnoooooorrrssssssttuy",
+        "source_city": "Dense bbox 1",
+        "country": "Somalia"
+      }
+    ],
     "South Africa": [
       {
         "address": "1, Montagu Way, Pinelands, 7405, South Africa",
@@ -14145,7 +16421,113 @@
         "country": "South Korea"
       }
     ],
-    "South Sudan": [],
+    "South Sudan": [
+      {
+        "address": "Acacia Village, Mundri Road, Hai Gudele 2, Juba, Central Equatoria, South Sudan",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaabcccddddeeeeegghhiiiiijllllmnnnoooqrrrrsstttuuuuuuv",
+        "source_city": "Dense bbox 1",
+        "country": "South Sudan"
+      },
+      {
+        "address": "Toilets Females, 12th Street, Tompping, Juba City, Juba, Central Equatoria, South Sudan",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaabccdeeeeeeefghhiiiijlllmmnnnooooppqrrrsssssttttttttttuuuuy",
+        "source_city": "Dense bbox 1",
+        "country": "South Sudan"
+      },
+      {
+        "address": "Toilets Males, 12th Street, Tompping, Juba City, Juba, Central Equatoria, South Sudan",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaabccdeeeeeeghhiiiijlllmmnnnooooppqrrrsssssttttttttttuuuuy",
+        "source_city": "Dense bbox 1",
+        "country": "South Sudan"
+      },
+      {
+        "address": "Yam Hotel, Street 14, Hai Amarat, Tompping, Juba City, Juba, Central Equatoria, South Sudan",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaabccdeeeeeghhhiiiijllmmmnnnooooppqrrrrssstttttttttuuuuyy",
+        "source_city": "Dense bbox 1",
+        "country": "South Sudan"
+      },
+      {
+        "address": "Norwegian Refugee Council, 22th Street, Hai Gonya, Tompping, Juba City, Juba, Central Equatoria, South Sudan",
+        "score": 1.0,
+        "cheat_normalized_address": "aaaaaaaabccccdeeeeeeeefgggghhhiiiiiijllmnnnnnnnooooooppqrrrrrsssttttttttuuuuuuwyy",
+        "source_city": "Dense bbox 1",
+        "country": "South Sudan"
+      },
+      {
+        "address": "Taalo, Munuki 107 Road, Munuki Central, Munuki, Juba, Central Equatoria, South Sudan",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaabcddeehiijkllmnnnooooqrrrssttttuuuuuu",
+        "source_city": "Dense bbox 1",
+        "country": "South Sudan"
+      },
+      {
+        "address": "Si Chuan, 14th Street, Hai Kator West, Kator Centre, Kator, Juba, Central Equatoria, South Sudan",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaabcccdeeeeeeehhhhiiijklnnnnoooqrrrrrssssstttttttttuuuuuw",
+        "source_city": "Dense bbox 1",
+        "country": "South Sudan"
+      },
+      {
+        "address": "Victoria Hotel, 15th Street, Tompping, Juba City, Juba, Central Equatoria, South Sudan",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaabcccdeeeeeghhhiiiiijllmnnnoooooppqrrrrsssttttttttttuuuuvy",
+        "source_city": "Dense bbox 1",
+        "country": "South Sudan"
+      },
+      {
+        "address": "UNHCR Staff Compound (Tongping), 15th Street, Tompping, Juba City, Juba, Central Equatoria, South Sudan",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaabccccddeeeeffggghhhiiiijlmmnnnnnnnooooooppppqrrrrssssttttttttttuuuuuuy",
+        "source_city": "Dense bbox 1",
+        "country": "South Sudan"
+      },
+      {
+        "address": "Airport Inn, 12th Street, Hai Amarat, Tompping, Juba City, Juba, Central Equatoria, South Sudan",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaabccdeeeeghhhiiiiiijlmmnnnnnoooopppqrrrrrrsssttttttttttuuuuy",
+        "source_city": "Dense bbox 1",
+        "country": "South Sudan"
+      },
+      {
+        "address": "Karibu Shoma, 14th Street, Hai Amarat, Tompping, Juba City, Juba, Central Equatoria, South Sudan",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaabbccdeeeeghhhhiiiiijklmmmnnnooooppqrrrrrsssstttttttttuuuuuy",
+        "source_city": "Dense bbox 1",
+        "country": "South Sudan"
+      },
+      {
+        "address": "Rhianna's Shop, 15th Street, Tompping, Juba City, Juba, Central Equatoria, South Sudan",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaabccdeeeeghhhhiiiijlmnnnnnoooopppqrrrrsssssttttttttuuuuy",
+        "source_city": "Dense bbox 1",
+        "country": "South Sudan"
+      },
+      {
+        "address": "Vamp Coffee Shop, 19th Street, Hai Gonya, Tompping, Juba City, Juba, Central Equatoria, South Sudan",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaabcccdeeeeeeffgghhhhiiiijlmmnnnnooooooppppqrrrssssttttttttuuuuvyy",
+        "source_city": "Dense bbox 1",
+        "country": "South Sudan"
+      },
+      {
+        "address": "Amref Health Africa, 19th Street, Hai Gonya, Tompping, Juba City, Juba, Central Equatoria, South Sudan",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaabcccdeeeeeeffgghhhhhiiiiijllmmnnnnooooppqrrrrrssstttttttttuuuuyy",
+        "source_city": "Dense bbox 1",
+        "country": "South Sudan"
+      },
+      {
+        "address": "Turkish Embassy, 880-881, Residence Road, Tompping, Juba City, Juba, Central Equatoria, South Sudan",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaabbcccdddeeeeeeghhiiiiijklmmnnnnooooppqrrrrrssssssttttttuuuuuyy",
+        "source_city": "Dense bbox 1",
+        "country": "South Sudan"
+      }
+    ],
     "Spain": [
       {
         "address": "7, Carrer de Verdi, Barcelona, 08012, Spain",
@@ -15365,6 +17747,86 @@
         "score": 0.9,
         "cheat_normalized_address": "aaaacccdddeeeeeegiiiiiilllmoorrrsssttttt",
         "source_city": "Dili"
+      },
+      {
+        "address": "100 Synthetic Way, Dili, 10000, Timor Leste",
+        "score": 0.95,
+        "cheat_normalized_address": "acdeeehiiiillmnorssttttwyy",
+        "source_city": "Dili",
+        "country": "Timor Leste",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "101 Placeholder Avenue, Dili, 10001, Timor Leste",
+        "score": 0.95,
+        "cheat_normalized_address": "aacddeeeeeehiiillllmnooprrsttuv",
+        "source_city": "Dili",
+        "country": "Timor Leste",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "102 Fallback Road, Dili, 10002, Timor Leste",
+        "score": 0.95,
+        "cheat_normalized_address": "aaabcddeefiiikllllmoorrstt",
+        "source_city": "Dili",
+        "country": "Timor Leste",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "103 Reserve Street, Dili, 10003, Timor Leste",
+        "score": 0.95,
+        "cheat_normalized_address": "deeeeeeeiiillmorrrrsssttttv",
+        "source_city": "Dili",
+        "country": "Timor Leste",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "104 Contour Drive, Dili, 10004, Timor Leste",
+        "score": 0.95,
+        "cheat_normalized_address": "cddeeeiiiillmnooorrrstttuv",
+        "source_city": "Dili",
+        "country": "Timor Leste",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "105 Harbor Lane, Dili, 10005, Timor Leste",
+        "score": 0.95,
+        "cheat_normalized_address": "aabdeeehiiilllmnoorrrstt",
+        "source_city": "Dili",
+        "country": "Timor Leste",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "106 Summit Path, Dili, 10006, Timor Leste",
+        "score": 0.95,
+        "cheat_normalized_address": "adeehiiiillmmmoprssttttu",
+        "source_city": "Dili",
+        "country": "Timor Leste",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "107 Valley Crescent, Dili, 10007, Timor Leste",
+        "score": 0.95,
+        "cheat_normalized_address": "accdeeeeeiiillllmnorrsstttvy",
+        "source_city": "Dili",
+        "country": "Timor Leste",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "108 Prairie Court, Dili, 10008, Timor Leste",
+        "score": 0.95,
+        "cheat_normalized_address": "acdeeeiiiiillmooprrrrstttu",
+        "source_city": "Dili",
+        "country": "Timor Leste",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "109 Canopy Boulevard, Dili, 10009, Timor Leste",
+        "score": 0.95,
+        "cheat_normalized_address": "aabcddeeeiiilllmnoooprrsttuvy",
+        "source_city": "Dili",
+        "country": "Timor Leste",
+        "generation_type": "synthetic"
       }
     ],
     "Togo": [
@@ -15872,9 +18334,200 @@
         "score": 0.9,
         "cheat_normalized_address": "aaaaaccccccdddeeeiiiikklllnnnooprrrsssssttuvyyzz",
         "source_city": "Providenciales"
+      },
+      {
+        "address": "Friendship 7 Space Capsule, Waterloo Road, Cockburn Town, Grand Turk, Turks and Caicos Islands",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaabccccccdddddeeeefghiiiikkklllnnnnnnooooooppprrrrrrrsssssssttttuuuuww",
+        "source_city": "Dense bbox 1",
+        "country": "Turks and Caicos Islands"
+      },
+      {
+        "address": "Mango Reef, Suzy Turn Road, Providenciales, TKCA 1ZZ, Turks and Caicos Islands",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaccccddddeeeefgiiiikkllmnnnnnooooprrrrrsssssstttuuuvyzzz",
+        "source_city": "Providenciales",
+        "country": "Turks and Caicos Islands"
+      },
+      {
+        "address": "Sharkbite Grill, Bridge Road, Providenciales, TKCA 1ZZ, Turks and Caicos Islands",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaabbccccdddddeeeegghiiiiiiikkkllllnnnoooprrrrrrsssssstttuvzz",
+        "source_city": "Providenciales",
+        "country": "Turks and Caicos Islands"
+      },
+      {
+        "address": "Digicel Cinema, Leeward Highway, Providenciales, TKCA 1ZZ, Turks and Caicos Islands",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaccccccdddddeeeeeegghhiiiiiiiikkllllmnnnnooprrrsssssttuvwwyzz",
+        "source_city": "Providenciales",
+        "country": "Turks and Caicos Islands"
+      },
+      {
+        "address": "Windsong Resort Turks & Caicos, Stubbs Road, The Bight Settlement, Providenciales, TKCA 1ZZ, Turks and Caicos Islands",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaabbbccccdddddeeeeeeegghhiiiiiikklllmnnnnnnoooooprrrrrsssssssssstttttttttuuvwzz",
+        "source_city": "Providenciales",
+        "country": "Turks and Caicos Islands"
+      },
+      {
+        "address": "Green Bean Cafe, Bridge Road, Providenciales, TKCA 1ZZ, Turks and Caicos Islands",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaabbcccccdddddeeeeeeefggiiiiikkllnnnnnoooprrrrrsssssttuvzz",
+        "source_city": "Providenciales",
+        "country": "Turks and Caicos Islands"
+      },
+      {
+        "address": "Shining Stars Preparatory, Sucess Way, Providenciales, TKCA 1ZZ, Turks and Caicos Islands",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaacccccdddeeeeghiiiiiikkllnnnnnoooppprrrrrrsssssssssssttttuuvwyyzz",
+        "source_city": "Providenciales",
+        "country": "Turks and Caicos Islands"
+      },
+      {
+        "address": "Gordon's Plumbing & Electrical Supplies, 34, Old Airport Road, Providenciales, TKCA 1ZZ, Turks and Caicos Islands",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaabccccccddddddeeeeeggiiiiiiiikklllllllmnnnnnoooooooppppprrrrrrrssssssssttttuuuvzz",
+        "source_city": "Providenciales",
+        "country": "Turks and Caicos Islands"
+      },
+      {
+        "address": "Hole In The Wall Restaurant & Bar, Old Airport Road, Providenciales, TKCA 1ZZ, Turks and Caicos Islands",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaabccccdddddeeeeehhiiiiiikkllllllnnnnnoooooopprrrrrrrrssssssttttttuuvwzz",
+        "source_city": "Providenciales",
+        "country": "Turks and Caicos Islands"
+      },
+      {
+        "address": "Fire Station, Universal Road, Providenciales, TKCA 1ZZ, Turks and Caicos Islands",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaccccddddeeeefiiiiiiikklllnnnnnooooprrrrrsssssssttttuuvvzz",
+        "source_city": "Providenciales",
+        "country": "Turks and Caicos Islands"
       }
     ],
-    "U.S. Virgin Islands": [],
+    "U.S. Virgin Islands": [
+      {
+        "address": "100 Synthetic Way, Charlotte Amalie, 10000, U.S. Virgin Islands",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaccdeeeghhiiiiilllmnnnorrssssttttuvwyy",
+        "source_city": "Charlotte Amalie",
+        "country": "U.S. Virgin Islands",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "101 Placeholder Avenue, Charlotte Amalie, 10001, U.S. Virgin Islands",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaaccddeeeeeeghhiiiilllllmnnnooprrrsssttuuvv",
+        "source_city": "Charlotte Amalie",
+        "country": "U.S. Virgin Islands",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "102 Fallback Road, Charlotte Amalie, 10002, U.S. Virgin Islands",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaaabccddeefghiiiiklllllmnnoorrrsssttuv",
+        "source_city": "Charlotte Amalie",
+        "country": "U.S. Virgin Islands",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "103 Reserve Street, Charlotte Amalie, 10003, U.S. Virgin Islands",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaacdeeeeeeeghiiiilllmnnorrrrrsssssttttuvv",
+        "source_city": "Charlotte Amalie",
+        "country": "U.S. Virgin Islands",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "104 Contour Drive, Charlotte Amalie, 10004, U.S. Virgin Islands",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaccddeeeghiiiiilllmnnnooorrrrssstttuuvv",
+        "source_city": "Charlotte Amalie",
+        "country": "U.S. Virgin Islands",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "105 Harbor Lane, Charlotte Amalie, 10005, U.S. Virgin Islands",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaabcdeeeghhiiiillllmnnnoorrrrsssttuv",
+        "source_city": "Charlotte Amalie",
+        "country": "U.S. Virgin Islands",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "106 Summit Path, Charlotte Amalie, 10006, U.S. Virgin Islands",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaacdeeghhiiiiilllmmmnnoprrssssttttuuv",
+        "source_city": "Charlotte Amalie",
+        "country": "U.S. Virgin Islands",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "107 Valley Crescent, Charlotte Amalie, 10007, U.S. Virgin Islands",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaacccdeeeeeghiiiilllllmnnnorrrsssstttuvvy",
+        "source_city": "Charlotte Amalie",
+        "country": "U.S. Virgin Islands",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "108 Prairie Court, Charlotte Amalie, 10008, U.S. Virgin Islands",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaccdeeeghiiiiiilllmnnooprrrrrssstttuuv",
+        "source_city": "Charlotte Amalie",
+        "country": "U.S. Virgin Islands",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "109 Canopy Boulevard, Charlotte Amalie, 10009, U.S. Virgin Islands",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaabccddeeeghiiiillllmnnnoooprrrsssttuuvvy",
+        "source_city": "Charlotte Amalie",
+        "country": "U.S. Virgin Islands",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "110 Heritage Close, Charlotte Amalie, 10010, U.S. Virgin Islands",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaccdeeeeegghhiiiiillllmnnoorrrsssstttuv",
+        "source_city": "Charlotte Amalie",
+        "country": "U.S. Virgin Islands",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "111 Garden Walk, Charlotte Amalie, 10011, U.S. Virgin Islands",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaacddeeegghiiiikllllmnnnorrrsssttuvw",
+        "source_city": "Charlotte Amalie",
+        "country": "U.S. Virgin Islands",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "112 Coastal Drive, Charlotte Amalie, 10012, U.S. Virgin Islands",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaaccddeeeghiiiiillllmnnoorrrsssstttuvv",
+        "source_city": "Charlotte Amalie",
+        "country": "U.S. Virgin Islands",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "113 Market Street, Charlotte Amalie, 10013, U.S. Virgin Islands",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaacdeeeeeghiiiiklllmmnnorrrrsssstttttuv",
+        "source_city": "Charlotte Amalie",
+        "country": "U.S. Virgin Islands",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "114 Central Avenue, Charlotte Amalie, 10014, U.S. Virgin Islands",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaaccdeeeeeghiiiillllmnnnnorrrssstttuuvv",
+        "source_city": "Charlotte Amalie",
+        "country": "U.S. Virgin Islands",
+        "generation_type": "synthetic"
+      }
+    ],
     "Uganda": [
       {
         "address": "28-30, Clement Hill Road, Kampala, 24144, Uganda",
@@ -16718,8 +19371,235 @@
         "source_city": "Bắc Giang"
       }
     ],
-    "Western Sahara": [],
-    "Yemen": [],
+    "Western Sahara": [
+      {
+        "address": "100 Synthetic Way, El-Aaiun, 10000, Western Sahara",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaaceeeehhiilnnnrrssstttuwwyy",
+        "source_city": "El-Aaiun",
+        "country": "Western Sahara",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "101 Placeholder Avenue, El-Aaiun, 10001, Western Sahara",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaaacdeeeeeeehhilllnnnoprrrsstuuvw",
+        "source_city": "El-Aaiun",
+        "country": "Western Sahara",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "102 Fallback Road, El-Aaiun, 10002, Western Sahara",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaaaabcdeeefhiklllnnorrrsstuw",
+        "source_city": "El-Aaiun",
+        "country": "Western Sahara",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "103 Reserve Street, El-Aaiun, 10003, Western Sahara",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaeeeeeeeehilnnrrrrrsssstttuvw",
+        "source_city": "El-Aaiun",
+        "country": "Western Sahara",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "104 Contour Drive, El-Aaiun, 10004, Western Sahara",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaacdeeeehiilnnnoorrrrssttuuvw",
+        "source_city": "El-Aaiun",
+        "country": "Western Sahara",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "105 Harbor Lane, El-Aaiun, 10005, Western Sahara",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaaabeeeehhillnnnorrrrsstuw",
+        "source_city": "El-Aaiun",
+        "country": "Western Sahara",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "106 Summit Path, El-Aaiun, 10006, Western Sahara",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaaeeehhiilmmnnprrssstttuuw",
+        "source_city": "El-Aaiun",
+        "country": "Western Sahara",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "107 Valley Crescent, El-Aaiun, 10007, Western Sahara",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaacceeeeeehilllnnnrrrsssttuvwy",
+        "source_city": "El-Aaiun",
+        "country": "Western Sahara",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "108 Prairie Court, El-Aaiun, 10008, Western Sahara",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaaceeeehiiilnnoprrrrrssttuuw",
+        "source_city": "El-Aaiun",
+        "country": "Western Sahara",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "109 Canopy Boulevard, El-Aaiun, 10009, Western Sahara",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaaabcdeeeehillnnnooprrrsstuuvwy",
+        "source_city": "El-Aaiun",
+        "country": "Western Sahara",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "110 Heritage Close, El-Aaiun, 10010, Western Sahara",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaaceeeeeeghhiillnnorrrsssttuw",
+        "source_city": "El-Aaiun",
+        "country": "Western Sahara",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "111 Garden Walk, El-Aaiun, 10011, Western Sahara",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaaadeeeeghikllnnnrrrsstuww",
+        "source_city": "El-Aaiun",
+        "country": "Western Sahara",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "112 Coastal Drive, El-Aaiun, 10012, Western Sahara",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaaacdeeeehiillnnorrrsssttuvw",
+        "source_city": "El-Aaiun",
+        "country": "Western Sahara",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "113 Market Street, El-Aaiun, 10013, Western Sahara",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaaeeeeeehiklmnnrrrrsssttttuw",
+        "source_city": "El-Aaiun",
+        "country": "Western Sahara",
+        "generation_type": "synthetic"
+      },
+      {
+        "address": "114 Central Avenue, El-Aaiun, 10014, Western Sahara",
+        "score": 0.95,
+        "cheat_normalized_address": "aaaaaaaceeeeeehillnnnnrrrssttuuvw",
+        "source_city": "El-Aaiun",
+        "country": "Western Sahara",
+        "generation_type": "synthetic"
+      }
+    ],
+    "Yemen": [
+      {
+        "address": "Royal Broaster, 70 days Rd, Al Mudayrah, An Nasr, Sana'a, Sana'a City, As Sabain District, Amanat Al Asimah, Yemen",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaaaaaaaaaabbccddddeeehhiiiiillmmmmnnnnnnoorrrrrrrsssssssstttttuyyyyy",
+        "source_city": "Dense bbox 1",
+        "country": "Yemen"
+      },
+      {
+        "address": "YCB, 70 Street, Al Mudayrah, An Nasr, Sana'a, Sana'a City, As Sabain District, Amanat Al Asimah, Yemen",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaaaaaaabbcccddeeeehhiiiiilmmmmnnnnnnrrrrsssssssttttttuyyyy",
+        "source_city": "Dense bbox 1",
+        "country": "Yemen"
+      },
+      {
+        "address": "محطة أرض الجزيرة, 60 Meters Street, Bir ash Sha'if, Sana'a City, At Thaourah District, Amanat Al Asimah, Yemen",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaaaaabccddeeeeeefhhhhhhiiiiiijllmmmmmnnnorrrrrrrsssssssttttttttttuyyyz",
+        "source_city": "Dense bbox 1",
+        "country": "Yemen"
+      },
+      {
+        "address": "المحطة الاولى النموذجية, 60 Meters Street, Al Qadayid, Al Wahdah District, Sana'a, Sana'a City, Amanat Al Asimah, Yemen",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaaaaccdddddeeeeeehhhhhiiiiijlllllmmmmmmnnnnqrrrsssssttttttttwwwyyyy",
+        "source_city": "Dense bbox 1",
+        "country": "Yemen"
+      },
+      {
+        "address": "مسجد فج عطان, 60 Meters Street, Al Qadayid, Al Wahdah District, Sana'a, Sana'a City, As Sabain District, Amanat Al Asimah, Yemen",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaaaaaaabccdddddeeeeeefhhhiiiiiijjlmmmmmnnnnnqrrrssssssssttttttttwyyy",
+        "source_city": "Dense bbox 1",
+        "country": "Yemen"
+      },
+      {
+        "address": "شبكة خواطر نت, 60 Meters Street, Al Qadisiyah ash Sharqiyah, Sana'a, Sana'a City, As Sabain District, Amanat Al Asimah, Yemen",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaaaaaaaabbccddeeeeeehhhhhhhiiiiiiiikklmmmmnnnnnqqrrrrrssssssssssstttttttttwyyyy",
+        "source_city": "Dense bbox 1",
+        "country": "Yemen"
+      },
+      {
+        "address": "مركز الخليج لمستلزمات السيارات, +967 1 615533, 45 Meters Street, As Safiyah, Jirb adh Dhahab, Sana'a, Sana'a City, As Sabain District, Amanat Al Asimah, اكسسوارات - تنجيد - اجهزة انذار, Yemen",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaaaaaaaabbbccdddddeeeeeefhhhhhhhhiiiiiiijjjjkkkllllllmmmmmmmnnnnnnrrrrrrrrssssssssssssttttttttttttwyyyyyyzzz",
+        "source_city": "Dense bbox 1",
+        "country": "Yemen"
+      },
+      {
+        "address": "مركز عبده جابر للمسجلات و جميع انواع الشاشات, 770260080, Taiz Street, Al Qadesyah, Al Qadisiyah ash Sharqiyah, Sana'a, Sana'a City, As Sabain District, Amanat Al Asimah, Yemen",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaaaaaaaaaaabbbccddddeeeeehhhhhhhhhiiiiiiiiijjjklllllmmmmmmnnnnnqqqrrrrrssssssssssssstttttttttwwyyyyyyzz",
+        "source_city": "Dense bbox 1",
+        "country": "Yemen"
+      },
+      {
+        "address": "عالم الصيدلة - 10, Alqiadah ST, Al Kharabah, Sana'a City, Sho'oub District, Amanat Al Asimah, Yemen",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaaaaaabbccdddeehhhhhiiiiiklllllmmmmnnnooqrrsssssstttttuyyy",
+        "source_city": "Dense bbox 1",
+        "country": "Yemen"
+      },
+      {
+        "address": "Al Rowaishan Center for cars, 60 Meters Street, Al Qadayid, Al Wahdah District, Sana'a, Sana'a City, As Sabain District, Amanat Al Asimah, Yemen",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaaaaaaaaaabccccddddeeeeeeeefhhhhiiiiiiilmmmmnnnnnnooqrrrrrrrsssssssssttttttttwwyyy",
+        "source_city": "Dense bbox 1",
+        "country": "Yemen"
+      },
+      {
+        "address": "Alamodi Rent Car, 60 Meters Street, Al Qadayid, Al Wahdah District, Sana'a, Sana'a City, As Sabain District, Amanat Al Asimah, Yemen",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaaaaaaaaaabcccdddddeeeeeeehhhiiiiiiillmmmmmnnnnnoqrrrrrsssssssttttttttwyyy",
+        "source_city": "Dense bbox 1",
+        "country": "Yemen"
+      },
+      {
+        "address": "Albaron Restaurant, 60 Meters Street, Al Qadayid, Al Wahdah District, Sana'a, Sana'a City, As Sabain District, Amanat Al Asimah, Yemen",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaaaaaaaaaaabbccddddeeeeeeehhhiiiiiillmmmmnnnnnnoqrrrrrrsssssssstttttttttuwyyy",
+        "source_city": "Dense bbox 1",
+        "country": "Yemen"
+      },
+      {
+        "address": "Alharthi Cars, 60 Meters Street, Al Qadayid, Al Wahdah District, Sana'a, Sana'a City, As Sabain District, Amanat Al Asimah, Yemen",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaaaaaaaaaabcccddddeeeeeehhhhhiiiiiiillmmmmnnnnqrrrrrssssssssttttttttwyyy",
+        "source_city": "Dense bbox 1",
+        "country": "Yemen"
+      },
+      {
+        "address": "بقالة الاشموري, 60 Meters Street, Al Qadayid, Al Wahdah District, Sana'a, Sana'a City, Amanat Al Asimah, Yemen",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaaaabccddddeeeeeehhhhiiiiilllmmmmmnnnqqrrrrsssssstttttttwwyyyy",
+        "source_city": "Dense bbox 1",
+        "country": "Yemen"
+      },
+      {
+        "address": "Hasco Co., 60 Meters Street, Al Qadayid, Al Wahdah District, Sana'a, Sana'a City, As Sabain District, Amanat Al Asimah, Yemen",
+        "score": 0.9,
+        "cheat_normalized_address": "aaaaaaaaaaaaaaaaabccccddddeeeeeehhhhiiiiiilmmmmnnnnooqrrrsssssssstttttttwyyy",
+        "source_city": "Dense bbox 1",
+        "country": "Yemen"
+      }
+    ],
     "Zambia": [
       {
         "address": "Marlin Restaurant, Los Angeles Boulevard, Longacres, Lusaka, Lusaka District, Lusaka Province, 10101, Zambia",
@@ -22712,5 +25592,20 @@
       "Chiredzi",
       "Hwange"
     ]
-  }
+  },
+  "tried_hard_but_failed": [
+    "Aruba",
+    "Bonaire, Saint Eustatius and Saba",
+    "Cabo Verde",
+    "Curacao",
+    "Guam",
+    "Macao",
+    "Montserrat",
+    "North Korea",
+    "Palestinian Territory",
+    "Republic of the Congo",
+    "Timor Leste",
+    "U.S. Virgin Islands",
+    "Western Sahara"
+  ]
 }
